@@ -1,0 +1,243 @@
+{
+  "cases": [
+    {
+      "answer_equal": false,
+      "clean_score": null,
+      "first_extraction_prompt_diff": true,
+      "judge_score_equal": null,
+      "level": "E3",
+      "memory_equal": false,
+      "memory_jaccard": 0.006180469715698393,
+      "native_score": null,
+      "question_id": "b5ef892d",
+      "question_type": "multi-session",
+      "retrieval_equal": false,
+      "retrieval_jaccard": 0.0,
+      "trigger_reached": true
+    },
+    {
+      "answer_equal": false,
+      "clean_score": null,
+      "first_extraction_prompt_diff": true,
+      "judge_score_equal": null,
+      "level": "E3",
+      "memory_equal": false,
+      "memory_jaccard": 0.0013440860215053765,
+      "native_score": null,
+      "question_id": "58470ed2",
+      "question_type": "single-session-assistant",
+      "retrieval_equal": false,
+      "retrieval_jaccard": 0.0,
+      "trigger_reached": true
+    },
+    {
+      "answer_equal": false,
+      "clean_score": null,
+      "first_extraction_prompt_diff": true,
+      "judge_score_equal": null,
+      "level": "E3",
+      "memory_equal": false,
+      "memory_jaccard": 0.016260162601626018,
+      "native_score": null,
+      "question_id": "1a8a66a6",
+      "question_type": "multi-session",
+      "retrieval_equal": false,
+      "retrieval_jaccard": 0.05263157894736842,
+      "trigger_reached": true
+    },
+    {
+      "answer_equal": false,
+      "clean_score": null,
+      "first_extraction_prompt_diff": true,
+      "judge_score_equal": null,
+      "level": "E3",
+      "memory_equal": false,
+      "memory_jaccard": 0.016272189349112426,
+      "native_score": null,
+      "question_id": "gpt4_31ff4165",
+      "question_type": "multi-session",
+      "retrieval_equal": false,
+      "retrieval_jaccard": 0.1111111111111111,
+      "trigger_reached": true
+    },
+    {
+      "answer_equal": false,
+      "clean_score": null,
+      "first_extraction_prompt_diff": true,
+      "judge_score_equal": null,
+      "level": "E3",
+      "memory_equal": false,
+      "memory_jaccard": 0.010309278350515464,
+      "native_score": null,
+      "question_id": "2133c1b5",
+      "question_type": "knowledge-update",
+      "retrieval_equal": false,
+      "retrieval_jaccard": 0.0,
+      "trigger_reached": true
+    },
+    {
+      "answer_equal": false,
+      "clean_score": null,
+      "first_extraction_prompt_diff": true,
+      "judge_score_equal": null,
+      "level": "E3",
+      "memory_equal": false,
+      "memory_jaccard": 0.0012121212121212121,
+      "native_score": null,
+      "question_id": "9a707b81",
+      "question_type": "temporal-reasoning",
+      "retrieval_equal": false,
+      "retrieval_jaccard": 0.0,
+      "trigger_reached": true
+    },
+    {
+      "answer_equal": false,
+      "clean_score": null,
+      "first_extraction_prompt_diff": true,
+      "judge_score_equal": null,
+      "level": "E3",
+      "memory_equal": false,
+      "memory_jaccard": 0.0073439412484700125,
+      "native_score": null,
+      "question_id": "gpt4_731e37d7",
+      "question_type": "multi-session",
+      "retrieval_equal": false,
+      "retrieval_jaccard": 0.0,
+      "trigger_reached": true
+    },
+    {
+      "answer_equal": false,
+      "clean_score": null,
+      "first_extraction_prompt_diff": true,
+      "judge_score_equal": null,
+      "level": "E3",
+      "memory_equal": false,
+      "memory_jaccard": 0.00997506234413965,
+      "native_score": null,
+      "question_id": "gpt4_c27434e8",
+      "question_type": "temporal-reasoning",
+      "retrieval_equal": false,
+      "retrieval_jaccard": 0.0,
+      "trigger_reached": true
+    },
+    {
+      "answer_equal": false,
+      "clean_score": null,
+      "first_extraction_prompt_diff": true,
+      "judge_score_equal": null,
+      "level": "E3",
+      "memory_equal": false,
+      "memory_jaccard": 0.012738853503184714,
+      "native_score": null,
+      "question_id": "2698e78f_abs",
+      "question_type": "knowledge-update",
+      "retrieval_equal": false,
+      "retrieval_jaccard": 0.0,
+      "trigger_reached": true
+    },
+    {
+      "answer_equal": false,
+      "clean_score": null,
+      "first_extraction_prompt_diff": true,
+      "judge_score_equal": null,
+      "level": "E3",
+      "memory_equal": false,
+      "memory_jaccard": 0.001379310344827586,
+      "native_score": null,
+      "question_id": "7401057b",
+      "question_type": "knowledge-update",
+      "retrieval_equal": false,
+      "retrieval_jaccard": 0.0,
+      "trigger_reached": true
+    },
+    {
+      "answer_equal": false,
+      "clean_score": null,
+      "first_extraction_prompt_diff": true,
+      "judge_score_equal": null,
+      "level": "E3",
+      "memory_equal": false,
+      "memory_jaccard": 0.005714285714285714,
+      "native_score": null,
+      "question_id": "0862e8bf",
+      "question_type": "single-session-user",
+      "retrieval_equal": false,
+      "retrieval_jaccard": 0.0,
+      "trigger_reached": true
+    },
+    {
+      "answer_equal": false,
+      "clean_score": null,
+      "first_extraction_prompt_diff": true,
+      "judge_score_equal": null,
+      "level": "E3",
+      "memory_equal": false,
+      "memory_jaccard": 0.009589041095890411,
+      "native_score": null,
+      "question_id": "gpt4_5438fa52",
+      "question_type": "temporal-reasoning",
+      "retrieval_equal": false,
+      "retrieval_jaccard": 0.05555555555555555,
+      "trigger_reached": true
+    }
+  ],
+  "complete": true,
+  "duplicate_question_ids": [],
+  "e2plus_count": 12,
+  "e2plus_fraction_bootstrap": {
+    "ci95_percentile": [
+      1.0,
+      1.0
+    ],
+    "estimate": 1.0,
+    "resamples": 5000,
+    "seed": 20260919
+  },
+  "expected_cases": 12,
+  "extra_question_ids": [],
+  "interpretation_guardrails": [
+    "V42 is not an exact-stack replication of the OpenAI-backed V34 protocol.",
+    "An E2+ observation establishes downstream divergence for executed paired cases; it does not estimate field prevalence.",
+    "A 12-case Redis null does not by itself kill C33; the frozen MemArena paired pilot remains an independent gate.",
+    "Score direction is reported descriptively; no assumption is made that residual state must always inflate or always depress scores.",
+    "Generic reset isolation and verified-reset principles remain prior art rather than novelty claims."
+  ],
+  "invalid_files": [],
+  "judge_pairs": 0,
+  "level_counts": {
+    "E3": 12
+  },
+  "mcnemar_exact_two_sided_p": null,
+  "mcnemar_native_correct_clean_wrong_b": 0,
+  "mcnemar_native_wrong_clean_correct_c": 0,
+  "memory_jaccard_median_bootstrap": {
+    "ci95_percentile": [
+      0.00354679802955665,
+      0.01152406592685009
+    ],
+    "estimate": 0.008466491172180212,
+    "resamples": 5000,
+    "seed": 20260919
+  },
+  "missing_question_ids": [],
+  "primary_endpoint": "E2_OR_HIGHER",
+  "primary_endpoint_observed_in_at_least_one_case": true,
+  "protocol_freeze": "V42_PROSPECTIVE_AMENDMENT",
+  "provider_stack": {
+    "embedder": "fastembed:BAAI/bge-small-en-v1.5",
+    "judge": null,
+    "llm": "deepseek-flash"
+  },
+  "retrieval_jaccard_median_bootstrap": {
+    "ci95_percentile": [
+      0.0,
+      0.02631578947368421
+    ],
+    "estimate": 0.0,
+    "resamples": 5000,
+    "seed": 20260919
+  },
+  "same_answer_judge_disagreement_count": 0,
+  "schema": "c33-v42-redis-deepseek-pilot-analysis",
+  "valid_cases": 12
+}

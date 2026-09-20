@@ -1,0 +1,43 @@
+{
+  "project_id": "AM-AUTO-20260918-R1",
+  "current_version": "V44",
+  "date": "2026-09-20",
+  "primary_candidate": "C33",
+  "working_title": "Hidden Trial State in Agent-Memory Benchmarks: An Empirical Audit",
+  "current_state": "V44_DEEPSEEK_NONTHINKING_CONTROL_FAILED_IDENTIFICATION_E1_CONFIRMED_E2_E3_UNMEASURED",
+  "v42": {
+    "stack": "Redis benchmark pinned commit + Mem0 2.0.19 + DeepSeek Flash thinking-low + local FastEmbed",
+    "formal_cases": 12,
+    "complete": true,
+    "mechanism_trigger_count": 12,
+    "mechanical_e3_label_count": 12,
+    "causal_e2_e3_interpretation": "INVALIDATED_BY_V43_STOCHASTIC_CONTROL"
+  },
+  "v43": {
+    "design": "verified-clean versus independently repeated verified-clean",
+    "cases": 3,
+    "complete": true,
+    "identical_first_prompt_count": 3,
+    "memory_divergence_count": 3,
+    "retrieval_divergence_count": 3,
+    "answer_divergence_count": 3,
+    "memory_jaccard_median": 0.011936339522546418,
+    "retrieval_jaccard_median": 0.0
+  },
+  "v44": {
+    "design": "non-thinking temperature-zero verified-clean versus verified-clean diagnostic gate",
+    "cases": 1,
+    "complete": true,
+    "first_extraction_prompt_equal": true,
+    "memory_equal": false,
+    "memory_jaccard": 0.11825192802056556,
+    "retrieval_equal": false,
+    "retrieval_jaccard": 0.0,
+    "answer_equal": false,
+    "decision": "STOP_EXACT_HASH_DEEPSEEK_CAUSAL_RERUN"
+  },
+  "highest_supported_controlled_evidence": "E1",
+  "formal_experiment": "NOT_STARTED",
+  "next_gate": "REDESIGN_DOWNSTREAM_ENDPOINT_WITH_REPLICATION_OR_DETERMINISTIC_MODEL_BEFORE_MEMARENA",
+  "claim_boundary": "Only E1 is currently causally supported; E2/E3 exact-hash differences overlap V43/V44 clean-clean baselines"
+}

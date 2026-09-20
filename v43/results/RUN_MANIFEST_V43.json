@@ -1,0 +1,63 @@
+{
+  "answer_model": "deepseek-flash",
+  "cases": [
+    {
+      "finished_at": "2026-09-20T08:02:00.252080+00:00",
+      "output": "/Users/slumpyfufu/Desktop/Projects/Science/experiment_outputs/redis_v43_clean_clean_control_20260920/results/case_01_b5ef892d.json",
+      "question_id": "b5ef892d",
+      "rank": 1,
+      "returncode": 0,
+      "started_at": "2026-09-20T07:50:00.413160+00:00",
+      "status": "completed",
+      "stderr_bytes": 197,
+      "stderr_sha256": "e4a8c99c00088c86bb68c7bf91f4e72467f32bbe5921b28b9a9d9bb197b2732c",
+      "stdout_bytes": 197,
+      "stdout_sha256": "c586418a4783d73bb3c81cf695e443a6a1b7f235f79bf00bd9ec768c161ee0f8",
+      "work_state_deleted_after_case": true
+    },
+    {
+      "finished_at": "2026-09-20T08:14:27.175801+00:00",
+      "output": "/Users/slumpyfufu/Desktop/Projects/Science/experiment_outputs/redis_v43_clean_clean_control_20260920/results/case_02_58470ed2.json",
+      "question_id": "58470ed2",
+      "rank": 2,
+      "returncode": 0,
+      "started_at": "2026-09-20T08:02:00.253851+00:00",
+      "status": "completed",
+      "stderr_bytes": 197,
+      "stderr_sha256": "e4a8c99c00088c86bb68c7bf91f4e72467f32bbe5921b28b9a9d9bb197b2732c",
+      "stdout_bytes": 197,
+      "stdout_sha256": "8eb2cc702772677f14262a0a038982d21225caecaf25f72d6ea958887ae09b5a",
+      "work_state_deleted_after_case": true
+    },
+    {
+      "finished_at": "2026-09-20T08:26:59.035567+00:00",
+      "output": "/Users/slumpyfufu/Desktop/Projects/Science/experiment_outputs/redis_v43_clean_clean_control_20260920/results/case_03_1a8a66a6.json",
+      "question_id": "1a8a66a6",
+      "rank": 3,
+      "returncode": 0,
+      "started_at": "2026-09-20T08:14:27.177630+00:00",
+      "status": "completed",
+      "stderr_bytes": 197,
+      "stderr_sha256": "e4a8c99c00088c86bb68c7bf91f4e72467f32bbe5921b28b9a9d9bb197b2732c",
+      "stdout_bytes": 197,
+      "stdout_sha256": "9e67a1d7b198d9411451bb17990a86133f97822264d348147569b79e51bdb85e",
+      "work_state_deleted_after_case": true
+    }
+  ],
+  "cohort_file": "/Users/slumpyfufu/Desktop/Projects/Science/v43/redis_v43_control_cohort.json",
+  "complete": true,
+  "control_sample_rule": "first three ranks of the frozen V34/V42 cohort",
+  "fail_after_successful_sessions": 3,
+  "failure_count": 0,
+  "finished_at": "2026-09-20T08:26:59.038072+00:00",
+  "judge_model": null,
+  "probe": "/Users/slumpyfufu/Desktop/Projects/Science/v43/code/redis_v43_clean_clean_probe.py",
+  "protocol_authority": "V43_STOCHASTIC_NEGATIVE_CONTROL",
+  "python": "3.12.14",
+  "raw_benchmark_text_persisted_in_final_runtime_package": false,
+  "redis_head": "94192c39e2a4a154f441a5411e3d73c4f54974a6",
+  "retain_work_state": false,
+  "schema": "c33-v43-redis-deepseek-control-run-manifest",
+  "started_at": "2026-09-20T07:50:00.408260+00:00",
+  "top_k": 10
+}
