@@ -1,0 +1,20 @@
+{
+  "project": "AM-AUTO-20260918-R1",
+  "phase": "V30",
+  "candidate": "C33",
+  "phase_root": "34_counterfactual_trace_v30",
+  "artifacts": [
+    {"path": "C33/AMB_PUBLIC_TRACE_COUNTERFACTUAL_V30.md", "role": "main audit memo"},
+    {"path": "C33/SOURCE_PROVENANCE_V30.json", "role": "frozen source binding"},
+    {"path": "C33/code/amb_trace_counterfactual_v30.py", "role": "offline counterfactual auditor"},
+    {"path": "C33/code/test_amb_trace_counterfactual_v30.py", "role": "deterministic assertions"},
+    {"path": "C33/fixtures/amb_ma03_minimal_v30.json", "role": "minimal public-trace fixture"},
+    {"path": "C33/results/AMB_COUNTERFACTUAL_RESULT_V30.json", "role": "counterfactual result"},
+    {"path": "C33/results/AMB_L1_L2_PROVENANCE_SCAN_V30.json", "role": "cross-phase provenance scan result"},
+    {"path": "common/RUNTIME_ENV_AUDIT_V30.json", "role": "runtime capability audit"},
+    {"path": "common/TEST_REPORT_V30.json", "role": "test report"},
+    {"path": "common/RESEARCH_STATE_V30.json", "role": "phase-local research state"},
+    {"path": "common/CHANGE_HISTORY_V30.md", "role": "phase change log"},
+    {"path": "reports/V30_DECISION_SUMMARY.md", "role": "phase decision summary"}
+  ]
+}

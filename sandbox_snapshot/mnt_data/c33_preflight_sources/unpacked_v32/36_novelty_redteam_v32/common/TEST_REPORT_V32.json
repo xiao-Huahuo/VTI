@@ -1,0 +1,15 @@
+{
+  "schema": "v32-test-report",
+  "tests": {
+    "redis_retry_controlflow_fixture": {"passed": 5, "failed": 0},
+    "python_compile": "PASS",
+    "exact_runtime_current_container": "BLOCKED_BY_DESIGN"
+  },
+  "runtime_blockers": [
+    "Python 3.13 outside frozen benchmark >=3.10,<3.13 requirement",
+    "mem0ai not installed",
+    "qdrant-client not installed",
+    "OPENAI_API_KEY absent",
+    "container cannot resolve github.com"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "c33-formal-pilot-protocol-materialization-v40",
+  "authority": "V34",
+  "project_id": "AM-AUTO-20260918-R1",
+  "candidate": "C33",
+  "protocol_changed": false,
+  "redis": {
+    "n": 12,
+    "selection": "SHA256(C33-V34-REDIS|question_id), eligible session_count >= 4",
+    "fault_after_successful_adds": 3,
+    "benchmark_commit": "94192c39e2a4a154f441a5411e3d73c4f54974a6",
+    "mem0_version": "2.0.19",
+    "primary_endpoint": "E2_OR_HIGHER"
+  },
+  "memarena": {
+    "n": 15,
+    "status": "FROZEN_PENDING_AFTER_REDIS"
+  },
+  "statistics": {
+    "bootstrap_resamples": 5000,
+    "bootstrap_seed": 20260919
+  },
+  "evidence_levels": {
+    "E0": "SOURCE_REACHABILITY",
+    "E1": "RESIDUAL_STATE_OBSERVED_OR_CONSUMED",
+    "E2": "REPRESENTATION_OR_RETRIEVAL_DIVERGENCE",
+    "E3": "ANSWER_DIVERGENCE",
+    "E4": "SCORE_DIVERGENCE"
+  }
+}

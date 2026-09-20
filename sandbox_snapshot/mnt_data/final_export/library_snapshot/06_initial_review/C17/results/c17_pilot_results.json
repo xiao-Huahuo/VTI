@@ -1,0 +1,278 @@
+{
+  "label": "synthetic lifecycle pilot; tests separability from static storage penalty, not real-agent performance",
+  "main": {
+    "vol_scale": 1.0,
+    "seeds": 120,
+    "methods": {
+      "utility_only": {
+        "net_mean": 8427.06810354238,
+        "net_sd": 400.7011038726649,
+        "pending_area_mean": 1212.1416666666667,
+        "maintenance_paid_mean": 5082.388906606756,
+        "stale_penalty_mean": 523.2197832999246
+      },
+      "best_static_storage_penalty": {
+        "net_mean": 8474.099352757443,
+        "net_sd": 408.50865573137924,
+        "pending_area_mean": 1368.4833333333333,
+        "maintenance_paid_mean": 5086.531960141544,
+        "stale_penalty_mean": 579.465968422288
+      },
+      "nlv": {
+        "net_mean": 10173.60950639871,
+        "net_sd": 334.16916308532564,
+        "pending_area_mean": 0.0,
+        "maintenance_paid_mean": 3642.837684365159,
+        "stale_penalty_mean": 0.0
+      },
+      "oracle": {
+        "net_mean": 11524.027312601222,
+        "net_sd": 318.05935289805825,
+        "pending_area_mean": 0.0,
+        "maintenance_paid_mean": 3374.1633393438447,
+        "stale_penalty_mean": 0.0
+      }
+    },
+    "paired": {
+      "nlv_minus_best_static_mean": 1699.510153641267,
+      "nlv_beats_best_static_runs": 120,
+      "nlv_minus_utility_mean": 1746.5414028563298
+    }
+  },
+  "volatility_sweep": [
+    {
+      "vol_scale": 0.15,
+      "seeds": 60,
+      "methods": {
+        "utility_only": {
+          "net_mean": 13619.71343269935,
+          "net_sd": 301.43403893330844,
+          "pending_area_mean": 0.0,
+          "maintenance_paid_mean": 893.3759439727413,
+          "stale_penalty_mean": 0.0
+        },
+        "best_static_storage_penalty": {
+          "net_mean": 13946.043484412994,
+          "net_sd": 309.45686338872275,
+          "pending_area_mean": 0.0,
+          "maintenance_paid_mean": 932.8887591513926,
+          "stale_penalty_mean": 0.0
+        },
+        "nlv": {
+          "net_mean": 13623.35375633543,
+          "net_sd": 316.5720776068671,
+          "pending_area_mean": 0.0,
+          "maintenance_paid_mean": 815.4141812754028,
+          "stale_penalty_mean": 0.0
+        },
+        "oracle": {
+          "net_mean": 15026.195240957966,
+          "net_sd": 298.9929716789855,
+          "pending_area_mean": 0.0,
+          "maintenance_paid_mean": 782.4071966969433,
+          "stale_penalty_mean": 0.0
+        }
+      },
+      "paired": {
+        "nlv_minus_best_static_mean": -322.6897280775636,
+        "nlv_beats_best_static_runs": 0,
+        "nlv_minus_utility_mean": 3.640323636080393
+      }
+    },
+    {
+      "vol_scale": 0.35,
+      "seeds": 60,
+      "methods": {
+        "utility_only": {
+          "net_mean": 12437.52862488848,
+          "net_sd": 306.46256917310893,
+          "pending_area_mean": 0.0,
+          "maintenance_paid_mean": 2075.56075178361,
+          "stale_penalty_mean": 0.0
+        },
+        "best_static_storage_penalty": {
+          "net_mean": 12711.396966017592,
+          "net_sd": 311.75859360845374,
+          "pending_area_mean": 0.0,
+          "maintenance_paid_mean": 2167.535277546792,
+          "stale_penalty_mean": 0.0
+        },
+        "nlv": {
+          "net_mean": 12646.411576998005,
+          "net_sd": 316.34517160779865,
+          "pending_area_mean": 0.0,
+          "maintenance_paid_mean": 1684.406445326106,
+          "stale_penalty_mean": 0.0
+        },
+        "oracle": {
+          "net_mean": 14060.501322084892,
+          "net_sd": 301.8903750818795,
+          "pending_area_mean": 0.0,
+          "maintenance_paid_mean": 1599.528689768247,
+          "stale_penalty_mean": 0.0
+        }
+      },
+      "paired": {
+        "nlv_minus_best_static_mean": -64.98538901958928,
+        "nlv_beats_best_static_runs": 10,
+        "nlv_minus_utility_mean": 208.88295210952498
+      }
+    },
+    {
+      "vol_scale": 0.7,
+      "seeds": 60,
+      "methods": {
+        "utility_only": {
+          "net_mean": 10351.179945857268,
+          "net_sd": 328.7667548179909,
+          "pending_area_mean": 0.55,
+          "maintenance_paid_mean": 4161.5901629833725,
+          "stale_penalty_mean": 0.165431594179665
+        },
+        "best_static_storage_penalty": {
+          "net_mean": 10532.102505893858,
+          "net_sd": 324.8337000445038,
+          "pending_area_mean": 2.033333333333333,
+          "maintenance_paid_mean": 4336.608008194749,
+          "stale_penalty_mean": 0.6329720287975634
+        },
+        "nlv": {
+          "net_mean": 11207.67100904206,
+          "net_sd": 323.2910321221582,
+          "pending_area_mean": 0.0,
+          "maintenance_paid_mean": 2865.4451238358724,
+          "stale_penalty_mean": 0.0
+        },
+        "oracle": {
+          "net_mean": 12597.44263228481,
+          "net_sd": 308.30788875403806,
+          "pending_area_mean": 0.0,
+          "maintenance_paid_mean": 2676.161202189939,
+          "stale_penalty_mean": 0.0
+        }
+      },
+      "paired": {
+        "nlv_minus_best_static_mean": 675.5685031482013,
+        "nlv_beats_best_static_runs": 60,
+        "nlv_minus_utility_mean": 856.4910631847947
+      }
+    },
+    {
+      "vol_scale": 1.0,
+      "seeds": 60,
+      "methods": {
+        "utility_only": {
+          "net_mean": 8410.372196885668,
+          "net_sd": 379.8423980276122,
+          "pending_area_mean": 1221.0833333333333,
+          "maintenance_paid_mean": 5092.05514627135,
+          "stale_penalty_mean": 528.8518093306919
+        },
+        "best_static_storage_penalty": {
+          "net_mean": 8461.323234338199,
+          "net_sd": 384.253126132142,
+          "pending_area_mean": 1377.9166666666667,
+          "maintenance_paid_mean": 5096.254182570468,
+          "stale_penalty_mean": 583.9503631237932
+        },
+        "nlv": {
+          "net_mean": 10155.915571632213,
+          "net_sd": 326.21033949964624,
+          "pending_area_mean": 0.0,
+          "maintenance_paid_mean": 3662.521579800761,
+          "stale_penalty_mean": 0.0
+        },
+        "oracle": {
+          "net_mean": 11514.646369749451,
+          "net_sd": 315.981969332218,
+          "pending_area_mean": 0.0,
+          "maintenance_paid_mean": 3380.2258632125545,
+          "stale_penalty_mean": 0.0
+        }
+      },
+      "paired": {
+        "nlv_minus_best_static_mean": 1694.5923372940156,
+        "nlv_beats_best_static_runs": 60,
+        "nlv_minus_utility_mean": 1745.5433747465452
+      }
+    },
+    {
+      "vol_scale": 1.4,
+      "seeds": 60,
+      "methods": {
+        "utility_only": {
+          "net_mean": 5273.447331925895,
+          "net_sd": 462.12860891171914,
+          "pending_area_mean": 4708.066666666667,
+          "maintenance_paid_mean": 5156.860991204567,
+          "stale_penalty_mean": 2136.33864247918
+        },
+        "best_static_storage_penalty": {
+          "net_mean": 5287.963726877201,
+          "net_sd": 461.4235257271466,
+          "pending_area_mean": 4740.1,
+          "maintenance_paid_mean": 5157.745458336648,
+          "stale_penalty_mean": 2143.5615973191852
+        },
+        "nlv": {
+          "net_mean": 8939.072470973366,
+          "net_sd": 328.8917501985163,
+          "pending_area_mean": 1.5666666666666667,
+          "maintenance_paid_mean": 4516.163789961316,
+          "stale_penalty_mean": 0.3710216172190933
+        },
+        "oracle": {
+          "net_mean": 10263.10492498428,
+          "net_sd": 317.1484989047376,
+          "pending_area_mean": 0.15,
+          "maintenance_paid_mean": 4116.6766137243,
+          "stale_penalty_mean": 0.10117888677487062
+        }
+      },
+      "paired": {
+        "nlv_minus_best_static_mean": 3651.1087440961646,
+        "nlv_beats_best_static_runs": 60,
+        "nlv_minus_utility_mean": 3665.6251390474704
+      }
+    },
+    {
+      "vol_scale": 1.8,
+      "seeds": 60,
+      "methods": {
+        "utility_only": {
+          "net_mean": 2783.718216046425,
+          "net_sd": 476.06389244141303,
+          "pending_area_mean": 7364.65,
+          "maintenance_paid_mean": 5188.43870960221,
+          "stale_penalty_mean": 3422.1558645682685
+        },
+        "best_static_storage_penalty": {
+          "net_mean": 2792.108158330382,
+          "net_sd": 474.17764979479415,
+          "pending_area_mean": 7377.883333333333,
+          "maintenance_paid_mean": 5188.37948014731,
+          "stale_penalty_mean": 3423.79699406526
+        },
+        "nlv": {
+          "net_mean": 7761.847430148636,
+          "net_sd": 392.7183119879958,
+          "pending_area_mean": 404.3833333333333,
+          "maintenance_paid_mean": 5129.779721092249,
+          "stale_penalty_mean": 124.83753979088334
+        },
+        "oracle": {
+          "net_mean": 9172.611072865731,
+          "net_sd": 339.1975973820725,
+          "pending_area_mean": 39.916666666666664,
+          "maintenance_paid_mean": 4715.644931474553,
+          "stale_penalty_mean": 16.978632344068807
+        }
+      },
+      "paired": {
+        "nlv_minus_best_static_mean": 4969.739271818255,
+        "nlv_beats_best_static_runs": 60,
+        "nlv_minus_utility_mean": 4978.129214102212
+      }
+    }
+  ]
+}

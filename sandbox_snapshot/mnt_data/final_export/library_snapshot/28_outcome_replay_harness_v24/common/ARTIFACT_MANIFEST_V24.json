@@ -1,0 +1,81 @@
+{
+  "project_id": "AM-AUTO-20260918-R1",
+  "version": "V24",
+  "artifacts": [
+    {
+      "path": "C33/AFFECTED_STACK_BINDING_V24.md",
+      "size": 1599,
+      "sha256": "e95ef5ef70c97ac45f41cf86ebb7e04b58a7841aa6cb1d20b4dc631d3adf89be"
+    },
+    {
+      "path": "C33/OUTCOME_REPLAY_PROTOCOL_V24.md",
+      "size": 4022,
+      "sha256": "2b044effb7fb362125359c63972fb2eb1c5e3da66ace184f2b576ca436333bf1"
+    },
+    {
+      "path": "C33/PUBLISHED_RUN_AUDIT_V24.md",
+      "size": 1501,
+      "sha256": "3b533543da25445eb4c4d036602861de5eca41a099bc161145137d37610f1b5f"
+    },
+    {
+      "path": "C33/TRACE_SCHEMA_V24.json",
+      "size": 1385,
+      "sha256": "c772a326a12fc7f5b0faa25726281b42bb8c15d02b33d52f58a35e50db323057"
+    },
+    {
+      "path": "C33/V24_HANDOFF.md",
+      "size": 872,
+      "sha256": "4e79f9bf895fdb3ec6721a3880ce6f7fbea6c4867191656483e8afd6aff47d2e"
+    },
+    {
+      "path": "C33/code/analyze_paired_reset.py",
+      "size": 3390,
+      "sha256": "161204aee29a41a50e357f45e0cd3ee53cb8a1945caab54cadaae49b29333e66"
+    },
+    {
+      "path": "C33/code/test_paired_reset_analysis.py",
+      "size": 922,
+      "sha256": "57a77a5c18dbaa33cf398eae60f5410e724d41b377f5fbe8e2f0f673e1f922ee"
+    },
+    {
+      "path": "C33/fixtures/paired_trace_fixture.jsonl",
+      "size": 1026,
+      "sha256": "92e08591b7bda2616c0a79dddff937bbd9f1a536fcbe210938ace113d012db72"
+    },
+    {
+      "path": "C33/results/paired_analysis_fixture.json",
+      "size": 841,
+      "sha256": "5f8f2192b981bb2e4e1b18d428e6f52c6c578e2ef8b7a18118426684e0369a37"
+    },
+    {
+      "path": "common/CHANGE_HISTORY_V24.md",
+      "size": 1081,
+      "sha256": "e931199fbb69249aae9b9f36dd563201da960922e1d477d3e07ca0bf1d30fc55"
+    },
+    {
+      "path": "common/CLAIM_LEDGER_V24.json",
+      "size": 4669,
+      "sha256": "c34673911697cde296b9b1509ba5c5d2efc3c04402847aef764fa782b67cebcb"
+    },
+    {
+      "path": "common/RESEARCH_STATE_V24.json",
+      "size": 1224,
+      "sha256": "8877f86c4e847e075ac43e20b879adab24e222ccfbe16b4e47c6a8e3e0b44de7"
+    },
+    {
+      "path": "common/SEARCH_AUDIT_LOG_V24.md",
+      "size": 1030,
+      "sha256": "7d1b85a696488b40fd97f0cfad15a1852fca58f204178895865eecbe0cd0a4e7"
+    },
+    {
+      "path": "common/TEST_REPORT_V24.json",
+      "size": 392,
+      "sha256": "2d46daa2f1a93af28b99fb68a8952ae2ed7e72a17434cb5658e6f1d4dbf0f325"
+    },
+    {
+      "path": "reports/V24_DECISION_SUMMARY.md",
+      "size": 1323,
+      "sha256": "cf0cdb3e69f82a16dc213f821390f0e6778a94e84957d4bf6367f380d35a76f6"
+    }
+  ]
+}

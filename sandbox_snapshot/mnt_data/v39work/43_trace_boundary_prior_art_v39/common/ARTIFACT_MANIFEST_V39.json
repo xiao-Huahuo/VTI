@@ -1,0 +1,25 @@
+{
+  "version": "V39",
+  "artifacts": [
+    {
+      "path": "43_trace_boundary_prior_art_v39/C33/CLAIM_LEDGER_V39.md",
+      "size": 5646,
+      "sha256": "de74c3a8cb9d017c0012d0b086f962d76c6642f8737fa55f96f064f35c05ca80"
+    },
+    {
+      "path": "43_trace_boundary_prior_art_v39/C33/MEMTRACE_TRACE_BOUNDARY_AUDIT_V39.md",
+      "size": 4079,
+      "sha256": "f851b331c8f42923d87e121e9060af73b572f4ad4b3f3584b8ef49ab2a21d1ca"
+    },
+    {
+      "path": "43_trace_boundary_prior_art_v39/C33/SOURCE_PROVENANCE_V39.json",
+      "size": 1564,
+      "sha256": "f3e62cd7d5491659841ef0bf9216d10601c3e88b615480f50b768d8c4bb450e8"
+    },
+    {
+      "path": "43_trace_boundary_prior_art_v39/C33/TRACE_OBSERVABILITY_MATRIX_V39.md",
+      "size": 1301,
+      "sha256": "08d4331d041f7d3033afe950c445f6f231d6d3c494320a143239c57f79236a85"
+    }
+  ]
+}

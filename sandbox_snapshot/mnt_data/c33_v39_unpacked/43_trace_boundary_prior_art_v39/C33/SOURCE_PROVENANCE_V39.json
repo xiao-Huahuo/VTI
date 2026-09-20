@@ -1,0 +1,38 @@
+{
+  "version": "V39",
+  "date": "2026-09-19",
+  "project": "AM-AUTO-20260918-R1",
+  "candidate": "C33",
+  "audited_sources": [
+    {
+      "repo": "zjunlp/MemBase",
+      "commit": "a9ba9495d48541d3e68588ff097294cc7a1201bc",
+      "path": "membase/runners/construction.py",
+      "blob_sha": "a174314d5e7cde7469b6f0be30431d21f81e6a0b",
+      "finding": "load/resume before comment_graph; save_memory and cleanup after graph"
+    },
+    {
+      "repo": "zjunlp/MemBase",
+      "commit": "a9ba9495d48541d3e68588ff097294cc7a1201bc",
+      "path": "membase/runners/search.py",
+      "blob_sha": "609efc9fa3e44a95d52d4369efd03530364c643d",
+      "finding": "load_memory before graph import/search comment_graph; cleanup after graph"
+    },
+    {
+      "repo": "zjunlp/MemTrace",
+      "commit": "ed2dcf7296ae3b61292fcf643cae3071ef373e9b",
+      "path": "toolkits/bench_utils.py",
+      "blob_sha": "c949c3cf868e4bf230184a22187b9dc7d0ece47e",
+      "finding": "MEMORY_ERROR_TYPES has five operation-level classes"
+    },
+    {
+      "repo": "zjunlp/MemTrace",
+      "commit": "ed2dcf7296ae3b61292fcf643cae3071ef373e9b",
+      "path": "toolkits/memtrace_utils.py",
+      "blob_sha": "798de0232f650a066416f3900c3fd18a98b44fa3",
+      "finding": "error definitions are extraction/update/deletion/retrieval/response information-flow failures"
+    }
+  ],
+  "evidence_level": "E0_SOURCE_CONTROL_FLOW",
+  "claim_boundary": "Trace boundary excludes lifecycle operations needed to attest trial freshness/completion. No released-case contamination or misattribution is claimed."
+}

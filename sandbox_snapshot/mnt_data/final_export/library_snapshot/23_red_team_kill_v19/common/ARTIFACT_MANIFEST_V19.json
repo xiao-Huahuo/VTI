@@ -1,0 +1,46 @@
+{
+  "project_id": "AM-AUTO-20260918-R1",
+  "version": "V19",
+  "artifacts": [
+    {
+      "path": "C30/KILL_MEMO_V19.md",
+      "size": 2444,
+      "sha256": "1e1e78c681cec9062a7fb858f8f0fc695538cd71fa6d814f3275fa3a9b3417cb"
+    },
+    {
+      "path": "C30/RED_TEAM_V19.md",
+      "size": 5511,
+      "sha256": "adb5a2c6c8eb5b60b8db815c58f242c2b9ae907a2b5a16004bac03150149fb70"
+    },
+    {
+      "path": "common/CHANGE_HISTORY_V19.md",
+      "size": 886,
+      "sha256": "a1663e6b68ef7bad5dccc1cd28d84c8f47f1d67cfe3c2c054eacf0bcf85c0a8f"
+    },
+    {
+      "path": "common/CLAIM_LEDGER_V19.json",
+      "size": 1752,
+      "sha256": "fdb6d2e820ce87f3676f2d6cd45f6c4e6208230565fac3f68e689de3a3a7ba2c"
+    },
+    {
+      "path": "common/PRIOR_ART_DELTA_V19.md",
+      "size": 2681,
+      "sha256": "0e198b91e360d97899b27fee936c59ade202eb1be9ff043c2bc91fec07f39150"
+    },
+    {
+      "path": "common/RESEARCH_STATE_V19.json",
+      "size": 1240,
+      "sha256": "6243931d2b70d3fd58f30f0b82f7359ba828fdfa9c06b243aaa65630fc2fb3c8"
+    },
+    {
+      "path": "common/SEARCH_AUDIT_LOG_V19.md",
+      "size": 1888,
+      "sha256": "adc28a31cf802fd31f23bef6ef88dce6a04dc9ff57462e2e5a04b8bacfcd574c"
+    },
+    {
+      "path": "reports/V19_DECISION_SUMMARY.md",
+      "size": 1057,
+      "sha256": "97c7c4cda11d33e453e02c1b1d1b8e3175f12a6d3b2353a1717306bcf4f06095"
+    }
+  ]
+}

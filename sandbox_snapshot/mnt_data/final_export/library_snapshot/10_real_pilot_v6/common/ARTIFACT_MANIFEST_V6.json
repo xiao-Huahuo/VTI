@@ -1,0 +1,47 @@
+[
+  {
+    "path": "C16/MECHANISM_BINDING_AUDIT.md",
+    "bytes": 1892,
+    "sha256": "37f88dd233737a2e42d2e85e2d14939451779fd6a244ce40f60eec9055b7d345"
+  },
+  {
+    "path": "C16/REAL_PILOT_PROTOCOL_V1.md",
+    "bytes": 848,
+    "sha256": "344ae1639fdab78f34a084b4b52dd976227445dbaf3efae5b56948eb8bce5b98"
+  },
+  {
+    "path": "C25/REAL_TRACE_GATE.md",
+    "bytes": 1560,
+    "sha256": "938cc11e576bfeed04c9f6933a6d251814ef162b9de84eae53110c5f61ddffe0"
+  },
+  {
+    "path": "C25/mumbench_domain_aggregate.json",
+    "bytes": 651,
+    "sha256": "32485824fc547ade1af97d8ae80e0ca143c43068dff3d6ba7c7a6c2992d7e8c6"
+  },
+  {
+    "path": "C27/CROSS_BENCHMARK_AUDIT_V1.md",
+    "bytes": 1660,
+    "sha256": "6170656922f47638b4171cc2a1caa0550ee5ea8c2c84804dbb8da9ce3812d6c1"
+  },
+  {
+    "path": "C27/results/writ_stratified_identifiability.json",
+    "bytes": 962,
+    "sha256": "ba458f0a602ec6c462a760499f69072d03636fa95cf0db5ee5b4710f370fa329"
+  },
+  {
+    "path": "common/RESEARCH_STATE_V6.json",
+    "bytes": 815,
+    "sha256": "1b3f0b9355173c4b91cf490e2fbc2c4394055e7c8045128532c14d736594ddd5"
+  },
+  {
+    "path": "common/SEARCH_LOG_V6.md",
+    "bytes": 776,
+    "sha256": "6bfd062a98d3b616727c76b360b83c2005976f5ed410b6c7bcc3e97137da948c"
+  },
+  {
+    "path": "reports/V6_DECISION_SUMMARY.md",
+    "bytes": 743,
+    "sha256": "e5d311617a794772790c9ceaebe417091d363207adcdc74ffea789286fd1a655"
+  }
+]

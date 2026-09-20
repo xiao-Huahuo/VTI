@@ -1,0 +1,36 @@
+{
+  "project_id": "AM-AUTO-20260918-R1",
+  "version": "V17",
+  "artifacts": [
+    {
+      "path": "C30/PROTOCOL_MISMATCH_GATE_V17.md",
+      "size": 2894,
+      "sha256": "f5e913a367427beea4d60d4a374808369843e6ed821843c3326cdaea28aa1eb0"
+    },
+    {
+      "path": "C31/DOWNGRADE_MEMO_V17.md",
+      "size": 1672,
+      "sha256": "1b3f7460fd8bac3a6868eebe3d1910ac9da160b79dafd6daf17c5f3b805ad33b"
+    },
+    {
+      "path": "common/CLAIM_LEDGER_V17.json",
+      "size": 1253,
+      "sha256": "a6582b51cf5a1f848dc69387f1cfc363d5b8b61034168fcf9bb4062795352153"
+    },
+    {
+      "path": "common/RESEARCH_STATE_V17.json",
+      "size": 1583,
+      "sha256": "1abbbe1e8dcf6addb923c6cc3fbc39c3d2135473242e79dac8b016bcaf4cb0a4"
+    },
+    {
+      "path": "common/SEARCH_AUDIT_LOG_V17.md",
+      "size": 1179,
+      "sha256": "ef528a7e207098c4d37682b2de72ea48c0e579393687c655f87b5247c127660b"
+    },
+    {
+      "path": "reports/V17_DECISION_SUMMARY.md",
+      "size": 1261,
+      "sha256": "547a79ee555655c0b89d2749ac927fef14537262d2bfda950f00cb5e72d6516d"
+    }
+  ]
+}

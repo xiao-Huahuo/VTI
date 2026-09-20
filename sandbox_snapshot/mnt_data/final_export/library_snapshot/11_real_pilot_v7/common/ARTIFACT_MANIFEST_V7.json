@@ -1,0 +1,22 @@
+{
+  "project_id": "AM-AUTO-20260918-R1",
+  "round": "V7",
+  "created_at": "2026-09-18T18:19:00+08:00",
+  "files": [
+    "C16/RAW_ARTIFACT_ACCESS_UPDATE_V7.md",
+    "C25/PUBLIC_TRACE_REFRESH_V7.md",
+    "C27/CLAIM_CONTRACT_V2.md",
+    "C27/CROSS_BENCHMARK_AUDIT_V2.md",
+    "C27/PROTOCOL_V2.md",
+    "C27/RED_TEAM_V2.md",
+    "C27/code/identifiability_audit_v7.py",
+    "C27/results/inmind_format_counterfactual_v7.json",
+    "C27/results/longmemeval_stratified_identifiability_v7.json",
+    "C27/results/writ_full_identifiability_v7.json",
+    "common/CHANGE_HISTORY_V7.md",
+    "common/PRIOR_ART_UPDATE_V7.md",
+    "common/RESEARCH_STATE_V7.json",
+    "common/SEARCH_LOG_V7.md",
+    "reports/V7_DECISION_SUMMARY.md"
+  ]
+}

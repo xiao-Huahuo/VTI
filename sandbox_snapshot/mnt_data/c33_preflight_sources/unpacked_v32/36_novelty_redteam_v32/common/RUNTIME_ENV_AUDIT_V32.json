@@ -1,0 +1,12 @@
+{
+  "container_network_note": "git remote access unavailable in this runtime",
+  "exact_redis_runtime_executable_here": false,
+  "openai_api_key_present": false,
+  "packages": {
+    "mem0ai": null,
+    "openai": null,
+    "qdrant-client": null
+  },
+  "python": "3.13.5",
+  "supported_by_frozen_benchmark": false
+}

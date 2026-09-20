@@ -1,0 +1,48 @@
+{
+  "project_id": "AM-AUTO-20260918-R1",
+  "research_direction": "Agent Memory",
+  "current_state": "IDEA_VALIDATION_V33_C33_TWO_PUBLIC_PROVIDER_SCORE_AFFECTING_TRACES_FORMAL_PILOT_UNLOCKED",
+  "active_ideas": ["C33"],
+  "primary_candidate": "C33",
+  "working_title": "Hidden Trial State in Agent-Memory Benchmarks: An Empirical Audit",
+  "statuses": {
+    "C33": "PRIMARY_EMPIRICAL_AUDIT_CANDIDATE_TWO_PUBLIC_PROVIDER_TRACES_WITH_SCORE_EFFECT_FORMAL_PILOT_UNLOCKED"
+  },
+  "evidence_matrix": {
+    "amb_mem0_cloud": "PUBLIC_DELETION_RESIDUAL_SCORE_NEGATIVE_PLUS_CROSS_RUN_SCORE_NEUTRAL_TRACE",
+    "amb_zep_cloud": "PUBLIC_CROSS_TEST_UUID_REUSE_SCORE_POSITIVE_FALSE_PASS_PLUS_SCORE_MASKED_LEAKAGE",
+    "redis_agent_memory_mem0_2_0_19": "SOURCE_AND_PRE_LLM_CONSUMPTION_SUPPORTED_EXACT_PAIRED_RUNTIME_PENDING",
+    "memarena_mem0_2_0_11": "SOURCE_MECHANISM_AND_PROTOCOL_REACHABILITY_SUPPORTED_EXACT_PAIRED_RUNTIME_PENDING",
+    "memorydata_local_mem0": "STRONG_LIFECYCLE_NEGATIVE_CONTROL",
+    "forgeteval_mem0_infer_false": "MECHANISM_NEGATIVE_CONTROL"
+  },
+  "public_score_forensics_v33": {
+    "mem0_trace_counterfactual_reported_score": "7 -> 13",
+    "mem0_direct_query_flips": 4,
+    "zep_layer1_queries": 59,
+    "zep_queries_with_prior_test_uuid": 57,
+    "zep_queries_all_top_results_prior_test_uuid": 30,
+    "zep_unique_reused_ids": 24,
+    "zep_tr06_trace_counterfactual_reported_score": "11 -> 9",
+    "zep_expect_empty_score_masked_examples": 6
+  },
+  "claim_taxonomy": [
+    "SCORE_NEGATIVE_CONTAMINATION",
+    "SCORE_POSITIVE_CONTAMINATION",
+    "SCORE_MASKED_CONTAMINATION",
+    "SCORE_NEUTRAL_CONTAMINATION"
+  ],
+  "formal_experiment": "NOT_STARTED",
+  "formal_pilot": "UNLOCKED_RQ_FREEZE_COMPLETE",
+  "next_gates": {
+    "primary": "FREEZE_FORMAL_PILOT_PROTOCOL_AND_EXPAND_ONE_ADDITIONAL_INDEPENDENT_BENCHMARK_FAMILY_AUDIT",
+    "controlled_replication_1": "RUN_REDIS_MEM0_2_0_19_EXACT_NATIVE_VS_VERIFIED_CLEAN_PAIRED_REPLAY",
+    "controlled_replication_2": "RUN_MEMARENA_MEM0_2_0_11_EXACT_NATIVE_VS_VERIFIED_CLEAN_PAIRED_REPLAY"
+  },
+  "novelty_boundary": "empirical agent-memory benchmark lifecycle audit; generic reset hermeticity, verified isolation and matched branching remain prior art",
+  "claim_boundary": "public trace score effects are provenance-limited; do not infer field prevalence or clean-rerun scores",
+  "novelty_risk": "HIGH_BUT_EMPIRICAL_SURVIVAL_GATE_PASSED",
+  "search_cutoff": "2026-09-19",
+  "artifact_policy": "retain_all_intermediate_and_final_no_user_export_required",
+  "updated_at": "2026-09-19T13:25:00+08:00"
+}

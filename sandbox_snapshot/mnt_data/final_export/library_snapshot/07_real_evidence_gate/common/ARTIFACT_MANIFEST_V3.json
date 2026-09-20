@@ -1,0 +1,92 @@
+[
+  {
+    "path": "C15/KILL_MEMO_BAVAR.md",
+    "bytes": 2216,
+    "sha256": "3bfdb7f07722e9290c3aab1689b128df34a41d8c2c408326e05dfba8d368bb9a"
+  },
+  {
+    "path": "C15/PUBLIC_EPISODE_REANALYSIS.json",
+    "bytes": 1880,
+    "sha256": "c358f759d9efbb3de7f2dbd9aa37e4bd743490e7d36a3f007d3760b1ed32bd8b"
+  },
+  {
+    "path": "C15/REAL_ARTIFACT_REANALYSIS.md",
+    "bytes": 1776,
+    "sha256": "8a655161191378f5c230659f29d81d81ea3e4dddc889976985fc10b49cff071e"
+  },
+  {
+    "path": "C16/CLAIM_CONTRACT_V3.md",
+    "bytes": 1266,
+    "sha256": "fcab7cc4f37cfe693ce4b37e31c3894e4af5873cbabfb3fe5f9d6b7a54feae1a"
+  },
+  {
+    "path": "C16/PRIOR_ART_REASSESSMENT.md",
+    "bytes": 1377,
+    "sha256": "2f50a2040fa4f7eb1b6fd2817c8a42991336869bb117195b34ec4c7b2a729049"
+  },
+  {
+    "path": "C16/PUBLISHED_REAL_DRIFT_DERIVED.json",
+    "bytes": 571,
+    "sha256": "b6c699c4284f683c1a47765f3be2b2f257857868e88f1af489570df521bfd90b"
+  },
+  {
+    "path": "C16/PUBLISHED_REAL_DRIFT_TABLE.csv",
+    "bytes": 960,
+    "sha256": "d3bb56381126e4ff25e7e9341fc3ec8a499d2c711c853abc9739e8340183fe67"
+  },
+  {
+    "path": "C16/REAL_DRIFT_CENSUS.md",
+    "bytes": 3356,
+    "sha256": "ff7456e16e4f431af375f824c6e09b2f3b893707f910012c0ce836c78c78da66"
+  },
+  {
+    "path": "C17/KILL_MEMO_COMPOSITION.md",
+    "bytes": 1849,
+    "sha256": "cafd86e3fcd8d53081edabd9378f6934ed02322a3bb6b8f2a4dad1149d3a98e2"
+  },
+  {
+    "path": "C17/SYSTEM_COST_CENSUS.md",
+    "bytes": 1394,
+    "sha256": "5b56d9f468eaf979a1d69a4b2decb99e2de4bf027e98cb9ba6d8b876e294dc5f"
+  },
+  {
+    "path": "common/EVIDENCE_PROVENANCE_V3.json",
+    "bytes": 2304,
+    "sha256": "db08c1cc7f04c4b9f04b64dfc2fd28fd12cc437bdd3b4aabe915303df15ce87d"
+  },
+  {
+    "path": "common/NOVELTY_REFRESH_V3.md",
+    "bytes": 1459,
+    "sha256": "14ab7a88b84280481a46ddb1e8f4cc4dd729b102f2b5d1ca3048e4941928d716"
+  },
+  {
+    "path": "common/RESEARCH_STATE_V2_SNAPSHOT.json",
+    "bytes": 677,
+    "sha256": "69fd2280583c533552ac8ded9223a29cd4b72403d5fe6131eb38a56b08a793d0"
+  },
+  {
+    "path": "common/RESEARCH_STATE_V3.json",
+    "bytes": 1294,
+    "sha256": "479e2a4f8c1bd48bbcc08d444d2aac75cdc93a27e9bdd686b5ee7fed5a386dd7"
+  },
+  {
+    "path": "common/SEARCH_LOG_V3.md",
+    "bytes": 1204,
+    "sha256": "b8cf8e2cfd7350b6e595180264ef50693a05f53919bb3a6a3120a2e67942f0d8"
+  },
+  {
+    "path": "reports/DECISION_LOG_V2.md",
+    "bytes": 1202,
+    "sha256": "0f80c13a5cea964c30ef86d6f723fa765969d16f84e180f67e334add1c8ed9a0"
+  },
+  {
+    "path": "reports/REAL_EVIDENCE_GATE_SUMMARY.md",
+    "bytes": 1313,
+    "sha256": "a6c90667c2923daba073baa64a305093571e741562b79c4c761c9f83cf87c7a0"
+  },
+  {
+    "path": "reports/RED_TEAM_V2.md",
+    "bytes": 1249,
+    "sha256": "458273e793e26374acc54f647803ed64e97c65925e3241d336d1e8bf6881c3c5"
+  }
+]

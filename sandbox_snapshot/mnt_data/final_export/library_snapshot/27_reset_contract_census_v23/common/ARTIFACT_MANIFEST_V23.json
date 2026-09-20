@@ -1,0 +1,76 @@
+{
+  "project_id": "AM-AUTO-20260918-R1",
+  "version": "V23",
+  "artifacts": [
+    {
+      "path": "C33/OUTCOME_GATE_BLOCK_V23.md",
+      "size": 1498,
+      "sha256": "fe3cf8479bce9ca5b98e755f05453d44b1f05a256caca2de2757a6b1e5970fc9"
+    },
+    {
+      "path": "C33/PRIOR_ART_DELTA_V23.md",
+      "size": 3919,
+      "sha256": "0f9997a450abf1b9ed9e58ee1c265c747d9d31c7bcc253f6dc0bca05286f782c"
+    },
+    {
+      "path": "C33/RESET_CONTRACT_CENSUS_V23.md",
+      "size": 4902,
+      "sha256": "97a2380e092dd6868cfd0894580943e948e1599d023530a282f454acebf9a527"
+    },
+    {
+      "path": "C33/V23_HANDOFF.md",
+      "size": 926,
+      "sha256": "7898bdc68f1db8fdbfb5d0294edec7ac147d034c1918dc53d8929b6810fe6eaf"
+    },
+    {
+      "path": "C33/code/validate_reset_census.py",
+      "size": 995,
+      "sha256": "1f4d1b8ac243eef24beb84d5baa87f087db1ba0f7fdec991a75693a39fe3e401"
+    },
+    {
+      "path": "C33/results/RESET_CONTRACT_MATRIX_V23.json",
+      "size": 9603,
+      "sha256": "a6545488bc4f4da5e144ba17170af601bfbac19e3ee4664dee5c1394d08207b2"
+    },
+    {
+      "path": "C33/results/RESET_CONTRACT_SUMMARY_V23.json",
+      "size": 267,
+      "sha256": "2b082bbd96dc8a146f5dd58fc8222254732ca7c63ca15f8a81b32617f2100e80"
+    },
+    {
+      "path": "common/CHANGE_HISTORY_V23.md",
+      "size": 1321,
+      "sha256": "31ff6d5b017f84aa7e2fb3e4c469d5309fdd1bb927eacd500a5c3a218faed1b6"
+    },
+    {
+      "path": "common/CLAIM_LEDGER_V23.json",
+      "size": 3575,
+      "sha256": "91a9fde23d41144bfdf963b209084e39a5f66ed54d148d37a43b10cdb9fd9951"
+    },
+    {
+      "path": "common/RESEARCH_STATE_V23.json",
+      "size": 1290,
+      "sha256": "29c87199bec7bd2c1d294da87e52eff7ef2575309ab99b262d7c356b872461d6"
+    },
+    {
+      "path": "common/RUNTIME_ENV_AUDIT_V23.json",
+      "size": 225,
+      "sha256": "1409dca072f47d233675259368d0b50b263a3355638b8d5f3bf767015623e72a"
+    },
+    {
+      "path": "common/SEARCH_AUDIT_LOG_V23.md",
+      "size": 2139,
+      "sha256": "6beca2e5f16e801bd5ca07e26db2a7b94b4a9441fac89b4fd1d590ffd78b4797"
+    },
+    {
+      "path": "common/TEST_REPORT_V23.json",
+      "size": 710,
+      "sha256": "50ba45ef774b2c7212caad69cf370acd0dd7ef394caa4309e7e96186a106bc9c"
+    },
+    {
+      "path": "reports/V23_DECISION_SUMMARY.md",
+      "size": 1597,
+      "sha256": "ea632df0fa2be39e56f463b32908153f9799bb916c5ff412e411db94d6e79abc"
+    }
+  ]
+}

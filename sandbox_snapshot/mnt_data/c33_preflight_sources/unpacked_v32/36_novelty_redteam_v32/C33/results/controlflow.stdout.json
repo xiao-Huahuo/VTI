@@ -1,0 +1,44 @@
+{
+  "all_routes_trigger": true,
+  "claim_level": "SOURCE_GROUNDED_CONTROL_FLOW_AND_PRE_LLM_STATE_CONSUMPTION_ONLY",
+  "crash_resume": {
+    "after_resume_native_reset_message_count": 2,
+    "after_resume_native_reset_vector_count": 0,
+    "before_crash_message_count": 2,
+    "before_crash_vector_count": 1,
+    "clean_first_add_last_k": 0,
+    "resumed_first_add_last_k": 2,
+    "route": "crash_resume_same_run_name",
+    "trigger_reached": true,
+    "user_id_equal": true,
+    "verified_clean_deleted_messages": 2
+  },
+  "downstream_llm_effect": "UNVERIFIED",
+  "mem0_commit": "dc82354e143c2581d505d581a00286d6ef8c3605",
+  "mem0_storage_blob": "5bd5512436cc6f3cbd5ce03d10808d3e6eef067b",
+  "mid_ingest_retry": {
+    "attempt1_first_add_last_k": 0,
+    "attempt2_first_add_last_k": 3,
+    "attempt2_first_add_last_k_hash": "f2778e2d1267396e1b964eeda483c81cccfc483a0ef1031997d22da1ca2c433c",
+    "attempt_starts": [
+      {
+        "message_count_after_reset": 0,
+        "vector_count_after_reset": 0
+      },
+      {
+        "message_count_after_reset": 3,
+        "vector_count_after_reset": 0
+      }
+    ],
+    "final_sidecar_count": 10,
+    "final_vector_count": 3,
+    "receipt_count": 4,
+    "route": "mid_ingest_retry",
+    "same_user_scope_across_attempts": true,
+    "trigger_reached": true
+  },
+  "redis_commit": "94192c39e2a4a154f441a5411e3d73c4f54974a6",
+  "redis_mem0_adapter_blob": "5f8344d91fc21b062d39e8a94b704b040b654c86",
+  "redis_runner_blob": "c4589ef6e2a414d5c00e4e67598e3bb48dde71ce",
+  "schema": "redis-retry-controlflow-v32"
+}

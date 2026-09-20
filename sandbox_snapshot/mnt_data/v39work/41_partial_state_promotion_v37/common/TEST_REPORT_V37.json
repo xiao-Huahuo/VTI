@@ -1,0 +1,8 @@
+{
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "unittest_returncode": 0,
+  "unittest_stdout": "",
+  "unittest_stderr": "test_ironcurtain_does_not_promote_partial (test_partial_state_promotion_v37.TestV37.test_ironcurtain_does_not_promote_partial) ... ok\ntest_lightmem_partial_promoted (test_partial_state_promotion_v37.TestV37.test_lightmem_partial_promoted) ... ok\ntest_lightmem_rerun_does_not_reset (test_partial_state_promotion_v37.TestV37.test_lightmem_rerun_does_not_reset) ... ok\ntest_memora_force_rebuild_keeps_stale (test_partial_state_promotion_v37.TestV37.test_memora_force_rebuild_keeps_stale) ... ok\ntest_memora_partial_promoted (test_partial_state_promotion_v37.TestV37.test_memora_partial_promoted) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n",
+  "fixture_returncode": 0,
+  "decision": "PASS"
+}

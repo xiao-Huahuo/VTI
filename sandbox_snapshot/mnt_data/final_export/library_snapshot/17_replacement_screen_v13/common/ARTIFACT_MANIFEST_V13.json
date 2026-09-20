@@ -1,0 +1,61 @@
+{
+  "project_id": "AM-AUTO-20260918-R1",
+  "version": "V13",
+  "artifacts": [
+    {
+      "path": "C16/DATA_BLOCK_V13.md",
+      "size": 898,
+      "sha256": "19184c83eb1d5ac58625f728e0ddb84f3adabfee9cbe1aff0abe2ae68419e219"
+    },
+    {
+      "path": "C27/EXECUTION_BLOCK_V13.md",
+      "size": 824,
+      "sha256": "4fdf5a6703d449e13bdaceeeae93c8cef30015b8856caa519f196b3f7c048873"
+    },
+    {
+      "path": "C28/CLAIM_CONTRACT_V13.json",
+      "size": 1731,
+      "sha256": "530b6a20cc60ee145cb753562f1efe84eb517d1a12b12c2189cfeeac11f68e2a"
+    },
+    {
+      "path": "C28/CODE_AUDIT_V13.md",
+      "size": 1967,
+      "sha256": "0cb70ea04634d61787ef9d68a38e17f064f471de78a7e7fd186d77fe09ad9410"
+    },
+    {
+      "path": "C28/IDEA_CARD_V13.md",
+      "size": 2231,
+      "sha256": "aa1d8ed54c6d2f7431159dc76c1ca23ae4e5a0796b410ab23e7856d119471cfb"
+    },
+    {
+      "path": "C28/PILOT_PROTOCOL_V13.md",
+      "size": 2131,
+      "sha256": "be8211af5a68fb2459ce3d070d66a5d57cc355ff69576242f9112d6597c1067e"
+    },
+    {
+      "path": "common/NOVELTY_AUDIT_V13.md",
+      "size": 1746,
+      "sha256": "6090d8a2c7b38672ec4e460f40a76fc4b532d40d5956bea3a2075524ea2c4317"
+    },
+    {
+      "path": "common/REPLACEMENT_CANDIDATE_POOL_V13.md",
+      "size": 2094,
+      "sha256": "f563c72176b7c4b4a3dc7e27ddf8689ba00db43d3f234b0e0e4fd4bf5673eaf6"
+    },
+    {
+      "path": "common/RESEARCH_STATE_V13.json",
+      "size": 1777,
+      "sha256": "6216e895bff3995fdb95c0da9c0ad15a096415c4e0a46e6f1d70b1c5a4cbf48c"
+    },
+    {
+      "path": "common/SEARCH_LOG_V13.md",
+      "size": 1081,
+      "sha256": "7db6f8427b172f837e61c3e33bd4cbdba5b01a164cefe808ce311bbb797f6d1f"
+    },
+    {
+      "path": "reports/V13_DECISION_SUMMARY.md",
+      "size": 1900,
+      "sha256": "99a6446d6c27beb306de72cb0c6b0943ced119dc8a018eb4e9432cd5e7db56f0"
+    }
+  ]
+}

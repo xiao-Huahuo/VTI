@@ -1,0 +1,152 @@
+{
+  "schema_version": "v33.1",
+  "project": "AM-AUTO-20260918-R1",
+  "candidate": "C33",
+  "source_repository": "AlekseiMarchenko/agent-memory-benchmark",
+  "frozen_commit": "55d4f02d61388525105ffe34fe3f9d2c846d25bf",
+  "mem0": {
+    "result_file": "amb-results-mem0/results.json",
+    "timestamp": "2026-03-31T21:50:31.205Z",
+    "reported_overall_score": 7,
+    "observed_deleted_target_residuals": [
+      {
+        "query_id": "sf-02-q1",
+        "test_id": "sf-02",
+        "query": "what workarounds do we have",
+        "expected": "empty",
+        "observed_score": 0,
+        "retrieval_count": 1,
+        "retrieval_score": 0.9,
+        "retrieved_content": "User has a temporary workaround to restart the auth service every 6 hours to prevent a memory leak",
+        "created_at": "2026-03-31T14:45:21-07:00"
+      },
+      {
+        "query_id": "sf-05-q1",
+        "test_id": "sf-05",
+        "query": "what endpoints are deprecated",
+        "expected": "empty",
+        "observed_score": 0,
+        "retrieval_count": 1,
+        "retrieval_score": 0.9,
+        "retrieved_content": "User states that the /api/v1/users endpoint will be deprecated and removed in Q4 2026",
+        "created_at": "2026-03-31T14:45:50-07:00"
+      },
+      {
+        "query_id": "sf-06-q1",
+        "test_id": "sf-06",
+        "query": "what bugs exist in auth",
+        "expected": "empty",
+        "observed_score": 0,
+        "retrieval_count": 1,
+        "retrieval_score": 0.9,
+        "retrieved_content": "User reports a null pointer exception in auth.ts line 42 when session expires",
+        "created_at": "2026-03-31T14:45:57-07:00"
+      },
+      {
+        "query_id": "ce-05-q1",
+        "test_id": "ce-05",
+        "query": "temporary test data",
+        "expected": "empty",
+        "observed_score": 0,
+        "retrieval_count": 1,
+        "retrieval_score": 0.9,
+        "retrieved_content": "User has a deletable memory labeled 'Deletable memory 1' containing temporary test data for benchmarking purposes",
+        "created_at": "2026-03-31T14:49:09-07:00"
+      }
+    ],
+    "other_selective_forgetting_residuals": [
+      {
+        "query_id": "sf-03-q1",
+        "observation": "retrieves the deleted ESLint/Airbnb memory while the expected surviving Biome memory is absent from recorded Top-k; deletion-target residual is observed but simple residual removal alone does not prove a score flip"
+      },
+      {
+        "query_id": "sf-04-q1",
+        "observation": "retrieves deleted Memory alpha while expected delta/epsilon are absent from recorded Top-k; deletion-target residual is observed but simple residual removal alone does not prove a score flip"
+      }
+    ],
+    "older_cross_run_trace": {
+      "query_id": "ma-03-q1",
+      "retrieved_content": "User applied a fix that increased the connection pool to 100 and added a connection timeout of 5 seconds",
+      "created_at": "2026-03-31T14:38:49-07:00",
+      "trace_counterfactual_score_delta": 0,
+      "classification": "retrieval-positive_score-neutral"
+    },
+    "trace_restricted_counterfactual": {
+      "rule": "remove only the four provenance-matched residual retrievals listed above; keep every other recorded query outcome unchanged",
+      "original_exact_weighted_score": 7.142857142857142,
+      "original_reported_rounded_score": 7,
+      "counterfactual_exact_weighted_score": 12.767857142857142,
+      "counterfactual_rounded_score": 13,
+      "query_flips": 4,
+      "interpretation": "trace-level scorer counterfactual, not an estimate of a fully clean rerun"
+    }
+  },
+  "zep": {
+    "result_file": "amb-results-zep/results.json",
+    "timestamp": "2026-03-31T21:28:09.959Z",
+    "reported_overall_score": 11,
+    "adapter_contract": {
+      "run_level_user_scope": "amb-user-${Date.now()}",
+      "store_thread_scope": "options.agentId or amb-benchmark",
+      "search_scope": "run-level user_id only; ignores query agentId",
+      "per_memory_delete": "returns true without deleting",
+      "cleanup_scope": "user deletion only at end of full benchmark"
+    },
+    "same_id_reuse_scan": {
+      "layer1_query_records": 59,
+      "queries_with_at_least_one_id_seen_in_different_prior_test": 57,
+      "queries_whose_all_recorded_top_results_were_ids_seen_in_different_prior_tests": 30,
+      "unique_prior_test_ids_reused": 24,
+      "passing_queries_whose_all_recorded_top_results_were_prior_test_ids": 8
+    },
+    "score_positive_false_pass": {
+      "query_id": "tr-06-q1",
+      "test_id": "tr-06",
+      "query": "how many people on the team",
+      "expected_keywords": ["4"],
+      "observed_score": 1,
+      "all_recorded_top_results_are_prior_test_ids": true,
+      "top_results": [
+        {
+          "id": "2db74056-756d-4a07-b097-9c50933ff895",
+          "content": "The team uses GitHub Actions for CI/CD processes.",
+          "score": 0.032786883
+        },
+        {
+          "id": "3613439b-5aba-476b-a84e-8e57d39229f8",
+          "content": "The user has 5 years of collective experience with React.",
+          "score": 0.016129032
+        },
+        {
+          "id": "19d07325-7321-4330-afbf-af62fe2c51a7",
+          "content": "The staging environment URL staging.example.com is associated with user amb-user-1774992130225",
+          "score": 0.015873017
+        }
+      ],
+      "scorer_mechanism": "case-insensitive substring check for every expected keyword",
+      "matched_substring": "4 in the stale run-level user identifier embedded in the third result",
+      "trace_restricted_removal_effect": {
+        "temporal_category_passed": "1/7 -> 0/7",
+        "overall_exact_weighted_score": "10.684523809523808 -> 8.541666666666666",
+        "reported_rounded_score": "11 -> 9"
+      },
+      "claim_boundary": "this proves the committed score is dependent on stale prior-test output under the frozen scorer; it does not predict what a clean rerun would retrieve"
+    },
+    "score_masked_leakage": {
+      "mechanism": "expectEmpty passes when every returned score is below 0.1, even if retrieval is non-empty",
+      "examples": ["sf-01-q1", "sf-02-q1", "sf-05-q1", "sf-06-q1", "ce-05-q1", "ce-07-q1"],
+      "observation": "each listed public query passes with three non-empty results; all three recorded IDs are prior-test IDs and all scores are below 0.1"
+    },
+    "current_main_check": {
+      "zep_adapter_blob_sha": "ff9c2d0dc9f24191b4ad30bfbd40e8f187ef8990",
+      "historical_zep_adapter_blob_sha": "ff9c2d0dc9f24191b4ad30bfbd40e8f187ef8990",
+      "status": "adapter mechanism unchanged on current default branch when checked 2026-09-19"
+    }
+  },
+  "audit_taxonomy": {
+    "score_negative": "Mem0 deletion-target residuals flip four recorded expectEmpty queries from fail to pass under trace-restricted removal",
+    "score_positive": "Zep tr-06 receives a pass from a stale prior-test result through the frozen substring scorer",
+    "score_masked": "Zep expectEmpty queries can pass while returning stale prior-test results with scores below 0.1",
+    "score_neutral": "Mem0 ma-03 stale cross-run retrieval changes retrieval content but not its already-zero score"
+  }
+}

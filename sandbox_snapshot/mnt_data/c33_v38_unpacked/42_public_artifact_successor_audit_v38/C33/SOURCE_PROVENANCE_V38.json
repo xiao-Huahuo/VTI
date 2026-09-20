@@ -1,0 +1,58 @@
+{
+  "project": "AM-AUTO-20260918-R1",
+  "version": "V38",
+  "audited_at": "2026-09-19T15:28:00+08:00",
+  "lightmem": {
+    "repo": "zjunlp/LightMem",
+    "commit": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+    "readme_blob_sha": "73098ff95f42cf81699b86c820562b888d008079",
+    "public_drive_url": "https://drive.google.com/drive/folders/1n1YCqq0aDeWiPILhkq-uS3sU3FDmslz9?usp=drive_link",
+    "drive_folder_id": "1n1YCqq0aDeWiPILhkq-uS3sU3FDmslz9",
+    "drive_folder_resolved_name": "lightmem_experiments",
+    "file_listing_status": "PENDING_CURRENT_INTERFACE_DOES_NOT_ENUMERATE_CONTENTS"
+  },
+  "membase": {
+    "repo": "zjunlp/MemBase",
+    "commit": "a9ba9495d48541d3e68588ff097294cc7a1201bc",
+    "files": {
+      "membase/runners/construction.py": "a174314d5e7cde7469b6f0be30431d21f81c93d5",
+      "membase/layers/mem0.py": "cc68e9444ada1a43a467c3e466624baf6b9fdcd2",
+      "membase/configs/mem0.py": "e4f7c3a4f76b404691eab820b59fc5421d0d2bd4",
+      "membase/layers/base.py": "79f9a9b17dffb9baec5cc74f4e252b19781e6a0b",
+      "membase/baselines/mem0/vector_stores/qdrant.py": "ee3354717619b02c47a3e863ecffa2d552190e52"
+    },
+    "initial_mem0_commit": "f86653aa694f15e318868419daffa7d73cfaba4d",
+    "initial_mem0_blob_sha": "bea88a00a5d163a2ca374278a15075d75d7b54e3",
+    "completion_marker_present_from_initial_mem0_integration": true,
+    "github_issue_search_matches_for_rerun_partial_state": 0,
+    "trace_reproduction": {
+      "integration_commit": "0712c073f5f3716d40ef6252fc0ef175623ac168",
+      "integration_date": "2026-06-03T12:35:45Z",
+      "run_traced_construction_sha": "97c5a79cdfc8c999b544d35bf666fc6ebf1173f2",
+      "trace_readme_sha_at_integration": "b6229f3c308060d338b87a75b6ed7b42c159d6f6",
+      "mem0_config_sha": "39ec8cf5517a1b356d211316c3f3c93b4b909930",
+      "mem0_save_dir": "examples/trace_memory_lifecycle_with_membase/traced_mem0",
+      "construction_flags": [
+        "--rerun",
+        "--tracing"
+      ],
+      "preconstruction_delete_in_script": false,
+      "longmemeval_reproduction_sample_size": 200
+    }
+  },
+  "memora": {
+    "repo": "microsoft/Memora",
+    "commit": "dec3f8f2444eace7004fc084abe1be9f3d88270e",
+    "audited_public_github_runtime_artifact": "NOT_LOCATED"
+  },
+  "evidence_boundary": "source/public-artifact forensics only; no new provider runtime or score-effect claim",
+  "memtracebench": {
+    "repo": "zjunlp/MemTraceBench",
+    "release_surface": "Hugging Face dataset",
+    "total_size": "6.39 GB",
+    "mem0_execution_graphs": 19,
+    "mem0_failure_annotations": 66,
+    "enumerated_mem0_longmemeval_graphs": 12,
+    "raw_body_inspection": "PENDING_XET_BODY_NOT_STREAMED_BY_CURRENT_INTERFACE"
+  }
+}

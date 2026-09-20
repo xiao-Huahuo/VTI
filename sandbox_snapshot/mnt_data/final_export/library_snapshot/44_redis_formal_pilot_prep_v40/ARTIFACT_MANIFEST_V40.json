@@ -1,0 +1,140 @@
+{
+  "candidate": "C33",
+  "files": [
+    {
+      "path": "FORMAL_PILOT_PROTOCOL_V40.json",
+      "sha256": "3ee9f0a603a81d49070e74bfa29daaa87484570db1a759db2fbc7dafbc33dcbd",
+      "size_bytes": 851
+    },
+    {
+      "path": "RESEARCH_STATE_V40.json",
+      "sha256": "d7237b8c966dbd203a40549cd65600ff43a048515021de4d3d076ed24bbb327c",
+      "size_bytes": 2436
+    },
+    {
+      "path": "V40_DECISION_SUMMARY.md",
+      "sha256": "63fa784cfb0c4443ee3fce10f76f238c66dcf84e29b78b2155709ecb9f7025eb",
+      "size_bytes": 2287
+    },
+    {
+      "path": "V40_HANDOFF.md",
+      "sha256": "ae4c7148dc6f9fc2dd078d75b7cfb59ffc6970f93bcb76ca25ce7c11b73baed1",
+      "size_bytes": 1779
+    },
+    {
+      "path": "code/fetch_frozen_longmemeval_v40.py",
+      "sha256": "bbb16fd366e3a439e07a83bd488fb44df42d17b03672c7971a06c8a51467c14f",
+      "size_bytes": 1794
+    },
+    {
+      "path": "code/hash_tree_v40.py",
+      "sha256": "f461c1f648ac48e6280b42c85245ecbf9b8690a0eca6296417490444e41d5b5c",
+      "size_bytes": 639
+    },
+    {
+      "path": "code/preflight_redis_v34_v40.py",
+      "sha256": "d054473bb9f8eb1c7fbf4020f3597ea7d62efe1258ea5771875517d38152e4e5",
+      "size_bytes": 6045
+    },
+    {
+      "path": "code/redis_exact_paired_probe_v32_reference.py",
+      "sha256": "dba4f058f5da97877576809d06df41fd4f641ee7981c61ce8f69028629bb06d9",
+      "size_bytes": 19681
+    },
+    {
+      "path": "code/redis_retry_controlflow_fixture_v32_reference.py",
+      "sha256": "a2ccd1202b63b6f1e5ef3f6de5df7a9a43ea5c1e61dd0a6789b281ec88bb53b3",
+      "size_bytes": 11442
+    },
+    {
+      "path": "code/redis_v34_exact_paired_probe_v40.py",
+      "sha256": "2eca053e898fbebf321bf5db29f4373257d1b6fce62ee5c48f46e5cbb2b73342",
+      "size_bytes": 20540
+    },
+    {
+      "path": "code/run_redis_v34_pilot_v40.py",
+      "sha256": "5623f25beb1ddcef7ee09f5a8b999f1f0408903f18b8e2fbae20b232a3dcc1cc",
+      "size_bytes": 6260
+    },
+    {
+      "path": "code/run_redis_v34_v40.sh",
+      "sha256": "e8a8bb1155e55c46e40a5d3aa62b49f8b3f48cba0ab4713c3dcf553da7883335",
+      "size_bytes": 1081
+    },
+    {
+      "path": "code/test_redis_retry_controlflow_fixture_v32_reference.py",
+      "sha256": "154f832cabd7fe1b7f45628d789ef560c02a156bdacd57d520cd0de8752012b4",
+      "size_bytes": 1747
+    },
+    {
+      "path": "code/test_v40_offline.py",
+      "sha256": "e80a9422bd72351126d3653574c14dbf364c31a232c1852482e4b9440609555b",
+      "size_bytes": 3796
+    },
+    {
+      "path": "code/validate_redis_v34_pilot_v40.py",
+      "sha256": "2ccfc88aad55e327bfa09c3d4eb8aa78126a82f0301e74504826fa6a0e07bbaf",
+      "size_bytes": 7749
+    },
+    {
+      "path": "common/AUDIT_REPORT_V40.json",
+      "sha256": "e7e14b6545126d5edc6d50441b85ed0cdb1fe6f016ec8f60d9952fe5e8be4324",
+      "size_bytes": 727
+    },
+    {
+      "path": "common/CHANGE_HISTORY_V40.md",
+      "sha256": "e3b435f913b32ee95299827686f6a758ed0c21be060ced006b1471e7b72726c0",
+      "size_bytes": 1148
+    },
+    {
+      "path": "common/CURRENT_RUNTIME_PREFLIGHT_V40.exitcode.txt",
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+      "size_bytes": 2
+    },
+    {
+      "path": "common/CURRENT_RUNTIME_PREFLIGHT_V40.json",
+      "sha256": "6415f85159a7b2832547f256523a8bf43be8da565eda09df947d6432f6415cb7",
+      "size_bytes": 1503
+    },
+    {
+      "path": "common/LEGACY_V32_CONTROLFLOW_TESTS.txt",
+      "sha256": "0e96d7ca7406320840ee2e704cbada03e2fe4b6d6aea1d667b4f685b07e7e24d",
+      "size_bytes": 98
+    },
+    {
+      "path": "common/PUBLIC_COHORT_DERIVATION_V40.json",
+      "sha256": "f08098229cfefacd123d328ef968dac1444906638bf53220d93baf2baa6660b0",
+      "size_bytes": 855
+    },
+    {
+      "path": "common/SOURCE_PROVENANCE_V40.json",
+      "sha256": "b4e4ac30e4c79ec40b0e763ad0cbccdcfa421ba13aa0763b1ea7edb1784a7572",
+      "size_bytes": 1765
+    },
+    {
+      "path": "common/TEST_REPORT_V40.txt",
+      "sha256": "20b00d9cc4a3409a3582614799f69f2a82d46a590612cb448479055fd731933d",
+      "size_bytes": 98
+    },
+    {
+      "path": "docs/COHORT_PROVENANCE_V40.md",
+      "sha256": "b29013fb831c546de85ccadaa83ac37ededb7c8103ad5c7b5f666af7f2b6fa77",
+      "size_bytes": 2861
+    },
+    {
+      "path": "docs/FORMAL_PILOT_EXECUTION_PACKAGE_V40.md",
+      "sha256": "0674478c5ccbd202ec7678872b9bf852f3c2e1eebf409c959b0eaaf815684878",
+      "size_bytes": 3752
+    },
+    {
+      "path": "redis_v34_cohort.json",
+      "sha256": "e050914baba1d940e477898b9cb505ca76d509785d0be00d5efa870abe6da16d",
+      "size_bytes": 3764
+    }
+  ],
+  "formal_pilot_executed": false,
+  "parent_v39_bundle_sha256": "beb6bdfa93eb7e831a9ba4c003de3b2cea3e4d748d279c298e0abef06191c6e2",
+  "project_id": "AM-AUTO-20260918-R1",
+  "schema": "c33-v40-artifact-manifest",
+  "stage": "V34_REDIS_FORMAL_PILOT_EXECUTION_PREP"
+}

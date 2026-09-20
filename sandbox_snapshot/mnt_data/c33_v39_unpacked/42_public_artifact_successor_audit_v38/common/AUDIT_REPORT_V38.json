@@ -1,0 +1,27 @@
+{
+  "version": "V38",
+  "formal_pilot_protocol": "V34",
+  "formal_pilot_changed": false,
+  "new_provider_runtime_experiments": 0,
+  "new_source_positive_integrations": 1,
+  "new_public_artifact_locators": 2,
+  "claims_unlocked": [
+    "C9",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14"
+  ],
+  "claims_still_blocked": [
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B6",
+    "B7",
+    "B8"
+  ],
+  "notes": "No synthetic fixture added because V37 already covers control-flow fixtures; V38 adds public artifact forensics, successor source audit, and official MemTraceBench reproduction-path reachability."
+}

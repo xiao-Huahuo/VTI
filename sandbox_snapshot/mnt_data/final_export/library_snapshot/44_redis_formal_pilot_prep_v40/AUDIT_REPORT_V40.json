@@ -1,0 +1,21 @@
+{
+  "schema": "c33-v40-offline-audit",
+  "protocol_authority": "V34",
+  "protocol_changed": false,
+  "checks": {
+    "cohort_size_12": true,
+    "selection_hashes_recomputed": true,
+    "selection_digests_sorted": true,
+    "all_frozen_cases_have_more_than_3_sessions": true,
+    "gold_fields_used_for_selection": false,
+    "new_v40_offline_tests_pass": true,
+    "new_v40_offline_test_count": 4,
+    "legacy_v32_controlflow_tests_pass": true,
+    "legacy_v32_controlflow_test_count": 5,
+    "all_v40_python_files_compile": true,
+    "shell_wrapper_syntax_valid": true,
+    "current_exact_runtime_ready": false,
+    "formal_pilot_executed": false
+  },
+  "result": "PROVIDER_FREE_PREPARATION_COMPLETE_EXACT_RUNTIME_REQUIRED"
+}

@@ -1,0 +1,101 @@
+{
+  "project_id": "AM-AUTO-20260918-R1",
+  "version": "V21",
+  "artifacts": [
+    {
+      "path": "C33/CENSUS_REPORT_V21.md",
+      "size": 4201,
+      "sha256": "fa813a12a43f5797ad566056f449ccce1963b352ddfa4788c078a8eb57026677"
+    },
+    {
+      "path": "C33/CORPUS_FREEZE_V21.json",
+      "size": 7262,
+      "sha256": "bd85ba5cb1edf0c61ad547f474b0a3118e8e59001b9fbb21bafb97ed982c3185"
+    },
+    {
+      "path": "C33/REPRESENTATIVE_SAMPLING_PROTOCOL_V21.md",
+      "size": 2207,
+      "sha256": "764eeaa6760ca8c3e4cfc8d1b832a8347364320c7cd655069ca1490fe1eb2042"
+    },
+    {
+      "path": "C33/code/__pycache__/validate_census.cpython-313.pyc",
+      "size": 2727,
+      "sha256": "be2895a3a987765a4199e3b332696568e83b6334b2b3dd4a7907c9652770093b"
+    },
+    {
+      "path": "C33/code/validate_census.py",
+      "size": 1448,
+      "sha256": "b70b79d83365ffc4e25bc8b834966e78cf5373874fed15dc7052a36430dfc303"
+    },
+    {
+      "path": "C33/results/census_validation_v21.json",
+      "size": 721,
+      "sha256": "5ac73069dcc82b5d14a0b2e5f39457ca80aa55b0faee12f95d3c17791d6aa298"
+    },
+    {
+      "path": "C33/tests/.pytest_cache/.gitignore",
+      "size": 37,
+      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+    },
+    {
+      "path": "C33/tests/.pytest_cache/CACHEDIR.TAG",
+      "size": 191,
+      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+    },
+    {
+      "path": "C33/tests/.pytest_cache/README.md",
+      "size": 302,
+      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+    },
+    {
+      "path": "C33/tests/.pytest_cache/v/cache/nodeids",
+      "size": 149,
+      "sha256": "3ee6b5308c7b7f1441697094937d14a48a4045fe2de0e22c95e9e599f7d27490"
+    },
+    {
+      "path": "C33/tests/__pycache__/test_validate_census.cpython-313-pytest-9.0.2.pyc",
+      "size": 3413,
+      "sha256": "f180f88d318c0c7dfe6e207cd13dcb1284c8da6df316759fa875d9449856bb68"
+    },
+    {
+      "path": "C33/tests/test_validate_census.py",
+      "size": 593,
+      "sha256": "b83fdba65109dffa2f9ef8bd0c1fb4cd8185a98e8405501d75ba7c9f217aa10e"
+    },
+    {
+      "path": "common/CHANGE_HISTORY_V21.md",
+      "size": 1073,
+      "sha256": "e1d17ac4f8bd146fc8967a6d645e616c20db87446e11e0af3ec3ea2e5a9cedf2"
+    },
+    {
+      "path": "common/CLAIM_LEDGER_V21.json",
+      "size": 2004,
+      "sha256": "97344fdc2bf1ec370803c7f9e73e57f68222481ab416f6b88c25fec23b915a2a"
+    },
+    {
+      "path": "common/RESEARCH_STATE_V21.json",
+      "size": 1903,
+      "sha256": "82e1182500b66c549a7a5d956fee8164901acdff9e5ff1133337c08bf9cf82ac"
+    },
+    {
+      "path": "common/SEARCH_AUDIT_LOG_V21.md",
+      "size": 2585,
+      "sha256": "40d3f332057109ef12f524f9c21d7d417c97f152bea1fdf9474289e9548d5f6a"
+    },
+    {
+      "path": "common/TEST_REPORT_V21.json",
+      "size": 422,
+      "sha256": "8a66df845ce76794f81b2c293c4fd279c7b82b275a569693185c20635fe5a51e"
+    },
+    {
+      "path": "common/pytest_v21.txt",
+      "size": 98,
+      "sha256": "fa9cd0e25dcc1e230610463c80c04cc48c6c326debe3521403b94a8e7f25f4ae"
+    },
+    {
+      "path": "reports/V21_DECISION_SUMMARY.md",
+      "size": 1063,
+      "sha256": "2864a8156208fc3dc71f716e15fafeba2d91d625ccb22d5cd95df053c0a6d96a"
+    }
+  ]
+}

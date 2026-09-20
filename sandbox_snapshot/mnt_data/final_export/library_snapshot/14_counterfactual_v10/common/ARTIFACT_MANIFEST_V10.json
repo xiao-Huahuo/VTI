@@ -1,0 +1,37 @@
+[
+  {
+    "path": "C27/CLAIM_LEDGER_V10.json",
+    "size": 999,
+    "sha256": "1e10b16fc6877a8412f8cf149f963dfbb1f565f2f596f700230339852728e869"
+  },
+  {
+    "path": "C27/COUNTERFACTUAL_NEUTRALIZATION_V1.md",
+    "size": 2238,
+    "sha256": "127f0e33a017b6bb7b1b33f112feae239554dfbc270efc300bec8229a076d693"
+  },
+  {
+    "path": "C27/PRIOR_ART_REFRESH_V10.md",
+    "size": 1842,
+    "sha256": "2192c87ea7f901c9bba6578123410aae9a14d579a49a68f301f241873847ac6c"
+  },
+  {
+    "path": "C27/results/counterfactual_neutralization_v10.json",
+    "size": 910,
+    "sha256": "b885c40378059667d8858a79f75e0a35e87cb05ae14c99d90c885cd754b56234"
+  },
+  {
+    "path": "common/CHANGE_HISTORY_V10.md",
+    "size": 788,
+    "sha256": "095ad022e2f293905e882227589b6da6bf52c43bbad97328e7ace05602bc1217"
+  },
+  {
+    "path": "common/RESEARCH_STATE_V10.json",
+    "size": 957,
+    "sha256": "8433bf30557f83636e5920d78b963f6bcfb177d4ff6f571a1d70f0792037f91c"
+  },
+  {
+    "path": "reports/V10_DECISION_SUMMARY.md",
+    "size": 1059,
+    "sha256": "2bed56a743569f83e5532880bb3b05744fc203cfea8d64824391e5e147d686ff"
+  }
+]

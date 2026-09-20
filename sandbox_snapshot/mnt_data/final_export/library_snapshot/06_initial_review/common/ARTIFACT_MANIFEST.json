@@ -1,0 +1,157 @@
+{
+  "run_id": "AM-AUTO-20260918-R1-INITIAL-REVIEW-V1",
+  "library_root": "/Research/AgentMemory/AM-AUTO-20260918-R1/06_initial_review",
+  "file_count_excluding_manifest_and_sha": 30,
+  "files": [
+    {
+      "path": "C15/CLAIM_CONTRACT_V2.md",
+      "size": 1007,
+      "sha256": "19d141708ce9226b1fe7903584d26b131cd3f70c356058d03ebc4284fc9b87c9"
+    },
+    {
+      "path": "C15/INITIAL_REVIEW.md",
+      "size": 1825,
+      "sha256": "a9fbb632ac340844a812c2f199f89e0d4be17953976cd60fd76a1d200e81030b"
+    },
+    {
+      "path": "C15/PILOT_PROTOCOL.md",
+      "size": 1214,
+      "sha256": "3cb01d303a281f59472636f2aa95a0f54aadbcda98826e0082c87745869472ca"
+    },
+    {
+      "path": "C15/PILOT_RESULT.md",
+      "size": 1332,
+      "sha256": "40ccd859478404702ab4d4b2c4ebd47b2b4c479e8c6832e330e3ef035d0234ff"
+    },
+    {
+      "path": "C15/RED_TEAM.md",
+      "size": 1078,
+      "sha256": "8b6810bae6656046e044b5182340d0f437e3cc472587f15cafbb42f7042945d5"
+    },
+    {
+      "path": "C15/code/pilot_c15.py",
+      "size": 5159,
+      "sha256": "23927190e3254dce8356cb58b3d104305141df30b507a4d3a18f219ab10f7e4a"
+    },
+    {
+      "path": "C15/results/c15_pilot_results.json",
+      "size": 20457,
+      "sha256": "a3faf65461cb45f304afad3fdd8142b4d431941b20119ff553da7bb519d2c8a2"
+    },
+    {
+      "path": "C16/CLAIM_CONTRACT_V2.md",
+      "size": 995,
+      "sha256": "c9a13f8b2d470545dfa472c78c0e847020167f1dae9149f7d4daf1e511b9d93b"
+    },
+    {
+      "path": "C16/INITIAL_REVIEW.md",
+      "size": 1809,
+      "sha256": "bc01d436c8ca61a642961b48e502a1b862b9b8ce2ecbfd547ef18e6d54df85fc"
+    },
+    {
+      "path": "C16/PILOT_PROTOCOL.md",
+      "size": 1097,
+      "sha256": "acd31fec04027408791749f26dcb952dd02b6ca2c11d404cdb8ac61d3b385fe2"
+    },
+    {
+      "path": "C16/PILOT_RESULT.md",
+      "size": 1405,
+      "sha256": "0278eaee6e8a10d252f50e94de6495590dc704d8b89a763a57df7eeaa27c5b20"
+    },
+    {
+      "path": "C16/RED_TEAM.md",
+      "size": 1170,
+      "sha256": "7a0029fe2f1d15e737fe34badea01134e176a60b56dc00502b6507bb9d8dff8e"
+    },
+    {
+      "path": "C16/code/pilot_c16.py",
+      "size": 5346,
+      "sha256": "eb88b76e2123b5548a983e1b3e62ec0573dbe3182f8fab41835a1b6493cd0f1a"
+    },
+    {
+      "path": "C16/results/c16_pilot_results.json",
+      "size": 27796,
+      "sha256": "58db3fe63948abaf26e0c405de1fb7c58ca7b4e613b2e01d5c73bea029d96b61"
+    },
+    {
+      "path": "C17/CLAIM_CONTRACT_V2.md",
+      "size": 875,
+      "sha256": "0e4a1eab9d324656cc85bcd18ab3969c2d4db8979f97a0dff33f094237231e72"
+    },
+    {
+      "path": "C17/INITIAL_REVIEW.md",
+      "size": 1388,
+      "sha256": "aa743ed462d516ecac87ff80791b45f88f2ec1d599c7b9856ba8f6022e363761"
+    },
+    {
+      "path": "C17/PILOT_PROTOCOL.md",
+      "size": 1276,
+      "sha256": "d83a80376e5318163e694015be1ace2ac8f2c5128427ff44ce18cd65c8fcf158"
+    },
+    {
+      "path": "C17/PILOT_RESULT.md",
+      "size": 1510,
+      "sha256": "1addbf60c34bbf03adba566447a07810c517771038ae8f53be497f9c463204c4"
+    },
+    {
+      "path": "C17/RED_TEAM.md",
+      "size": 1171,
+      "sha256": "1b35f815318cc12de14fc96fd55f72ac653c4a5b352ee9406af32af652b3e4d6"
+    },
+    {
+      "path": "C17/code/pilot_c17.py",
+      "size": 5974,
+      "sha256": "a903ca2634aa4eaab899855e62fceced575a679b7056e04efc3fae592e114ba0"
+    },
+    {
+      "path": "C17/results/c17_pilot_results.json",
+      "size": 9085,
+      "sha256": "934c01672c9f8fd65e1b91b4f6f69807fcad4cf0b2a1f32360b391d56aabde21"
+    },
+    {
+      "path": "common/CHANGE_HISTORY_INITIAL_REVIEW_V1.md",
+      "size": 1345,
+      "sha256": "31101bdf3c909d73268be787615750d1965ce8adf1a5ca3fa621a5f3ce0a60fa"
+    },
+    {
+      "path": "common/RESEARCH_STATE_V1_SNAPSHOT.json",
+      "size": 642,
+      "sha256": "687bba3b0fed7e94f68cb3eef760116d7afcc74becaa8b440d91248221e4fb45"
+    },
+    {
+      "path": "common/RESEARCH_STATE_V2.json",
+      "size": 1016,
+      "sha256": "5c7159147294fd40cdd61e91e73f5e653afe38667e186a7f4a330de06eb1389b"
+    },
+    {
+      "path": "common/SEARCH_LOG_V2.md",
+      "size": 2619,
+      "sha256": "87e5fb82c7ea51b6c1a47a0597b3168c9de6e8ca548ef33baed5e8d94757a03e"
+    },
+    {
+      "path": "common/SOURCE_SNAPSHOT_2026-09-18.md",
+      "size": 6104,
+      "sha256": "1b88737aea4800d28c4c26fb33f855ba1ab6fccddab8078415555d42da7ccf88"
+    },
+    {
+      "path": "common/VALIDATION_PROVENANCE.json",
+      "size": 691,
+      "sha256": "c88bd3628c65f6d20f6413534bcaf3013f2e5bfabc007c507bf2c9994716f835"
+    },
+    {
+      "path": "reports/DECISION_LOG.md",
+      "size": 1050,
+      "sha256": "a439a42c33140dc20a6087918eeb11ddbab9911426cbf4ce79e698fa459bf8c3"
+    },
+    {
+      "path": "reports/INITIAL_REVIEW_SUMMARY.md",
+      "size": 2582,
+      "sha256": "5dad2386b8887db0624c5a6f1dd26de7e7bc7fe2c6a661a8c37dc668989f107a"
+    },
+    {
+      "path": "reports/NOVELTY_REFRESH_V2.md",
+      "size": 1824,
+      "sha256": "b39f0e7621309b770c8e4fdff58e51cc1eea1b4f3d85a9891657f706b0ce31d2"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "version": "V33",
+  "artifact_count": 20,
+  "artifacts": [
+    {
+      "path": "C33/CLAIM_LEDGER_V33.json",
+      "bytes": 2445,
+      "sha256": "6f8ddace1d85a4aa6ec6d61da83e74cc7fb74e9a6939ddea1d652b4e3475b513"
+    },
+    {
+      "path": "C33/PUBLIC_SCORE_FORENSICS_V33.md",
+      "bytes": 7337,
+      "sha256": "dbb591048003267bb5b5b4f2ff71c2027617abad8c0a4b55a9dd78b94f56e836"
+    },
+    {
+      "path": "C33/RQ_FREEZE_V33.md",
+      "bytes": 2409,
+      "sha256": "2a329841753eefdfc501d3b31dc0af4643b7d0892caa2ca05f1bd9c25b8e3df7"
+    },
+    {
+      "path": "C33/SOURCE_PROVENANCE_V33.json",
+      "bytes": 1176,
+      "sha256": "2c362fb673fa4e322c7f160008f99e3fe0098bf3e2c8517a5366aeb4777e5b53"
+    },
+    {
+      "path": "C33/V33_HANDOFF.md",
+      "bytes": 2445,
+      "sha256": "5a493e565ef41d6e675de6f2ccce5ec3f63984c547da57233b2c18247b8695da"
+    },
+    {
+      "path": "C33/code/.pytest_cache/.gitignore",
+      "bytes": 37,
+      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+    },
+    {
+      "path": "C33/code/.pytest_cache/CACHEDIR.TAG",
+      "bytes": 191,
+      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+    },
+    {
+      "path": "C33/code/.pytest_cache/README.md",
+      "bytes": 302,
+      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+    },
+    {
+      "path": "C33/code/.pytest_cache/v/cache/nodeids",
+      "bytes": 262,
+      "sha256": "2fa493a5187688f42f234237030f82e316028db1f37cf4e75a6e10ab389fe2c8"
+    },
+    {
+      "path": "C33/code/__pycache__/amb_public_state_audit_v33.cpython-313.pyc",
+      "bytes": 9035,
+      "sha256": "df82c4249aea16513bd386a1cd115d3a67d69007fac55653f06f4c690e719353"
+    },
+    {
+      "path": "C33/code/__pycache__/test_amb_public_state_audit_v33.cpython-313-pytest-9.0.2.pyc",
+      "bytes": 6929,
+      "sha256": "dc886bab5c729b574f4a9748114003358e1e0ab839a400e97a175e8a03bb14c7"
+    },
+    {
+      "path": "C33/code/__pycache__/test_amb_public_state_audit_v33.cpython-313.pyc",
+      "bytes": 2245,
+      "sha256": "eac3d4d51a86081d50603c85bfb6ed28cc3ec68c44d9bb4c4f8903ea52f1c542"
+    },
+    {
+      "path": "C33/code/amb_public_state_audit_v33.py",
+      "bytes": 6688,
+      "sha256": "a2c04ee28c09b01016b4b6757159898b27a9993a026d2366c08aaaed6c62d09f"
+    },
+    {
+      "path": "C33/code/test_amb_public_state_audit_v33.py",
+      "bytes": 1838,
+      "sha256": "cbcadcff9c43565a0e007ee9d657251ac6c0123383b45303a8eff0b71880aef6"
+    },
+    {
+      "path": "C33/results/AMB_PUBLIC_TRACE_FORENSICS_V33.json",
+      "bytes": 7123,
+      "sha256": "ea9609d8a03b6dcac62cfac9c083569322c1842c5efd97d9d526c761c26f04ca"
+    },
+    {
+      "path": "common/CHANGE_HISTORY_V33.md",
+      "bytes": 31989,
+      "sha256": "851c24b67503d9e194c00890aaf6f8fb24a72ae97a11c3bd1646fdce00447123"
+    },
+    {
+      "path": "common/RESEARCH_STATE_V33.json",
+      "bytes": 2563,
+      "sha256": "c02b241ad95fc61043f310537a6a882e9b76d07a8b0d66bbe51c6f0295fd9e79"
+    },
+    {
+      "path": "common/TEST_REPORT_V33.json",
+      "bytes": 423,
+      "sha256": "09aef35c3d840efe60ab5546a132ed173887fb8d413043024bf158b82ec2f22c"
+    },
+    {
+      "path": "common/unit_tests.stdout.txt",
+      "bytes": 98,
+      "sha256": "a120868bd3fc09d509fffc59557d83c4a1b7c4ac7ff8bd6cf4e1a6bd1c89bd3b"
+    },
+    {
+      "path": "reports/V33_DECISION_SUMMARY.md",
+      "bytes": 3450,
+      "sha256": "875185a3b65fc6396e6f7bdcfd39c65abc13bca478790a79910be4f7659c624a"
+    }
+  ]
+}

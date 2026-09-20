@@ -1,0 +1,17 @@
+{
+  "evidence_scope": "source-integration falsifier only",
+  "provider_response": {
+    "success": false,
+    "deletedCount": 2,
+    "errors": [
+      {
+        "id": "doc-3",
+        "error": "simulated provider delete failure"
+      }
+    ]
+  },
+  "adapter_local_memory_count_after_reset": 0,
+  "remote_memory_count_after_reset": 1,
+  "remote_canary_retrievable": true,
+  "blindspot": true
+}

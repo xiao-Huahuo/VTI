@@ -1,0 +1,29 @@
+{
+  "lightmem": {
+    "public_locator": true,
+    "file_level_listing_obtained": false,
+    "published_run_contamination_claim_unlocked": false
+  },
+  "memora": {
+    "raw_runtime_artifact_located_on_audited_github_surfaces": false,
+    "public_output_contract_located": true
+  },
+  "membase": {
+    "source_audit_complete_for_v38": true,
+    "provider_runtime_trace": false,
+    "score_effect": false,
+    "ordinary_resume_requires_config_marker": true,
+    "interrupted_partial_store_reset_before_replay": false,
+    "mem0_add_exception_propagates_to_runner": false,
+    "rerun_deletes_persistent_state": false
+  },
+  "memtracebench": {
+    "public_dataset_locator": true,
+    "mem0_execution_graph_count": 19,
+    "mem0_longmemeval_graph_files_enumerated": 12,
+    "official_generation_script_uses_rerun": true,
+    "official_generation_script_predelete": false,
+    "released_graph_body_inspection_complete": false,
+    "released_run_contamination_claim_unlocked": false
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "project_id": "AM-AUTO-20260918-R1",
+  "version": "V12",
+  "created_at": "2026-09-18T20:15:00+08:00",
+  "files": [
+    {
+      "path": "C16/PRIOR_ART_AND_GATE_UPDATE_V12.md",
+      "bytes": 2885,
+      "sha256": "26a4bdad7bb43c9ad49b22f723fbb16420fcde93b058f97574bc9455b24d0b79"
+    },
+    {
+      "path": "C27/THRESHOLD_CALIBRATION_V12.md",
+      "bytes": 3627,
+      "sha256": "879892ab270d81c0a3f393b8d29999323ad2820b47a6f5136b8f527c43516749"
+    },
+    {
+      "path": "C27/results/locomo_threshold_calibration_v12.json",
+      "bytes": 1342,
+      "sha256": "46a07e158048f49517282f3ee465718356e7d796c0d3d6acca7818d2cdb0843e"
+    },
+    {
+      "path": "common/CHANGE_HISTORY_V12.md",
+      "bytes": 1235,
+      "sha256": "95c98046c94049cafd83e5aad7080d194ce1dd2d15ace4bbcd497a8fcbc481ce"
+    },
+    {
+      "path": "common/RESEARCH_STATE_V12.json",
+      "bytes": 1161,
+      "sha256": "63b9706c7acbe126d021a682d0999385cda1e621a797b676fb7adc077b7de97d"
+    },
+    {
+      "path": "common/SEARCH_LOG_V12.md",
+      "bytes": 1753,
+      "sha256": "5a2c7a90b10c0f5a4df754d8ba73d8bb366973c6001a28ca0533b4601f965f73"
+    },
+    {
+      "path": "reports/V12_DECISION_SUMMARY.md",
+      "bytes": 1890,
+      "sha256": "0e32f74f873d26e8d650f90e478576d48d4cf1a93699389cab5143f9757d06fd"
+    }
+  ]
+}

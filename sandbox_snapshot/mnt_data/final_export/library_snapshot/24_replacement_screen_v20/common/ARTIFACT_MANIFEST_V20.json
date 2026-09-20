@@ -1,0 +1,81 @@
+{
+  "project_id": "AM-AUTO-20260918-R1",
+  "version": "V20",
+  "artifacts": [
+    {
+      "path": "C18/KILL_MEMO_V20.md",
+      "size": 1378,
+      "sha256": "9a45a199ad0c942385af23b3120997074474cd14cf4adf1d557bc7e801124009"
+    },
+    {
+      "path": "C33/IDEA_CARD_V20.md",
+      "size": 4448,
+      "sha256": "eae1bda2b0dd2ff4d76e6c81d7e97e9901463942700438b5d71555186ec2052a"
+    },
+    {
+      "path": "C33/STATIC_PILOT_V20.md",
+      "size": 1826,
+      "sha256": "9305dfa24385d914df3411620336a64cb9298972c83d528060355b60df9a0fca"
+    },
+    {
+      "path": "C33/cases_v20.json",
+      "size": 4651,
+      "sha256": "c57f1ef1b95ed2e4a359b9e94d0fd1825d4e831b8e22004a0eecad0d17719b2f"
+    },
+    {
+      "path": "C33/code/path_equivalence_audit.py",
+      "size": 2175,
+      "sha256": "e132257885ca53d26e9388febb4cb9a850b4245c7ce7b38750cad2d016e1fbee"
+    },
+    {
+      "path": "C33/results/static_pilot_v20.json",
+      "size": 3109,
+      "sha256": "20915f680f98a432c63e0e22d1753708d1544911f894cf6a870402be11cfdfd3"
+    },
+    {
+      "path": "C33/tests/test_path_equivalence_audit.py",
+      "size": 1357,
+      "sha256": "956675c32b26501497c35cbe2b5ff892290fcbf313c817f78c4f12afb2216803"
+    },
+    {
+      "path": "common/CANDIDATE_POOL_V20.md",
+      "size": 1792,
+      "sha256": "ec455ca2c2c211122888fd9f7bb445d02089d7d2ebf0c376489bb087e0082c5e"
+    },
+    {
+      "path": "common/CHANGE_HISTORY_V20.md",
+      "size": 1302,
+      "sha256": "167e5f466bc3e0e7f64a0248acfc0a908f4cefa02585d23ee3cd767334c336d0"
+    },
+    {
+      "path": "common/CLAIM_LEDGER_V20.json",
+      "size": 1485,
+      "sha256": "3133aa14d96a7d5fee8d3e38583000f7c1f215c1a2fceaaf0eba74802dcb7e36"
+    },
+    {
+      "path": "common/PRIOR_ART_MATRIX_V20.md",
+      "size": 2510,
+      "sha256": "21f5f9f847a0f66fcf1d030f920a457dc13497a98d9de55027928a49398cd539"
+    },
+    {
+      "path": "common/RESEARCH_STATE_V20.json",
+      "size": 1941,
+      "sha256": "f79711675c6830c491a6cda84e0b26b58afc2a19e9aaac2b8494be0fbac113dc"
+    },
+    {
+      "path": "common/SEARCH_AUDIT_LOG_V20.md",
+      "size": 1593,
+      "sha256": "722a4186d2d22b2ea975ad5896ee50e45bbb58e26db9d94d7e9efb2175e9b3ad"
+    },
+    {
+      "path": "common/TEST_REPORT_V20.json",
+      "size": 490,
+      "sha256": "7697ff61b3372e870343a2914b43fb2c696545140203d63168e86c6e0bb698eb"
+    },
+    {
+      "path": "reports/V20_DECISION_SUMMARY.md",
+      "size": 1482,
+      "sha256": "f714aa9edd13b178346e0e39caabce14e3aa26101f74077c61656842e3f28598"
+    }
+  ]
+}

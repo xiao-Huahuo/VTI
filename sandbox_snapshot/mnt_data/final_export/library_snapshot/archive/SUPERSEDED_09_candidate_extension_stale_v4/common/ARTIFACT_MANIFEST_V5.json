@@ -1,0 +1,37 @@
+[
+  {
+    "path": "C23/CLAIM_CONTRACT_V1.md",
+    "size": 351,
+    "sha256": "b3beac87e1890e6a8bab7f885f170ebc4cf254d22761b92cc247737c2b880957"
+  },
+  {
+    "path": "C23/HISTORICAL_SOURCE_CENSUS_P0.md",
+    "size": 1137,
+    "sha256": "b2f294f1b3b92ec1505b0bd86a739df478010902ece1b4b2a6f404841e3ba71a"
+  },
+  {
+    "path": "C23/IDEA_CARD.md",
+    "size": 1521,
+    "sha256": "baafef3d7d550e0675988f1ccbe2a53c8c6b41c3512c47650b5d0ad1573d99c3"
+  },
+  {
+    "path": "common/RESEARCH_STATE_V5.json",
+    "size": 1111,
+    "sha256": "148fe6c29ab564b72320d83f91acb917cd39a1fec3d73f8a2d202f8b02b2bbaf"
+  },
+  {
+    "path": "common/SEARCH_LOG_V5.md",
+    "size": 635,
+    "sha256": "412306c5d5aca355f0d6b1ee741ab8747b6009931cfedd1cce39a145fd603296"
+  },
+  {
+    "path": "reports/DECISION_LOG_V4.md",
+    "size": 331,
+    "sha256": "d3f9daaac7a33ef9abe98dfebf51eda85338ebf61599006aaec32e4a4eae94b1"
+  },
+  {
+    "path": "reports/PORTFOLIO_V5.md",
+    "size": 848,
+    "sha256": "f001b38a18d1e51f41921e00788228c7b78e796fcf477c50f93e0aa4c9820d9a"
+  }
+]

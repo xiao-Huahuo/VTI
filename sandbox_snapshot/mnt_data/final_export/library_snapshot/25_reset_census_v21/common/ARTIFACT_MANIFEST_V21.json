@@ -1,0 +1,51 @@
+{
+  "project_id": "AM-AUTO-20260918-R1",
+  "version": "V21",
+  "artifacts": [
+    {
+      "path": "C33/CURRENT_HARNESS_RESET_GATE_V21.md",
+      "size": 2100,
+      "sha256": "3637861a031b3f98c933d3cd9ebbee83a3982bb4e1d1cf43f3b579871439ddb0"
+    },
+    {
+      "path": "C33/code/current_redis_reset_fixture.py",
+      "size": 2198,
+      "sha256": "abe7941c658ebe6201afea4949482581e0192da49fbc125ca6127a33837fa604"
+    },
+    {
+      "path": "C33/results/current_redis_reset_fixture.json",
+      "size": 485,
+      "sha256": "fd93fcf8736fd08e63de95d2ec8245c8ca7bda299608626ec9e7e563d3d8c6f9"
+    },
+    {
+      "path": "common/CHANGE_HISTORY_V21.md",
+      "size": 849,
+      "sha256": "0790598e15e10722ad5aaaaf76cead468cbe631f47445c9ad80f8948cfe3aac4"
+    },
+    {
+      "path": "common/CLAIM_LEDGER_V21.json",
+      "size": 1334,
+      "sha256": "61e9c1d4b183347eb03c53c67a5c8e39f4efb47636d0ec01a3dd36f1fabbd381"
+    },
+    {
+      "path": "common/RESEARCH_STATE_V21.json",
+      "size": 970,
+      "sha256": "f7b5e2f3a37dde8b8605937b16263953760423cc0b39084cc9ca03a70886c3a5"
+    },
+    {
+      "path": "common/RESET_CENSUS_V21.md",
+      "size": 2271,
+      "sha256": "ff23440364fe91c75432dbf75b8acab703181f919c11c7344300e8ffe198d9e6"
+    },
+    {
+      "path": "common/SHA256SUMS_V21.txt",
+      "size": 935,
+      "sha256": "a68708fdfef873775bd53d6840a33d77b038f0efefd2c0b3db168ead948a90bd"
+    },
+    {
+      "path": "reports/V21_DECISION_SUMMARY.md",
+      "size": 1314,
+      "sha256": "89e35ac597a2775bbc89c09b81b4e664484f1e31b5ed82646bb66e7741ed2481"
+    }
+  ]
+}

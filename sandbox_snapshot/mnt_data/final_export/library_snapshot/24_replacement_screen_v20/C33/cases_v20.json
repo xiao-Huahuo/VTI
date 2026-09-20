@@ -1,0 +1,112 @@
+[
+  {
+    "case_id": "aelfrice_pre_v4_cutover",
+    "system": "robotrocketscience/aelfrice",
+    "ref": "pre-c8942e214f2e37746815673020a21a12823f144a",
+    "evidence_type": "primary_commit_diff",
+    "benchmark": {
+      "core": "retrieve_v2",
+      "ranking_config": "retrieve_v2_defaults",
+      "feature_set": ["intentional_clustering", "hrr_structural", "staged_lanes"],
+      "postprocess": "retrieval_result",
+      "side_effects": []
+    },
+    "deployment": {
+      "core": "legacy_retrieve_205_line_body",
+      "ranking_config": "legacy_retrieve_resolvers",
+      "feature_set": [],
+      "postprocess": "belief_list",
+      "side_effects": ["deferred_feedback_enqueue"]
+    },
+    "expected": {"retrieval_drift": true, "lifecycle_drift": true},
+    "notes": "The v4.0 cutover commit explicitly states benchmark/eval used retrieve_v2 while production used legacy retrieve; some retrieve_v2-default-on lanes were inert in production."
+  },
+  {
+    "case_id": "claude_mem_lite_pre_production_hybrid",
+    "system": "sdsrss/claude-mem-lite",
+    "ref": "before-a4a414db69810e46471c51c5ac128604def46b6f",
+    "evidence_type": "primary_history_and_current_regression_docs",
+    "benchmark": {
+      "core": "fts_only_searchObservations",
+      "ranking_config": "lexical_fts",
+      "feature_set": ["fts"],
+      "postprocess": "benchmark_ranker",
+      "side_effects": []
+    },
+    "deployment": {
+      "core": "searchObservationsHybrid",
+      "ranking_config": "production_hybrid",
+      "feature_set": ["fts", "production_hybrid_scoring"],
+      "postprocess": "mem_search_recall",
+      "side_effects": []
+    },
+    "expected": {"retrieval_drift": true, "lifecycle_drift": false},
+    "notes": "Current project history states older benchmark instrument was FTS-only and did not execute the production hybrid path."
+  },
+  {
+    "case_id": "yourmemory_0bda3e",
+    "system": "sachitrafa/YourMemory",
+    "ref": "0bda3e0331e67b357832735f6beec3d3f7fb022e",
+    "evidence_type": "primary_source",
+    "benchmark": {
+      "core": "benchmark_reimplementation",
+      "ranking_config": "bm25_0.4_vector_0.6_no_temporal_direct_match",
+      "feature_set": ["bm25", "vector", "graph"],
+      "postprocess": "top5",
+      "side_effects": []
+    },
+    "deployment": {
+      "core": "src.services.retrieve.retrieve",
+      "ranking_config": "bm25_0.5_vector_0.5_plus_temporal_boost",
+      "feature_set": ["bm25", "vector", "graph", "temporal_boost", "optional_relevance_judge"],
+      "postprocess": "production_result",
+      "side_effects": ["recall_reinforcement"]
+    },
+    "expected": {"retrieval_drift": true, "lifecycle_drift": true},
+    "notes": "Benchmark comments say constants mirror production, but source constants and temporal scoring differ."
+  },
+  {
+    "case_id": "claude_mem_lite_current_production_hybrid",
+    "system": "sdsrss/claude-mem-lite",
+    "ref": "post-a4a414-and-current-production-hybrid-gate",
+    "evidence_type": "primary_source_attestation",
+    "benchmark": {
+      "core": "searchObservationsHybrid",
+      "ranking_config": "production_hybrid",
+      "feature_set": ["production_hybrid_scoring"],
+      "postprocess": "mem_search_recall_equivalent",
+      "side_effects": []
+    },
+    "deployment": {
+      "core": "searchObservationsHybrid",
+      "ranking_config": "production_hybrid",
+      "feature_set": ["production_hybrid_scoring"],
+      "postprocess": "mem_search_recall_equivalent",
+      "side_effects": []
+    },
+    "expected": {"retrieval_drift": false, "lifecycle_drift": false},
+    "notes": "The benchmark's production_hybrid scenario explicitly drives the real searchObservationsHybrid path used by mem_search/recall."
+  },
+  {
+    "case_id": "redis_shipping_rest_api_attested",
+    "system": "redis/agent-memory-server",
+    "ref": "94192c39e2a4a154f441a5411e3d73c4f54974a6",
+    "evidence_type": "primary_attestation",
+    "benchmark": {
+      "core": "shipping_agent_memory_rest_api",
+      "ranking_config": "provider_api_config",
+      "feature_set": ["shipping_api"],
+      "postprocess": "benchmark_adapter",
+      "side_effects": []
+    },
+    "deployment": {
+      "core": "shipping_agent_memory_rest_api",
+      "ranking_config": "provider_api_config",
+      "feature_set": ["shipping_api"],
+      "postprocess": "benchmark_adapter",
+      "side_effects": []
+    },
+    "expected": {"retrieval_drift": false, "lifecycle_drift": false},
+    "notes": "README explicitly separates an 86.5% research configuration from the public harness and states the public harness evaluates the shipping REST API. Treated as attested control, not independently proven full equivalence."
+  }
+]
