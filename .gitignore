@@ -18,6 +18,8 @@ htmlcov/
 venv/
 
 # Local experiment runtime data
+third_party/
+.runtime/
 experiment_outputs/
 runtime_outputs/
 outputs/
