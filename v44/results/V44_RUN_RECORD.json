@@ -1,0 +1,13 @@
+{
+  "schema": "c33-v44-direct-diagnostic-run-record",
+  "execution_mode": "direct_single_case_gate",
+  "timestamps_available": false,
+  "complete": true,
+  "failure_count": 0,
+  "question_id": "b5ef892d",
+  "session_count": 52,
+  "result_file": "case_01_b5ef892d.json",
+  "result_sha256": "454eb25f3d6d036ac025980ebf995381eff9c64218a6549218984ceab4ef941f",
+  "raw_work_state_retained": false,
+  "note": "V44 was executed as a predeclared one-case stop/expand diagnostic rather than through the V42/V43 orchestration runner."
+}
