@@ -4,9 +4,11 @@ This source tree intentionally omits `history/`, `.runtime/`, `third_party/`, do
 
 ## Prepare public dependencies
 
-On a Linux GPU server with Git, Python and [uv](https://docs.astral.sh/uv/) installed:
+On a Linux GPU server with Git, Python and [uv](https://docs.astral.sh/uv/) installed, clone the pushed source-only `main` branch and prepare public dependencies:
 
 ```bash
+git clone --depth 1 --branch main git@github.com:xiao-Huahuo/VTI.git Science
+cd Science
 python3 ops/bootstrap_gpu_server.py
 python3 ops/bootstrap_gpu_server.py --verify-only
 ```
@@ -21,7 +23,7 @@ cd Science
 python3 ops/bootstrap_gpu_server.py
 ```
 
-The bundle has one source-only commit and can be cloned without a Git hosting account. The local `main` branch has also been cleaned to contain current source only, but **no Git remote is configured**. For hosted Git, configure a remote and push `main`; do not use `git push --mirror`, which would include local Codex turn-diff refs. The older commits remain in `main` history, while the portable bundle has no historical parent and is the smallest Git transfer.
+The bundle has one source-only commit and can be cloned without a Git hosting account. The local `main` branch is pushed to `git@github.com:xiao-Huahuo/VTI.git`; use `--depth 1` for the smallest hosted clone. Do not use `git push --mirror`, which would include local Codex turn-diff refs. The older commits remain in `main` history, while the portable bundle has no historical parent and is the smallest Git transfer.
 
 ## Still required before formal V57
 

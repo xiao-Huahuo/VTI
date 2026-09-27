@@ -650,7 +650,7 @@
   "superseded_proposal_archive": "history/SUPERSEDED_PROPOSALS_RELOCATION_20260927.json",
   "gpu_server_portability": {
     "status": "SOURCE_ONLY_MAIN_COMMITTED_AND_PORTABLE_BUNDLE_VERIFIED_FORMAL_V57_NOT_READY",
-    "git_remote_configured": false,
+    "git_remote_configured": true,
     "ignored": [
       "history/",
       "third_party/",
@@ -671,6 +671,9 @@
     "local_git_history_contains_codex_turn_diff_refs": true,
     "main_head_source_only": true,
     "main_head_files": 65,
-    "old_tracked_paths_removed_in_source_commit": 452
+    "old_tracked_paths_removed_in_source_commit": 452,
+    "remote_url": "git@github.com:xiao-Huahuo/VTI.git",
+    "remote_branch": "origin/main",
+    "remote_main_verified": true
   }
 }

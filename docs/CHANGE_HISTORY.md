@@ -646,3 +646,11 @@ Graphiti 0.30.2 构造器预检通过，但本机没有容器/Neo4j。
 核对源 tar 清单和 `.gitignore` 后，暂存历史根路径的删除与当前 65 个源码文件，检查无意外未跟踪源文件及 Git diff whitespace；在 main 做本地 source-only 提交。保留原科研档案及 Codex refs。
 ### 完成与未完成状态
 本地 main 当前 HEAD 只追踪 65 个实际存在的源文件（约 0.5 MB），工作树无未提交变更；旧提交历史仍可回看，`.git` 对象不清理。轻量独立 Git bundle 经真实 clone 与逐文件哈希核对通过。尚无 remote，未向服务器或 Git 托管服务推送；V57 仍未冻结。
+
+# GitHub 源码仓库首次推送
+### 现状
+用户提供新建的 `git@github.com:xiao-Huahuo/VTI.git`，要求使用桌面带代理终端推送。当地 main 是 65 文件的 source-only 提交，工作树干净，remote 尚未配置。
+### 实施方案
+检查 `.command` 仅设置本地 127.0.0.1:7891 代理并打开 zsh；在该终端通过 SSH HTTP CONNECT ProxyCommand 与现有 known_hosts 验证空仓库，添加 origin、推送 main，回读远端提交哈希。
+### 完成与未完成状态
+首次推送成功；首轮本地与远端 `refs/heads/main` 均为 `236aea825af603405f9150cd6e3919c164c50c58`。没有推送 Codex turn-diff refs、history 目录、模型和虚拟环境。服务器说明及状态入口随后另作小幅文档提交；V57 正式运行仍未冻结。

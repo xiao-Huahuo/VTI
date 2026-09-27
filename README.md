@@ -1,6 +1,6 @@
 # AM-AUTO-20260918-R1 — C33
 
-**Reset Is Not Isolation：Agent-memory benchmark 的 trial isolation 审计。**
+**Reset Is Not Isolation：Agent-memory benchmark 的 trial isolation 审计。** 当前源码已推送至 [GitHub VTI](https://github.com/xiao-Huahuo/VTI)；`history/` 和本机运行环境不在仓库当前树中。
 
 ## 当前状态
 
