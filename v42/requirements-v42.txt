@@ -1,3 +1,0 @@
-# Additive dependencies on top of the frozen benchmark uv environment.
-fastembed==0.8.0
-onnxruntime==1.30.0

@@ -1,0 +1,92 @@
+{
+  "schema": "c33-v57-matched-predecessor-panel-draft-v1",
+  "status": "DRAFT_NOT_FROZEN_NO_V57_MODEL_CALLS",
+  "source_proposal": "docs/proposals/V57_MATCHED_PREDECESSOR_SOURCE_20260927.txt",
+  "historical_v56_decision": "UNVERIFIABLE_NULL_DIVERGENCE; immutable",
+  "panel": [
+    "LangMem-Local",
+    "Graphiti-Local"
+  ],
+  "development_compatibility": {
+    "cases_file": "v57_design/V57_DEV_CASES.json",
+    "case_ranks": [
+      1,
+      3,
+      4
+    ],
+    "independent_pristine_runs_per_case_backend": 3,
+    "single_candidate_model": "qwen3:14b-q4_K_M",
+    "model_actual_digest": "PENDING_DOWNLOAD_AFTER_ENGINEERING_AND_PROTOCOL_REVIEW",
+    "scorer": "v57_design/code/count_unit_v1.py",
+    "scorer_synthetic_vectors": "v57_design/COUNT_UNIT_V1_TEST_VECTORS.json",
+    "scorer_dry_run": "v57_design/results/COUNT_UNIT_V1_AUDIT.json",
+    "structural_rule": "9/9 completed without fatal schema/tool/runtime errors; final memory and retrieval nonempty; count answer scorable",
+    "functional_rule": "all three cases correct in at least two of three runs",
+    "purpose": "backend configuration validity only; no isolation inference"
+  },
+  "confirmatory": {
+    "frozen_targets": [
+      {
+        "rank": 26,
+        "question_id": "0a995998",
+        "session_count": 44
+      },
+      {
+        "rank": 27,
+        "question_id": "87f22b4a",
+        "session_count": 47
+      },
+      {
+        "rank": 28,
+        "question_id": "2318644b",
+        "session_count": 41
+      }
+    ],
+    "predecessor": {
+      "rank": 1,
+      "question_id": "b5ef892d",
+      "session_count": 52
+    },
+    "independent_units_per_target_backend": 10,
+    "assignment_per_target": "5 native and 5 pristine-shadow, randomized before outcomes; assignment read only after full predecessor receipt",
+    "common_unit_prefix": "fresh process/backend A/backend B/model server; full predecessor ingest and answer on A",
+    "native_arm": "stock native reset on predecessor-bearing A; full target on same A",
+    "shadow_arm": "discard predecessor-bearing A; stock native reset on untouched B; full target on B",
+    "trial_boundary": "no LLM unload, daemon restart, sleep, verified cleanup or extra recovery between predecessor and target",
+    "replicate_boundary": "destroy processes, model server, backend, database and ephemeral volume; next unit fresh",
+    "primary_observable": "normal benchmark Top-10 retrieval, first five texts measured as ordered 1925-D BGE footprint",
+    "footprint_code": "v57_design/code/retrieval_footprint.py",
+    "footprint_dry_run": "v57_design/results/RETRIEVAL_FOOTPRINT_DRY_RUN.json",
+    "target_test": "5+5 Fisher exact right-tail energy statistic, 252 assignments per target",
+    "backend_test": "2-of-3 partial conjunction p=min(1,2*p_second_smallest)",
+    "backend_alpha": 0.025,
+    "statistics_code": "v57_design/code/partial_conjunction.py",
+    "statistics_dry_run": "v57_design/results/PARTIAL_CONJUNCTION_DRY_RUN.json",
+    "primary_positive_label": "REPLICATED_RETRIEVAL_INFLUENCE",
+    "primary_non_detection_label": "INFLUENCE_NOT_DETECTED; not an isolation certificate",
+    "execution_failure_rule": "no replacement assignment or target; any incomplete target makes that backend UNVERIFIABLE_EXECUTION",
+    "maximum_session_ingestions_per_compatible_backend_before_extra_graphiti_calls": 2880,
+    "planned_backend_panel_maximum_session_ingestions": 5760
+  },
+  "environment_status": {
+    "langmem_local": "V56 Stage0 engineering passed; 14B compatibility not run",
+    "graphiti_local": "Graphiti core 0.30.2 local client/BGE embedder/BGE cosine reranker injection toy audit 7/7; no Neo4j health/reset/teardown, no 14B structured output",
+    "container_runtime": "ABSENT; Homebrew colima/docker installation stopped; no Neo4j container ready",
+    "graphiti_engineering_report": "v57_design/results/GRAPHITI_ENGINEERING_PREFLIGHT.json",
+    "graphiti_telemetry": "must set GRAPHITI_TELEMETRY_ENABLED=false",
+    "openai_api": "prohibited; local OpenAI-compatible endpoint is allowed without remote OpenAI transmission",
+    "graphiti_local_component_audit": "v57_design/results/GRAPHITI_LOCAL_COMPONENT_AUDIT.json",
+    "downloadable_source_policy": "history/runtime/vendor/cache omitted from source; pinned public assets bootstrapped on server"
+  },
+  "freeze_allowed": false,
+  "unresolved_before_runtime_freeze": [
+    "Neo4j image digest, health/reset/teardown receipts and Graphiti-Local adapter",
+    "14B actual local model digest and structured-output preflight after engineering audit",
+    "per-unit local model-server lifecycle and no-interference drill",
+    "assignment schedules with committed seed and hidden-until-predecessor reveal",
+    "BGE cache/dtype/normalization identity bound into runtime manifest",
+    "formal checkpoint/recovery drill and bounded compute plan"
+  ],
+  "portable_assets": "v57_design/DOWNLOADABLE_ASSETS.json",
+  "server_bootstrap": "ops/bootstrap_gpu_server.py"
+}

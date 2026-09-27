@@ -1,0 +1,154 @@
+{
+  "kind": "arxiv",
+  "identifier": "2606.15903",
+  "url": "https://api.datacite.org/dois/10.48550/arxiv.2606.15903",
+  "attributes": {
+    "doi": "10.48550/arxiv.2606.15903",
+    "prefix": "10.48550",
+    "suffix": "arxiv.2606.15903",
+    "identifiers": [
+      {
+        "identifier": "2606.15903",
+        "identifierType": "arXiv"
+      }
+    ],
+    "alternateIdentifiers": [
+      {
+        "alternateIdentifierType": "arXiv",
+        "alternateIdentifier": "2606.15903"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Yang, Dongxu",
+        "nameType": "Personal",
+        "givenName": "Dongxu",
+        "familyName": "Yang",
+        "affiliation": [],
+        "nameIdentifiers": []
+      }
+    ],
+    "titles": [
+      {
+        "title": "Control-Plane Placement Shapes Forgetting: An Architectural Study of Agent Memory Across Thirteen System Configurations"
+      }
+    ],
+    "publisher": "arXiv",
+    "container": {},
+    "publicationYear": 2026,
+    "subjects": [
+      {
+        "lang": "en",
+        "subject": "Computation and Language (cs.CL)",
+        "subjectScheme": "arXiv"
+      },
+      {
+        "lang": "en",
+        "subject": "Artificial Intelligence (cs.AI)",
+        "subjectScheme": "arXiv"
+      },
+      {
+        "subject": "FOS: Computer and information sciences",
+        "subjectScheme": "Fields of Science and Technology (FOS)"
+      },
+      {
+        "subject": "FOS: Computer and information sciences",
+        "schemeUri": "http://www.oecd.org/science/inno/38235147.pdf",
+        "subjectScheme": "Fields of Science and Technology (FOS)"
+      },
+      {
+        "lang": "en",
+        "subject": "I.2.7; I.2.11; H.3.3",
+        "subjectScheme": "ACM"
+      }
+    ],
+    "contributors": [],
+    "dates": [
+      {
+        "date": "2026-06-14T16:32:15Z",
+        "dateType": "Submitted",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026-06-16T01:04:27Z",
+        "dateType": "Updated",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026-06-16T06:16:41Z",
+        "dateType": "Submitted",
+        "dateInformation": "v2"
+      },
+      {
+        "date": "2026-06-17T00:32:02Z",
+        "dateType": "Updated",
+        "dateInformation": "v2"
+      },
+      {
+        "date": "2026-06",
+        "dateType": "Available",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026",
+        "dateType": "Issued"
+      }
+    ],
+    "language": null,
+    "types": {
+      "ris": "GEN",
+      "bibtex": "misc",
+      "citeproc": "article",
+      "schemaOrg": "CreativeWork",
+      "resourceType": "Article",
+      "resourceTypeGeneral": "Preprint"
+    },
+    "relatedIdentifiers": [],
+    "relatedItems": [],
+    "sizes": [],
+    "formats": [],
+    "version": "2",
+    "rightsList": [
+      {
+        "rights": "arXiv.org perpetual, non-exclusive license",
+        "rightsUri": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      }
+    ],
+    "descriptions": [
+      {
+        "description": "Where an LLM sits in an agent memory pipeline -- between the recall plane that retrieves stored facts (extensively benchmarked) and the control plane that mutates them via supersede, release, purge (largely untested) -- shapes which forgetting failure modes the system recovers. Comparing thirteen system configurations on a 385-case adversarial surface, we observe three placement regimes with partly complementary coverage: deterministic primitives suffice for lexical/temporal categories but fail canonicalization (5% on identifier-obfuscation, 0% on cross-lingual); inscribe-time LLM recovers canonicalization (100%) but cannot help intent-aware deletion (0% on prefix-collision and compound-fact); a mutation-time hook recovers intent-aware deletion (78-85%) and brightens nearly all categories simultaneously (91.7-93.2% overall, $0.17 per 385-case run, 2.3s/case mutation latency vs. 64-191ms/case deterministic, recall path unchanged).\n We expose the trade-off via ForgetEval, a 1000-case templated suite plus a 385-case adversarial layer (132 hand-crafted + 253 LLM-drafted oracle-validated) scored by deterministic substring match, paired with a six-method Adapter Protocol with honest N/A scoring that lets heterogeneous memory stores enter in 130 lines. Admission is corroborated by 10-annotator IAA (Fleiss' kappa = 0.958) and a 77-case external-authored subset (four blind contributors) that replicates the canonicalization asymmetry and amplifies the joint-placement lift (+27.8 pt). Production failures are predominantly forgetting failures rather than recall failures, yet existing benchmarks measure only recall. ForgetEval and all adapters are released under MIT.",
+        "descriptionType": "Abstract"
+      },
+      {
+        "description": "25 pages including appendices. Code, benchmark, and adapters released under MIT at https://github.com/deeplethe/lethe",
+        "descriptionType": "Other"
+      }
+    ],
+    "geoLocations": [],
+    "fundingReferences": [],
+    "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00LjMvbWV0YWRhdGEueHNkIj4KICA8aWRlbnRpZmllciBpZGVudGlmaWVyVHlwZT0iRE9JIj4xMC40ODU1MC9BUlhJVi4yNjA2LjE1OTAzPC9pZGVudGlmaWVyPgogIDxhbHRlcm5hdGVJZGVudGlmaWVycz4KICAgIDxhbHRlcm5hdGVJZGVudGlmaWVyIGFsdGVybmF0ZUlkZW50aWZpZXJUeXBlPSJhclhpdiI+MjYwNi4xNTkwMzwvYWx0ZXJuYXRlSWRlbnRpZmllcj4KICA8L2FsdGVybmF0ZUlkZW50aWZpZXJzPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5ZYW5nLCBEb25neHU8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkRvbmd4dTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5ZYW5nPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogIDwvY3JlYXRvcnM+CiAgPHRpdGxlcz4KICAgIDx0aXRsZT5Db250cm9sLVBsYW5lIFBsYWNlbWVudCBTaGFwZXMgRm9yZ2V0dGluZzogQW4gQXJjaGl0ZWN0dXJhbCBTdHVkeSBvZiBBZ2VudCBNZW1vcnkgQWNyb3NzIFRoaXJ0ZWVuIFN5c3RlbSBDb25maWd1cmF0aW9uczwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlcj5hclhpdjwvcHVibGlzaGVyPgogIDxwdWJsaWNhdGlvblllYXI+MjAyNjwvcHVibGljYXRpb25ZZWFyPgogIDxzdWJqZWN0cz4KICAgIDxzdWJqZWN0IHhtbDpsYW5nPSJlbiIgc3ViamVjdFNjaGVtZT0iYXJYaXYiPkNvbXB1dGF0aW9uIGFuZCBMYW5ndWFnZSAoY3MuQ0wpPC9zdWJqZWN0PgogICAgPHN1YmplY3QgeG1sOmxhbmc9ImVuIiBzdWJqZWN0U2NoZW1lPSJhclhpdiI+QXJ0aWZpY2lhbCBJbnRlbGxpZ2VuY2UgKGNzLkFJKTwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IkZpZWxkcyBvZiBTY2llbmNlIGFuZCBUZWNobm9sb2d5IChGT1MpIj5GT1M6IENvbXB1dGVyIGFuZCBpbmZvcm1hdGlvbiBzY2llbmNlczwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHhtbDpsYW5nPSJlbiIgc3ViamVjdFNjaGVtZT0iQUNNIj5JLjIuNzsgSS4yLjExOyBILjMuMzwvc3ViamVjdD4KICA8L3N1YmplY3RzPgogIDxkYXRlcz4KICAgIDxkYXRlIGRhdGVUeXBlPSJTdWJtaXR0ZWQiIGRhdGVJbmZvcm1hdGlvbj0idjEiPjIwMjYtMDYtMTRUMTY6MzI6MTVaPC9kYXRlPgogICAgPGRhdGUgZGF0ZVR5cGU9IlVwZGF0ZWQiIGRhdGVJbmZvcm1hdGlvbj0idjEiPjIwMjYtMDYtMTZUMDE6MDQ6MjdaPC9kYXRlPgogICAgPGRhdGUgZGF0ZVR5cGU9IlN1Ym1pdHRlZCIgZGF0ZUluZm9ybWF0aW9uPSJ2MiI+MjAyNi0wNi0xNlQwNjoxNjo0MVo8L2RhdGU+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iVXBkYXRlZCIgZGF0ZUluZm9ybWF0aW9uPSJ2MiI+MjAyNi0wNi0xN1QwMDozMjowMlo8L2RhdGU+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iQXZhaWxhYmxlIiBkYXRlSW5mb3JtYXRpb249InYxIj4yMDI2LTA2PC9kYXRlPgogIDwvZGF0ZXM+CiAgPHJlc291cmNlVHlwZSByZXNvdXJjZVR5cGVHZW5lcmFsPSJQcmVwcmludCI+QXJ0aWNsZTwvcmVzb3VyY2VUeXBlPgogIDx2ZXJzaW9uPjI8L3ZlcnNpb24+CiAgPHJpZ2h0c0xpc3Q+CiAgICA8cmlnaHRzIHJpZ2h0c1VSST0iaHR0cDovL2FyeGl2Lm9yZy9saWNlbnNlcy9ub25leGNsdXNpdmUtZGlzdHJpYi8xLjAvIj5hclhpdi5vcmcgcGVycGV0dWFsLCBub24tZXhjbHVzaXZlIGxpY2Vuc2U8L3JpZ2h0cz4KICA8L3JpZ2h0c0xpc3Q+CiAgPGRlc2NyaXB0aW9ucz4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9IkFic3RyYWN0Ij5XaGVyZSBhbiBMTE0gc2l0cyBpbiBhbiBhZ2VudCBtZW1vcnkgcGlwZWxpbmUgLS0gYmV0d2VlbiB0aGUgcmVjYWxsIHBsYW5lIHRoYXQgcmV0cmlldmVzIHN0b3JlZCBmYWN0cyAoZXh0ZW5zaXZlbHkgYmVuY2htYXJrZWQpIGFuZCB0aGUgY29udHJvbCBwbGFuZSB0aGF0IG11dGF0ZXMgdGhlbSB2aWEgc3VwZXJzZWRlLCByZWxlYXNlLCBwdXJnZSAobGFyZ2VseSB1bnRlc3RlZCkgLS0gc2hhcGVzIHdoaWNoIGZvcmdldHRpbmcgZmFpbHVyZSBtb2RlcyB0aGUgc3lzdGVtIHJlY292ZXJzLiBDb21wYXJpbmcgdGhpcnRlZW4gc3lzdGVtIGNvbmZpZ3VyYXRpb25zIG9uIGEgMzg1LWNhc2UgYWR2ZXJzYXJpYWwgc3VyZmFjZSwgd2Ugb2JzZXJ2ZSB0aHJlZSBwbGFjZW1lbnQgcmVnaW1lcyB3aXRoIHBhcnRseSBjb21wbGVtZW50YXJ5IGNvdmVyYWdlOiBkZXRlcm1pbmlzdGljIHByaW1pdGl2ZXMgc3VmZmljZSBmb3IgbGV4aWNhbC90ZW1wb3JhbCBjYXRlZ29yaWVzIGJ1dCBmYWlsIGNhbm9uaWNhbGl6YXRpb24gKDUlIG9uIGlkZW50aWZpZXItb2JmdXNjYXRpb24sIDAlIG9uIGNyb3NzLWxpbmd1YWwpOyBpbnNjcmliZS10aW1lIExMTSByZWNvdmVycyBjYW5vbmljYWxpemF0aW9uICgxMDAlKSBidXQgY2Fubm90IGhlbHAgaW50ZW50LWF3YXJlIGRlbGV0aW9uICgwJSBvbiBwcmVmaXgtY29sbGlzaW9uIGFuZCBjb21wb3VuZC1mYWN0KTsgYSBtdXRhdGlvbi10aW1lIGhvb2sgcmVjb3ZlcnMgaW50ZW50LWF3YXJlIGRlbGV0aW9uICg3OC04NSUpIGFuZCBicmlnaHRlbnMgbmVhcmx5IGFsbCBjYXRlZ29yaWVzIHNpbXVsdGFuZW91c2x5ICg5MS43LTkzLjIlIG92ZXJhbGwsICQwLjE3IHBlciAzODUtY2FzZSBydW4sIDIuM3MvY2FzZSBtdXRhdGlvbiBsYXRlbmN5IHZzLiA2NC0xOTFtcy9jYXNlIGRldGVybWluaXN0aWMsIHJlY2FsbCBwYXRoIHVuY2hhbmdlZCkuCiAgV2UgZXhwb3NlIHRoZSB0cmFkZS1vZmYgdmlhIEZvcmdldEV2YWwsIGEgMTAwMC1jYXNlIHRlbXBsYXRlZCBzdWl0ZSBwbHVzIGEgMzg1LWNhc2UgYWR2ZXJzYXJpYWwgbGF5ZXIgKDEzMiBoYW5kLWNyYWZ0ZWQgKyAyNTMgTExNLWRyYWZ0ZWQgb3JhY2xlLXZhbGlkYXRlZCkgc2NvcmVkIGJ5IGRldGVybWluaXN0aWMgc3Vic3RyaW5nIG1hdGNoLCBwYWlyZWQgd2l0aCBhIHNpeC1tZXRob2QgQWRhcHRlciBQcm90b2NvbCB3aXRoIGhvbmVzdCBOL0Egc2NvcmluZyB0aGF0IGxldHMgaGV0ZXJvZ2VuZW91cyBtZW1vcnkgc3RvcmVzIGVudGVyIGluIDEzMCBsaW5lcy4gQWRtaXNzaW9uIGlzIGNvcnJvYm9yYXRlZCBieSAxMC1hbm5vdGF0b3IgSUFBIChGbGVpc3MnIGthcHBhID0gMC45NTgpIGFuZCBhIDc3LWNhc2UgZXh0ZXJuYWwtYXV0aG9yZWQgc3Vic2V0IChmb3VyIGJsaW5kIGNvbnRyaWJ1dG9ycykgdGhhdCByZXBsaWNhdGVzIHRoZSBjYW5vbmljYWxpemF0aW9uIGFzeW1tZXRyeSBhbmQgYW1wbGlmaWVzIHRoZSBqb2ludC1wbGFjZW1lbnQgbGlmdCAoKzI3LjggcHQpLiBQcm9kdWN0aW9uIGZhaWx1cmVzIGFyZSBwcmVkb21pbmFudGx5IGZvcmdldHRpbmcgZmFpbHVyZXMgcmF0aGVyIHRoYW4gcmVjYWxsIGZhaWx1cmVzLCB5ZXQgZXhpc3RpbmcgYmVuY2htYXJrcyBtZWFzdXJlIG9ubHkgcmVjYWxsLiBGb3JnZXRFdmFsIGFuZCBhbGwgYWRhcHRlcnMgYXJlIHJlbGVhc2VkIHVuZGVyIE1JVC48L2Rlc2NyaXB0aW9uPgogICAgPGRlc2NyaXB0aW9uIGRlc2NyaXB0aW9uVHlwZT0iT3RoZXIiPjI1IHBhZ2VzIGluY2x1ZGluZyBhcHBlbmRpY2VzLiBDb2RlLCBiZW5jaG1hcmssIGFuZCBhZGFwdGVycyByZWxlYXNlZCB1bmRlciBNSVQgYXQgaHR0cHM6Ly9naXRodWIuY29tL2RlZXBsZXRoZS9sZXRoZTwvZGVzY3JpcHRpb24+CiAgPC9kZXNjcmlwdGlvbnM+CjwvcmVzb3VyY2U+",
+    "url": "https://arxiv.org/abs/2606.15903",
+    "contentUrl": null,
+    "metadataVersion": 1,
+    "schemaVersion": "http://datacite.org/schema/kernel-4",
+    "source": "mds",
+    "isActive": true,
+    "state": "findable",
+    "reason": null,
+    "viewCount": 0,
+    "viewsOverTime": [],
+    "downloadCount": 0,
+    "downloadsOverTime": [],
+    "referenceCount": 0,
+    "citationCount": 0,
+    "citationsOverTime": [],
+    "partCount": 0,
+    "partOfCount": 0,
+    "versionCount": 0,
+    "versionOfCount": 0,
+    "created": "2026-06-16T03:33:49.000Z",
+    "registered": "2026-06-16T03:33:50.000Z",
+    "published": "2026",
+    "updated": "2026-06-17T02:28:55.000Z"
+  }
+}

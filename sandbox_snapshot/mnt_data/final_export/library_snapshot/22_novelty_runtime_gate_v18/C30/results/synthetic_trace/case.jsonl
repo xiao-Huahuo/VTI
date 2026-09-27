@@ -1,4 +1,0 @@
-{"event": "milestone_snapshot", "readiness": "count_ready", "offset_s": 0, "snapshot": {"edge_count": 1, "canonical_edge_fingerprint": "A", "fact_fingerprint": "F1", "edges": [], "retrieval": {"q": {"ids": ["e1"], "facts": [], "canonical_fingerprint": "x"}}}}
-{"event": "milestone_snapshot", "readiness": "native_ready", "offset_s": 0, "snapshot": {"edge_count": 1, "canonical_edge_fingerprint": "B", "fact_fingerprint": "F2", "edges": [], "retrieval": {"q": {"ids": ["e2"], "facts": [], "canonical_fingerprint": "x"}}}}
-{"event": "milestone_snapshot", "readiness": "count_ready", "offset_s": 300, "snapshot": {"edge_count": 1, "canonical_edge_fingerprint": "B", "fact_fingerprint": "F2", "edges": [], "retrieval": {"q": {"ids": ["e2"], "facts": [], "canonical_fingerprint": "x"}}}}
-{"event": "run_complete", "readiness_gap_s": 42.0}

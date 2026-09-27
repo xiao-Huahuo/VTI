@@ -1,0 +1,33 @@
+{
+  "schema": "c33-v57-python-environment-snapshot-v1",
+  "at_utc": "2026-09-27T06:13:58.926403+00:00",
+  "status": "ACTIVE_ENGINEERING_ENVIRONMENTS_NOT_FORMAL_FROZEN_RUNTIME",
+  "manager": "uv 0.12.10",
+  "base_python": "uv-managed CPython 3.12.14 macOS arm64",
+  "environments": {
+    "statistics": {
+      "venv": ".runtime/v57-stat-venv",
+      "python": "3.12.14",
+      "pip_freeze": "v57_design/environment/stat-pip-freeze-20260927.txt",
+      "pip_freeze_sha256": "5c12d85e7c08038d1dd9ffbf8119d12ce808885230a47e2bf65dcd9f114659d5",
+      "package_count": 1
+    },
+    "graphiti": {
+      "venv": ".runtime/v57-graphiti-venv",
+      "python": "3.12.14",
+      "pip_freeze": "v57_design/environment/graphiti-pip-freeze-20260927.txt",
+      "pip_freeze_sha256": "044ad4b825854d81b3ad3d1e6da4a43f71a6135eeb57284c2ed2e0693578cba4",
+      "package_count": 46
+    }
+  },
+  "shared_embedding_cache": ".runtime/fastembed-cache",
+  "archived_environments": [
+    "history/runtime/v56-venv",
+    "history/runtime/memarena-v50-venv",
+    "history/runtime/v55-venv"
+  ],
+  "isolation_rule": "Do not install V57 packages into archived experimental environments; recreate from a reviewed manifest before formal model calls.",
+  "uv_lock_present": false,
+  "v57_formal_model_calls": 0,
+  "graphiti_openai_python_dependency_note": "OpenAI SDK is installed as graphiti-core dependency for a localhost-compatible client; no remote OpenAI API has been called."
+}

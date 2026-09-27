@@ -1,12 +1,54 @@
-# Secrets
+# Historical experiments and exports stay on the research machine / archive.
+# A GPU server needs the current code, protocols and small audit manifests only.
+/history/
+/exports/
+
+# Recreate these from pinned manifests on each host.
+/third_party/
+/.runtime/
+/.local/
+/.cache/
+/data/
+/datasets/
+/models/
+/model_cache/
+/docs/literature/pdfs/
+/cache/
+/work/
+/outputs/
+/experiment_outputs/
+/runtime_outputs/
+/v57_design/runs/
+/v57_design/drills/
+/v57_design/results/raw/
+
+# Downloadable datasets, model weights and compressed handoff bundles.
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.parquet
+*.arrow
+*.gguf
+*.safetensors
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.whl
+*.sqlite
+*.sqlite3
+*.db
+
+# Credentials and machine-local configuration.
 .env
 .env.*
 !.env.example
+*.pem
+*.key
 
-# macOS
-.DS_Store
-
-# Python
+# Python and OS-generated files.
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -16,17 +58,7 @@ __pycache__/
 htmlcov/
 .venv/
 venv/
-
-# Local experiment runtime data
-third_party/
-.runtime/
-experiment_outputs/
-runtime_outputs/
-outputs/
-work/
-cache/
-
-# Logs and temporary files
+.DS_Store
 *.log
 *.tmp
 *.swp

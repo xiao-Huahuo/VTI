@@ -1,0 +1,147 @@
+{
+  "kind": "arxiv",
+  "identifier": "2607.01935",
+  "url": "https://api.datacite.org/dois/10.48550/arxiv.2607.01935",
+  "attributes": {
+    "doi": "10.48550/arxiv.2607.01935",
+    "prefix": "10.48550",
+    "suffix": "arxiv.2607.01935",
+    "identifiers": [
+      {
+        "identifier": "2607.01935",
+        "identifierType": "arXiv"
+      }
+    ],
+    "alternateIdentifiers": [
+      {
+        "alternateIdentifierType": "arXiv",
+        "alternateIdentifier": "2607.01935"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Shi, Zitong",
+        "nameType": "Personal",
+        "givenName": "Zitong",
+        "familyName": "Shi",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Tang, Yixuan",
+        "nameType": "Personal",
+        "givenName": "Yixuan",
+        "familyName": "Tang",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Tung, Anthony Kum Hoe",
+        "nameType": "Personal",
+        "givenName": "Anthony Kum Hoe",
+        "familyName": "Tung",
+        "affiliation": [],
+        "nameIdentifiers": []
+      }
+    ],
+    "titles": [
+      {
+        "title": "A-TMA: Decoupling State-Aware Memory Failures in Long-Term Agent Memory"
+      }
+    ],
+    "publisher": "arXiv",
+    "container": {},
+    "publicationYear": 2026,
+    "subjects": [
+      {
+        "lang": "en",
+        "subject": "Artificial Intelligence (cs.AI)",
+        "subjectScheme": "arXiv"
+      },
+      {
+        "subject": "FOS: Computer and information sciences",
+        "subjectScheme": "Fields of Science and Technology (FOS)"
+      }
+    ],
+    "contributors": [],
+    "dates": [
+      {
+        "date": "2026-07-02T09:28:29Z",
+        "dateType": "Submitted",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026-07-03T00:39:20Z",
+        "dateType": "Updated",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026-07-08T13:29:16Z",
+        "dateType": "Submitted",
+        "dateInformation": "v2"
+      },
+      {
+        "date": "2026-07-09T00:43:37Z",
+        "dateType": "Updated",
+        "dateInformation": "v2"
+      },
+      {
+        "date": "2026-07",
+        "dateType": "Available",
+        "dateInformation": "v1"
+      }
+    ],
+    "language": null,
+    "types": {
+      "ris": "GEN",
+      "bibtex": "misc",
+      "citeproc": "article",
+      "schemaOrg": "CreativeWork",
+      "resourceType": "Article",
+      "resourceTypeGeneral": "Preprint"
+    },
+    "relatedIdentifiers": [],
+    "relatedItems": [],
+    "sizes": [],
+    "formats": [],
+    "version": "2",
+    "rightsList": [
+      {
+        "rights": "arXiv.org perpetual, non-exclusive license",
+        "rightsUri": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      }
+    ],
+    "descriptions": [
+      {
+        "description": "Long term memory lets LLM agents act as persistent assistants, but user facts change. A useful memory system must know what is true now, what used to be true, and what changed. We study \\emph{ghost memory}, a state coordination failure in which old, current, and transition facts coexist in the memory bank, remain mixed during retrieval, and mislead the answer model. We argue that memory systems should be understood and optimized from three levels: bank maintenance, retrieval, and answer time resolution. We propose ATMA, a state aware overlay for existing memory systems. ATMA keeps superseded and transition records in the bank, builds evidence packets for the query's requested state view, and exposes current, historical, and transition labels to QA. We further call for decoupled evaluation of bank, retrieval, and answer level failures, since final QA accuracy can hide where ghost memory occurs. To make this failure measurable, we build LTP (LoCoMo Temporal Plus), a conflict heavy benchmark for ghost memory, and evaluate on LoCoMo for long conversation generalization. On LTP, Graphiti+ATMA improves conflict accuracy by 0.240 absolute over Graphiti. On LoCoMo, Graphiti+ATMA raises temporal F1 from 0.0295 to 0.1705. The gains are host dependent, but they indicate that explicit state roles can reduce memory failures hidden by final QA accuracy.",
+        "descriptionType": "Abstract"
+      }
+    ],
+    "geoLocations": [],
+    "fundingReferences": [],
+    "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00LjMvbWV0YWRhdGEueHNkIj4KICA8aWRlbnRpZmllciBpZGVudGlmaWVyVHlwZT0iRE9JIj4xMC40ODU1MC9BUlhJVi4yNjA3LjAxOTM1PC9pZGVudGlmaWVyPgogIDxhbHRlcm5hdGVJZGVudGlmaWVycz4KICAgIDxhbHRlcm5hdGVJZGVudGlmaWVyIGFsdGVybmF0ZUlkZW50aWZpZXJUeXBlPSJhclhpdiI+MjYwNy4wMTkzNTwvYWx0ZXJuYXRlSWRlbnRpZmllcj4KICA8L2FsdGVybmF0ZUlkZW50aWZpZXJzPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5TaGksIFppdG9uZzwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+Wml0b25nPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPlNoaTwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5UYW5nLCBZaXh1YW48L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPllpeHVhbjwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5UYW5nPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPlR1bmcsIEFudGhvbnkgS3VtIEhvZTwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+QW50aG9ueSBLdW0gSG9lPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPlR1bmc8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgPC9jcmVhdG9ycz4KICA8dGl0bGVzPgogICAgPHRpdGxlPkEtVE1BOiBEZWNvdXBsaW5nIFN0YXRlLUF3YXJlIE1lbW9yeSBGYWlsdXJlcyBpbiBMb25nLVRlcm0gQWdlbnQgTWVtb3J5PC90aXRsZT4KICA8L3RpdGxlcz4KICA8cHVibGlzaGVyPmFyWGl2PC9wdWJsaXNoZXI+CiAgPHB1YmxpY2F0aW9uWWVhcj4yMDI2PC9wdWJsaWNhdGlvblllYXI+CiAgPHN1YmplY3RzPgogICAgPHN1YmplY3QgeG1sOmxhbmc9ImVuIiBzdWJqZWN0U2NoZW1lPSJhclhpdiI+QXJ0aWZpY2lhbCBJbnRlbGxpZ2VuY2UgKGNzLkFJKTwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IkZpZWxkcyBvZiBTY2llbmNlIGFuZCBUZWNobm9sb2d5IChGT1MpIj5GT1M6IENvbXB1dGVyIGFuZCBpbmZvcm1hdGlvbiBzY2llbmNlczwvc3ViamVjdD4KICA8L3N1YmplY3RzPgogIDxkYXRlcz4KICAgIDxkYXRlIGRhdGVUeXBlPSJTdWJtaXR0ZWQiIGRhdGVJbmZvcm1hdGlvbj0idjEiPjIwMjYtMDctMDJUMDk6Mjg6MjlaPC9kYXRlPgogICAgPGRhdGUgZGF0ZVR5cGU9IlVwZGF0ZWQiIGRhdGVJbmZvcm1hdGlvbj0idjEiPjIwMjYtMDctMDNUMDA6Mzk6MjBaPC9kYXRlPgogICAgPGRhdGUgZGF0ZVR5cGU9IlN1Ym1pdHRlZCIgZGF0ZUluZm9ybWF0aW9uPSJ2MiI+MjAyNi0wNy0wOFQxMzoyOToxNlo8L2RhdGU+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iVXBkYXRlZCIgZGF0ZUluZm9ybWF0aW9uPSJ2MiI+MjAyNi0wNy0wOVQwMDo0MzozN1o8L2RhdGU+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iQXZhaWxhYmxlIiBkYXRlSW5mb3JtYXRpb249InYxIj4yMDI2LTA3PC9kYXRlPgogIDwvZGF0ZXM+CiAgPHJlc291cmNlVHlwZSByZXNvdXJjZVR5cGVHZW5lcmFsPSJQcmVwcmludCI+QXJ0aWNsZTwvcmVzb3VyY2VUeXBlPgogIDx2ZXJzaW9uPjI8L3ZlcnNpb24+CiAgPHJpZ2h0c0xpc3Q+CiAgICA8cmlnaHRzIHJpZ2h0c1VSST0iaHR0cDovL2FyeGl2Lm9yZy9saWNlbnNlcy9ub25leGNsdXNpdmUtZGlzdHJpYi8xLjAvIj5hclhpdi5vcmcgcGVycGV0dWFsLCBub24tZXhjbHVzaXZlIGxpY2Vuc2U8L3JpZ2h0cz4KICA8L3JpZ2h0c0xpc3Q+CiAgPGRlc2NyaXB0aW9ucz4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9IkFic3RyYWN0Ij5Mb25nIHRlcm0gbWVtb3J5IGxldHMgTExNIGFnZW50cyBhY3QgYXMgcGVyc2lzdGVudCBhc3Npc3RhbnRzLCBidXQgdXNlciBmYWN0cyBjaGFuZ2UuIEEgdXNlZnVsIG1lbW9yeSBzeXN0ZW0gbXVzdCBrbm93IHdoYXQgaXMgdHJ1ZSBub3csIHdoYXQgdXNlZCB0byBiZSB0cnVlLCBhbmQgd2hhdCBjaGFuZ2VkLiBXZSBzdHVkeSBcZW1waHtnaG9zdCBtZW1vcnl9LCBhIHN0YXRlIGNvb3JkaW5hdGlvbiBmYWlsdXJlIGluIHdoaWNoIG9sZCwgY3VycmVudCwgYW5kIHRyYW5zaXRpb24gZmFjdHMgY29leGlzdCBpbiB0aGUgbWVtb3J5IGJhbmssIHJlbWFpbiBtaXhlZCBkdXJpbmcgcmV0cmlldmFsLCBhbmQgbWlzbGVhZCB0aGUgYW5zd2VyIG1vZGVsLiBXZSBhcmd1ZSB0aGF0IG1lbW9yeSBzeXN0ZW1zIHNob3VsZCBiZSB1bmRlcnN0b29kIGFuZCBvcHRpbWl6ZWQgZnJvbSB0aHJlZSBsZXZlbHM6IGJhbmsgbWFpbnRlbmFuY2UsIHJldHJpZXZhbCwgYW5kIGFuc3dlciB0aW1lIHJlc29sdXRpb24uIFdlIHByb3Bvc2UgQVRNQSwgYSBzdGF0ZSBhd2FyZSBvdmVybGF5IGZvciBleGlzdGluZyBtZW1vcnkgc3lzdGVtcy4gQVRNQSBrZWVwcyBzdXBlcnNlZGVkIGFuZCB0cmFuc2l0aW9uIHJlY29yZHMgaW4gdGhlIGJhbmssIGJ1aWxkcyBldmlkZW5jZSBwYWNrZXRzIGZvciB0aGUgcXVlcnkncyByZXF1ZXN0ZWQgc3RhdGUgdmlldywgYW5kIGV4cG9zZXMgY3VycmVudCwgaGlzdG9yaWNhbCwgYW5kIHRyYW5zaXRpb24gbGFiZWxzIHRvIFFBLiBXZSBmdXJ0aGVyIGNhbGwgZm9yIGRlY291cGxlZCBldmFsdWF0aW9uIG9mIGJhbmssIHJldHJpZXZhbCwgYW5kIGFuc3dlciBsZXZlbCBmYWlsdXJlcywgc2luY2UgZmluYWwgUUEgYWNjdXJhY3kgY2FuIGhpZGUgd2hlcmUgZ2hvc3QgbWVtb3J5IG9jY3Vycy4gVG8gbWFrZSB0aGlzIGZhaWx1cmUgbWVhc3VyYWJsZSwgd2UgYnVpbGQgTFRQIChMb0NvTW8gVGVtcG9yYWwgUGx1cyksIGEgY29uZmxpY3QgaGVhdnkgYmVuY2htYXJrIGZvciBnaG9zdCBtZW1vcnksIGFuZCBldmFsdWF0ZSBvbiBMb0NvTW8gZm9yIGxvbmcgY29udmVyc2F0aW9uIGdlbmVyYWxpemF0aW9uLiBPbiBMVFAsIEdyYXBoaXRpK0FUTUEgaW1wcm92ZXMgY29uZmxpY3QgYWNjdXJhY3kgYnkgMC4yNDAgYWJzb2x1dGUgb3ZlciBHcmFwaGl0aS4gT24gTG9Db01vLCBHcmFwaGl0aStBVE1BIHJhaXNlcyB0ZW1wb3JhbCBGMSBmcm9tIDAuMDI5NSB0byAwLjE3MDUuIFRoZSBnYWlucyBhcmUgaG9zdCBkZXBlbmRlbnQsIGJ1dCB0aGV5IGluZGljYXRlIHRoYXQgZXhwbGljaXQgc3RhdGUgcm9sZXMgY2FuIHJlZHVjZSBtZW1vcnkgZmFpbHVyZXMgaGlkZGVuIGJ5IGZpbmFsIFFBIGFjY3VyYWN5LjwvZGVzY3JpcHRpb24+CiAgPC9kZXNjcmlwdGlvbnM+CjwvcmVzb3VyY2U+",
+    "url": "https://arxiv.org/abs/2607.01935",
+    "contentUrl": null,
+    "metadataVersion": 1,
+    "schemaVersion": "http://datacite.org/schema/kernel-4",
+    "source": "mds",
+    "isActive": true,
+    "state": "findable",
+    "reason": null,
+    "viewCount": 0,
+    "viewsOverTime": [],
+    "downloadCount": 0,
+    "downloadsOverTime": [],
+    "referenceCount": 0,
+    "citationCount": 0,
+    "citationsOverTime": [],
+    "partCount": 0,
+    "partOfCount": 0,
+    "versionCount": 0,
+    "versionOfCount": 0,
+    "created": "2026-07-03T01:59:18.000Z",
+    "registered": "2026-07-03T01:59:18.000Z",
+    "published": "2026",
+    "updated": "2026-07-09T02:08:10.000Z"
+  }
+}

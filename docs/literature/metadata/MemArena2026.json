@@ -1,0 +1,151 @@
+{
+  "kind": "arxiv",
+  "identifier": "2608.02613",
+  "url": "https://api.datacite.org/dois/10.48550/arxiv.2608.02613",
+  "attributes": {
+    "doi": "10.48550/arxiv.2608.02613",
+    "prefix": "10.48550",
+    "suffix": "arxiv.2608.02613",
+    "identifiers": [
+      {
+        "identifier": "2608.02613",
+        "identifierType": "arXiv"
+      }
+    ],
+    "alternateIdentifiers": [
+      {
+        "alternateIdentifierType": "arXiv",
+        "alternateIdentifier": "2608.02613"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Zhang, Jiadong",
+        "nameType": "Personal",
+        "givenName": "Jiadong",
+        "familyName": "Zhang",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Ma, Xiaosong",
+        "nameType": "Personal",
+        "givenName": "Xiaosong",
+        "familyName": "Ma",
+        "affiliation": [],
+        "nameIdentifiers": []
+      }
+    ],
+    "titles": [
+      {
+        "title": "MemArena: An Ego-Centric Benchmark for On-Device Agentic Personal Memory Assistants at Scale"
+      }
+    ],
+    "publisher": "arXiv",
+    "container": {},
+    "publicationYear": 2026,
+    "subjects": [
+      {
+        "lang": "en",
+        "subject": "Computation and Language (cs.CL)",
+        "subjectScheme": "arXiv"
+      },
+      {
+        "lang": "en",
+        "subject": "Artificial Intelligence (cs.AI)",
+        "subjectScheme": "arXiv"
+      },
+      {
+        "lang": "en",
+        "subject": "Machine Learning (cs.LG)",
+        "subjectScheme": "arXiv"
+      },
+      {
+        "lang": "en",
+        "subject": "Multiagent Systems (cs.MA)",
+        "subjectScheme": "arXiv"
+      },
+      {
+        "subject": "FOS: Computer and information sciences",
+        "subjectScheme": "Fields of Science and Technology (FOS)"
+      }
+    ],
+    "contributors": [],
+    "dates": [
+      {
+        "date": "2026-05-20T17:07:32Z",
+        "dateType": "Submitted",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026-08-05T00:00:16Z",
+        "dateType": "Updated",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026-08",
+        "dateType": "Available",
+        "dateInformation": "v1"
+      }
+    ],
+    "language": null,
+    "types": {
+      "ris": "GEN",
+      "bibtex": "misc",
+      "citeproc": "article",
+      "schemaOrg": "CreativeWork",
+      "resourceType": "Article",
+      "resourceTypeGeneral": "Preprint"
+    },
+    "relatedIdentifiers": [],
+    "relatedItems": [],
+    "sizes": [],
+    "formats": [],
+    "version": "1",
+    "rightsList": [
+      {
+        "rights": "Creative Commons Attribution 4.0 International",
+        "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc-by-4.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "descriptions": [
+      {
+        "description": "Edge-deployed personal memory assistants must handle private interpersonal conversations on-device with open-weight models. Yet, existing memory benchmarks often under-test the combination of activity-dense interaction, ego-centric perspective, and coherent multi-session worlds. MemArena fills these gaps with a single-world conversational benchmark built with its MASim agent simulator, for 50 agents over 15 days (10.3M dialog-text tokens, 24.1K text-only ego-observed tokens/agent/day). With the interaction history, it co-generates ground truth over six recall, reasoning, and trustworthiness evaluation dimensions. We evaluate five open-weight readers with Vanilla context, BM25-RAG, Oracle retrieval, Memobase, and MemSearch as memory backends. Three results stand out: (1) Memory-backend choice matters more for content accuracy: At Qwen3-0.6B, Memobase-to-MemSearch gains +32.5/+19.2 pp, exceeding MemSearch reader scaling (+10.6/+6.8 pp). (2) Permission-aware access fails universally, with Oracle leaking heavily and other backends too timid to disclose. (3) Search latency bites only at very small reader: on a Spark GB10 edge node, memory-search adds a moderate and fixed 87/7/48 ms (BM25-RAG/Memobase/MemSearch) that composes a small part of TTFT for most reader-backend combinations. Code, the MASim simulator, and the MemArena-L benchmark will be released upon acceptance.",
+        "descriptionType": "Abstract"
+      },
+      {
+        "description": "48 pages, 6 figures",
+        "descriptionType": "Other"
+      }
+    ],
+    "geoLocations": [],
+    "fundingReferences": [],
+    "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00LjMvbWV0YWRhdGEueHNkIj4KICA8aWRlbnRpZmllciBpZGVudGlmaWVyVHlwZT0iRE9JIj4xMC40ODU1MC9BUlhJVi4yNjA4LjAyNjEzPC9pZGVudGlmaWVyPgogIDxhbHRlcm5hdGVJZGVudGlmaWVycz4KICAgIDxhbHRlcm5hdGVJZGVudGlmaWVyIGFsdGVybmF0ZUlkZW50aWZpZXJUeXBlPSJhclhpdiI+MjYwOC4wMjYxMzwvYWx0ZXJuYXRlSWRlbnRpZmllcj4KICA8L2FsdGVybmF0ZUlkZW50aWZpZXJzPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5aaGFuZywgSmlhZG9uZzwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+SmlhZG9uZzwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5aaGFuZzwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5NYSwgWGlhb3Nvbmc8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPlhpYW9zb25nPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPk1hPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogIDwvY3JlYXRvcnM+CiAgPHRpdGxlcz4KICAgIDx0aXRsZT5NZW1BcmVuYTogQW4gRWdvLUNlbnRyaWMgQmVuY2htYXJrIGZvciBPbi1EZXZpY2UgQWdlbnRpYyBQZXJzb25hbCBNZW1vcnkgQXNzaXN0YW50cyBhdCBTY2FsZTwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlcj5hclhpdjwvcHVibGlzaGVyPgogIDxwdWJsaWNhdGlvblllYXI+MjAyNjwvcHVibGljYXRpb25ZZWFyPgogIDxzdWJqZWN0cz4KICAgIDxzdWJqZWN0IHhtbDpsYW5nPSJlbiIgc3ViamVjdFNjaGVtZT0iYXJYaXYiPkNvbXB1dGF0aW9uIGFuZCBMYW5ndWFnZSAoY3MuQ0wpPC9zdWJqZWN0PgogICAgPHN1YmplY3QgeG1sOmxhbmc9ImVuIiBzdWJqZWN0U2NoZW1lPSJhclhpdiI+QXJ0aWZpY2lhbCBJbnRlbGxpZ2VuY2UgKGNzLkFJKTwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHhtbDpsYW5nPSJlbiIgc3ViamVjdFNjaGVtZT0iYXJYaXYiPk1hY2hpbmUgTGVhcm5pbmcgKGNzLkxHKTwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHhtbDpsYW5nPSJlbiIgc3ViamVjdFNjaGVtZT0iYXJYaXYiPk11bHRpYWdlbnQgU3lzdGVtcyAoY3MuTUEpPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iRmllbGRzIG9mIFNjaWVuY2UgYW5kIFRlY2hub2xvZ3kgKEZPUykiPkZPUzogQ29tcHV0ZXIgYW5kIGluZm9ybWF0aW9uIHNjaWVuY2VzPC9zdWJqZWN0PgogIDwvc3ViamVjdHM+CiAgPGRhdGVzPgogICAgPGRhdGUgZGF0ZVR5cGU9IlN1Ym1pdHRlZCIgZGF0ZUluZm9ybWF0aW9uPSJ2MSI+MjAyNi0wNS0yMFQxNzowNzozMlo8L2RhdGU+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iVXBkYXRlZCIgZGF0ZUluZm9ybWF0aW9uPSJ2MSI+MjAyNi0wOC0wNVQwMDowMDoxNlo8L2RhdGU+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iQXZhaWxhYmxlIiBkYXRlSW5mb3JtYXRpb249InYxIj4yMDI2LTA4PC9kYXRlPgogIDwvZGF0ZXM+CiAgPHJlc291cmNlVHlwZSByZXNvdXJjZVR5cGVHZW5lcmFsPSJQcmVwcmludCI+QXJ0aWNsZTwvcmVzb3VyY2VUeXBlPgogIDx2ZXJzaW9uPjE8L3ZlcnNpb24+CiAgPHJpZ2h0c0xpc3Q+CiAgICA8cmlnaHRzIHJpZ2h0c1VSST0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbGljZW5zZXMvYnkvNC4wLyIgcmlnaHRzSWRlbnRpZmllclNjaGVtZT0iU1BEWCIgcmlnaHRzSWRlbnRpZmllcj0iQ0MtQlktNC4wIj5DcmVhdGl2ZSBDb21tb25zIEF0dHJpYnV0aW9uIDQuMCBJbnRlcm5hdGlvbmFsPC9yaWdodHM+CiAgPC9yaWdodHNMaXN0PgogIDxkZXNjcmlwdGlvbnM+CiAgICA8ZGVzY3JpcHRpb24gZGVzY3JpcHRpb25UeXBlPSJBYnN0cmFjdCI+RWRnZS1kZXBsb3llZCBwZXJzb25hbCBtZW1vcnkgYXNzaXN0YW50cyBtdXN0IGhhbmRsZSBwcml2YXRlIGludGVycGVyc29uYWwgY29udmVyc2F0aW9ucyBvbi1kZXZpY2Ugd2l0aCBvcGVuLXdlaWdodCBtb2RlbHMuIFlldCwgZXhpc3RpbmcgbWVtb3J5IGJlbmNobWFya3Mgb2Z0ZW4gdW5kZXItdGVzdCB0aGUgY29tYmluYXRpb24gb2YgYWN0aXZpdHktZGVuc2UgaW50ZXJhY3Rpb24sIGVnby1jZW50cmljIHBlcnNwZWN0aXZlLCBhbmQgY29oZXJlbnQgbXVsdGktc2Vzc2lvbiB3b3JsZHMuIE1lbUFyZW5hIGZpbGxzIHRoZXNlIGdhcHMgd2l0aCBhIHNpbmdsZS13b3JsZCBjb252ZXJzYXRpb25hbCBiZW5jaG1hcmsgYnVpbHQgd2l0aCBpdHMgTUFTaW0gYWdlbnQgc2ltdWxhdG9yLCBmb3IgNTAgYWdlbnRzIG92ZXIgMTUgZGF5cyAoMTAuM00gZGlhbG9nLXRleHQgdG9rZW5zLCAyNC4xSyB0ZXh0LW9ubHkgZWdvLW9ic2VydmVkIHRva2Vucy9hZ2VudC9kYXkpLiBXaXRoIHRoZSBpbnRlcmFjdGlvbiBoaXN0b3J5LCBpdCBjby1nZW5lcmF0ZXMgZ3JvdW5kIHRydXRoIG92ZXIgc2l4IHJlY2FsbCwgcmVhc29uaW5nLCBhbmQgdHJ1c3R3b3J0aGluZXNzIGV2YWx1YXRpb24gZGltZW5zaW9ucy4gV2UgZXZhbHVhdGUgZml2ZSBvcGVuLXdlaWdodCByZWFkZXJzIHdpdGggVmFuaWxsYSBjb250ZXh0LCBCTTI1LVJBRywgT3JhY2xlIHJldHJpZXZhbCwgTWVtb2Jhc2UsIGFuZCBNZW1TZWFyY2ggYXMgbWVtb3J5IGJhY2tlbmRzLiBUaHJlZSByZXN1bHRzIHN0YW5kIG91dDogKDEpIE1lbW9yeS1iYWNrZW5kIGNob2ljZSBtYXR0ZXJzIG1vcmUgZm9yIGNvbnRlbnQgYWNjdXJhY3k6IEF0IFF3ZW4zLTAuNkIsIE1lbW9iYXNlLXRvLU1lbVNlYXJjaCBnYWlucyArMzIuNS8rMTkuMiBwcCwgZXhjZWVkaW5nIE1lbVNlYXJjaCByZWFkZXIgc2NhbGluZyAoKzEwLjYvKzYuOCBwcCkuICgyKSBQZXJtaXNzaW9uLWF3YXJlIGFjY2VzcyBmYWlscyB1bml2ZXJzYWxseSwgd2l0aCBPcmFjbGUgbGVha2luZyBoZWF2aWx5IGFuZCBvdGhlciBiYWNrZW5kcyB0b28gdGltaWQgdG8gZGlzY2xvc2UuICgzKSBTZWFyY2ggbGF0ZW5jeSBiaXRlcyBvbmx5IGF0IHZlcnkgc21hbGwgcmVhZGVyOiBvbiBhIFNwYXJrIEdCMTAgZWRnZSBub2RlLCBtZW1vcnktc2VhcmNoIGFkZHMgYSBtb2RlcmF0ZSBhbmQgZml4ZWQgODcvNy80OCBtcyAoQk0yNS1SQUcvTWVtb2Jhc2UvTWVtU2VhcmNoKSB0aGF0IGNvbXBvc2VzIGEgc21hbGwgcGFydCBvZiBUVEZUIGZvciBtb3N0IHJlYWRlci1iYWNrZW5kIGNvbWJpbmF0aW9ucy4gQ29kZSwgdGhlIE1BU2ltIHNpbXVsYXRvciwgYW5kIHRoZSBNZW1BcmVuYS1MIGJlbmNobWFyayB3aWxsIGJlIHJlbGVhc2VkIHVwb24gYWNjZXB0YW5jZS48L2Rlc2NyaXB0aW9uPgogICAgPGRlc2NyaXB0aW9uIGRlc2NyaXB0aW9uVHlwZT0iT3RoZXIiPjQ4IHBhZ2VzLCA2IGZpZ3VyZXM8L2Rlc2NyaXB0aW9uPgogIDwvZGVzY3JpcHRpb25zPgo8L3Jlc291cmNlPg==",
+    "url": "https://arxiv.org/abs/2608.02613",
+    "contentUrl": null,
+    "metadataVersion": 0,
+    "schemaVersion": "http://datacite.org/schema/kernel-4",
+    "source": "mds",
+    "isActive": true,
+    "state": "findable",
+    "reason": null,
+    "viewCount": 0,
+    "viewsOverTime": [],
+    "downloadCount": 0,
+    "downloadsOverTime": [],
+    "referenceCount": 0,
+    "citationCount": 0,
+    "citationsOverTime": [],
+    "partCount": 0,
+    "partOfCount": 0,
+    "versionCount": 0,
+    "versionOfCount": 0,
+    "created": "2026-08-05T01:53:50.000Z",
+    "registered": "2026-08-05T01:53:50.000Z",
+    "published": "2026",
+    "updated": "2026-08-05T01:53:50.000Z"
+  }
+}

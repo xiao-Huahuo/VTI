@@ -1,0 +1,230 @@
+{
+  "kind": "arxiv",
+  "identifier": "2605.17829",
+  "url": "https://api.datacite.org/dois/10.48550/arxiv.2605.17829",
+  "attributes": {
+    "doi": "10.48550/arxiv.2605.17829",
+    "prefix": "10.48550",
+    "suffix": "arxiv.2605.17829",
+    "identifiers": [
+      {
+        "identifier": "2605.17829",
+        "identifierType": "arXiv"
+      }
+    ],
+    "alternateIdentifiers": [
+      {
+        "alternateIdentifierType": "arXiv",
+        "alternateIdentifier": "2605.17829"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Xuan, Keyang",
+        "nameType": "Personal",
+        "givenName": "Keyang",
+        "familyName": "Xuan",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Song, Peiyang",
+        "nameType": "Personal",
+        "givenName": "Peiyang",
+        "familyName": "Song",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Lu, Pan",
+        "nameType": "Personal",
+        "givenName": "Pan",
+        "familyName": "Lu",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Han, Pengrui",
+        "nameType": "Personal",
+        "givenName": "Pengrui",
+        "familyName": "Han",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Li, Wenkai",
+        "nameType": "Personal",
+        "givenName": "Wenkai",
+        "familyName": "Li",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Zhang, Zhenyu",
+        "nameType": "Personal",
+        "givenName": "Zhenyu",
+        "familyName": "Zhang",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "He, Zexue",
+        "nameType": "Personal",
+        "givenName": "Zexue",
+        "familyName": "He",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Hua, Wenyue",
+        "nameType": "Personal",
+        "givenName": "Wenyue",
+        "familyName": "Hua",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Li, Manling",
+        "nameType": "Personal",
+        "givenName": "Manling",
+        "familyName": "Li",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "You, Jiaxuan",
+        "nameType": "Personal",
+        "givenName": "Jiaxuan",
+        "familyName": "You",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Weller, Adrian",
+        "nameType": "Personal",
+        "givenName": "Adrian",
+        "familyName": "Weller",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Wang, Yizhong",
+        "nameType": "Personal",
+        "givenName": "Yizhong",
+        "familyName": "Wang",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Pei, Jiaxin",
+        "nameType": "Personal",
+        "givenName": "Jiaxin",
+        "familyName": "Pei",
+        "affiliation": [],
+        "nameIdentifiers": []
+      }
+    ],
+    "titles": [
+      {
+        "title": "Interactive Evaluation Requires a Design Science"
+      }
+    ],
+    "publisher": "arXiv",
+    "container": {},
+    "publicationYear": 2026,
+    "subjects": [
+      {
+        "lang": "en",
+        "subject": "Artificial Intelligence (cs.AI)",
+        "subjectScheme": "arXiv"
+      },
+      {
+        "subject": "FOS: Computer and information sciences",
+        "subjectScheme": "Fields of Science and Technology (FOS)"
+      },
+      {
+        "subject": "FOS: Computer and information sciences",
+        "schemeUri": "http://www.oecd.org/science/inno/38235147.pdf",
+        "subjectScheme": "Fields of Science and Technology (FOS)"
+      }
+    ],
+    "contributors": [],
+    "dates": [
+      {
+        "date": "2026-05-18T04:03:18Z",
+        "dateType": "Submitted",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026-05-19T01:35:50Z",
+        "dateType": "Updated",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026-05",
+        "dateType": "Available",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026",
+        "dateType": "Issued"
+      }
+    ],
+    "language": null,
+    "types": {
+      "ris": "GEN",
+      "bibtex": "misc",
+      "citeproc": "article",
+      "schemaOrg": "CreativeWork",
+      "resourceType": "Article",
+      "resourceTypeGeneral": "Preprint"
+    },
+    "relatedIdentifiers": [],
+    "relatedItems": [],
+    "sizes": [],
+    "formats": [],
+    "version": "1",
+    "rightsList": [
+      {
+        "rights": "arXiv.org perpetual, non-exclusive license",
+        "rightsUri": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      }
+    ],
+    "descriptions": [
+      {
+        "description": "AI evaluation is undergoing a structural change. Large language models (LLMs) are increasingly deployed as systems that act over time through tools, environments, users, and other agents, while many evaluation practices still inherit assumptions from response-centered benchmarks (e.g., fixed inputs, isolated outputs, and outcome judgments that can be made from a single response). The field has begun to build interactive benchmarks, but the resulting landscape is fragmented: benchmarks differ in what interaction artifacts they admit, how trajectories are scored, and what claims their results support. This position paper argues that interactive evaluation should be treated as a principled evaluation paradigm, not merely a new family of agent benchmarks. Simply adopting previous evaluation paradigms does not suffice. We define evaluation as an autonomous mapping from evidence to judgments, and show that interactive evaluation changes both sides of this mapping: the evidence becomes interaction-generated trajectories, while the evaluation procedure must assess process, recoverability, coordination, robustness, and system-level performance. Building on this definition, we propose a two-axis taxonomy, derive design principles and reporting standards, examine representative scenarios, and analyze how longstanding evaluation challenges reappear at the trajectory level.",
+        "descriptionType": "Abstract"
+      },
+      {
+        "description": "10 pages",
+        "descriptionType": "Other"
+      }
+    ],
+    "geoLocations": [],
+    "fundingReferences": [],
+    "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00LjMvbWV0YWRhdGEueHNkIj4KICA8aWRlbnRpZmllciBpZGVudGlmaWVyVHlwZT0iRE9JIj4xMC40ODU1MC9BUlhJVi4yNjA1LjE3ODI5PC9pZGVudGlmaWVyPgogIDxhbHRlcm5hdGVJZGVudGlmaWVycz4KICAgIDxhbHRlcm5hdGVJZGVudGlmaWVyIGFsdGVybmF0ZUlkZW50aWZpZXJUeXBlPSJhclhpdiI+MjYwNS4xNzgyOTwvYWx0ZXJuYXRlSWRlbnRpZmllcj4KICA8L2FsdGVybmF0ZUlkZW50aWZpZXJzPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5YdWFuLCBLZXlhbmc8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPktleWFuZzwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5YdWFuPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPlNvbmcsIFBlaXlhbmc8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPlBlaXlhbmc8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+U29uZzwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5MdSwgUGFuPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5QYW48L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+THU8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+SGFuLCBQZW5ncnVpPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5QZW5ncnVpPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPkhhbjwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5MaSwgV2Vua2FpPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5XZW5rYWk8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+TGk8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+WmhhbmcsIFpoZW55dTwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+Wmhlbnl1PC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPlpoYW5nPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkhlLCBaZXh1ZTwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+WmV4dWU8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+SGU8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+SHVhLCBXZW55dWU8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPldlbnl1ZTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5IdWE8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+TGksIE1hbmxpbmc8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPk1hbmxpbmc8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+TGk8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+WW91LCBKaWF4dWFuPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5KaWF4dWFuPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPllvdTwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5XZWxsZXIsIEFkcmlhbjwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+QWRyaWFuPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPldlbGxlcjwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5XYW5nLCBZaXpob25nPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5ZaXpob25nPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPldhbmc8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+UGVpLCBKaWF4aW48L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkppYXhpbjwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5QZWk8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgPC9jcmVhdG9ycz4KICA8dGl0bGVzPgogICAgPHRpdGxlPkludGVyYWN0aXZlIEV2YWx1YXRpb24gUmVxdWlyZXMgYSBEZXNpZ24gU2NpZW5jZTwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlcj5hclhpdjwvcHVibGlzaGVyPgogIDxwdWJsaWNhdGlvblllYXI+MjAyNjwvcHVibGljYXRpb25ZZWFyPgogIDxzdWJqZWN0cz4KICAgIDxzdWJqZWN0IHhtbDpsYW5nPSJlbiIgc3ViamVjdFNjaGVtZT0iYXJYaXYiPkFydGlmaWNpYWwgSW50ZWxsaWdlbmNlIChjcy5BSSk8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJGaWVsZHMgb2YgU2NpZW5jZSBhbmQgVGVjaG5vbG9neSAoRk9TKSI+Rk9TOiBDb21wdXRlciBhbmQgaW5mb3JtYXRpb24gc2NpZW5jZXM8L3N1YmplY3Q+CiAgPC9zdWJqZWN0cz4KICA8ZGF0ZXM+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iU3VibWl0dGVkIiBkYXRlSW5mb3JtYXRpb249InYxIj4yMDI2LTA1LTE4VDA0OjAzOjE4WjwvZGF0ZT4KICAgIDxkYXRlIGRhdGVUeXBlPSJVcGRhdGVkIiBkYXRlSW5mb3JtYXRpb249InYxIj4yMDI2LTA1LTE5VDAxOjM1OjUwWjwvZGF0ZT4KICAgIDxkYXRlIGRhdGVUeXBlPSJBdmFpbGFibGUiIGRhdGVJbmZvcm1hdGlvbj0idjEiPjIwMjYtMDU8L2RhdGU+CiAgPC9kYXRlcz4KICA8cmVzb3VyY2VUeXBlIHJlc291cmNlVHlwZUdlbmVyYWw9IlByZXByaW50Ij5BcnRpY2xlPC9yZXNvdXJjZVR5cGU+CiAgPHZlcnNpb24+MTwvdmVyc2lvbj4KICA8cmlnaHRzTGlzdD4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJodHRwOi8vYXJ4aXYub3JnL2xpY2Vuc2VzL25vbmV4Y2x1c2l2ZS1kaXN0cmliLzEuMC8iPmFyWGl2Lm9yZyBwZXJwZXR1YWwsIG5vbi1leGNsdXNpdmUgbGljZW5zZTwvcmlnaHRzPgogIDwvcmlnaHRzTGlzdD4KICA8ZGVzY3JpcHRpb25zPgogICAgPGRlc2NyaXB0aW9uIGRlc2NyaXB0aW9uVHlwZT0iQWJzdHJhY3QiPkFJIGV2YWx1YXRpb24gaXMgdW5kZXJnb2luZyBhIHN0cnVjdHVyYWwgY2hhbmdlLiBMYXJnZSBsYW5ndWFnZSBtb2RlbHMgKExMTXMpIGFyZSBpbmNyZWFzaW5nbHkgZGVwbG95ZWQgYXMgc3lzdGVtcyB0aGF0IGFjdCBvdmVyIHRpbWUgdGhyb3VnaCB0b29scywgZW52aXJvbm1lbnRzLCB1c2VycywgYW5kIG90aGVyIGFnZW50cywgd2hpbGUgbWFueSBldmFsdWF0aW9uIHByYWN0aWNlcyBzdGlsbCBpbmhlcml0IGFzc3VtcHRpb25zIGZyb20gcmVzcG9uc2UtY2VudGVyZWQgYmVuY2htYXJrcyAoZS5nLiwgZml4ZWQgaW5wdXRzLCBpc29sYXRlZCBvdXRwdXRzLCBhbmQgb3V0Y29tZSBqdWRnbWVudHMgdGhhdCBjYW4gYmUgbWFkZSBmcm9tIGEgc2luZ2xlIHJlc3BvbnNlKS4gVGhlIGZpZWxkIGhhcyBiZWd1biB0byBidWlsZCBpbnRlcmFjdGl2ZSBiZW5jaG1hcmtzLCBidXQgdGhlIHJlc3VsdGluZyBsYW5kc2NhcGUgaXMgZnJhZ21lbnRlZDogYmVuY2htYXJrcyBkaWZmZXIgaW4gd2hhdCBpbnRlcmFjdGlvbiBhcnRpZmFjdHMgdGhleSBhZG1pdCwgaG93IHRyYWplY3RvcmllcyBhcmUgc2NvcmVkLCBhbmQgd2hhdCBjbGFpbXMgdGhlaXIgcmVzdWx0cyBzdXBwb3J0LiBUaGlzIHBvc2l0aW9uIHBhcGVyIGFyZ3VlcyB0aGF0IGludGVyYWN0aXZlIGV2YWx1YXRpb24gc2hvdWxkIGJlIHRyZWF0ZWQgYXMgYSBwcmluY2lwbGVkIGV2YWx1YXRpb24gcGFyYWRpZ20sIG5vdCBtZXJlbHkgYSBuZXcgZmFtaWx5IG9mIGFnZW50IGJlbmNobWFya3MuIFNpbXBseSBhZG9wdGluZyBwcmV2aW91cyBldmFsdWF0aW9uIHBhcmFkaWdtcyBkb2VzIG5vdCBzdWZmaWNlLiBXZSBkZWZpbmUgZXZhbHVhdGlvbiBhcyBhbiBhdXRvbm9tb3VzIG1hcHBpbmcgZnJvbSBldmlkZW5jZSB0byBqdWRnbWVudHMsIGFuZCBzaG93IHRoYXQgaW50ZXJhY3RpdmUgZXZhbHVhdGlvbiBjaGFuZ2VzIGJvdGggc2lkZXMgb2YgdGhpcyBtYXBwaW5nOiB0aGUgZXZpZGVuY2UgYmVjb21lcyBpbnRlcmFjdGlvbi1nZW5lcmF0ZWQgdHJhamVjdG9yaWVzLCB3aGlsZSB0aGUgZXZhbHVhdGlvbiBwcm9jZWR1cmUgbXVzdCBhc3Nlc3MgcHJvY2VzcywgcmVjb3ZlcmFiaWxpdHksIGNvb3JkaW5hdGlvbiwgcm9idXN0bmVzcywgYW5kIHN5c3RlbS1sZXZlbCBwZXJmb3JtYW5jZS4gQnVpbGRpbmcgb24gdGhpcyBkZWZpbml0aW9uLCB3ZSBwcm9wb3NlIGEgdHdvLWF4aXMgdGF4b25vbXksIGRlcml2ZSBkZXNpZ24gcHJpbmNpcGxlcyBhbmQgcmVwb3J0aW5nIHN0YW5kYXJkcywgZXhhbWluZSByZXByZXNlbnRhdGl2ZSBzY2VuYXJpb3MsIGFuZCBhbmFseXplIGhvdyBsb25nc3RhbmRpbmcgZXZhbHVhdGlvbiBjaGFsbGVuZ2VzIHJlYXBwZWFyIGF0IHRoZSB0cmFqZWN0b3J5IGxldmVsLjwvZGVzY3JpcHRpb24+CiAgICA8ZGVzY3JpcHRpb24gZGVzY3JpcHRpb25UeXBlPSJPdGhlciI+MTAgcGFnZXM8L2Rlc2NyaXB0aW9uPgogIDwvZGVzY3JpcHRpb25zPgo8L3Jlc291cmNlPg==",
+    "url": "https://arxiv.org/abs/2605.17829",
+    "contentUrl": null,
+    "metadataVersion": 0,
+    "schemaVersion": "http://datacite.org/schema/kernel-4",
+    "source": "mds",
+    "isActive": true,
+    "state": "findable",
+    "reason": null,
+    "viewCount": 0,
+    "viewsOverTime": [],
+    "downloadCount": 0,
+    "downloadsOverTime": [],
+    "referenceCount": 0,
+    "citationCount": 0,
+    "citationsOverTime": [],
+    "partCount": 0,
+    "partOfCount": 0,
+    "versionCount": 0,
+    "versionOfCount": 0,
+    "created": "2026-05-19T04:14:55.000Z",
+    "registered": "2026-05-19T04:14:56.000Z",
+    "published": "2026",
+    "updated": "2026-05-19T04:14:56.000Z"
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "schema": "c33-v57-count-unit-v1-test-audit",
+  "at_utc": "2026-09-27T04:27:19.242331+00:00",
+  "status": "PASS",
+  "passed": 46,
+  "total": 46,
+  "source_bound_cases": [
+    "1a8a66a6",
+    "b5ef892d",
+    "gpt4_31ff4165"
+  ],
+  "model_calls": 0,
+  "outcomes": [
+    {
+      "case": "b5ef892d",
+      "answer": "8",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "8 days.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "eight days",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "I spent eight days camping.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "The total was 8 days.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "The answer is eight.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "It is 8 days.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "A total of eight days.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "7 days",
+      "expected": "INCORRECT",
+      "actual": "INCORRECT",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "I spent nine days camping.",
+      "expected": "INCORRECT",
+      "actual": "INCORRECT",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "8.5 days",
+      "expected": "UNSCORABLE",
+      "actual": "UNSCORABLE",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "On May 8, 2023, I spent eight days camping.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "I spent 8 days and 9 days.",
+      "expected": "AMBIGUOUS",
+      "actual": "AMBIGUOUS",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "At least eight days.",
+      "expected": "UNSCORABLE",
+      "actual": "UNSCORABLE",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "2023-05-08",
+      "expected": "UNSCORABLE",
+      "actual": "UNSCORABLE",
+      "passed": true
+    },
+    {
+      "case": "b5ef892d",
+      "answer": "I cannot determine the number of days.",
+      "expected": "UNSCORABLE",
+      "actual": "UNSCORABLE",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "2",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "two",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "two magazine subscriptions",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "There are 2 subscriptions.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "You have two subscriptions.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "You currently have two magazine subscriptions.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "You currently have one magazine subscription.",
+      "expected": "INCORRECT",
+      "actual": "INCORRECT",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "The answer is 2.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "A total of 2.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "one subscription",
+      "expected": "INCORRECT",
+      "actual": "INCORRECT",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "3 magazines",
+      "expected": "INCORRECT",
+      "actual": "INCORRECT",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "2 subscriptions and 3 subscriptions",
+      "expected": "AMBIGUOUS",
+      "actual": "AMBIGUOUS",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "About two subscriptions",
+      "expected": "UNSCORABLE",
+      "actual": "UNSCORABLE",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "The New Yorker and Architectural Digest",
+      "expected": "UNSCORABLE",
+      "actual": "UNSCORABLE",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "2.0 subscriptions",
+      "expected": "UNSCORABLE",
+      "actual": "UNSCORABLE",
+      "passed": true
+    },
+    {
+      "case": "1a8a66a6",
+      "answer": "In 2023, I had 2 subscriptions.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "4",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "four",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "four devices",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "There are four health-related devices.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "I use 4 devices.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "You use at least two health-related devices.",
+      "expected": "UNSCORABLE",
+      "actual": "UNSCORABLE",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "The total is 4.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "The answer is four.",
+      "expected": "CORRECT",
+      "actual": "CORRECT",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "5 devices",
+      "expected": "INCORRECT",
+      "actual": "INCORRECT",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "I use three devices.",
+      "expected": "INCORRECT",
+      "actual": "INCORRECT",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "four devices, sometimes five devices",
+      "expected": "AMBIGUOUS",
+      "actual": "AMBIGUOUS",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "Around four devices",
+      "expected": "UNSCORABLE",
+      "actual": "UNSCORABLE",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "2023-04-01",
+      "expected": "UNSCORABLE",
+      "actual": "UNSCORABLE",
+      "passed": true
+    },
+    {
+      "case": "gpt4_31ff4165",
+      "answer": "4.5 devices",
+      "expected": "UNSCORABLE",
+      "actual": "UNSCORABLE",
+      "passed": true
+    }
+  ]
+}

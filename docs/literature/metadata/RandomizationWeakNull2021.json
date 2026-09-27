@@ -1,0 +1,691 @@
+{
+  "kind": "crossref",
+  "identifier": "10.1080/01621459.2020.1750415",
+  "url": "https://api.crossref.org/works/10.1080%2F01621459.2020.1750415",
+  "attributes": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          26
+        ]
+      ],
+      "date-time": "2026-09-26T16:43:00Z",
+      "timestamp": 1790440980857,
+      "version": "4.1.0"
+    },
+    "reference-count": 81,
+    "publisher": "Informa UK Limited",
+    "issue": "536",
+    "content-domain": {
+      "domain": [
+        "www.tandfonline.com"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "Journal of the American Statistical Association"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          2
+        ]
+      ]
+    },
+    "DOI": "10.1080/01621459.2020.1750415",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2020,
+          4,
+          2
+        ]
+      ],
+      "date-time": "2020-04-02T19:28:32Z",
+      "timestamp": 1585855712000
+    },
+    "page": "1898-1913",
+    "update-policy": "https://doi.org/10.1080/tandf_crossmark_01",
+    "source": "Crossref",
+    "is-referenced-by-count": 40,
+    "title": [
+      "Randomization Tests for Weak Null Hypotheses in Randomized Experiments"
+    ],
+    "prefix": "10.1080",
+    "volume": "116",
+    "author": [
+      {
+        "given": "Jason",
+        "family": "Wu",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Statistics, University of California, Berkeley, CA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-2704-2353",
+        "authenticated-orcid": false,
+        "given": "Peng",
+        "family": "Ding",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Statistics, University of California, Berkeley, CA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "301",
+    "published-online": {
+      "date-parts": [
+        [
+          2020,
+          5,
+          7
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "CIT0001",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1257/app.1.1.136"
+      },
+      {
+        "key": "CIT0002",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2307/3001775"
+      },
+      {
+        "key": "CIT0003",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/13-AOS1200"
+      },
+      {
+        "key": "CIT0004",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/01621459.2016.1241178"
+      },
+      {
+        "key": "CIT0005",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/bs.hefe.2016.10.003"
+      },
+      {
+        "key": "CIT0006",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/aos/1176346267"
+      },
+      {
+        "key": "CIT0007",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/biomet/asy072"
+      },
+      {
+        "key": "CIT0008",
+        "doi-asserted-by": "crossref",
+        "first-page": "575",
+        "DOI": "10.1080/01621459.1980.10477512",
+        "volume": "75",
+        "author": "Basu D.",
+        "year": "1980",
+        "journal-title": "Journal of the American Statistical Association"
+      },
+      {
+        "key": "CIT0009",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1073/pnas.1510506113"
+      },
+      {
+        "key": "CIT0010",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/aoms/1177728786"
+      },
+      {
+        "key": "CIT0011",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.1111/j.2517-6161.1955.tb00176.x",
+        "volume": "17",
+        "author": "Box G. E. P.",
+        "year": "1955",
+        "journal-title": "Journal of the Royal Statistical Society, Series B"
+      },
+      {
+        "key": "CIT0012",
+        "volume-title": "Distribution-Free Statistical Tests",
+        "author": "Bradley J. V.",
+        "year": "1968"
+      },
+      {
+        "key": "CIT0013",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/01621459.1997.10473671"
+      },
+      {
+        "key": "CIT0014",
+        "unstructured": "Caughey, D., Dafoe, A., and Miratrix, L. (2017), “Beyond the Sharp Null: Randomization Inference, Bounded Null Hypotheses, and Confidence Intervals for Maximum Effects,” arXiv no. 1709.07339."
+      },
+      {
+        "key": "CIT0015",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3982/ECTA7416"
+      },
+      {
+        "key": "CIT0016",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/13-AOS1090"
+      },
+      {
+        "key": "CIT0017",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jeconom.2016.01.003"
+      },
+      {
+        "key": "CIT0018",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/biomet/53.1-2.199"
+      },
+      {
+        "key": "CIT0019",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/rssb.12085"
+      },
+      {
+        "key": "CIT0020",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/16-STS571"
+      },
+      {
+        "key": "CIT0021",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/biomet/asx059"
+      },
+      {
+        "key": "CIT0022",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/rssb.12124"
+      },
+      {
+        "key": "CIT0023",
+        "first-page": "3895",
+        "volume-title": "Handbook of Development Economics",
+        "volume": "4",
+        "author": "Duflo E.",
+        "year": "2007"
+      },
+      {
+        "key": "CIT0024",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1017/S0021859600052862"
+      },
+      {
+        "key": "CIT0025",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/bimj.19710130623"
+      },
+      {
+        "key": "CIT0026",
+        "volume-title": "The Design of Experiments",
+        "author": "Fisher R. A.",
+        "year": "1935",
+        "edition": "1"
+      },
+      {
+        "key": "CIT0027",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/rssb.12290"
+      },
+      {
+        "key": "CIT0028",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/biomet/asy034"
+      },
+      {
+        "key": "CIT0029",
+        "author": "Fogarty C. B.",
+        "year": "2019",
+        "journal-title": "Journal of the American Statistical Association"
+      },
+      {
+        "key": "CIT0030",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jmva.2016.10.004"
+      },
+      {
+        "key": "CIT0031",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jmva.2017.12.008"
+      },
+      {
+        "key": "CIT0032",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/(SICI)1097-0258(19960615)15:11<1069::AID-SIM220>3.0.CO;2-Q"
+      },
+      {
+        "key": "CIT0033",
+        "volume-title": "Analysis, and Interpretation",
+        "author": "Gerber A. S.",
+        "year": "2012"
+      },
+      {
+        "key": "CIT0034",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/aos/1176350933"
+      },
+      {
+        "key": "CIT0035",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1515/jci-2015-0018"
+      },
+      {
+        "key": "CIT0036",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/aoms/1177704172"
+      },
+      {
+        "key": "CIT0037",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/aoms/1177729436"
+      },
+      {
+        "key": "CIT0038",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Imbens, G. W., and Menzel, K. (2018), “A Causal Bootstrap,” Technical Report, National Bureau of Economic Research.",
+        "DOI": "10.3386/w24833"
+      },
+      {
+        "key": "CIT0039",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1017/CBO9781139025751"
+      },
+      {
+        "key": "CIT0040",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/S0167-7152(97)00043-6"
+      },
+      {
+        "key": "CIT0041",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/S0378-3758(99)00009-9"
+      },
+      {
+        "key": "CIT0042",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/aos/1056562462"
+      },
+      {
+        "key": "CIT0043",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1097/00010694-195205000-00012"
+      },
+      {
+        "key": "CIT0044",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/biomet/56.2.231"
+      },
+      {
+        "key": "CIT0045",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jmva.2015.05.001"
+      },
+      {
+        "key": "CIT0046",
+        "volume-title": "Nonparametrics: Statistical Methods Based on Ranks",
+        "author": "Lehmann E. L.",
+        "year": "1975"
+      },
+      {
+        "key": "CIT0047",
+        "unstructured": "Lei, L., and Ding, P. (2018), “Regression Adjustment in Completely Randomized Experiments With a Diverging Number of Covariates,” arXiv no. 1806.07585."
+      },
+      {
+        "key": "CIT0048",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/sim.6764"
+      },
+      {
+        "key": "CIT0049",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/01621459.2017.1295865"
+      },
+      {
+        "key": "CIT0050",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/12-AOAS583"
+      },
+      {
+        "key": "CIT0051",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/0962280214545121"
+      },
+      {
+        "key": "CIT0052",
+        "first-page": "356",
+        "volume": "32",
+        "author": "Loh W. W.",
+        "year": "2017",
+        "journal-title": "Statistical Science"
+      },
+      {
+        "key": "CIT0053",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.spl.2016.01.010"
+      },
+      {
+        "key": "CIT0054",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.spl.2016.07.010"
+      },
+      {
+        "key": "CIT0055",
+        "unstructured": "Middleton, J. A. (2018), “A Unified Theory of Regression Adjustment for Design-Based Inference,” arXiv no. 1803.06011."
+      },
+      {
+        "key": "CIT0056",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1515/spp-2013-0002"
+      },
+      {
+        "key": "CIT0057",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1201/9781439894903"
+      },
+      {
+        "key": "CIT0058",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/01621459.2017.1294076"
+      },
+      {
+        "key": "CIT0059",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/sim.7176"
+      },
+      {
+        "key": "CIT0060",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/aos/1176349396"
+      },
+      {
+        "key": "CIT0061",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/ss/1177012031"
+      },
+      {
+        "key": "CIT0062",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2307/2983637"
+      },
+      {
+        "key": "CIT0063",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1198/jasa.2011.tm10356"
+      },
+      {
+        "key": "CIT0064",
+        "doi-asserted-by": "crossref",
+        "first-page": "216",
+        "DOI": "10.1080/01621459.1963.10500843",
+        "volume": "58",
+        "author": "Page E. B.",
+        "year": "1963",
+        "journal-title": "Journal of the American Statistical Association"
+      },
+      {
+        "key": "CIT0065",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/rssb.12073"
+      },
+      {
+        "key": "CIT0066",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2307/2984124"
+      },
+      {
+        "key": "CIT0067",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/sim.6384"
+      },
+      {
+        "key": "CIT0068",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/01621459.1990.10474928"
+      },
+      {
+        "key": "CIT0069",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.0006-341X.1999.00560.x"
+      },
+      {
+        "key": "CIT0070",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/biomet/88.1.219"
+      },
+      {
+        "key": "CIT0071",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/ss/1042727942"
+      },
+      {
+        "key": "CIT0072",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/978-1-4757-3692-2"
+      },
+      {
+        "key": "CIT0073",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1198/0003130031405"
+      },
+      {
+        "key": "CIT0074",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1037/h0037350"
+      },
+      {
+        "key": "CIT0075",
+        "first-page": "591",
+        "volume": "75",
+        "author": "Rubin D. B",
+        "year": "1980",
+        "journal-title": "Journal of the American Statistical Association"
+      },
+      {
+        "key": "CIT0076",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1198/016214504000001880"
+      },
+      {
+        "key": "CIT0077",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/13-STS454"
+      },
+      {
+        "key": "CIT0078",
+        "doi-asserted-by": "crossref",
+        "first-page": "586",
+        "DOI": "10.3102/1076998618786968",
+        "volume": "43",
+        "author": "Schochet P. Z.",
+        "year": "2018",
+        "journal-title": "Journal of Educational and Behavioral Statistics"
+      },
+      {
+        "key": "CIT0079",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jmva.2012.10.011"
+      },
+      {
+        "key": "CIT0080",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/0197-2456(93)90225-3"
+      },
+      {
+        "key": "CIT0081",
+        "doi-asserted-by": "crossref",
+        "first-page": "582",
+        "DOI": "10.1214/07-AOAS151",
+        "volume": "2",
+        "author": "Zheng L.",
+        "year": "2008",
+        "journal-title": "The Annals of Applied Statistics"
+      }
+    ],
+    "container-title": [
+      "Journal of the American Statistical Association"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://www.tandfonline.com/doi/pdf/10.1080/01621459.2020.1750415",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2024,
+          8,
+          3
+        ]
+      ],
+      "date-time": "2024-08-03T09:29:40Z",
+      "timestamp": 1722677380000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://www.tandfonline.com/doi/full/10.1080/01621459.2020.1750415"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          5,
+          7
+        ]
+      ]
+    },
+    "references-count": 81,
+    "journal-issue": {
+      "issue": "536",
+      "published-print": {
+        "date-parts": [
+          [
+            2021,
+            10,
+            2
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.1080/01621459.2020.1750415"
+    ],
+    "URL": "https://doi.org/10.1080/01621459.2020.1750415",
+    "relation": {},
+    "ISSN": [
+      "0162-1459",
+      "1537-274X"
+    ],
+    "issn-type": [
+      {
+        "value": "0162-1459",
+        "type": "print"
+      },
+      {
+        "value": "1537-274X",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2020,
+          5,
+          7
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "The publishing and review policy for this title is described in its Aims & Scope.",
+        "order": 1,
+        "name": "peerreview_statement",
+        "label": "Peer Review Statement"
+      },
+      {
+        "value": "http://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=uasa20",
+        "URL": "http://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=uasa20",
+        "order": 2,
+        "name": "aims_and_scope_url",
+        "label": "Aim & Scope"
+      },
+      {
+        "value": "2019-06-17",
+        "order": 0,
+        "name": "received",
+        "label": "Received",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2019-11-22",
+        "order": 1,
+        "name": "revised",
+        "label": "Revised",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2020-03-16",
+        "order": 2,
+        "name": "accepted",
+        "label": "Accepted",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2020-05-07",
+        "order": 3,
+        "name": "published",
+        "label": "Published",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      }
+    ]
+  }
+}

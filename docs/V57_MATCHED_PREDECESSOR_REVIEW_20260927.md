@@ -1,0 +1,27 @@
+# V57 matched-predecessor proposal: implementation review
+
+Status: **not frozen; no V57 LongMemEval or 14B model calls**. The revised user-supplied proposal is preserved byte-for-byte at `docs/proposals/V57_MATCHED_PREDECESSOR_SOURCE_20260927.txt`.
+
+## Scientific assessment
+
+The proposed experimental unit runs the same full predecessor in every replicate, then compares target retrieval after **native reset on predecessor-bearing backend A** with target retrieval on **previously untouched shadow backend B**. Assignment is hidden from the runner until predecessor completion. This resolves the previous design's unequal predecessor LLM workload without forcing a model unload at the trial boundary. It estimates predecessor effect **conditional on the matched predecessor workload and the chosen shadow/reset protocol**, not universal backend safety.
+
+Five randomized native and five shadow units per target, all full trajectories, are appropriate for a Fisher sharp-null test if each unit really owns an independent backend, database and LLM runtime, assignment is randomized, and no unit affects another. Three exact 252-assignment target tests feed the prespecified `2-of-3` partial-conjunction p-value `min(1, 2 p_(2))`. Backend-family alpha remains 0.025 for the two planned backends. A backend primary positive then requires evidence in at least two selected target cases; non-detection is never an isolation certificate. Ordered Top-5 retrieval is the single primary observable; memory and answers are secondary.
+
+## Offline work completed
+
+- `v57_design/V57_DEV_CASES.json` binds exposed ranks 1, 3 and 4 to the pinned dataset SHA, exact questions, raw references (`8 days.`, `2`, `4`), parsed integers and unit lexicons.
+- `v57_design/code/count_unit_v1.py` is a new development-only scorer. **46/46 synthetic vectors** passed, including numeric words, units, dates, decimals, conflicts, hedges and actual V48-style `you currently have` wording. It replaces the inapplicable V49 rule; it has no causal role.
+- `v57_design/code/retrieval_footprint.py` implements the draft 1925-value ordered rank-aware footprint with NFC/whitespace normalization, duplicate preservation, L2-normalized embeddings and presence weights. A **fake-embedding dry run passed 8/8**. The actual BGE runtime/digest binding remains pending.
+- `v57_design/code/partial_conjunction.py` implements target-level 252-assignment energy tests and the 2-of-3 decision. An implementation audit passed **9/9** checks, including **10,000 synthetic null datasets**. The all-null simulated positive rate was 0.0001; the conservative one-false-target limiting simulation gave 0.0152 at backend alpha 0.025. These simulations audit code only; they do not validate the runtime causal assumptions.
+- `graphiti-core==0.30.2` is installed in an isolated V57 engineering Python environment. Constructor-only injection passed 6/6, and actual local FastEmbed BGE plus a disclosed BGE-cosine reranker passed **7/7 synthetic toy-component checks**, with `GRAPHITI_TELEMETRY_ENABLED=false` and `EMBEDDING_DIM=384` set before import. **Zero LLM-model and database calls**. See `v57_design/results/GRAPHITI_ENGINEERING_PREFLIGHT.json` and `v57_design/results/GRAPHITI_LOCAL_COMPONENT_AUDIT.json`.
+
+## Remaining freeze blockers
+
+1. **Graphiti runtime is not ready.** This Mac has no Docker/Colima container runtime and no Neo4j image/health/reset/teardown receipt. Local BGE and a candidate BGE-cosine reranker passed toy calls but have not been used inside a real Graphiti query. Homebrew installation was attempted but stopped during a slow metadata fetch; no container runtime was installed. Graphiti's default reranker differs from this local substitute, and internal retries require explicit audit. The pinned Redis Graphiti adapter cannot be called a ready local no-OpenAI configuration.
+2. **14B has not been installed or probed**, as requested. The final runtime manifest cannot yet include its actual Ollama digest. A 16 GB MacBook Air is likely a poor execution host for 14B plus two independent Neo4j instances and many thousands of full session ingestions; the formal host and resource plan must be settled before claiming executable readiness.
+3. **No randomized run-slot schedule or per-unit isolation drill exists yet.** The runner must commit all assignments before outcomes, keep each assignment unread until predecessor-complete receipt, and demonstrate separate Ollama server processes and backend/database teardown between units. A shared Neo4j instance or shared model server would violate the stated unit boundary.
+4. **Provider behavior is not yet bound to the common footprint.** The provider must continue its normal Top-10 query, save the ordered raw texts, and only then take the first five for measurement. Empty/duplicate retrieval, BGE cache hash, float32 footprint bytes and float64 statistic must be independently re-read.
+5. The workload is **2,880 session ingestions per compatible backend, 5,760 for two**, before Graphiti's internal extra LLM calls and development runs. This needs checkpointing, a same-run interruption drill and a realistic compute location.
+
+The local artifacts are therefore a **reviewable protocol draft and offline implementation audit**, not a frozen scientific run. V56 remains unchanged. The earlier abandoned V57 draft scorer and global-mean statistic are preserved under `history/drafts/` and cannot be mistaken for the current design.

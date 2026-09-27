@@ -1,0 +1,23 @@
+{
+  "schema": "c33-v57-graphiti-local-components-toy-audit-v1",
+  "at_utc": "2026-09-27T06:32:49.170383+00:00",
+  "status": "PASS_TOY_COMPONENTS_ONLY",
+  "checks": {
+    "bge_snapshot_matches_active_manifest": true,
+    "toy_embeddings_are_384": true,
+    "toy_rerank_content_and_duplicates": true,
+    "real_local_clients_injected": true,
+    "dimension_384_before_import": true,
+    "telemetry_and_openai_key_absent": true,
+    "graphiti_package_0_30_2": true
+  },
+  "checks_passed": 7,
+  "checks_total": 7,
+  "bge_cache_tree_sha256": "d43150a691d02e46b7848cb04e6db89ad74b9f1a1e00bb75e8d9f034861ff7a3",
+  "bge_cache_file_count": 5,
+  "graphiti_constructor_sha256": "2d0ffbb8b6de59787269326a9255d875f74da63ed66fd4f4fad3f159538d0fdd",
+  "local_components_sha256": "c0e6fb4b11bbb5efb64d825a43b37b449839bee8b9aa41db6b37da1009e8963c",
+  "llm_model_calls": 0,
+  "database_queries": 0,
+  "boundary": "Synthetic text embeddings only. Neo4j health/reset/teardown and real structured output remain untested."
+}

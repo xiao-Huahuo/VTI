@@ -1,79 +1,25 @@
-# Current handoff — V44
+# Current handoff — C33 V57 design
 
-Date: 2026-09-20
+Date: 2026-09-27 (Asia/Shanghai) | Project: `AM-AUTO-20260918-R1` | State: **V57 design draft; no V57 model runs**
 
-Project: `AM-AUTO-20260918-R1`
+## Current research gate
 
-Candidate: `C33`
+The active work is `v57_design/`: a matched full-predecessor randomized comparison of native reset versus pristine-shadow memory state, proposed for LangMem-Local and Graphiti-Local. Its protocol is **not frozen**. The 14B model is not installed; ranks 26–28 have not been run. The next engineering requirement is a real isolated Neo4j instance and Graphiti reset/teardown proof, followed by the 14B runtime identity, per-unit no-interference drill and frozen assignment schedule. See `v57_design/PROTOCOL_DRAFT.json` and `docs/V57_MATCHED_PREDECESSOR_REVIEW_20260927.md`.
 
-Status: `V44_DEEPSEEK_NONTHINKING_CONTROL_FAILED_IDENTIFICATION_E1_CONFIRMED_E2_E3_UNMEASURED`
+Completed offline checks: development count scorer 46/46 synthetic vectors; ordered retrieval footprint 8/8; partial-conjunction statistic 9/9 including 10,000 synthetic null datasets. Graphiti constructor 6/6 and toy local BGE/reranker 7/7 used no LLM or database calls. These checks do not establish a V57 causal outcome.
 
-## What is established
+## Historical evidence and archive
 
-The exact Redis benchmark checkout and Mem0 2.0.19 path were executed on macOS
-with the frozen 12-case cohort. In all 12 V42 cases, native scoped reset left 10
-Mem0 message rows while verified cleanup left zero. Both arms had zero scoped
-vectors before re-ingestion. The first extraction prompt differed in all 12
-native-versus-clean pairs.
+V55 Redis×Mem0 held-out formal run finished 12/12 selected cases: 11 Stage-A valid, 10 E2 evaluable and 10/10 E2 positive, with 6/10 answer-text E3 positive. Supplemental DeepSeek E4 had no common correctness direction. The full V55 run is in `history/v55_formal/`, with relocation manifests under `history/`.
 
-This directly supports E1: behaviorally active state escapes the lifecycle
-boundary implied by the benchmark reset and is consumed by the next transition.
+V56 LangMem-Local stopped at its first clean-clean null divergence: rank 25's independent 51-session clean trajectories had final memory/retrieval counts 1 versus 3, both below the frozen floor of 5. No predecessor or native arm ran. Its terminal result remains `UNVERIFIABLE_NULL_DIVERGENCE`, independently audited 439/439. The complete version is now physically in `history/v56_cross_backend/`, unmodified, with exact relocation evidence in `history/V56_AND_LEGACY_RELOCATION_AUDIT_20260927.json`. The old V56 dashboard is stopped. Frozen V56 scripts contain original root-path assumptions; see `history/V56_REHYDRATION.md` before historical replay. No V56 causal claim was created by archival.
 
-## What is not established
+Legacy MemArena/Mem0 vendored source, V50/V56 Python environments, old root diagnostics and the V56 web-GPT statement were moved into `history/` and hashed before/after. The active root retains only the pinned Redis benchmark source under `third_party/`, the BGE cache and V57 environments under `.runtime/`, current docs and V57 design code.
 
-V42 produced different memory, Top-10 retrieval and answer hashes in all 12
-pairs, but V43 produced the same pattern in three clean-clean controls whose
-first extraction prompts were identical. V44 disabled DeepSeek thinking and set
-temperature to zero; its real clean-clean case still diverged.
+## Literature and claim boundary
 
-Consequently, V42's mechanical E3 labels are not causal E3 evidence. E2 and E3
-remain unmeasured causally; E4 was not measured.
+`IDEA.md` preserves the user's original idea with a dated literature addendum. The active claim-to-source map is `docs/literature/RELATED_WORK_CURRENT.md`; `docs/literature/references.bib` contains 20 starter entries and a 10/10 metadata/structure audit. It is not yet a submission-ready bibliography. V55 supports within-stack measurement distortion, not backend prevalence or a directional correctness decline. V56 contributes no independent-backend isolation result. V57 statistics and Graphiti toy engineering checks are preliminary only.
 
-## Version chain
+Current Python environments are described in `v57_design/environment/README.md`; both are engineering-only uv/CPython 3.12.14 environments, separate from the archived V50/V55/V56 venvs.
 
-1. **V40** — OpenAI-backed exact protocol materialized, but unavailable due API
-   credit constraints.
-2. **V42** — Prospective DeepSeek + local FastEmbed amendment; 12/12 completed.
-3. **V43** — Three thinking-mode clean-clean controls exposed a stochastic
-   baseline matching the nominal V42 effect.
-4. **V44** — One non-thinking, temperature-zero clean-clean gate still diverged;
-   exact-hash DeepSeek reruns were stopped.
-
-## Next scientific action
-
-Do not rerun V42 unchanged and do not start MemArena with the same endpoint.
-Freeze a new design before further provider calls. Acceptable directions are:
-
-1. deterministic or seeded model inference;
-2. replicated native-clean and clean-clean arms with a distributional treatment
-   estimand;
-3. semantic/task-level outcomes calibrated against repeated clean-clean
-   baselines rather than exact string hashes.
-
-A small V45 feasibility gate should precede any n=12 expansion. Kill or downscope
-C33 if a redesigned pilot cannot separate treatment effect from stochastic
-baseline.
-
-## Runtime state
-
-- Python 3.12 virtual environment remains under the ignored `third_party/` tree.
-- Exact Redis checkout remains at commit
-  `94192c39e2a4a154f441a5411e3d73c4f54974a6`.
-- `mem0ai==2.0.19`, FastEmbed 0.8.0 and local Qdrant remain installed.
-- `.env` is ignored and contains the local provider credential.
-- Dataset caches and raw experiment work directories were intentionally removed
-  after structured receipts were committed. They can be downloaded/recreated.
-- Direct DeepSeek access was more reliable than the optional local proxy during
-  long runs.
-
-## Known gaps
-
-The historical MemArena V27 scripts referenced by old handoffs are absent from
-the migration package. See [KNOWN_GAPS.md](KNOWN_GAPS.md).
-
-## Git checkpoints
-
-- `c15be3c` — V40 migration baseline.
-- `3ec0b7f` — macOS Redis runtime preparation.
-- `6f020e9` — DeepSeek pilot and stochastic-control implementation.
-- `f40637d` — V42–V44 results and decisions.
+Portable GPU-server engineering preparation: `.gitignore` excludes history, environments, vendored checkouts, exports and downloadable weights/datasets; `v57_design/DOWNLOADABLE_ASSETS.json` pins the public source/data/BGE snapshot; `ops/bootstrap_gpu_server.py` recreates only engineering dependencies and verifies hashes. `SERVER_README.md` gives server commands. No Git remote is configured and V57 formal runtime is still unfrozen.

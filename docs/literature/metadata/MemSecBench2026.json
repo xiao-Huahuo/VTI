@@ -1,0 +1,166 @@
+{
+  "kind": "arxiv",
+  "identifier": "2607.27080",
+  "url": "https://api.datacite.org/dois/10.48550/arxiv.2607.27080",
+  "attributes": {
+    "doi": "10.48550/arxiv.2607.27080",
+    "prefix": "10.48550",
+    "suffix": "arxiv.2607.27080",
+    "identifiers": [
+      {
+        "identifier": "2607.27080",
+        "identifierType": "arXiv"
+      }
+    ],
+    "alternateIdentifiers": [
+      {
+        "alternateIdentifierType": "arXiv",
+        "alternateIdentifier": "2607.27080"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Chen, Xuanze",
+        "nameType": "Personal",
+        "givenName": "Xuanze",
+        "familyName": "Chen",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Xie, Xukang",
+        "nameType": "Personal",
+        "givenName": "Xukang",
+        "familyName": "Xie",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Fu, Wentao",
+        "nameType": "Personal",
+        "givenName": "Wentao",
+        "familyName": "Fu",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Zhou, Jiajun",
+        "nameType": "Personal",
+        "givenName": "Jiajun",
+        "familyName": "Zhou",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Yu, Shanqing",
+        "nameType": "Personal",
+        "givenName": "Shanqing",
+        "familyName": "Yu",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Xuan, Qi",
+        "nameType": "Personal",
+        "givenName": "Qi",
+        "familyName": "Xuan",
+        "affiliation": [],
+        "nameIdentifiers": []
+      }
+    ],
+    "titles": [
+      {
+        "title": "MemSecBench: Tracking Agent Memory Poisoning from Persistence to Consequence and Repair"
+      }
+    ],
+    "publisher": "arXiv",
+    "container": {},
+    "publicationYear": 2026,
+    "subjects": [
+      {
+        "lang": "en",
+        "subject": "Cryptography and Security (cs.CR)",
+        "subjectScheme": "arXiv"
+      },
+      {
+        "lang": "en",
+        "subject": "Artificial Intelligence (cs.AI)",
+        "subjectScheme": "arXiv"
+      },
+      {
+        "subject": "FOS: Computer and information sciences",
+        "subjectScheme": "Fields of Science and Technology (FOS)"
+      }
+    ],
+    "contributors": [],
+    "dates": [
+      {
+        "date": "2026-07-29T16:06:54Z",
+        "dateType": "Submitted",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026-07-30T00:58:22Z",
+        "dateType": "Updated",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026-07",
+        "dateType": "Available",
+        "dateInformation": "v1"
+      }
+    ],
+    "language": null,
+    "types": {
+      "ris": "GEN",
+      "bibtex": "misc",
+      "citeproc": "article",
+      "schemaOrg": "CreativeWork",
+      "resourceType": "Article",
+      "resourceTypeGeneral": "Preprint"
+    },
+    "relatedIdentifiers": [],
+    "relatedItems": [],
+    "sizes": [],
+    "formats": [],
+    "version": "1",
+    "rightsList": [
+      {
+        "rights": "arXiv.org perpetual, non-exclusive license",
+        "rightsUri": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      }
+    ],
+    "descriptions": [
+      {
+        "description": "Memory systems allow agents to retain and reuse information from past interactions, but they can also let malicious content persist. A malicious instruction crafted by an attacker may be stored in long-term memory, recalled much later, and quietly shape a real action. Recent benchmarks increasingly examine agent memory security, yet few trace the same malicious semantics across persistence, downstream consequences, and selective repair under diverse memory-backend comparisons. To address this gap, we introduce MemSecBench, a task-grounded benchmark for the lifecycle security of agent memory systems. It contains 310 cases drawn from 48 realistic contexts across code and science, daily life, and office work. Each case follows a controlled Write--Execute--Forget protocol in an isolated runtime under an exact agent configuration, defined by an agent harness, a memory backend, and an LLM backend. Evidence-based adjudication combines a deterministic write check, checkpoint-specific judge-model evaluations, and programmatic gates across seven lifecycle checkpoints. The experimental design spans a 24-configuration matrix of two agent harnesses, four memory backends, and three LLM backends. Across all 24 configurations, malicious memory persists in 84.2% of all cases, and the full Write--Execute chain succeeds in 50.3%. Among successfully poisoned cases, 59.6% complete the full Execute chain, while 56.1% achieve selective repair.Compared with matched Native configurations, the largest absolute differences are 16.1 percentage points for end-to-end attack success and 41.3 percentage points for selective repair. These descriptive contrasts indicate that the evaluated memory system stacks differ in lifecycle security, both in the propagation of malicious memory and in selective repair after successful memory poisoning.",
+        "descriptionType": "Abstract"
+      }
+    ],
+    "geoLocations": [],
+    "fundingReferences": [],
+    "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00LjMvbWV0YWRhdGEueHNkIj4KICA8aWRlbnRpZmllciBpZGVudGlmaWVyVHlwZT0iRE9JIj4xMC40ODU1MC9BUlhJVi4yNjA3LjI3MDgwPC9pZGVudGlmaWVyPgogIDxhbHRlcm5hdGVJZGVudGlmaWVycz4KICAgIDxhbHRlcm5hdGVJZGVudGlmaWVyIGFsdGVybmF0ZUlkZW50aWZpZXJUeXBlPSJhclhpdiI+MjYwNy4yNzA4MDwvYWx0ZXJuYXRlSWRlbnRpZmllcj4KICA8L2FsdGVybmF0ZUlkZW50aWZpZXJzPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5DaGVuLCBYdWFuemU8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPlh1YW56ZTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5DaGVuPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPlhpZSwgWHVrYW5nPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5YdWthbmc8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+WGllPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkZ1LCBXZW50YW88L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPldlbnRhbzwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5GdTwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5aaG91LCBKaWFqdW48L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkppYWp1bjwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5aaG91PC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPll1LCBTaGFucWluZzwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+U2hhbnFpbmc8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+WXU8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+WHVhbiwgUWk8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPlFpPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPlh1YW48L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgPC9jcmVhdG9ycz4KICA8dGl0bGVzPgogICAgPHRpdGxlPk1lbVNlY0JlbmNoOiBUcmFja2luZyBBZ2VudCBNZW1vcnkgUG9pc29uaW5nIGZyb20gUGVyc2lzdGVuY2UgdG8gQ29uc2VxdWVuY2UgYW5kIFJlcGFpcjwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlcj5hclhpdjwvcHVibGlzaGVyPgogIDxwdWJsaWNhdGlvblllYXI+MjAyNjwvcHVibGljYXRpb25ZZWFyPgogIDxzdWJqZWN0cz4KICAgIDxzdWJqZWN0IHhtbDpsYW5nPSJlbiIgc3ViamVjdFNjaGVtZT0iYXJYaXYiPkNyeXB0b2dyYXBoeSBhbmQgU2VjdXJpdHkgKGNzLkNSKTwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHhtbDpsYW5nPSJlbiIgc3ViamVjdFNjaGVtZT0iYXJYaXYiPkFydGlmaWNpYWwgSW50ZWxsaWdlbmNlIChjcy5BSSk8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJGaWVsZHMgb2YgU2NpZW5jZSBhbmQgVGVjaG5vbG9neSAoRk9TKSI+Rk9TOiBDb21wdXRlciBhbmQgaW5mb3JtYXRpb24gc2NpZW5jZXM8L3N1YmplY3Q+CiAgPC9zdWJqZWN0cz4KICA8ZGF0ZXM+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iU3VibWl0dGVkIiBkYXRlSW5mb3JtYXRpb249InYxIj4yMDI2LTA3LTI5VDE2OjA2OjU0WjwvZGF0ZT4KICAgIDxkYXRlIGRhdGVUeXBlPSJVcGRhdGVkIiBkYXRlSW5mb3JtYXRpb249InYxIj4yMDI2LTA3LTMwVDAwOjU4OjIyWjwvZGF0ZT4KICAgIDxkYXRlIGRhdGVUeXBlPSJBdmFpbGFibGUiIGRhdGVJbmZvcm1hdGlvbj0idjEiPjIwMjYtMDc8L2RhdGU+CiAgPC9kYXRlcz4KICA8cmVzb3VyY2VUeXBlIHJlc291cmNlVHlwZUdlbmVyYWw9IlByZXByaW50Ij5BcnRpY2xlPC9yZXNvdXJjZVR5cGU+CiAgPHZlcnNpb24+MTwvdmVyc2lvbj4KICA8cmlnaHRzTGlzdD4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJodHRwOi8vYXJ4aXYub3JnL2xpY2Vuc2VzL25vbmV4Y2x1c2l2ZS1kaXN0cmliLzEuMC8iPmFyWGl2Lm9yZyBwZXJwZXR1YWwsIG5vbi1leGNsdXNpdmUgbGljZW5zZTwvcmlnaHRzPgogIDwvcmlnaHRzTGlzdD4KICA8ZGVzY3JpcHRpb25zPgogICAgPGRlc2NyaXB0aW9uIGRlc2NyaXB0aW9uVHlwZT0iQWJzdHJhY3QiPk1lbW9yeSBzeXN0ZW1zIGFsbG93IGFnZW50cyB0byByZXRhaW4gYW5kIHJldXNlIGluZm9ybWF0aW9uIGZyb20gcGFzdCBpbnRlcmFjdGlvbnMsIGJ1dCB0aGV5IGNhbiBhbHNvIGxldCBtYWxpY2lvdXMgY29udGVudCBwZXJzaXN0LiBBIG1hbGljaW91cyBpbnN0cnVjdGlvbiBjcmFmdGVkIGJ5IGFuIGF0dGFja2VyIG1heSBiZSBzdG9yZWQgaW4gbG9uZy10ZXJtIG1lbW9yeSwgcmVjYWxsZWQgbXVjaCBsYXRlciwgYW5kIHF1aWV0bHkgc2hhcGUgYSByZWFsIGFjdGlvbi4gUmVjZW50IGJlbmNobWFya3MgaW5jcmVhc2luZ2x5IGV4YW1pbmUgYWdlbnQgbWVtb3J5IHNlY3VyaXR5LCB5ZXQgZmV3IHRyYWNlIHRoZSBzYW1lIG1hbGljaW91cyBzZW1hbnRpY3MgYWNyb3NzIHBlcnNpc3RlbmNlLCBkb3duc3RyZWFtIGNvbnNlcXVlbmNlcywgYW5kIHNlbGVjdGl2ZSByZXBhaXIgdW5kZXIgZGl2ZXJzZSBtZW1vcnktYmFja2VuZCBjb21wYXJpc29ucy4gVG8gYWRkcmVzcyB0aGlzIGdhcCwgd2UgaW50cm9kdWNlIE1lbVNlY0JlbmNoLCBhIHRhc2stZ3JvdW5kZWQgYmVuY2htYXJrIGZvciB0aGUgbGlmZWN5Y2xlIHNlY3VyaXR5IG9mIGFnZW50IG1lbW9yeSBzeXN0ZW1zLiBJdCBjb250YWlucyAzMTAgY2FzZXMgZHJhd24gZnJvbSA0OCByZWFsaXN0aWMgY29udGV4dHMgYWNyb3NzIGNvZGUgYW5kIHNjaWVuY2UsIGRhaWx5IGxpZmUsIGFuZCBvZmZpY2Ugd29yay4gRWFjaCBjYXNlIGZvbGxvd3MgYSBjb250cm9sbGVkIFdyaXRlLS1FeGVjdXRlLS1Gb3JnZXQgcHJvdG9jb2wgaW4gYW4gaXNvbGF0ZWQgcnVudGltZSB1bmRlciBhbiBleGFjdCBhZ2VudCBjb25maWd1cmF0aW9uLCBkZWZpbmVkIGJ5IGFuIGFnZW50IGhhcm5lc3MsIGEgbWVtb3J5IGJhY2tlbmQsIGFuZCBhbiBMTE0gYmFja2VuZC4gRXZpZGVuY2UtYmFzZWQgYWRqdWRpY2F0aW9uIGNvbWJpbmVzIGEgZGV0ZXJtaW5pc3RpYyB3cml0ZSBjaGVjaywgY2hlY2twb2ludC1zcGVjaWZpYyBqdWRnZS1tb2RlbCBldmFsdWF0aW9ucywgYW5kIHByb2dyYW1tYXRpYyBnYXRlcyBhY3Jvc3Mgc2V2ZW4gbGlmZWN5Y2xlIGNoZWNrcG9pbnRzLiBUaGUgZXhwZXJpbWVudGFsIGRlc2lnbiBzcGFucyBhIDI0LWNvbmZpZ3VyYXRpb24gbWF0cml4IG9mIHR3byBhZ2VudCBoYXJuZXNzZXMsIGZvdXIgbWVtb3J5IGJhY2tlbmRzLCBhbmQgdGhyZWUgTExNIGJhY2tlbmRzLiBBY3Jvc3MgYWxsIDI0IGNvbmZpZ3VyYXRpb25zLCBtYWxpY2lvdXMgbWVtb3J5IHBlcnNpc3RzIGluIDg0LjIlIG9mIGFsbCBjYXNlcywgYW5kIHRoZSBmdWxsIFdyaXRlLS1FeGVjdXRlIGNoYWluIHN1Y2NlZWRzIGluIDUwLjMlLiBBbW9uZyBzdWNjZXNzZnVsbHkgcG9pc29uZWQgY2FzZXMsIDU5LjYlIGNvbXBsZXRlIHRoZSBmdWxsIEV4ZWN1dGUgY2hhaW4sIHdoaWxlIDU2LjElIGFjaGlldmUgc2VsZWN0aXZlIHJlcGFpci5Db21wYXJlZCB3aXRoIG1hdGNoZWQgTmF0aXZlIGNvbmZpZ3VyYXRpb25zLCB0aGUgbGFyZ2VzdCBhYnNvbHV0ZSBkaWZmZXJlbmNlcyBhcmUgMTYuMSBwZXJjZW50YWdlIHBvaW50cyBmb3IgZW5kLXRvLWVuZCBhdHRhY2sgc3VjY2VzcyBhbmQgNDEuMyBwZXJjZW50YWdlIHBvaW50cyBmb3Igc2VsZWN0aXZlIHJlcGFpci4gVGhlc2UgZGVzY3JpcHRpdmUgY29udHJhc3RzIGluZGljYXRlIHRoYXQgdGhlIGV2YWx1YXRlZCBtZW1vcnkgc3lzdGVtIHN0YWNrcyBkaWZmZXIgaW4gbGlmZWN5Y2xlIHNlY3VyaXR5LCBib3RoIGluIHRoZSBwcm9wYWdhdGlvbiBvZiBtYWxpY2lvdXMgbWVtb3J5IGFuZCBpbiBzZWxlY3RpdmUgcmVwYWlyIGFmdGVyIHN1Y2Nlc3NmdWwgbWVtb3J5IHBvaXNvbmluZy48L2Rlc2NyaXB0aW9uPgogIDwvZGVzY3JpcHRpb25zPgo8L3Jlc291cmNlPg==",
+    "url": "https://arxiv.org/abs/2607.27080",
+    "contentUrl": null,
+    "metadataVersion": 0,
+    "schemaVersion": "http://datacite.org/schema/kernel-4",
+    "source": "mds",
+    "isActive": true,
+    "state": "findable",
+    "reason": null,
+    "viewCount": 0,
+    "viewsOverTime": [],
+    "downloadCount": 0,
+    "downloadsOverTime": [],
+    "referenceCount": 0,
+    "citationCount": 0,
+    "citationsOverTime": [],
+    "partCount": 0,
+    "partOfCount": 0,
+    "versionCount": 0,
+    "versionOfCount": 0,
+    "created": "2026-07-30T02:12:15.000Z",
+    "registered": "2026-07-30T02:12:16.000Z",
+    "published": "2026",
+    "updated": "2026-07-30T02:12:16.000Z"
+  }
+}
