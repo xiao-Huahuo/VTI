@@ -28,7 +28,7 @@ GitHub 主分支已同步，但 V58 依赖的冻结源码仍在 Git 忽略的历
 
 ### 完成与未完成状态
 
-2 路配置的首个开发请求导致 19GB 模型占用、42% CPU offload 和约 6% 内存可用，已安全终止并保留发送现场，不重试；未启动两个 worker。原串行配置的 2 个开发 ingestion 回读通过，LLM 请求约占 wall time 的 96.82%，checkpoint 约占 0.015%。总计 3 次开发请求发送、2 份响应保存；**V58 正式模型调用 0**。因资源风险未完成 30–50 个 ingestion 或 1/2 lane 吞吐对照，1.35× gate 未评估、未通过；没有正式并发 execution amendment。正式串行 `READY_FOR_FORMAL_RUN` 状态不变，详见 `docs/v58/EXECUTION_PROFILING_SCREENING_20260930.md`。
+2 路配置的首个开发请求导致 19GB 模型占用、42% CPU offload 和memory_pressure free percentage 约 6%（非物理空闲比例），已安全终止并保留发送现场，不重试；未启动两个 worker。原串行配置的 2 个开发 ingestion 回读通过，LLM 请求约占 wall time 的 96.82%，checkpoint 约占 0.015%。总计 3 次开发请求发送、2 份响应保存；**V58 正式模型调用 0**。因资源风险未完成 30–50 个 ingestion 或 1/2 lane 吞吐对照，1.35× gate 未评估、未通过；没有正式并发 execution amendment。正式串行 `READY_FOR_FORMAL_RUN` 状态不变，详见 `docs/v58/EXECUTION_PROFILING_SCREENING_20260930.md`。
 
 # 2026-09-30 V58 主指标前瞻性补充与离线实现
 
@@ -99,3 +99,7 @@ GitHub 主分支已同步，但 V58 依赖的冻结源码仍在 Git 忽略的历
 ### 完成与未完成状态
 
 安全暂停与页面已实现。暂停在当前步骤提交后退出，强杀/断电的原失败边界仍明示；原始收据未改。正式模型调用 0，未启动正式实验。证据见 docs/v58/PAUSE_AND_MONITOR_AUDIT.md。
+
+# 2026-09-30 V58 内存监控口径更正
+
+用户发现空闲整机已用约 10GB。更正此前将 memory_pressure free percentage 解释为物理可用比例的错误；保留原始 profiling 收据，并说明旧 smoke 未控制后台应用。进度页改用 vm_stat 页分类显示非文件缓存占用估计、文件缓存与压缩内存；缺失采样不显示为零。监控测试 2/2 通过，现场读取 16GiB 总量、约 10.16GiB 非缓存占用、约 5.06GiB 文件缓存、swap 0。未调用模型，正式调用仍为 0。

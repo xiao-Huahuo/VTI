@@ -11,7 +11,7 @@
     "source_path": "solutions/v58/src/",
     "runner": "solutions/v58/src/runner.py",
     "version_manifest": "solutions/v58/VERSION_MANIFEST.json",
-    "version_manifest_sha256": "195925df2ca3b02e03ef02b311016455489b696ef892911342607f82e596e9b9"
+    "version_manifest_sha256": "4ed607103f84f99287bbf1f10300099f95855831f7903b8ff9f9b649f5e06452"
   },
   "current_tests": {
     "status": "OFFLINE_TEST_PASS_RECOVERY_TEST_PASS",
@@ -134,6 +134,8 @@
     "pause_semantics": "Finish current operation and commit checkpoint, then exit; in-flight hard kill remains uncertain",
     "dashboard_entry": "solutions/v58/src/progress_server.py",
     "audit": "docs/v58/PAUSE_AND_MONITOR_AUDIT.md",
-    "formal_model_calls_during_revision": 0
+    "formal_model_calls_during_revision": 0,
+    "memory_interpretation": "vm_stat non-file-cache estimate, cache and compressor; memory_pressure percentage is not physical availability",
+    "memory_correction_tests": "2/2 dashboard tests, no model calls"
   }
 }

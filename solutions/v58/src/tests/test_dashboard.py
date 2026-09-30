@@ -13,9 +13,26 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import progress_server as dashboard
+from machine_metrics import memory_pages
 
 
 class DashboardTests(unittest.TestCase):
+    def test_memory_page_categories_and_missing_sample(self):
+        sample = """Mach Virtual Memory Statistics: (page size of 16384 bytes)
+Anonymous pages: 100.
+Pages wired down: 20.
+Pages occupied by compressor: 5.
+File-backed pages: 50.
+Pages free: 3.
+Pages speculative: 2.
+"""
+        result = memory_pages(sample)
+        self.assertEqual(result["memory_noncache_estimate_bytes"], 125 * 16384)
+        self.assertEqual(result["memory_file_cache_bytes"], 50 * 16384)
+        self.assertEqual(result["memory_unused_pages_bytes"], 5 * 16384)
+        self.assertEqual(memory_pages("unavailable"), {})
+        self.assertEqual(memory_pages(sample.replace("Anonymous pages: 100.", "")), {})
+
     def test_only_formal_batches_are_counted_and_pause_api_is_local_control(self):
         with tempfile.TemporaryDirectory() as temporary:
             project = Path(temporary)

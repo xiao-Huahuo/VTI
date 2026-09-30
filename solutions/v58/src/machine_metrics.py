@@ -21,10 +21,28 @@ def command(args: list[str], timeout: float = 3) -> str | None:
         return None
 
 
+def memory_pages(text: str) -> dict:
+    """Expose page categories; non-cache usage is an estimate, not Activity Monitor's exact counter."""
+    size = re.search(r"page size of (\d+) bytes", text)
+    fields = {}
+    for label in ("Anonymous pages", "Pages wired down", "Pages occupied by compressor",
+                  "File-backed pages", "Pages free", "Pages speculative"):
+        match = re.search(r"(?:\"?" + re.escape(label) + r"\"?):\s*(\d+)", text)
+        fields[label] = int(match.group(1)) if match else None
+    if not size or any(value is None for value in fields.values()):
+        return {}
+    page = int(size.group(1))
+    return {"memory_noncache_estimate_bytes": page * (fields["Anonymous pages"] + fields["Pages wired down"] + fields["Pages occupied by compressor"]),
+            "memory_file_cache_bytes": page * fields["File-backed pages"],
+            "memory_compressed_resident_bytes": page * fields["Pages occupied by compressor"],
+            "memory_wired_bytes": page * fields["Pages wired down"],
+            "memory_unused_pages_bytes": page * (fields["Pages free"] + fields["Pages speculative"])}
+
+
 def collect(project: Path) -> dict:
     result = {"sampled_at_utc": utc_now(), "platform": platform.system(), "cores": os.cpu_count(),
               "cpu_percent": None, "gpu_percent": None, "memory_total_bytes": None,
-              "memory_available_percent": None, "swap_used_bytes": None,
+              "memory_pressure_free_percent": None, "swap_used_bytes": None,
               "gpu_shared_memory_bytes": None, "model_server_online": False,
               "models": [], "processes": []}
     if platform.system() == "Darwin":
@@ -32,6 +50,9 @@ def collect(project: Path) -> dict:
         total = command(["sysctl", "-n", "hw.memsize"])
         if total and total.strip().isdigit():
             result["memory_total_bytes"] = int(total.strip())
+        page_stats = command(["vm_stat"])
+        if page_stats:
+            result.update(memory_pages(page_stats))
         top = command(["top", "-l", "2", "-s", "1", "-n", "0"], timeout=4)
         if top:
             matches = re.findall(r"CPU usage:\s*([\d.]+)% user,\s*([\d.]+)% sys", top)
@@ -41,7 +62,7 @@ def collect(project: Path) -> dict:
         if pressure:
             match = re.search(r"System-wide memory free percentage:\s*(\d+)%", pressure)
             if match:
-                result["memory_available_percent"] = int(match.group(1))
+                result["memory_pressure_free_percent"] = int(match.group(1))
         swap = command(["sysctl", "vm.swapusage"])
         if swap:
             match = re.search(r"used\s*=\s*([\d.]+)([MG])", swap)
