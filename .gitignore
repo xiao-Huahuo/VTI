@@ -18,6 +18,9 @@
 /outputs/
 /experiment_outputs/
 /runtime_outputs/
+# All version inputs and outputs remain local, including nested version layouts.
+**/inputs/
+**/outputs/
 /v57_design/runs/
 /v57_design/drills/
 /v57_design/results/raw/

@@ -1,6 +1,8 @@
 # Reset Is Not Isolation
 
-> **2026-09-27 文献维护注记：** 下文保留 idea 形成时的原始论证与阶段状态；最新文献边界和引用见 [`docs/literature/RELATED_WORK_CURRENT.md`](docs/literature/RELATED_WORK_CURRENT.md)，参考文献库见 [`docs/literature/references.bib`](docs/literature/references.bib)。当前实验状态以 `CURRENT_STATE.json` 和终止收据为准。
+> **2026-09-27 文献维护注记：** 下文保留 idea 形成时的原始论证与阶段状态；当时的文献边界和引用现归档在 [`RELATED_WORK_CURRENT.md`](history/pre_v58_root_20260930/docs/literature/RELATED_WORK_CURRENT.md)，参考文献库见 [`references.bib`](history/pre_v58_root_20260930/docs/literature/references.bib)。当时的实验状态以[旧 `CURRENT_STATE.json`](history/pre_v58_root_20260930/CURRENT_STATE.json)和终止收据为准。
+
+> **2026-09-30 新起点注记：** V57 及以前的代码、数据和文档已整体归入 [`history/`](history/README.md)。上文旧的 `docs/` 链接、`CURRENT_STATE.json` 路径及阶段数字均属于归档时的历史语境；对应旧根目录见 [`history/pre_v58_root_20260930/`](history/pre_v58_root_20260930/)。本文件保留原始 idea，不代表 V58 已有协议或实验结果；当前入口以根目录 [`README.md`](README.md) 和 [`科研开发规范.md`](科研开发规范.md) 为准。
 
 ## Interventional Auditing and Certification of Cross-Trial State in Agent-Memory Benchmarks
 
@@ -2373,4 +2375,4 @@ V32 已发现、但上文未点名的 [Agentic Benchmark Checklist](https://arxi
 
 V57 拟用的 Fisher sharp-null 随机化检验、energy statistic 和 2-of-3 partial conjunction 都是已有统计方法，应分别引用 [Wu–Ding](https://doi.org/10.1080/01621459.2020.1750415)、[Székely–Rizzo](https://doi.org/10.1016/j.jspi.2013.03.018) 和 [Benjamini–Heller](https://doi.org/10.1111/j.1541-0420.2007.00984.x)。潜在新贡献是将它们以正确的实验单元、随机化与无干扰约束用于 agent-memory benchmark 的 trial boundary；V57 仍未冻结，不能在论文里写成已完成结果。
 
-逐篇 claim 边界、版本承接和仍待核查的文献见 [`docs/literature/RELATED_WORK_CURRENT.md`](docs/literature/RELATED_WORK_CURRENT.md) 与 [`docs/LITERATURE_LINEAGE_AUDIT_20260927.md`](docs/LITERATURE_LINEAGE_AUDIT_20260927.md)。
+逐篇 claim 边界、版本承接和仍待核查的文献见归档的 [`RELATED_WORK_CURRENT.md`](history/pre_v58_root_20260930/docs/literature/RELATED_WORK_CURRENT.md) 与 [`LITERATURE_LINEAGE_AUDIT_20260927.md`](history/pre_v58_root_20260930/docs/LITERATURE_LINEAGE_AUDIT_20260927.md)。

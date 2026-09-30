@@ -1,34 +1,25 @@
-# AM-AUTO-20260918-R1 — C33
+# Reset Is Not Isolation
 
-**Reset Is Not Isolation：Agent-memory benchmark 的 trial isolation 审计。** 当前源码已推送至 [GitHub VTI](https://github.com/xiao-Huahuo/VTI)；`history/` 和本机运行环境不在仓库当前树中。
+**先读[《科研开发规范》](科研开发规范.md)，再开始任何新版本的设计、编码、实验或整理。** [IDEA.md](IDEA.md)保留研究问题的原始表述；它不是当前实验结果或可执行协议。
 
 ## 当前状态
 
-当前工作仅是 **V57 方案与工程预检**，尚无 V57 LongMemEval 模型运行，协议也未冻结。14B 模型未安装；Graphiti-Local 只完成无数据库的玩具组件测试，Neo4j reset/teardown 仍未验收。见 [当前交接](CURRENT_HANDOFF.md)、[V57 未冻结草案](v57_design/PROTOCOL_DRAFT.json)及[方案审查](docs/V57_MATCHED_PREDECESSOR_REVIEW_20260927.md)。
+仓库已在 V57 结束后清空当前工作区，准备从 V58 重新开始。**V58 尚无当前源码、输入或输出，也未启动实验。** 不要把历史目录中的脚本或旧冻结方案当作 V58 runner。
 
-V55 正式结果和原始收据在 [history/v55_formal](history/v55_formal)；V56 因 clean-clean 分叉按冻结规则停止，**不是 LangMem isolation PASS/FAIL**，完整归档于 [history/v56_cross_backend](history/v56_cross_backend)。V56 的独立回读为 439/439；[决策摘要](history/v56_cross_backend/V56_DECISION_SUMMARY.md)和[迁移审计](history/V56_AND_LEGACY_RELOCATION_AUDIT_20260927.json)可追溯原结果。旧 V56 进度页已关闭。
+V57 及以前的非规范代码、实验数据、文档、旧环境和导出物都在 [history/](history/README.md)，整个目录由保持不变的 `.gitignore` 忽略。原根目录归档在 [history/pre_v58_root_20260930/](history/pre_v58_root_20260930/)；迁移前[文件哈希清单](history/PRE_V58_ROOT_MOVE_MANIFEST_20260930.json)和迁移后[独立回读](history/PRE_V58_ROOT_MOVE_AUDIT_20260930_V2.json)可用于核验。该目录是历史资料区，布局和路径不符合新规范；不要直接在其中续跑或改写冻结收据。
 
-## 当前入口
+历史结论只作背景：V55 有 Mem0 的 held-out 因果证据；V56 以 `UNVERIFIABLE_NULL_DIVERGENCE` 停止；V57 的 LangMem–DeepSeek Compatibility 判为 `LANGMEM_DS_INCOMPATIBLE`，正式 rank 26/27 未运行。详情见归档的[旧状态](history/pre_v58_root_20260930/CURRENT_STATE.json)和[V57 完整报告](history/pre_v58_root_20260930/study_freeze/results/V57_COMPATIBILITY_FULL_REPORT_20260930.md)。这些结果不会自动变成新版本的证据。
 
-- [IDEA.md](IDEA.md)：用户研究 idea，含注明日期的文献补充；旧阶段数字以当前状态和终止收据为准。
-- [CURRENT_STATE.json](CURRENT_STATE.json)：机器状态；[CURRENT_HANDOFF.md](CURRENT_HANDOFF.md)：当前交接。
-- [V57 设计](v57_design/PROTOCOL_DRAFT.json)：尚未冻结。[计数器审计](v57_design/results/COUNT_UNIT_V1_AUDIT.json)、[检索表示审计](v57_design/results/RETRIEVAL_FOOTPRINT_DRY_RUN.json)、[统计干跑](v57_design/results/PARTIAL_CONJUNCTION_DRY_RUN.json)与[Graphiti 玩具组件审计](v57_design/results/GRAPHITI_LOCAL_COMPONENT_AUDIT.json)只验证离线代码和工程接口。
-- [当前 Related Work 对照](docs/literature/RELATED_WORK_CURRENT.md)、[20 条起始参考文献](docs/literature/references.bib)及[10/10 参考文献审计](docs/literature/REFERENCE_LIBRARY_AUDIT.json)。
-- [当前 Python 环境说明](v57_design/environment/README.md)与[依赖快照](v57_design/environment/V57_ENV_SNAPSHOT.json)：V57 工程环境隔离，正式运行身份未冻结。
-- [显卡服务器准备说明](SERVER_README.md)、[可下载资产清单](v57_design/DOWNLOADABLE_ASSETS.json)、[源码包导出](ops/export_gpu_source.py)和[轻量 Git bundle 导出](ops/export_gpu_git_bundle.py)：历史、模型、环境不进入可迁移源码；服务器按哈希重新获取。
-- [科研开发规范](科研开发规范.md)、[已知缺口](KNOWN_GAPS.md)、[变更记录](docs/CHANGE_HISTORY.md)、[历史索引](history/README.md)。
-
-## 目录
+## V58 起的新结构
 
 ```text
-IDEA.md / CURRENT_*       当前研究入口
-v57_design/               当前未冻结的 V57 方案、代码、离线审计
-docs/                     研究方案、文献、变更记录
-third_party/agent-memory-server/   当前保留的固定 Redis benchmark 源码
-.runtime/                 当前 BGE 缓存与 V57 隔离 Python 环境
-ops/                      当前工作流工具
-exports/                  当前可分享产物目录
-history/                  V42–V56、旧依赖、旧运行环境与迁移清单
+docs/vXX/                         本版方案、冻结记录、审查、报告
+solutions/vXX/
+├── src/                          本版全部源码，包括实验代码和测试
+├── inputs/                       实际输入，Git 忽略
+└── outputs/<run_id>/              原始收据、检查点和分析结果，Git 忽略
 ```
 
-历史冻结代码中的旧根路径不作内容修改；如需复跑，先阅读 [V56 布局恢复说明](history/V56_REHYDRATION.md)，在隔离工作副本中恢复布局并核对哈希。
+`src/` 中的代码从自身所属的 `src` 推导本版路径，不依赖机器绝对路径或启动目录。每版的输入来源、哈希、运行身份和重建方式写在可跟踪的版本说明中。具体规则以[开发规范](科研开发规范.md)为准。
+
+根目录只保留项目入口和控制文件；V58 的 `docs/`、`solutions/` 将在实际开始该版本时建立。历史材料不会为了目录外观被批量改写。`.env` 等旧凭据也已随本机旧根目录归档，**不可将 `history/` 整体上传或公开**。
