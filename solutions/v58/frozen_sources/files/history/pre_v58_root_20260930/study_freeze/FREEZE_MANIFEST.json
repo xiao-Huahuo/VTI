@@ -1,0 +1,23 @@
+{
+  "api_calls": 0,
+  "created_utc": "2026-09-30T02:31:58.434917+00:00",
+  "dataset_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+  "files_sha256": {
+    "V57_COMPATIBILITY.json": "180fbbf6c16e931b9fdfd28bc742ad034eb8700dcc7c6f57a4b78fdf22b049af",
+    "V57_FORMAL_DESIGN.json": "bdd1762d7c91e647b3b27b3d17c08aaace957757f9703a9b2b0a5b5059df8153",
+    "V58_POLICY_ORDER.json": "ab09bc9cb64512376350c6eec6edbd4ae36c7b94faf19ace2602de36bb946553",
+    "V59_MECHANISM_COST.json": "c13941cb865462147015e62b24711e22a4be6bc62e0796108dce60e3f0dfea08"
+  },
+  "generator_sha256": "0140bf2d8a59631f17213294fa8dc265cf845d8a2cbf2cace352bbdb9eb20848",
+  "random_seed_hex": "22e40d1fcec801c76f45a2505ccb07bc",
+  "remaining_execution_gates": [
+    "DeepSeek-LangMem adapter and raw request instrumentation",
+    "zero-retry crash tests",
+    "unit teardown and real backend recovery drill",
+    "runtime identity and returned model binding",
+    "run-specific preflight"
+  ],
+  "schema": "c33-three-block-design-freeze-manifest-v1",
+  "source_sha256": "19730484d4321be5df62dc236fa027107d67e7fa84d5a5f7585bf27202927555",
+  "status": "DESIGN_FROZEN_EXECUTION_BLOCKED"
+}

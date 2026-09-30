@@ -1,0 +1,91 @@
+{
+  "arms": {
+    "F": "Rotate to new user_id/run_id while retaining contaminated backend state",
+    "N": "Native reset in same scope",
+    "P": "Pristine backend clone never exposed to contaminated seed",
+    "V": "V55 verified cleanup in same scope"
+  },
+  "blocks": [
+    {
+      "arm_execution_order": [
+        "N",
+        "V",
+        "P",
+        "F"
+      ],
+      "question_id": "gpt4_74aed68e",
+      "rank": 13,
+      "repeat": 1,
+      "sessions": 45
+    },
+    {
+      "arm_execution_order": [
+        "N",
+        "V",
+        "P",
+        "F"
+      ],
+      "question_id": "gpt4_74aed68e",
+      "rank": 13,
+      "repeat": 2,
+      "sessions": 45
+    },
+    {
+      "arm_execution_order": [
+        "P",
+        "F",
+        "V",
+        "N"
+      ],
+      "question_id": "a06e4cfe",
+      "rank": 15,
+      "repeat": 1,
+      "sessions": 53
+    },
+    {
+      "arm_execution_order": [
+        "N",
+        "P",
+        "V",
+        "F"
+      ],
+      "question_id": "a06e4cfe",
+      "rank": 15,
+      "repeat": 2,
+      "sessions": 53
+    },
+    {
+      "arm_execution_order": [
+        "P",
+        "F",
+        "V",
+        "N"
+      ],
+      "question_id": "gpt4_d12ceb0e",
+      "rank": 17,
+      "repeat": 1,
+      "sessions": 45
+    },
+    {
+      "arm_execution_order": [
+        "V",
+        "F",
+        "P",
+        "N"
+      ],
+      "question_id": "gpt4_d12ceb0e",
+      "rank": 17,
+      "repeat": 2,
+      "sessions": 45
+    }
+  ],
+  "claim_boundary": "Exploratory mechanism and cost; no equivalence, certificate, or general cheapest-policy claim",
+  "microbenchmark": "100 policy-only operations per N/V/F; descriptive only",
+  "outcomes": "Per block distances N-P, V-P, F-P; medians, ranges, sign counts; full lifecycle latency/RSS/storage receipts",
+  "random_seed_hex": "22e40d1fcec801c76f45a2505ccb07bc",
+  "schema": "c33-v59-mechanism-cost-design-freeze-v1",
+  "seed": "Each block independently regenerates V55's three-successful-session plus frozen-fault contaminated seed; clone before policy application",
+  "selection": "Earliest three V55 stage-A-valid, E2-evaluable, E2-positive ranks",
+  "selection_source_sha256": "bedc1f3518fcadca5519145ba85b59b7687ca2bbcb1759883f7c9cc997e2188d",
+  "status": "DESIGN_FROZEN_EXECUTION_BLOCKED"
+}

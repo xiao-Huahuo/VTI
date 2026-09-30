@@ -1,0 +1,113 @@
+{
+  "decision": "p26<0.05 AND p27<0.05 for REPLICATED_CROSS_BACKEND_INFLUENCE; one significant = SINGLE_TARGET_SIGNAL; neither = INFLUENCE_NOT_DETECTED",
+  "endpoint": "Ordered Top-5 1925-dimensional BGE retrieval footprint; empty list is valid",
+  "failure": "Any incomplete unit makes its target and backend result UNVERIFIABLE_EXECUTION; no replacement or rerun",
+  "footprint_code_sha256": "80ebdde1bbaa7998532e198eac55ca0a62343adeef3ef65ad0d8428a8501e171",
+  "predecessor": {
+    "question_id": "b5ef892d",
+    "rank": 1,
+    "sessions": 52
+  },
+  "random_seed_hex": "22e40d1fcec801c76f45a2505ccb07bc",
+  "schema": "c33-v57-ds-formal-design-freeze-v1",
+  "status": "DESIGN_FROZEN_EXECUTION_BLOCKED",
+  "targets": [
+    {
+      "assignments": [
+        {
+          "arm": "S",
+          "slot": 1
+        },
+        {
+          "arm": "N",
+          "slot": 2
+        },
+        {
+          "arm": "S",
+          "slot": 3
+        },
+        {
+          "arm": "N",
+          "slot": 4
+        },
+        {
+          "arm": "S",
+          "slot": 5
+        },
+        {
+          "arm": "N",
+          "slot": 6
+        },
+        {
+          "arm": "N",
+          "slot": 7
+        },
+        {
+          "arm": "S",
+          "slot": 8
+        },
+        {
+          "arm": "S",
+          "slot": 9
+        },
+        {
+          "arm": "N",
+          "slot": 10
+        }
+      ],
+      "question_id": "0a995998",
+      "rank": 26,
+      "sessions": 44
+    },
+    {
+      "assignments": [
+        {
+          "arm": "N",
+          "slot": 1
+        },
+        {
+          "arm": "N",
+          "slot": 2
+        },
+        {
+          "arm": "S",
+          "slot": 3
+        },
+        {
+          "arm": "S",
+          "slot": 4
+        },
+        {
+          "arm": "N",
+          "slot": 5
+        },
+        {
+          "arm": "S",
+          "slot": 6
+        },
+        {
+          "arm": "N",
+          "slot": 7
+        },
+        {
+          "arm": "S",
+          "slot": 8
+        },
+        {
+          "arm": "S",
+          "slot": 9
+        },
+        {
+          "arm": "N",
+          "slot": 10
+        }
+      ],
+      "question_id": "87f22b4a",
+      "rank": 27,
+      "sessions": 47
+    }
+  ],
+  "test": "Euclidean energy statistic in float64, right-tail Fisher test over 72 allowed assignments per target, tie tolerance 1e-12",
+  "unit": "Fresh process and separate LangMem A/B; full predecessor on A; reveal arm only after predecessor-complete receipt; native reset A or empty reset B; full target on assigned backend",
+  "unit_isolation": "Destroy process, managers, stores, and local embed working state between units"
+}

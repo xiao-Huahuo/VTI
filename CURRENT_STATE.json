@@ -1,6 +1,6 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-09-30T11:02:19+00:00",
+  "updated_at_utc": "2026-09-30T12:04:18+00:00",
   "project": "Reset Is Not Isolation",
   "phase": "V58_READY_FOR_FORMAL_RUN_NO_FORMAL_CALLS",
   "active_version": "v58",
@@ -11,7 +11,7 @@
     "source_path": "solutions/v58/src/",
     "runner": "solutions/v58/src/runner.py",
     "version_manifest": "solutions/v58/VERSION_MANIFEST.json",
-    "version_manifest_sha256": "031ea200ca7900b6858ee9d9d8b187cd12b0a906dffc6d056b04cbcd2e1c7be0"
+    "version_manifest_sha256": "7c96f9b54f54be5df183d79bab153c69ccbc4efa5ba8605b9fdd1bc3de20c46b"
   },
   "current_tests": {
     "status": "OFFLINE_TEST_PASS_RECOVERY_TEST_PASS",
@@ -19,6 +19,7 @@
     "recovery_checks_passed": 13,
     "backend_fake_four_trial_drill": "PASS",
     "backend_cross_process_resume_checks_passed": 8,
+    "gpu_source_pack_safety_tests_passed": 2,
     "real_model_calls": 0
   },
   "current_docs": {
@@ -102,6 +103,22 @@
     "two_lane_throughput_gate": "NOT_EVALUATED_NOT_QUALIFIED",
     "formal_execution_amendment": null,
     "serial_formal_runner_and_checkpoint_unchanged": true
+  },
+  "gpu_supercomputer_preparation": {
+    "status": "SOURCE_ONLY_LOCAL_VERIFIED_SCHEDULER_TEST_ONLY",
+    "account_work_boundary": "~/projects/srx/",
+    "source_pack": "solutions/v58/frozen_sources/MANIFEST.json",
+    "source_pack_sha256": "2a346366497b1318cf2ed640b7c7a4a4f2a00a0ce13ffad4aac418de18367945",
+    "source_restore_entry": "solutions/v58/src/gpu/prepare_sources.py",
+    "scheduler_template": "solutions/v58/src/gpu/source_preflight.sbatch",
+    "login_reachable": true,
+    "github_https_from_login": "TIMEOUT",
+    "a100x4_sbatch_test_only": "ELIGIBLE_WITH_PROJECT_ACCOUNT",
+    "gpu_job_submitted": false,
+    "model_downloads": 0,
+    "environment_installs": 0,
+    "dataset_downloads": 0,
+    "gpu_formal_run_qualified": false
   },
   "env_location": ".env (moved from history/pre_v58_root_20260930/.env at user request; Git ignored; mode 0600)"
 }

@@ -1,0 +1,161 @@
+{
+  "schema": "c33-v55-formal-prospective-confirmatory-experiment",
+  "date": "2026-09-25",
+  "project_id": "AM-AUTO-20260918-R1",
+  "candidate": "C33",
+  "status": "PRE_EXECUTION_REVISED_FINAL_RUNNER_DRILL_PENDING",
+  "purpose": "prospectively measure calibrated hidden-trial-state E2/E3 effects on ranks 13-24 not executed in V42/V47/V48, under the local Redis x Mem0 stack",
+  "prior_evidence_is_not_part_of_primary_formal_sample": {
+    "pilot_ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "pilot_case_count": 12,
+    "reason": "V42 executed ranks 1-12; V47/V48 reused ranks 1-4. None qualify as cases untouched by protocol development."
+  },
+  "selection": {
+    "source": "v55_formal/FROZEN_COHORT_V55.json",
+    "source_sha256": "efff6265ec03c09bd928470c8379f1d77eae4ba94f6fd828f68d1c479c924d07",
+    "derivation_rule": "same V34 SHA256 ordering continued beyond the prior 12-case materialization",
+    "rule": "exclude all V42 ranks 1-12; use formal ranks 13-24 inclusive; no outcome-based substitution",
+    "ranks": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "n_cases": 12,
+    "replacement": "none"
+  },
+  "stack": {
+    "redis_commit": "94192c39e2a4a154f441a5411e3d73c4f54974a6",
+    "mem0_version": "2.0.19",
+    "embedding_provider": "fastembed",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "model": "qwen3:8b-q4_K_M",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "think": false,
+    "temperature": 0.0,
+    "top_k_sampling": 1,
+    "top_p": 1.0,
+    "seed": 20260920,
+    "num_ctx": 32768,
+    "num_predict": 2048,
+    "repeat_penalty": 1.1,
+    "extraction_schema_sha256": "1055ef9cc3ce37fa5ca586cc066d39e89090c8eb8b4ac53407184d0f53a3baa3",
+    "openai_api_required": false,
+    "ollama_server_version": "0.34.3",
+    "ollama_python_version": "0.6.2",
+    "fastembed_version": "0.8.0",
+    "qdrant_client_version": "1.19.1"
+  },
+  "design": {
+    "unit": "LongMemEval case",
+    "arms": [
+      "clean_ref",
+      "clean_rep",
+      "native"
+    ],
+    "shared_seed_snapshot": "one failed-attempt seed per case cloned byte-for-byte into all arms",
+    "clean_ref": "verified cleanup then full replay",
+    "clean_rep": "independent verified cleanup then full replay",
+    "native": "benchmark-native scoped reset then full replay",
+    "run_order": [
+      "clean_ref",
+      "clean_rep",
+      "native"
+    ],
+    "native_gate": "native may run only after clean_ref versus clean_rep exact pipeline null-control pass",
+    "provider_microprobe": "three actual first-session clean extraction replays from one verified-clean reset snapshot per case; compare ordered prompt and raw content hashes, save each repetition before continuing",
+    "progressive_fail_fast": "if runner exposes per-session exact request/response/checkpoint comparators, stop the case on the first clean-clean mismatch; final Stage A criteria remain authoritative"
+  },
+  "stage_a_clean_control": {
+    "required": true,
+    "pass": [
+      "same frozen branch seed identity",
+      "same first extraction prompt hash",
+      "same final memory text multiset/hash representation",
+      "same ordered Top-10 retrieval text hashes",
+      "same final answer text hash",
+      "quality floors satisfied"
+    ],
+    "failure": "mark case CALIBRATION_INVALID; do not run native; do not replace case"
+  },
+  "quality_floor": {
+    "final_memory_count_min": 100,
+    "retrieval_count": 10
+  },
+  "endpoints": {
+    "E1": "after native reset, scoped vectors are zero while stale scoped sidecar messages remain; verified-clean has zero scoped vectors and messages; next extraction prompt differs",
+    "E2_primary": "among Stage-A-valid cases, native differs from clean_ref in final memory text set/multiset or ordered Top-10 retrieval",
+    "E2_continuous": [
+      "memory_jaccard",
+      "retrieval_jaccard"
+    ],
+    "E3_secondary": "final answer text hash differs between native and clean_ref after E1/E2",
+    "E4_secondary": "paired correctness differs under the prospectively frozen no-OpenAI judge policy"
+  },
+  "e4_policy": {
+    "trigger": "only E3-positive cases; identical answer text cannot yield a paired correctness difference",
+    "rubric": "same LongMemEval judge rubric for both arms",
+    "judge_provider": "DeepSeek API",
+    "requested_model": "deepseek-flash",
+    "thinking": "disabled",
+    "temperature": 0,
+    "votes_per_answer": 3,
+    "decision": "majority yes/no independently for clean_ref and native",
+    "provider_identity_guard": "record returned model ID for every receipt and fail the E4 batch if it changes within the run",
+    "no_posthoc_rule_switching": true,
+    "claim": "supplemental no-OpenAI correctness endpoint, not official GPT-4o LongMemEval score"
+  },
+  "formal_summaries": {
+    "denominator": "report all 12 selected, Stage-A-valid, E1-assessed, and E2-evaluable counts separately; E2/E3 rates use only Stage-A-valid cases with completed E1-positive quality-passing native arm; post-Stage-A generation/schema failures are missing, not negative",
+    "primary": [
+      "Stage-A-valid count / 12",
+      "E1-assessed count and E1-positive / assessed",
+      "E2-evaluable count and E2-positive / evaluable",
+      "missing E2 after Stage A count",
+      "median and per-case memory Jaccard among E2-evaluable",
+      "median and per-case retrieval Jaccard among E2-evaluable"
+    ],
+    "secondary": [
+      "E3-text-positive count / E2-evaluable",
+      "E4 paired outcome counts among E3-positive cases",
+      "question-type and session-count descriptive breakdowns"
+    ],
+    "uncertainty": "Wilson 95% intervals for binary rates; descriptive only, no population prevalence claim beyond the frozen formal cohort",
+    "no_pilot_pooling_in_primary": true
+  },
+  "stopping_and_failure": {
+    "generation_or_schema_error": "mark that case EVALUATION_INVALID_GENERATION_OR_SCHEMA with immutable failure scene and no automatic retry or replacement; continue remaining selected cases",
+    "clean_control_failure": "do not launch native for that case",
+    "global_stop": "if at least two of the first three selected cases have an identical predeclared calibration failure-signature or provider nondeterminism, stop batch",
+    "checkpoint": "atomic checkpoint after every session/arm unit; full run requires a real interruption/resume drill before batch execution",
+    "resume": "refuse identity/config/checkpoint hash mismatch"
+  },
+  "compute_budget": {
+    "maximum_full_arms_if_all_valid": 36,
+    "cases": 12,
+    "note": "case count increases runtime, not model memory requirement; run serially unless concurrency is separately validated"
+  },
+  "claim_boundary": "V55 can support calibrated effect frequencies and effect-size distributions within the prospectively selected 12-case Redis x Mem0 formal cohort. It cannot by itself establish universal benchmark prevalence, natural published-run contamination, official GPT-4o score effects, or cross-model generality.",
+  "pre_execution_corrigendum": "v55_formal/docs/PRE_EXECUTION_CORRIGENDUM.md"
+}

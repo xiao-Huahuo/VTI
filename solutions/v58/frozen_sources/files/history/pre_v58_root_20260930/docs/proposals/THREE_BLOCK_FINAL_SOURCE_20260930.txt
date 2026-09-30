@@ -1,0 +1,751 @@
+可以冻结了。你这次指出的三个问题都能在**不继续扩大实验规模**的情况下彻底解决，而且我重新推了一遍后，不再保留会影响因果解释的开放设计项。
+
+我把最终方案定为：**V57 = 独立 backend 因果复现；V58 = Policy × Order 的严格随机实验；V59 = 小样本机制与运行成本研究。** 不做 Graphiti，不下载 14B，不新增第四个大实验。
+
+## 冻结决议
+
+V56 永久保持 `UNVERIFIABLE_NULL_DIVERGENCE`，不重解释、不调阈值、不重跑 rank25。
+
+V57 使用 `LangMem + deepseek-flash`。V58、V59 全部回到已经验证稳定的 `Mem0 + Qwen3 8B Q4`。V57 是唯一收费实验。
+
+这三个实验分别只回答一个问题：
+
+```text id="c0n2tm"
+V57
+Mem0 之外是否也能出现 predecessor → retrieval 的因果影响？
+
+V58
+native reset 下的 predecessor/order sensitivity，
+是否被 verified cleanup 显著削弱？
+
+V59
+native / verified / fresh-scope 三种策略在已知 positive case 上
+表现如何、成本多少？
+```
+
+不再让任何一个实验承担超出设计能力的 claim。
+
+---
+
+# V57：最终冻结版
+
+## 1. Compatibility
+
+现有 `count_unit_v1.py` **不重写**。
+
+你已经验证：
+
+```text id="k1e8cn"
+46 / 46 synthetic tests PASS
+```
+
+并且 `"8" / "8 days" / "eight days" / "I spent eight days..." / "The total was 8 days"` 等都正确处理，因此冻结当前实现，只在 manifest 记录它的 SHA-256。
+
+Development cases 固定：
+
+```text id="obkpwr"
+rank 1  b5ef892d
+rank 3  1a8a66a6
+rank 4  gpt4_31ff4165
+```
+
+每个 case 两次独立 pristine run，共 6 条。
+
+Compatibility PASS 固定为：
+
+```text id="t7a5em"
+6/6 完整执行
+6/6 memory 非空
+6/6 retrieval 非空
+6/6 answer 可由 count_unit_v1 解析
+无 fatal tool/schema/API failure
+
+总 correctness >= 4/6
+且每个 case 至少 1/2 correct
+```
+
+任何一项不满足：
+
+```text id="zby116"
+LANGMEM_DS_INCOMPATIBLE
+```
+
+V57 到此结束。**不自动换 Graphiti。**
+
+这彻底消除了 backend fishing。
+
+---
+
+## 2. DeepSeek 调用错误规则
+
+这里采用最保守、最容易审稿的办法：
+
+> **正式实验中，HTTP 请求一旦交给 DeepSeek client，就永不自动重发。**
+
+虽然官方对 500/503 建议重试、429 建议降低请求速率，但对于随机模型实验，我们无法知道连接中断时服务端是否已经生成过一次 output；因此科研 runner 比官方业务重试建议更严格。:chatgpt-content-reference{index="0"}
+
+状态机冻结为：
+
+```text id="5kv8ei"
+REQUEST_PREPARED
+↓
+原子写 request body + SHA256
+↓
+REQUEST_DISPATCHED
+↓
+client.chat.completions.create(...)
+```
+
+只有两种成功路径：
+
+```text id="1eo4tk"
+完整 HTTP response 到达
+↓
+立即原子保存 raw response
+↓
+解析
+↓
+commit checkpoint
+```
+
+或失败：
+
+```text id="u65ral"
+client 被调用以后发生任何：
+429 / 500 / 503
+read timeout
+connection reset
+EOF
+进程在 response 落盘前死亡
+↓
+AMBIGUOUS_EXTERNAL_CALL
+↓
+该 experimental unit terminal invalid
+```
+
+**不重发。**
+
+400/401/402/422 属于配置/资源错误，同样 terminal。
+
+DeepSeek 官方 JSON mode 确实可能偶发返回空 content；收到这种 HTTP 200 响应后，也不得“再抽一次”，直接记 `SEMANTIC_MODEL_FAILURE`。:chatgpt-content-reference{index="1"}
+
+这样 P0 完全消失。
+
+---
+
+## 3. DeepSeek identity
+
+Compatibility 六条运行中，所有成功 response 的 `model` 字段必须一致。
+
+把该值冻结为：
+
+```text id="ry94ct"
+EXPECTED_RETURNED_MODEL_ID
+```
+
+Formal 阶段出现不同 `model`：
+
+```text id="fvqad2"
+MODEL_IDENTITY_DRIFT
+→ 当前 unit invalid
+→ V57 confirmatory = UNVERIFIABLE_EXECUTION
+```
+
+请求固定：
+
+```text id="irf9qu"
+model = deepseek-flash
+thinking = disabled
+temperature = 0
+stream = false
+concurrency = 1
+```
+
+DeepSeek 当前 thinking mode 默认开启，因此 `disabled` 必须显式传入。:chatgpt-content-reference{index="2"}
+
+`temperature=0` 只是 frozen configuration，**不视作 deterministic guarantee**。
+
+---
+
+# V57 Formal
+
+Targets 固定：
+
+```text id="bja48m"
+rank26  0a995998  44 sessions
+rank27  87f22b4a  47 sessions
+```
+
+Predecessor 固定：
+
+```text id="tgi9qm"
+rank1  b5ef892d  52 sessions
+```
+
+每个 target 10 个独立 units：
+
+```text id="r6ofcr"
+5 Native
+5 Pristine-Shadow
+```
+
+总计 20 units。
+
+## Experimental unit
+
+每个 unit：
+
+```text id="enqrjo"
+fresh Python process
+fresh LangMem A
+fresh unused LangMem B
+↓
+完整 predecessor → A
+↓
+PREDECESSOR_COMPLETE receipt
+↓
+此时 runner 才读取该 unit 已冻结的 assignment
+```
+
+Native：
+
+```text id="ogwrj7"
+A.stock_reset()
+↓
+完整 target → A
+```
+
+Shadow：
+
+```text id="3efemg"
+A 不再使用
+B.stock_reset() on empty
+↓
+完整 target → B
+```
+
+reset 与 target 中间禁止任何：
+
+```text id="ak6frh"
+LLM restart
+provider restart
+额外 cleanup
+sleep stabilization
+manager rebuild
+```
+
+---
+
+## 4. Assignment
+
+每个 target 分三个时间 block：
+
+```text id="1xoyua"
+slots 1–4   2 N / 2 S
+slots 5–8   2 N / 2 S
+slots 9–10  1 N / 1 S
+```
+
+因此合法分配：
+
+$$
+6\times6\times2=72
+$$
+
+assignment schedule 在 formal API call 前物化成 JSON，不能只存 seed。
+
+---
+
+## 5. Primary endpoint
+
+唯一 Primary：
+
+### Ordered Top-5 Retrieval Footprint
+
+文本 normalization 固定：
+
+```text id="mri3df"
+Unicode NFC
+CRLF → LF
+strip
+连续 whitespace → 单空格
+大小写保留
+标点保留
+duplicate 保留
+```
+
+本地 embedding：
+
+```text id="foy8uw"
+BAAI/bge-small-en-v1.5
+384D
+L2-normalized
+float32
+```
+
+rank $r$：
+
+$$
+w_r=\frac1{\log_2(r+1)}
+$$
+
+不足五条用零向量，并附存在 mask。
+
+最终：
+
+$$
+v=
+[w_1e_1,\ldots,w_5e_5,w_1m_1,\ldots,w_5m_5]
+\in\mathbb R^{1925}
+$$
+
+空 retrieval 是**合法科学 outcome**，不是 invalid run。
+
+---
+
+## 6. Target statistic
+
+5 Native 与 5 Shadow 使用 Euclidean energy statistic：
+
+$$
+T=
+\frac{2}{25}\sum_{N,S}\|v_N-v_S\|
+-\frac1{25}\sum_{N,N'}\|v_N-v_{N'}\|
+-\frac1{25}\sum_{S,S'}\|v_S-v_{S'}\|
+$$
+
+统计阶段全部转 `float64`。
+
+对实际允许的 72 个 assignments 做 exact Fisher randomization：
+
+$$
+p_j=
+\frac{\#\{T^{perm}\ge T^{obs}-10^{-12}\}}{72}
+$$
+
+最终只有：
+
+$$
+p_{26}<0.05
+\land
+p_{27}<0.05
+$$
+
+才允许：
+
+```text id="lwrl0t"
+REPLICATED_CROSS_BACKEND_INFLUENCE
+```
+
+一个显著：
+
+```text id="ypkrgt"
+SINGLE_TARGET_SIGNAL
+```
+
+都不显著：
+
+```text id="u2kw0b"
+INFLUENCE_NOT_DETECTED
+```
+
+绝不出现 `SAFE` / `ISOLATION_PASS`。
+
+Memory、answer、correctness 全部 secondary，不允许翻转 primary 判定。
+
+---
+
+# V58：重新设计后也可以冻结
+
+你指出 Williams 4-order 设计中 predecessor 与 target position 混杂，这个问题我直接彻底消掉。
+
+不用 4 个 Williams orders。
+
+改成 **12 个预注册 permutations 的 exact-cover design**。
+
+Cases：
+
+```text id="75b0w9"
+A = rank29  gpt4_ec93e27f  47 sessions
+B = rank30  gpt4_45189cb4  45 sessions
+C = rank31  08f4fc43       47 sessions
+D = rank32  e8a79c70       44 sessions
+```
+
+固定 12 个 orders：
+
+```text id="kxqfui"
+CBAD
+BCDA
+ABDC
+ACBD
+CADB
+BACD
+ADCB
+DABC
+DCAB
+CDBA
+BDAC
+DBCA
+```
+
+这组不是随便挑的，它满足：
+
+> **每一个有向 predecessor→target pair，在 target position 2、3、4 各恰好出现一次。**
+
+即 12 个 directed pairs × 3 positions = 36 个 adjacency-position cells，**全部恰好覆盖一次**。
+
+同时每个 A/B/C/D 在四个 position 各出现 3 次。
+
+因此：
+
+> predecessor identity 与 target position 不再混杂。
+
+这直接解决你指出的 V58 P1。
+
+---
+
+# V58 两个 policy
+
+每一个 order 独立执行两次：
+
+```text id="ar3r7m"
+Native
+Verified-Clean
+```
+
+总计：
+
+```text id="d3td4d"
+12 orders × 2 policies
+= 24 benchmark sequences
+```
+
+每 sequence 4 cases。
+
+每一个 order 是一个 matched block。
+
+在每个 block 内预先随机决定：
+
+```text id="y1bhpn"
+slot1 = N / V
+slot2 = V / N
+```
+
+两个 slots 是两个完全独立 fresh sequence runs。
+
+因此，同一个 exact order 本身有两个独立重复；policy label 在这两个 repeat 间随机分配。
+
+这已经足够做**随机化的 policy-effect inference**，不需要额外再给每个 policy 做第二次 repeat。
+
+---
+
+## V58 primary estimand
+
+不再声称：
+
+> Native 本身具有多大的 order distortion。
+
+真正 primary 是：
+
+> **verified cleanup 是否降低 predecessor-conditioned retrieval sensitivity。**
+
+对于 policy $p$，target $j$，position $q\in\{2,3,4\}$：
+
+由于 exact-cover，每个 cell 中恰好有三个 observation，对应三个可能 predecessor。
+
+定义 cell dispersion：
+
+$$
+D_{jqp}
+=
+\frac{
+d(v_1,v_2)+d(v_1,v_3)+d(v_2,v_3)
+}{3}
+$$
+
+再定义：
+
+$$
+S_p=
+\frac1{12}
+\sum_{j=1}^{4}
+\sum_{q=2}^{4}
+D_{jqp}
+$$
+
+Primary：
+
+$$
+\Delta
+=
+S_{Native}-S_{Verified}
+$$
+
+因此它直接衡量：
+
+> 在控制 target identity 和 target position 后，native reset 是否表现出更大的 predecessor-conditioned retrieval variation。
+
+Primary inference：
+
+12 个 order blocks 中各有一个 N/V pair。
+
+在 sharp null 下交换每个 block 内的 policy labels，共：
+
+$$
+2^{12}=4096
+$$
+
+种合法 assignments。
+
+做 one-sided exact randomization：
+
+$$
+p=
+\frac{
+\#\{\Delta^{perm}\ge\Delta^{obs}-10^{-12}\}
+}{4096}
+$$
+
+若：
+
+$$
+p<0.05,\quad\Delta>0
+$$
+
+唯一允许的主结论是：
+
+> **Verified cleanup significantly attenuates predecessor-conditioned retrieval sensitivity in the fixed four-case panel.**
+
+不写：
+
+```text id="5vjljj"
+benchmark ranking changed
+benchmark score invalid
+leaderboard distorted
+```
+
+因为这个实验没有测那些东西。
+
+这彻底解决你指出的第三个问题。
+
+---
+
+# V58 correctness
+
+每个 sequence 的 4-case correctness score 仍保存。
+
+但只作为：
+
+```text id="e9scq3"
+secondary descriptive endpoint
+```
+
+可以报告 Native 和 Verified 在不同 order 下的 0–4 score。
+
+除非未来另做正式 score-level 实验，否则不能从 retrieval primary 推导 leaderboard claim。
+
+---
+
+# V59：最终定位就是机制 + 成本，不再追求 certificate
+
+这一点不再摇摆。
+
+固定使用 V55 中按 rank 最靠前的 3 个 E2-evaluable positive cases：
+
+```text id="7zrnsl"
+rank13  gpt4_74aed68e   45 sessions
+rank15  a06e4cfe        53 sessions
+rank17  gpt4_d12ceb0e   45 sessions
+```
+
+我已经重新从 V55 aggregate 核对：三者都是 `stage_a_valid=true`、`e2_evaluable=true`、`e2_positive=true`；rank14 是 native generation missing，rank16 是 clean calibration failure，因此没有被跳过来“挑效果”。这就是机械的最早三个合格 ranks。
+
+每 case 两个独立 blocks。
+
+每 block 生成一次与 V55 **完全相同定义**的 contaminated seed：
+
+```text id="283trg"
+3 successful sessions
++
+frozen injected-fault procedure
+```
+
+然后冻结该 seed snapshot，并派生四个同时期 arms：
+
+```text id="6fvj9p"
+N = Native Reset，同 scope
+V = V55 Verified Cleanup，同 scope
+F = Fresh Scope Rotation
+P = Pristine Shadow
+```
+
+这里加入 `P` 是为了不把 Fresh Scope 偷偷当 ground truth。
+
+---
+
+## V59 Fresh Scope 的精确定义
+
+`F` 不删除 predecessor state。
+
+它保留同一 cloned backend state，但 target 使用一个从未出现过的新：
+
+```text id="rbe4c3"
+user_id
+run_id / scope identity
+```
+
+旧 predecessor state 仍物理存在于 backend，只是 target 进入新的逻辑 scope。
+
+因此 F 真正回答：
+
+> **最便宜的 logical scope rotation 是否能避免已知 sidecar carryover？**
+
+而不是模糊的“fresh namespace”。
+
+---
+
+## V59 Pristine
+
+`P` 使用从未执行 contaminated seed 的空白 backend clone，再执行相同 target。
+
+所以 V59 有一个真正同时期的 pristine behavioral reference。
+
+---
+
+## V59 不做显著性 certificate
+
+仍使用相同 Top-5 retrieval footprint。
+
+每 block 报告：
+
+$$
+d(N,P)
+$$
+
+$$
+d(V,P)
+$$
+
+$$
+d(F,P)
+$$
+
+总共：
+
+```text id="8s75qj"
+3 cases × 2 blocks = 6 matched blocks
+```
+
+逐个完整报告。
+
+另外报告：
+
+```text id="0m1ztb"
+V closer to P than N：x/6
+F closer to P than N：x/6
+```
+
+以及三种距离的 median / range。
+
+不设：
+
+```text id="gqj0pd"
+隔离阈值 δ
+PASS
+certificate
+equivalence
+```
+
+因此也不存在“小样本不够证明安全”的问题。
+
+V59 就是一项：
+
+> **mechanism-recovery comparison**
+
+---
+
+# V59 成本指标
+
+每个 arm 必须同期记录：
+
+```text id="xh2j60"
+policy application latency
+target ingestion latency
+query latency
+boundary-to-answer latency
+peak RSS
+storage bytes / operations
+```
+
+此外三种实际 mitigation policy：
+
+```text id="h4t03e"
+Native
+Verified
+Fresh Scope
+```
+
+各做 100 次 reset/switch-only microbenchmark。
+
+Pristine 不属于 operational reset policy，因此不进入 reset-only overhead comparison。
+
+最终论文只说：
+
+> 某种 policy 在这些 case 中更接近 pristine，同时 boundary overhead 为多少。
+
+不说：
+
+> 普遍成本最低。
+
+---
+
+# V58 / V59 本机可运行性
+
+两个实验继续使用已经在 V55 跑通的：
+
+```text id="iea8ry"
+Qwen3 8B Q4_K_M
+Ollama
+Mem0
+BGE-small
+```
+
+M5 16GB 不并发。
+
+实际预算：
+
+| 实验 | workload | RAM | 预计时间 | API |
+|---|---:|---:|---:|---:|
+| V57 Compatibility | 6 trajectories | 2–4 GB | 1–3 h | 少量 DeepSeek |
+| V57 Formal | 20 matched units | 2–4 GB | 5–12 h | 约 ¥20–35，Compatibility 后按实际 token 重算 |
+| V58 | 24 × 4-case sequences，约 4392 sessions | 9–12 GB | 约 20–40 h | ¥0 |
+| V59 | 24 target arms + 少量 seed generation | 9–12 GB | 约 8–16 h | ¥0 |
+
+V58 最重，但它可以按 12 个 matched blocks checkpoint，分 2–4 晚串行执行；不要求更大内存，只增加 wall-clock。
+
+---
+
+# 最后一次设计级审查
+
+现在三个实验分别没有再承担超范围 claim：
+
+**V57** 不证明 LangMem 安全，只检测两个固定 target 上的独立 backend 因果 influence；无自动 backend fishing，无 exact-null 假设，无网络重抽。
+
+**V58** 不再把 predecessor 与 position 混在一起，也不声称 benchmark score/ranking distortion。12-order exact-cover 使每个 predecessor-target pair 在三个 target positions 各出现一次，primary 只检验 **verified policy 对 predecessor-conditioned retrieval sensitivity 的削弱**。
+
+**V59** 不再做 isolation certificate，也不拿历史 V55 当同期 control；Native、Verified、Fresh Scope 和 Pristine 全部同期，从同一 block 的冻结状态派生，只做 mechanism recovery 和 operational cost。
+
+**现在设计层可以冻结。**
+
+真正落盘时，只剩工程性动作，而不是科研设计决策：
+
+1. 将现有 `count_unit_v1.py` 原样 hash-freeze；
+2. 生成 V57 六条 Compatibility manifest；
+3. 生成 V57 两个 target 的 72-state assignment files；
+4. 把 DeepSeek **zero-retry-after-dispatch** 状态机写进 runner 并做 fake-client crash tests；
+5. 把上面的 12 个 V58 permutations 和 12 个 block 的 N/V slot assignments物化成文件；
+6. 把 V59 ranks 13/15/17、四 arms 和 2 repeats 物化；
+7. 全部 offline tests、SIGTERM/resume drill、SHA-256 manifest 通过后，才允许第一笔 DeepSeek 调用。
+
+从科研设计角度，**不再需要继续修改实验结构**。下一步就应该进入 V57 Compatibility 的工程冻结，而不是再重新设计 V57/V58/V59。

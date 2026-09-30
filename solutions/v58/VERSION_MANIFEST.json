@@ -7,6 +7,8 @@
   "formal_entry": "solutions/v58/src/runner.py",
   "formal_model_calls": 0,
   "formal_run_receipts": null,
+  "gpu_source_pack_sha256": "2a346366497b1318cf2ed640b7c7a4a4f2a00a0ce13ffad4aac418de18367945",
+  "gpu_source_status": "SOURCE_ONLY_PREPARED_NO_MODEL_ENV_DOWNLOAD",
   "input_manifest_sha256": "5e8bef6afa0a3b6e66b8610dbcf8d411e7497374a1e2737951f5d9c82456df82",
   "metric_amendment_sha256": "e00a04bf02502a3fcc9067c837d9e7f7534b7645e4f48200e6ad92ed2f05bece",
   "offline_preflight_entry": "python solutions/v58/src/audit_freeze.py",
@@ -20,6 +22,8 @@
     "solutions/v58/src/drill_backend_fake.py": "431c80687e296b93b4c701eb1016bf0b22e363f42f4583351ed426aafa8d9a8e",
     "solutions/v58/src/drill_backend_resume.py": "de4bc4097b319559ba20f52fecae4017c5c27fe66de65ab2f81ffa06a127b082",
     "solutions/v58/src/drill_recovery.py": "eda36693de5ef79e3e565ea80a9bf9b7ccbd2612dd58615cd379fcc7653ad2cf",
+    "solutions/v58/src/gpu/prepare_sources.py": "285126b8f4d84536c85dadd46ac5e05fef23d74285ff04ccbd1ccf671fff06d6",
+    "solutions/v58/src/gpu/test_prepare_sources.py": "39b061f590ea6526705d258a90bb2d964d3e8e8cff0ded86f76983db7ee4ec2c",
     "solutions/v58/src/journal.py": "f18ada8dcece03f82118f061cb9b213d6a87222d7852559576449ff7d36544fb",
     "solutions/v58/src/profiling/profile.py": "b94f69523d8fa976f4d5a3164daef1b6f78249fd3f8e5ffc7a9aee61daf4baeb",
     "solutions/v58/src/profiling/test_profile.py": "34605c095306d017c1a936ab5ee1c16f4c966005fb31ddb0acef44b04b266fa5",
@@ -30,6 +34,6 @@
     "solutions/v58/src/transport.py": "d94a895ba16ae87256634e9bf3e6d7a75e15da1351872dd0aecd0beca1ed27d3"
   },
   "status": "READY_FOR_FORMAL_RUN_NO_FORMAL_RUN_STARTED",
-  "updated_at_utc": "2026-09-30T10:58:45.937134+00:00",
+  "updated_at_utc": "2026-09-30T12:03:57.584980+00:00",
   "version": "v58"
 }

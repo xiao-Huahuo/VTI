@@ -1,0 +1,67 @@
+{
+  "cases_sha256": "766e53b9326905c512e961512c234ec6f266f0c699e45bbfb0a03001dcdbc35e",
+  "dataset_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+  "failure_label": "LANGMEM_DS_INCOMPATIBLE",
+  "model_request": {
+    "concurrency": 1,
+    "model": "deepseek-flash",
+    "stream": false,
+    "temperature": 0,
+    "thinking": "disabled"
+  },
+  "pass_rule": {
+    "complete": 6,
+    "correct_min": 4,
+    "correct_min_per_case": 1,
+    "fatal_failures": 0,
+    "nonempty_memory": 6,
+    "nonempty_retrieval": 6,
+    "parseable_answer": 6
+  },
+  "purpose": "Engineering qualification only; no causal or backend-safety claim",
+  "receipt_rule": "Persist request body and hash before dispatch; persist raw response before parsing",
+  "retry_rule": "No automatic retry after client dispatch for any HTTP or transport failure",
+  "returned_model_id": "BIND_FROM_SIX_COMPATIBILITY_RUNS_BEFORE_FORMAL",
+  "schema": "c33-v57-ds-compatibility-freeze-v1",
+  "scorer_sha256": "26d7bc6c0b21aa7c3954caeb526e225eb6d1d61b98a0dd07aad664b59930725a",
+  "scorer_vectors_sha256": "de90da8ee1f959d605868eb3a14f1b4750397dc3b82409e8cfdfd4e8987b3d4e",
+  "status": "DESIGN_FROZEN_EXECUTION_BLOCKED",
+  "trajectories": [
+    {
+      "question_id": "b5ef892d",
+      "rank": 1,
+      "repeat": 1,
+      "slot": 1
+    },
+    {
+      "question_id": "1a8a66a6",
+      "rank": 3,
+      "repeat": 1,
+      "slot": 2
+    },
+    {
+      "question_id": "gpt4_31ff4165",
+      "rank": 4,
+      "repeat": 1,
+      "slot": 3
+    },
+    {
+      "question_id": "b5ef892d",
+      "rank": 1,
+      "repeat": 2,
+      "slot": 4
+    },
+    {
+      "question_id": "1a8a66a6",
+      "rank": 3,
+      "repeat": 2,
+      "slot": 5
+    },
+    {
+      "question_id": "gpt4_31ff4165",
+      "rank": 4,
+      "repeat": 2,
+      "slot": 6
+    }
+  ]
+}

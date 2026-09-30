@@ -1,0 +1,110 @@
+{
+  "blocks": [
+    {
+      "block": 1,
+      "order": "CBAD",
+      "slot1": "N",
+      "slot2": "V"
+    },
+    {
+      "block": 2,
+      "order": "BCDA",
+      "slot1": "N",
+      "slot2": "V"
+    },
+    {
+      "block": 3,
+      "order": "ABDC",
+      "slot1": "V",
+      "slot2": "N"
+    },
+    {
+      "block": 4,
+      "order": "ACBD",
+      "slot1": "V",
+      "slot2": "N"
+    },
+    {
+      "block": 5,
+      "order": "CADB",
+      "slot1": "V",
+      "slot2": "N"
+    },
+    {
+      "block": 6,
+      "order": "BACD",
+      "slot1": "V",
+      "slot2": "N"
+    },
+    {
+      "block": 7,
+      "order": "ADCB",
+      "slot1": "V",
+      "slot2": "N"
+    },
+    {
+      "block": 8,
+      "order": "DABC",
+      "slot1": "N",
+      "slot2": "V"
+    },
+    {
+      "block": 9,
+      "order": "DCAB",
+      "slot1": "N",
+      "slot2": "V"
+    },
+    {
+      "block": 10,
+      "order": "CDBA",
+      "slot1": "N",
+      "slot2": "V"
+    },
+    {
+      "block": 11,
+      "order": "BDAC",
+      "slot1": "N",
+      "slot2": "V"
+    },
+    {
+      "block": 12,
+      "order": "DBCA",
+      "slot1": "N",
+      "slot2": "V"
+    }
+  ],
+  "cases": [
+    {
+      "question_id": "gpt4_ec93e27f",
+      "rank": 29,
+      "sessions": 47,
+      "symbol": "A"
+    },
+    {
+      "question_id": "gpt4_45189cb4",
+      "rank": 30,
+      "sessions": 45,
+      "symbol": "B"
+    },
+    {
+      "question_id": "08f4fc43",
+      "rank": 31,
+      "sessions": 47,
+      "symbol": "C"
+    },
+    {
+      "question_id": "e8a79c70",
+      "rank": 32,
+      "sessions": 44,
+      "symbol": "D"
+    }
+  ],
+  "claim_boundary": "Policy effect on fixed-panel order/history-conditioned retrieval dispersion; no score, ranking, or isolated immediate-predecessor claim",
+  "exact_cover": "Each directed adjacent pair occurs exactly once at each target position 2, 3, 4; each case occurs 3 times at each position",
+  "inference": "One-sided exact Fisher policy-label test over 2^12=4096 within-order swaps",
+  "primary": "Native minus verified mean within-target-and-position dispersion across the three predecessor-labeled orders",
+  "random_seed_hex": "22e40d1fcec801c76f45a2505ccb07bc",
+  "runtime": "Fresh independent Mem0 sequence per slot; V55-defined verified cleanup; pinned Qwen3 8B Q4",
+  "schema": "c33-v58-policy-order-design-freeze-v1",
+  "status": "DESIGN_FROZEN_EXECUTION_BLOCKED"
+}

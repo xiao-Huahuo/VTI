@@ -1,0 +1,39 @@
+{
+  "benchmark_git_bundle": {
+    "bytes": 4082894,
+    "expected_head": "94192c39e2a4a154f441a5411e3d73c4f54974a6",
+    "path": "solutions/v58/frozen_sources/agent-memory-server-94192c.bundle",
+    "restore_target": "history/pre_v58_root_20260930/third_party/agent-memory-server",
+    "sha256": "4a37b4380987a21d4999e0826d8a4a1a8a89a5e17a5c75b8a34e0a3d939045a4"
+  },
+  "created_at_utc": "2026-09-30T11:36:21.002448+00:00",
+  "files_sha256": {
+    "history/pre_v58_root_20260930/docs/proposals/THREE_BLOCK_FINAL_SOURCE_20260930.txt": "19730484d4321be5df62dc236fa027107d67e7fa84d5a5f7585bf27202927555",
+    "history/pre_v58_root_20260930/study_freeze/FREEZE_MANIFEST.json": "1c19fc68a195a486a991678402c187802ca2780ba90990e8c9e03280e57ece5d",
+    "history/pre_v58_root_20260930/study_freeze/V57_COMPATIBILITY.json": "180fbbf6c16e931b9fdfd28bc742ad034eb8700dcc7c6f57a4b78fdf22b049af",
+    "history/pre_v58_root_20260930/study_freeze/V57_FORMAL_DESIGN.json": "bdd1762d7c91e647b3b27b3d17c08aaace957757f9703a9b2b0a5b5059df8153",
+    "history/pre_v58_root_20260930/study_freeze/V58_POLICY_ORDER.json": "ab09bc9cb64512376350c6eec6edbd4ae36c7b94faf19ace2602de36bb946553",
+    "history/pre_v58_root_20260930/study_freeze/V59_MECHANISM_COST.json": "c13941cb865462147015e62b24711e22a4be6bc62e0796108dce60e3f0dfea08",
+    "history/pre_v58_root_20260930/study_freeze/create_design_freeze.py": "0140bf2d8a59631f17213294fa8dc265cf845d8a2cbf2cace352bbdb9eb20848",
+    "history/pre_v58_root_20260930/v57_design/DOWNLOADABLE_ASSETS.json": "342bf37c2c642eaf082b637835faa045f08602ced524b21dc3420ad190db7f0a",
+    "history/pre_v58_root_20260930/v57_design/code/retrieval_footprint.py": "80ebdde1bbaa7998532e198eac55ca0a62343adeef3ef65ad0d8428a8501e171",
+    "history/v45/code/redis_v45_ollama_deterministic_gate.py": "c891e5164439372dd383414c51e0c47fa2ab587f85c994fe95ed9ece1cdbb3b9",
+    "history/v55_formal/FINAL_PRE_EXECUTION_MANIFEST.json": "6d0b7d1424e19058bed43ae2b903a488ed1c89c94f10e26ecc4875f4e339d4ef",
+    "history/v55_formal/FORMAL_PROTOCOL_V55.json": "7508d8e334de66ad828a2fabecd0696370623a6b1a5cf90bae2dcfe52aa7f6cb",
+    "history/v55_formal/code/checkpoint.py": "09eaf678d2a5bc27a6f18d82b8057703f6227d843ac8980291398cf8fe937e11",
+    "history/v55_formal/code/run_v55.py": "6abb2bacee292d042f235ae128dc109efd89dd9ff39d6a14575091924c9de117",
+    "history/v55_formal/code/schema.py": "4d20abfad67aebbaff88c71bdac96389c84534db9cb7579ba2ed8c118fd7e067"
+  },
+  "forbidden_assets": [
+    ".env",
+    "history experiment receipts",
+    "LongMemEval dataset",
+    "Qwen model weights",
+    "BGE model cache",
+    "Python virtual environments"
+  ],
+  "purpose": "Byte-identical source-only restoration of ignored frozen dependencies after Git clone; no model, dataset, Python environment, secret or experimental output",
+  "remote_allowed_root": "~/projects/srx/",
+  "schema": "science-v58-gpu-source-dependency-pack-v1",
+  "status": "SOURCE_ONLY_NO_MODEL_DOWNLOAD"
+}

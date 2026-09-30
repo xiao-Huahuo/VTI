@@ -1,0 +1,27 @@
+{
+  "time_utc": "2026-09-25T07:45:33.112217+00:00",
+  "status": "FINAL_CODE_AWAITING_REAL_DRILL_NO_FORMAL_OUTCOMES",
+  "selection": "ranks 13-24",
+  "source_zip_sha256": "34c800bf064779c21ba53f43bdb300f865250b4f5eaf9393eb8ae1f103b146f0",
+  "files_sha256": {
+    "v55_formal/FORMAL_PROTOCOL_V55.json": "7508d8e334de66ad828a2fabecd0696370623a6b1a5cf90bae2dcfe52aa7f6cb",
+    "v55_formal/FROZEN_COHORT_V55.json": "efff6265ec03c09bd928470c8379f1d77eae4ba94f6fd828f68d1c479c924d07",
+    "v55_formal/code/run_v55.py": "6abb2bacee292d042f235ae128dc109efd89dd9ff39d6a14575091924c9de117",
+    "v55_formal/code/checkpoint.py": "09eaf678d2a5bc27a6f18d82b8057703f6227d843ac8980291398cf8fe937e11",
+    "v55_formal/code/schema.py": "4d20abfad67aebbaff88c71bdac96389c84534db9cb7579ba2ed8c118fd7e067",
+    "v55_formal/code/validate_formal_cohort.py": "9c57e5e05616224199b759906ed27d196e9fc2994a136172e4c2d2455b3c0c30",
+    "v55_formal/code/aggregate_formal_results.py": "e1b3adfda086b2d193afea7981e47b24684b9857330b4817c9d7d685610e1b95",
+    "v55_formal/code/score_e4.py": "58a5d2e6521cfe2292e6815b735cd4259c5df16636f16683f46e1b827d2fa9ed",
+    "v55_formal/docs/PRE_EXECUTION_CORRIGENDUM.md": "69b3baa4ebd31bd5ed6e68a98bc0275936ee30be1c1cb0bf89ef26aa05124d3e",
+    "v55_formal/docs/FORMAL_PROTOCOL.md": "f8149c637980051ac100d2d9f592e4860842ad646fef40afc79d907aa2834d3c",
+    "history/v45/code/redis_v45_ollama_deterministic_gate.py": "c891e5164439372dd383414c51e0c47fa2ab587f85c994fe95ed9ece1cdbb3b9"
+  },
+  "runtime_versions": {
+    "mem0ai": "2.0.19",
+    "ollama": "0.6.2",
+    "fastembed": "0.8.0",
+    "qdrant-client": "1.19.1"
+  },
+  "dry_run_case": "historical rank 1 b5ef892d",
+  "generation_schema_case_terminal_policy": "invalid_case_no_retry_missing_not_negative"
+}
