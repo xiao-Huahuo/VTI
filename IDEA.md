@@ -2,7 +2,7 @@
 
 > **2026-09-27 文献维护注记：** 下文保留 idea 形成时的原始论证与阶段状态；当时的文献边界和引用现归档在 [`RELATED_WORK_CURRENT.md`](history/pre_v58_root_20260930/docs/literature/RELATED_WORK_CURRENT.md)，参考文献库见 [`references.bib`](history/pre_v58_root_20260930/docs/literature/references.bib)。当时的实验状态以[旧 `CURRENT_STATE.json`](history/pre_v58_root_20260930/CURRENT_STATE.json)和终止收据为准。
 
-> **2026-09-30 新起点注记：** V57 及以前的代码、数据和文档已整体归入 [`history/`](history/README.md)。上文旧的 `docs/` 链接、`CURRENT_STATE.json` 路径及阶段数字均属于归档时的历史语境；对应旧根目录见 [`history/pre_v58_root_20260930/`](history/pre_v58_root_20260930/)。本文件保留原始 idea，不代表 V58 已有协议或实验结果；当前入口以根目录 [`README.md`](README.md) 和 [`科研开发规范.md`](科研开发规范.md) 为准。
+> **2026-09-30 新起点注记：** V57 及以前的代码、数据和文档已整体归入 [`history/`](history/README.md)。上文旧的 `docs/` 链接、旧 `CURRENT_STATE.json` 路径及阶段数字均属于归档时的历史语境；对应旧根目录见 [`history/pre_v58_root_20260930/`](history/pre_v58_root_20260930/)。本文件保留原始 idea，不代表 V58 已有协议或实验结果；当前入口以根目录 [`README.md`](README.md)、[`科研开发规范.md`](科研开发规范.md) 和[新的 `CURRENT_STATE.json`](CURRENT_STATE.json) 为准。
 
 ## Interventional Auditing and Certification of Cross-Trial State in Agent-Memory Benchmarks
 

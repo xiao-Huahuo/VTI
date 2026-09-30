@@ -1,0 +1,52 @@
+{
+  "schema": "science-current-state-v1",
+  "updated_at_utc": "2026-09-30T06:13:03.779997+00:00",
+  "project": "Reset Is Not Isolation",
+  "phase": "PRE_V58_RESET",
+  "active_version": null,
+  "next_version": "v58",
+  "scientific_design_status": "NO_NEW_VERSION_PROTOCOL_FROZEN",
+  "current_code": {
+    "status": "NOT_STARTED",
+    "source_path": null,
+    "runner": null
+  },
+  "current_tests": {
+    "status": "NOT_STARTED",
+    "passed": null
+  },
+  "current_docs": {
+    "status": "BASELINE_READY",
+    "idea": "IDEA.md",
+    "development_standard": "科研开发规范.md",
+    "readme": "README.md",
+    "change_history": "docs/CHANGE_HISTORY.md",
+    "version_docs": null
+  },
+  "current_data": {
+    "status": "NOT_STARTED",
+    "inputs": null,
+    "outputs": null,
+    "git_policy": "all inputs/ and outputs/ ignored"
+  },
+  "historical_evidence": {
+    "status": "ARCHIVED_NOT_CURRENT",
+    "root": "history/",
+    "pre_v58_root": "history/pre_v58_root_20260930/",
+    "migration_manifest": "history/PRE_V58_ROOT_MOVE_MANIFEST_20260930.json",
+    "migration_audit": "history/PRE_V58_ROOT_MOVE_AUDIT_20260930_V2.json",
+    "summary": {
+      "v55": "fixed Redis×Mem0 held-out E2 evidence",
+      "v56": "UNVERIFIABLE_NULL_DIVERGENCE",
+      "v57": "LANGMEM_DS_INCOMPATIBLE compatibility; formal rank 26/27 not run"
+    }
+  },
+  "outstanding_before_v58_execution": [
+    "Create docs/v58/ protocol and freeze manifest",
+    "Create solutions/v58/src/ runner and tests",
+    "Stage pinned inputs under ignored solutions/v58/inputs/",
+    "Pass backend/runtime/recovery gates before any new run"
+  ],
+  "last_run_receipts_for_active_version": null,
+  "source_of_truth_rule": "Original frozen protocols and immutable run receipts outrank this summary when they conflict."
+}
