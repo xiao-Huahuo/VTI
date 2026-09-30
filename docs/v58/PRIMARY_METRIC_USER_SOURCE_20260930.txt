@@ -1,0 +1,676 @@
+# V58 Primary Metric 前瞻性补充冻结
+
+## 1. 决断
+
+接受当前 V58 审查结论：
+
+```text
+P0: V58 primary metric 未唯一指定
+```
+
+原冻结方案定义了：
+
+$$
+D_{jqp}
+=
+\frac{
+d(v_1,v_2)+d(v_1,v_3)+d(v_2,v_3)
+}{3}
+$$
+
+以及：
+
+$$
+S_p=
+\frac1{12}
+\sum_{j=1}^{4}
+\sum_{q=2}^{4}
+D_{jqp}
+$$
+
+$$
+\Delta=S_{Native}-S_{Verified}
+$$
+
+但没有唯一绑定 $v$ 的具体表示和 $d$ 的距离，因此当前不能实施。
+
+截至本次补充冻结：
+
+```text
+V58 formal runs = 0
+V58 formal model calls = 0
+V58 formal outcomes observed = 0
+```
+
+因此允许在不查看任何 V58 正式结果的情况下，对该缺口进行一次**前瞻性补充冻结**。
+
+不得把本次补充描述成“原方案已经冻结的内容”。
+
+---
+
+# 2. 补充范围
+
+本次只能补充：
+
+```text
+v = retrieval representation
+d = retrieval distance
+及其机械计算规则
+```
+
+以下内容全部保持原冻结方案不变：
+
+- 四个 case
+- 12 个 order
+- 24 条 sequence
+- N/V assignment
+- exact-cover design
+- target / position 定义
+- cell dispersion 公式
+- $S_p$
+- $\Delta$
+- 4096-state exact randomization test
+- 单侧检验方向
+- $p<0.05$ 判定
+- claim boundary
+- Qwen3 8B Q4 + Mem0 实验栈
+- V55 Verified Cleanup
+- Native Reset
+- correctness secondary endpoint
+
+不得借本次 amendment 修改其他设计。
+
+---
+
+# 3. Retrieval representation：Ordered Top-5 Retrieval Footprint
+
+V58 的 $v$ 固定复用 V57 已冻结的：
+
+```text
+Ordered Top-5 Retrieval Footprint
+```
+
+对应已有实现：
+
+```text
+v57_design/code/retrieval_footprint.py
+SHA-256:
+80ebdde1bbaa7998532e198eac55ca0a62343adeef3ef65ad0d8428a8501e171
+```
+
+实现时必须验证该哈希。
+
+V58 可以将该文件按字节一致方式复制到：
+
+```text
+solutions/v58/src/retrieval_footprint.py
+```
+
+如果复制，复制后 SHA-256 必须仍完全相同。
+
+不得修改该实现后继续声称复用了 V57 footprint。
+
+---
+
+# 4. Retrieval 输入
+
+每个 V58 trial 完成其当前 case 的全部 session ingestion 后，使用与 V55 相同的正式 query 和相同 Mem0 retrieval path：
+
+```text
+memory_store._memory.search(
+    question,
+    filters={"user_id": current_scope},
+    top_k=10
+)
+```
+
+经过与 V55 相同的 `normalize_results` 后，按照 provider 返回的 retrieval 顺序取得 textual memory content。
+
+用于 footprint 的只能是：
+
+```text
+retrieved memory text
+```
+
+不得加入：
+
+- memory ID
+- retrieval score
+- timestamp
+- metadata
+- user ID
+- policy label
+- order label
+
+文本字段的提取必须与 V55 `text_hashes_in_order()` 所使用的 memory textual content 一致。
+
+如果这一点无法从冻结 V45 engine 唯一核实，则继续 fail-closed，不自行猜字段。
+
+完整 Top-10 原始 retrieval 必须保存在 raw 中。
+
+footprint 只使用其中前五条。
+
+---
+
+# 5. 文本 normalization
+
+每一条 retrieval text 固定执行：
+
+```text
+Unicode NFC
+CRLF → LF
+strip
+连续 whitespace → 单空格
+大小写保留
+标点保留
+duplicate 保留
+```
+
+不得：
+
+- lowercase
+- 去标点
+- 去重
+- stemming
+- semantic merge
+- 根据 retrieval score 重排
+
+---
+
+# 6. Measurement embedding
+
+固定：
+
+```text
+BAAI/bge-small-en-v1.5
+384 dimensions
+```
+
+必须复用项目已经冻结/缓存的同一 measurement embedding 资产，不重新选择 embedding model。
+
+已有工程资产记录中对应：
+
+```text
+fastembed_name:
+BAAI/bge-small-en-v1.5
+
+fastembed version:
+0.8.0
+
+HF repository:
+Qdrant/bge-small-en-v1.5-onnx-Q
+
+observed revision:
+aa8f8b060edb00e03bfdd08813a2949946c8ba55
+
+snapshot tree SHA-256:
+d43150a691d02e46b7848cb04e6db89ad74b9f1a1e00bb75e8d9f034861ff7a3
+```
+
+实施前重新核验当前完整项目中的实际资产与冻结记录。
+
+如实际 V55/V57 measurement environment 与上述记录发生冲突，停止并报告，不自行选择版本。
+
+每条 embedding：
+
+1. 转为 `float32`
+2. 检查维度严格为 384
+3. 检查全部 finite
+4. 对每条 embedding 单独进行 L2 normalization
+
+即：
+
+$$
+e_r=\frac{x_r}{\|x_r\|_2}
+$$
+
+零范数或非 finite embedding 视为执行错误，不继续计算正式指标。
+
+---
+
+# 7. Rank weighting
+
+Top-5 的 rank weight 固定为：
+
+$$
+w_r=\frac1{\log_2(r+1)},\qquad r=1,\ldots,5
+$$
+
+retrieval 顺序保持原样。
+
+不存在任何重新排序。
+
+---
+
+# 8. Missing retrieval 与 presence mask
+
+如果 retrieval 少于五条：
+
+- 已存在的位置使用正常 embedding；
+- 缺失位置 embedding 使用 384 维零向量；
+- 每一个位置附加 presence mask $m_r$。
+
+定义：
+
+$$
+m_r=
+\begin{cases}
+1,&\text{该 rank 存在 retrieval}\\
+0,&\text{否则}
+\end{cases}
+$$
+
+最终：
+
+$$
+v=
+[
+w_1e_1,\ldots,w_5e_5,
+w_1m_1,\ldots,w_5m_5
+]
+\in\mathbb R^{1925}
+$$
+
+footprint 保存为 `float32`。
+
+空 retrieval 是合法科学 outcome：
+
+```text
+v = all-zero 1925D footprint
+```
+
+不得因为 retrieval 为空而替换 case 或删除 observation。
+
+---
+
+# 9. Primary distance
+
+V58 的 $d$ 唯一固定为：
+
+```text
+Euclidean L2 distance
+```
+
+计算距离前，将两个 footprint 转为 `float64`：
+
+$$
+d(v_a,v_b)
+=
+\left\|
+\operatorname{float64}(v_a)
+-
+\operatorname{float64}(v_b)
+\right\|_2
+$$
+
+不得进一步：
+
+- normalize 1925D footprint
+- standardize dimensions
+- clip
+- threshold
+- cosine transform
+- Jaccard transform
+- set matching
+- optimal matching
+- retrieval-ID matching
+
+V58 primary 只使用上述 Euclidean distance。
+
+其他距离如果未来需要，只能作为明确标记的 post-hoc / secondary analysis，不能改变 V58 primary 判定。
+
+---
+
+# 10. Cell dispersion
+
+原冻结定义保持不变。
+
+对于 target $j$、position $q\in\{2,3,4\}$、policy $p$，exact-cover 给出三个 predecessor-conditioned observations：
+
+$$
+v_1,v_2,v_3
+$$
+
+定义：
+
+$$
+D_{jqp}
+=
+\frac{
+d(v_1,v_2)+
+d(v_1,v_3)+
+d(v_2,v_3)
+}{3}
+$$
+
+全部距离计算使用前述 float64 Euclidean distance。
+
+---
+
+# 11. Policy dispersion
+
+保持原定义：
+
+$$
+S_p=
+\frac1{12}
+\sum_{j=1}^{4}
+\sum_{q=2}^{4}
+D_{jqp}
+$$
+
+其中 $p\in\{Native,Verified\}$。
+
+Primary effect：
+
+$$
+\Delta
+=
+S_{Native}-S_{Verified}
+$$
+
+$\Delta>0$ 表示 Native 下的 order/history-conditioned retrieval dispersion 更大。
+
+---
+
+# 12. Exact randomization inference
+
+原冻结推断完全不变。
+
+12 个 order block 内分别交换两个独立 sequence 的 N/V label：
+
+$$
+2^{12}=4096
+$$
+
+必须完整枚举 4096 个合法 assignments。
+
+对于每个 assignment，重新计算完整：
+
+```text
+D
+→ S_Native
+→ S_Verified
+→ Delta
+```
+
+不得只交换最终汇总数字。
+
+单侧 exact p-value：
+
+$$
+p=
+\frac{
+\#\{
+\Delta^{perm}
+\ge
+\Delta^{obs}-10^{-12}
+\}
+}{4096}
+$$
+
+tie tolerance：
+
+```text
+1e-12
+```
+
+不得增加 `+1` correction。
+
+不得使用 Monte Carlo permutation。
+
+---
+
+# 13. Primary 判定
+
+保持此前冻结规则：
+
+只有同时满足：
+
+$$
+\Delta>0
+$$
+
+以及：
+
+$$
+p<0.05
+$$
+
+才允许得出：
+
+> Verified cleanup significantly attenuates predecessor-conditioned retrieval sensitivity in the fixed four-case panel.
+
+不得升级为：
+
+- benchmark ranking changed
+- benchmark score invalid
+- leaderboard distorted
+- all memory benchmarks are contaminated
+- Verified Cleanup universally solves isolation
+
+---
+
+# 14. 为什么选择这一补充，而不是重新设计指标
+
+本次 amendment 的选择依据必须记录为：
+
+1. V58 正式结果尚未产生，因此没有依据 V58 outcome 选择指标。
+2. V57 在本项目中已经前瞻性冻结同一 Ordered Top-5 1925D footprint。
+3. V57 已经使用该 footprint 上的 Euclidean norm 进行 primary inference。
+4. V59 已批准设计明确写有“仍使用相同 Top-5 retrieval footprint”。
+5. 复用已有 measurement definition 比临时选择 cosine、Jaccard 或新的 embedding 表示具有更少研究者自由度。
+
+这些是本次**新决断的依据**。
+
+不得写成：
+
+> V58 原本就已经冻结了 Top-5 Euclidean metric。
+
+原 V58 冻结确实遗漏了这一点。
+
+---
+
+# 15. 补充冻结的落盘方式
+
+不得修改或覆盖原来的：
+
+```text
+study_freeze/V58_POLICY_ORDER.json
+study_freeze/FREEZE_MANIFEST.json
+```
+
+新增：
+
+```text
+study_freeze/V58_PRIMARY_METRIC_AMENDMENT_20260930.json
+study_freeze/V58_AMENDMENT_MANIFEST_20260930.json
+```
+
+其中 amendment manifest 至少 hash：
+
+```text
+V58_POLICY_ORDER.json
+THREE_BLOCK_FINAL_SOURCE_20260930.txt
+V57_FORMAL_DESIGN.json
+v57_design/code/retrieval_footprint.py
+V58_PRIMARY_METRIC_AMENDMENT_20260930.json
+```
+
+这样保留：
+
+```text
+原始冻结
++
+后续前瞻性补充冻结
+```
+
+的完整历史，而不是重写过去。
+
+同时在：
+
+```text
+docs/v58/PRIMARY_METRIC_AMENDMENT.md
+```
+
+记录：
+
+```text
+原因：原 V58 d(v_i,v_j) 未唯一化
+时间：2026-09-30
+V58 formal model calls before amendment: 0
+V58 formal outcomes observed before amendment: 0
+性质：prospective design amendment
+```
+
+---
+
+# 16. P1：旧冻结审计脚本路径问题
+
+旧 audit script 因项目归档后仍按旧 V55 路径查找文件，此问题属于：
+
+```text
+P1 implementation / repository-layout compatibility issue
+```
+
+不是科研设计修改。
+
+处理方式：
+
+1. 不修改历史冻结文件；
+2. 不修改历史 V55 原始代码；
+3. 在 `solutions/v58/src/` 中建立新的 V58 audit entry；
+4. 从当前 project root 解析：
+
+```text
+history/v55_formal/
+history/v45/
+study_freeze/
+```
+
+5. 对真正使用的历史文件重新核验 SHA-256；
+6. 禁止“路径找不到时寻找任意同名文件”。
+
+如果冻结依赖 hash 不一致：
+
+```text
+FAIL CLOSED
+```
+
+---
+
+# 17. Amendment 后重新执行审查
+
+补充冻结落盘后，从头重新执行：
+
+```text
+freeze audit
+↓
+语句到语句审查
+↓
+P0-P3 挖洞式审查
+↓
+假设与决断审查
+↓
+pre-registration consistency review
+```
+
+重点验证：
+
+```text
+v 是否唯一
+d 是否唯一
+retrieval text source 是否唯一
+measurement embedding 是否唯一
+float precision 是否唯一
+missing retrieval 行为是否唯一
+4096 permutation 是否机械可复现
+```
+
+如果 P0 清零，再继续 V58 runner 开发。
+
+如果仍存在 P0：
+
+```text
+STOP
+```
+
+不得进入 runner 实现。
+
+---
+
+# 18. 状态更新
+
+本次补充后，V58 不应直接进入 `READY_FOR_FORMAL_RUN`。
+
+建议状态：
+
+```text
+DESIGN_FROZEN_WITH_PROSPECTIVE_METRIC_AMENDMENT
+```
+
+重新审计通过后：
+
+```text
+DESIGN_FREEZE_AUDIT_PASS
+```
+
+之后才继续：
+
+```text
+IMPLEMENTATION_COMPLETE
+OFFLINE_TEST_PASS
+RECOVERY_TEST_PASS
+AUDIT_PASS
+COST_PREFLIGHT_PASS
+READY_FOR_FORMAL_RUN
+```
+
+更新：
+
+```text
+docs/CHANGE_HISTORY.md
+README.md
+CURRENT_STATE.json
+```
+
+并明确保留原 P0 的发现及修复过程。
+
+---
+
+# 19. 当前任务边界
+
+本轮 Codex 先完成：
+
+1. 物化上述 V58 Primary Metric amendment。
+2. 生成 amendment manifest。
+3. 修复 V58 审计入口的历史路径兼容问题。
+4. 重新执行完整 freeze audit。
+5. 重新执行 P0-P3 和决断审查。
+6. 更新 README、CHANGE_HISTORY、CURRENT_STATE。
+7. 汇报审查结果。
+
+当前仍然：
+
+```text
+DO NOT RUN V58
+DO NOT CALL MODEL
+DO NOT IMPLEMENT A DIFFERENT METRIC
+DO NOT MODIFY ORIGINAL FREEZE
+DO NOT START V59
+```
+
+如果上述重新审查后 P0 清零，再进入上一份任务书规定的 V58 runner 实施阶段。
+
+最终必须报告：
+
+```text
+V58 P0 count
+V58 P1 count
+metric amendment hashes
+footprint code hash
+embedding asset identity
+freeze audit result
+current regulatory state
+FORMAL MODEL CALLS: 0
+```

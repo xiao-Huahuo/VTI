@@ -1,0 +1,22 @@
+{
+  "created_at_utc": "2026-09-30T10:49:13.928737+00:00",
+  "development_requests_dispatched_before": 1,
+  "development_responses_persisted_before": 0,
+  "formal_model_calls_before": 0,
+  "formal_serial_runner_unchanged": true,
+  "new_scope": "Use original serial Ollama configuration only for development bottleneck diagnostics; no 2-lane throughput qualification or execution amendment is granted",
+  "previous_profile_freeze_v2_sha256": "a02bb73e38c508f527458ffe54c03cf0770961cef5229127ab67dc325b1ba478",
+  "resource_stop_receipt": "solutions/v58/outputs/v58-profile-macm5-20260930-smoke-w1/raw/RESOURCE_PREFLIGHT_STOP.json",
+  "resource_stop_receipt_sha256": "c32c1d4711b694fe98b1b5dfcde52a63fc370f67243b7f54a0929c703f169780",
+  "schema": "science-v58-development-profiling-resource-contingency-v1",
+  "scientific_design_unchanged": true,
+  "serial_server_config_claim": {
+    "OLLAMA_CONTEXT_LENGTH": "32768",
+    "OLLAMA_FLASH_ATTENTION": "false",
+    "OLLAMA_KEEP_ALIVE": "30m",
+    "OLLAMA_KV_CACHE_TYPE": "UNSET_DEFAULT_F16",
+    "OLLAMA_NUM_PARALLEL": "1"
+  },
+  "status": "PROSPECTIVE_SERIAL_DIAGNOSTIC_AFTER_CONCURRENCY_RESOURCE_STOP",
+  "zero_retry_for_aborted_request": true
+}

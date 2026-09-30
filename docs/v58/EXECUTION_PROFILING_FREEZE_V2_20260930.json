@@ -1,0 +1,12 @@
+{
+  "created_at_utc": "2026-09-30T10:39:32.466972+00:00",
+  "development_model_calls_before_v2": 0,
+  "formal_design_unchanged": true,
+  "formal_model_calls_before_v2": 0,
+  "previous_freeze_sha256": "18cf66eb79cc15fdf1fee817d3d4c7046eca0acf126fd403608ce7c5101a1901",
+  "profile_code_sha256": "b94f69523d8fa976f4d5a3164daef1b6f78249fd3f8e5ffc7a9aee61daf4baeb",
+  "reason": "Smoke failed before run directory or model dispatch because nested profiling import resolved Python stdlib statistics instead of formal statistics module; profiling-only runtime identity import was isolated. Workload, gate and server configuration unchanged.",
+  "schema": "science-v58-development-execution-profiling-freeze-v2",
+  "status": "PROSPECTIVE_DEVELOPMENT_PROFILING_ONLY",
+  "supersedes_engineering_code_identity_from": "docs/v58/EXECUTION_PROFILING_FREEZE_20260930.json"
+}

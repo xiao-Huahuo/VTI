@@ -1,0 +1,65 @@
+{
+  "schema": "c33-v58-prospective-primary-metric-amendment-v1",
+  "date": "2026-09-30",
+  "status": "DESIGN_FROZEN_WITH_PROSPECTIVE_METRIC_AMENDMENT",
+  "reason": "Original V58 design defined d(v_i,v_j) without uniquely binding v and d",
+  "pre_amendment_formal_runs": 0,
+  "pre_amendment_formal_model_calls": 0,
+  "pre_amendment_formal_outcomes_observed": 0,
+  "scope": "Only retrieval representation, distance and mechanical calculation rules; all original V58 cases, orders, N/V assignments, formulas, test, threshold, stack and claim boundary remain unchanged",
+  "user_source_sha256": "d47f3de743f47752d890e320f887624adc360f674edfe5adbde8ec9d86a7a6f9",
+  "representation": {
+    "name": "Ordered Top-5 Retrieval Footprint",
+    "source_code_sha256": "80ebdde1bbaa7998532e198eac55ca0a62343adeef3ef65ad0d8428a8501e171",
+    "source_code_original": "history/pre_v58_root_20260930/v57_design/code/retrieval_footprint.py",
+    "source_code_v58": "solutions/v58/src/retrieval_footprint.py",
+    "retrieval_call": "memory_store._memory.search(question, filters={'user_id': current_scope}, top_k=10)",
+    "normalizer": "V45 normalize_results",
+    "text_field_rule": "str(row.get('memory') or row.get('text') or row.get('data') or '')",
+    "text_field_source": "V45 text_hashes_in_order",
+    "preserve_provider_order": true,
+    "raw_top10_required": true,
+    "footprint_uses_first": 5,
+    "text_normalization": "Unicode NFC; CRLF to LF; strip; collapse consecutive whitespace; preserve case, punctuation and duplicates",
+    "embedding_name": "BAAI/bge-small-en-v1.5",
+    "embedding_dimensions": 384,
+    "embedding_input_dtype": "float32",
+    "embedding_per_item_l2_normalized": true,
+    "embedding_failures": "Non-finite, zero norm or wrong dimension is an execution error",
+    "rank_weight": "w_r=1/log2(r+1), r=1..5",
+    "missing_positions": "zero 384D embedding and zero presence mask",
+    "present_mask": "one at each present rank, weighted by rank weight",
+    "empty_retrieval": "valid all-zero 1925D footprint",
+    "output_dimensions": 1925,
+    "output_dtype": "float32"
+  },
+  "embedding_asset": {
+    "fastembed_version": "0.8.0",
+    "hf_repo": "Qdrant/bge-small-en-v1.5-onnx-Q",
+    "observed_revision": "aa8f8b060edb00e03bfdd08813a2949946c8ba55",
+    "snapshot_tree_sha256": "d43150a691d02e46b7848cb04e6db89ad74b9f1a1e00bb75e8d9f034861ff7a3"
+  },
+  "distance": {
+    "name": "Euclidean L2",
+    "conversion_before_distance": "both float32 footprints to float64",
+    "formula": "sqrt(sum((float64(v_a)-float64(v_b))**2))",
+    "no_full_footprint_renormalization": true,
+    "no_standardization_clipping_threshold_or_alternative_matching": true
+  },
+  "unchanged_primary": {
+    "cell_dispersion": "mean of the three pairwise distances among the three predecessor-labeled observations for each target-position-policy cell",
+    "policy_dispersion": "mean of 12 target-position cell dispersions per policy",
+    "effect": "S_Native-S_Verified",
+    "randomization": "all 4096 within-order-block N/V label swaps; recompute all cells and effect for each assignment",
+    "p_value": "count(permuted_delta>=observed_delta-1e-12)/4096",
+    "decision": "delta>0 and p<0.05",
+    "claim_boundary": "Fixed four-case panel policy effect on complete-history/order-conditioned retrieval dispersion only"
+  },
+  "rationale": [
+    "No V58 formal outcome existed before this amendment",
+    "The V57 project prospectively froze the same Top-5 1925D footprint",
+    "V57 primary inference used Euclidean norm on that footprint",
+    "The approved V59 design says it continues using the same Top-5 footprint",
+    "Reuse narrows researcher degrees of freedom versus a newly selected distance"
+  ]
+}

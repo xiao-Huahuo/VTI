@@ -1,0 +1,33 @@
+{
+  "schema": "science-v58-input-manifest-v1",
+  "status": "PINNED_LOCAL_INPUT_STAGED",
+  "dataset": {
+    "path": "solutions/v58/inputs/longmemeval-v1/longmemeval_s_cleaned.json",
+    "sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+    "bytes": 277383467,
+    "source": "independent macOS clone copy of ~/.cache/agent-memory-benchmark/longmemeval-v1/longmemeval_s_cleaned.json",
+    "rebuild": "Obtain the pinned LongMemEval small cleaned JSON from the URL in history/pre_v58_root_20260930/v57_design/DOWNLOADABLE_ASSETS.json, verify SHA-256, and place at this version input path"
+  },
+  "measurement_embedding": {
+    "model": "BAAI/bge-small-en-v1.5",
+    "fastembed_version": "0.8.0",
+    "hf_repo": "Qdrant/bge-small-en-v1.5-onnx-Q",
+    "revision": "aa8f8b060edb00e03bfdd08813a2949946c8ba55",
+    "snapshot_tree_sha256": "d43150a691d02e46b7848cb04e6db89ad74b9f1a1e00bb75e8d9f034861ff7a3",
+    "local_source": "history/pre_v58_root_20260930/.runtime/fastembed-cache",
+    "rebuild": "Download only the pinned revision and verify the full snapshot tree hash"
+  },
+  "model": {
+    "provider": "local Ollama",
+    "tag": "qwen3:8b-q4_K_M",
+    "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "ollama_server_version": "0.34.3"
+  },
+  "historical_dependencies": {
+    "v45_engine": "history/v45/code/redis_v45_ollama_deterministic_gate.py",
+    "v55_runner": "history/v55_formal/code/run_v55.py",
+    "benchmark_checkout": "history/pre_v58_root_20260930/third_party/agent-memory-server",
+    "benchmark_commit": "94192c39e2a4a154f441a5411e3d73c4f54974a6"
+  },
+  "git_policy": "inputs and outputs ignored; this manifest is tracked"
+}

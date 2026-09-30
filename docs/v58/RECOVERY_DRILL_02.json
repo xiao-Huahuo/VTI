@@ -1,0 +1,22 @@
+{
+  "schema": "science-v58-fake-process-death-drill-v1",
+  "status": "PASS",
+  "checks": {
+    "A_partial_rejected": true,
+    "B_committed_state_resumes": true,
+    "C_partial_rejected": true,
+    "D_partial_rejected": true,
+    "D_raw_response_preserved_no_completion": true,
+    "E_committed_state_resumes": true,
+    "E_second_resume": true,
+    "G_partial_rejected": true,
+    "G_dispatch_without_response_rejected": true,
+    "F_freeze_hash_drift_rejected": true,
+    "F_dataset_hash_drift_rejected": true,
+    "F_model_identity_drift_rejected": true,
+    "F_code_version_drift_rejected": true
+  },
+  "passed": 13,
+  "total": 13,
+  "real_model_calls": 0
+}

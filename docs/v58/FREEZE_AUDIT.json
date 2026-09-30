@@ -1,0 +1,55 @@
+{
+  "schema": "science-v58-freeze-audit-v1",
+  "checked_at_utc": "2026-09-30T06:36:33Z",
+  "overall": "FAIL_CLOSED_PRIMARY_ENDPOINT_UNDERSPECIFIED",
+  "formal_run_allowed": false,
+  "implementation_allowed": false,
+  "real_model_calls": 0,
+  "sources": {
+    "task_text": "/Users/slumpyfufu/.codex/attachments/4b30f565-1d6b-4aeb-944f-c891811ee730/已粘贴的文本.txt",
+    "freeze_manifest": "history/pre_v58_root_20260930/study_freeze/FREEZE_MANIFEST.json",
+    "v58_design": "history/pre_v58_root_20260930/study_freeze/V58_POLICY_ORDER.json",
+    "approved_source": "history/pre_v58_root_20260930/docs/proposals/THREE_BLOCK_FINAL_SOURCE_20260930.txt",
+    "v55_manifest": "history/v55_formal/FINAL_PRE_EXECUTION_MANIFEST.json"
+  },
+  "verified_sha256": {
+    "v58_design": "ab09bc9cb64512376350c6eec6edbd4ae36c7b94faf19ace2602de36bb946553",
+    "approved_source": "19730484d4321be5df62dc236fa027107d67e7fa84d5a5f7585bf27202927555",
+    "v45_engine": "c891e5164439372dd383414c51e0c47fa2ab587f85c994fe95ed9ece1cdbb3b9",
+    "dataset": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442"
+  },
+  "checks": {
+    "all_four_design_file_hashes_match_manifest": true,
+    "source_and_generator_hashes_match_manifest": true,
+    "v45_engine_hash_matches_v55_manifest": true,
+    "v55_runner_checkpoint_schema_hashes_match_manifest": true,
+    "dataset_hash_matches_freeze": true,
+    "four_cases_in_design": true,
+    "unique_orders": 12,
+    "planned_sequences": 24,
+    "adjacency_position_cells_covered_once": 36,
+    "position_balance_each_case_each_position": 3,
+    "blocks_with_one_N_and_one_V": 12,
+    "exact_policy_label_assignments": 4096,
+    "v59_config_and_six_sample_blocks_exist": true,
+    "v59_arm_order_materialized_in_each_block": true,
+    "v58_primary_distance_and_vector_explicitly_bound": false,
+    "archived_audit_script_runs_after_relocation": false,
+    "ollama_server_available_at_audit": false
+  },
+  "blockers": [
+    {
+      "id": "P0-PRIMARY-ENDPOINT",
+      "severity": "P0",
+      "finding": "The V58 source defines D using d(v_i,v_j), but the V58 section and frozen JSON do not explicitly bind d or v to a distance and retrieval representation. A V57 Top-5 footprint and Euclidean distance appear in another experiment's section; adopting them for V58 would be an unrecorded interpretation of the primary outcome.",
+      "required_resolution": "Prospectively record an explicit V58 endpoint binding or corrigendum, with source identity and freeze hash, before implementation. Do not edit historical freeze files in place."
+    },
+    {
+      "id": "P1-ARCHIVED-AUDITOR-PATH",
+      "severity": "P1",
+      "finding": "The original audit_design_freeze.py fails after root relocation because it searches for history/v55_formal under the archived old root.",
+      "required_resolution": "Use a new version-local, relocation-aware auditor before an execution gate; preserve the historical script."
+    }
+  ],
+  "scope": "Read-only scientific freeze audit; no V58 runner, fake-client drill, runtime preflight or formal experiment was performed."
+}

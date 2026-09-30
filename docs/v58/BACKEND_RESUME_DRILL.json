@@ -1,0 +1,17 @@
+{
+  "schema": "science-v58-real-backend-cross-process-resume-drill-v1",
+  "status": "PASS",
+  "checks": {
+    "N_first_process_killed_after_boundary": true,
+    "N_checkpoint_unchanged": true,
+    "N_second_process_resumed": true,
+    "N_sidecar_semantics": true,
+    "V_first_process_killed_after_boundary": true,
+    "V_checkpoint_unchanged": true,
+    "V_second_process_resumed": true,
+    "V_sidecar_semantics": true
+  },
+  "passed": 8,
+  "total": 8,
+  "real_model_calls": 0
+}

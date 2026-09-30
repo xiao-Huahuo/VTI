@@ -1,0 +1,42 @@
+{
+  "schema": "science-v58-cost-preflight-v1",
+  "checked_at_utc": "2026-09-30T07:19:40.397400+00:00",
+  "status": "PASS_ESTIMATE_UNCERTAIN",
+  "sequence_count": 24,
+  "trial_count": 96,
+  "session_ingestions": 4392,
+  "expected_model_requests": 4488,
+  "expected_non_model_operations": {
+    "retrieval_queries": 96,
+    "cleanup_boundaries": 72,
+    "measurement_embedding_items_max": 480
+  },
+  "estimated_input_tokens": 50164493,
+  "estimated_output_tokens": 1767868,
+  "estimated_total_tokens": 51932361,
+  "estimate_basis": {
+    "v55_clean_ref_model_call_receipts": 600,
+    "v55_input_tokens": 6706483,
+    "v55_output_tokens": 236346,
+    "caveat": "V58 four-case shared sequence history can change prompt lengths; estimates are extrapolations, not a run entitlement"
+  },
+  "worst_case_if_one_call_per_ingestion_and_answer": {
+    "max_requests": 4488,
+    "input_tokens_at_32768_per_call": 147062784,
+    "output_tokens_at_2048_per_call": 9191424
+  },
+  "model_provider": "local Ollama",
+  "model": "qwen3:8b-q4_K_M",
+  "pricing_assumption": "No per-token external API charge for local Ollama; electricity, hardware amortization and operator time excluded",
+  "pricing_timestamp": "2026-09-30",
+  "estimated_api_cost_cny": 0,
+  "worst_case_api_cost_cny": 0,
+  "runtime_model_identity_verified": true,
+  "formal_run_allowed": false,
+  "hard_budget_controls": [
+    "MAX_REQUESTS",
+    "MAX_INPUT_TOKENS",
+    "MAX_OUTPUT_TOKENS",
+    "MAX_COST_IF_AVAILABLE"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "science-v58-development-profiling-screening-audit-v1",
+  "created_at_utc": "2026-09-30T10:58:19.088618+00:00",
+  "status": "RESOURCE_PREFLIGHT_STOP_NO_CONCURRENCY_AMENDMENT",
+  "formal_model_calls": 0,
+  "development_requests_dispatched": 3,
+  "development_responses_persisted": 2,
+  "serial_smoke": {
+    "run_id": "v58-profile-macm5-20260930-serial-smoke-w1",
+    "committed_sessions": 2,
+    "elapsed_seconds": 157.7122883330012,
+    "llm_request_seconds": 152.69307604099959,
+    "llm_share_of_wall": 0.968174881329451,
+    "checkpoint_total_seconds": 0.02361887599909096,
+    "qdrant_wrapped_seconds": 0.2919910839991644,
+    "sqlite_wrapped_seconds": 0.023134168000979116,
+    "summary_sha256": "cd3a834454166f9cd03e1891e04756c8c4ce42908290df9243e8bfe47ed0752f",
+    "resource_sha256": "0aca833c45941b9810e9b290aa09fe1ac6d29ada215630b4444e511870e938d7"
+  },
+  "two_parallel_config_smoke": {
+    "run_id": "v58-profile-macm5-20260930-smoke-w1",
+    "requests_dispatched": 1,
+    "responses_persisted": 0,
+    "last_committed_checkpoint": 0,
+    "resource_stop_sha256": "c32c1d4711b694fe98b1b5dfcde52a63fc370f67243b7f54a0929c703f169780",
+    "note": "Observed 19 GB model footprint and partial CPU offload with 6% free memory; two workers were not launched"
+  },
+  "throughput_gate_1_35": "NOT_EVALUATED",
+  "formal_serial_runner_sha256": "8a3390bf39527b673cbce2f6044f0ec5da6e27074d15602c5116fac7fe27cd72",
+  "formal_checkpoint_sha256": "f18ada8dcece03f82118f061cb9b213d6a87222d7852559576449ff7d36544fb",
+  "profile_code_sha256": "b94f69523d8fa976f4d5a3164daef1b6f78249fd3f8e5ffc7a9aee61daf4baeb",
+  "interpretation": "Two successful sessions only; not a 30-50 ingestion stable throughput sample; no formal budget update"
+}

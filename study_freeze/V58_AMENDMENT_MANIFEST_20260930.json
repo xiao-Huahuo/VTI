@@ -1,0 +1,41 @@
+{
+  "created_at_utc": "2026-09-30T06:53:03.854578+00:00",
+  "files": {
+    "amendment": {
+      "path": "study_freeze/V58_PRIMARY_METRIC_AMENDMENT_20260930.json",
+      "sha256": "e00a04bf02502a3fcc9067c837d9e7f7534b7645e4f48200e6ad92ed2f05bece"
+    },
+    "original_freeze_manifest": {
+      "path": "history/pre_v58_root_20260930/study_freeze/FREEZE_MANIFEST.json",
+      "sha256": "1c19fc68a195a486a991678402c187802ca2780ba90990e8c9e03280e57ece5d"
+    },
+    "original_source": {
+      "path": "history/pre_v58_root_20260930/docs/proposals/THREE_BLOCK_FINAL_SOURCE_20260930.txt",
+      "sha256": "19730484d4321be5df62dc236fa027107d67e7fa84d5a5f7585bf27202927555"
+    },
+    "original_v57_footprint": {
+      "path": "history/pre_v58_root_20260930/v57_design/code/retrieval_footprint.py",
+      "sha256": "80ebdde1bbaa7998532e198eac55ca0a62343adeef3ef65ad0d8428a8501e171"
+    },
+    "original_v57_formal_design": {
+      "path": "history/pre_v58_root_20260930/study_freeze/V57_FORMAL_DESIGN.json",
+      "sha256": "bdd1762d7c91e647b3b27b3d17c08aaace957757f9703a9b2b0a5b5059df8153"
+    },
+    "original_v58_policy_order": {
+      "path": "history/pre_v58_root_20260930/study_freeze/V58_POLICY_ORDER.json",
+      "sha256": "ab09bc9cb64512376350c6eec6edbd4ae36c7b94faf19ace2602de36bb946553"
+    },
+    "user_amendment_source": {
+      "path": "docs/v58/PRIMARY_METRIC_USER_SOURCE_20260930.txt",
+      "sha256": "d47f3de743f47752d890e320f887624adc360f674edfe5adbde8ec9d86a7a6f9"
+    },
+    "v58_footprint_copy": {
+      "path": "solutions/v58/src/retrieval_footprint.py",
+      "sha256": "80ebdde1bbaa7998532e198eac55ca0a62343adeef3ef65ad0d8428a8501e171"
+    }
+  },
+  "pre_amendment_formal_model_calls": 0,
+  "pre_amendment_formal_runs": 0,
+  "schema": "c33-v58-prospective-amendment-manifest-v1",
+  "status": "DESIGN_FROZEN_WITH_PROSPECTIVE_METRIC_AMENDMENT"
+}

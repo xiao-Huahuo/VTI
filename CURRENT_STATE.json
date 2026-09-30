@@ -1,32 +1,38 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-09-30T06:20:25.278831+00:00",
+  "updated_at_utc": "2026-09-30T11:02:19+00:00",
   "project": "Reset Is Not Isolation",
-  "phase": "PRE_V58_RESET",
-  "active_version": null,
-  "next_version": "v58",
-  "scientific_design_status": "NO_NEW_VERSION_PROTOCOL_FROZEN",
+  "phase": "V58_READY_FOR_FORMAL_RUN_NO_FORMAL_CALLS",
+  "active_version": "v58",
+  "next_version": "v59",
+  "scientific_design_status": "DESIGN_FROZEN_WITH_PROSPECTIVE_METRIC_AMENDMENT",
   "current_code": {
-    "status": "NOT_STARTED",
-    "source_path": null,
-    "runner": null
+    "status": "IMPLEMENTATION_COMPLETE_OFFLINE_VERIFIED",
+    "source_path": "solutions/v58/src/",
+    "runner": "solutions/v58/src/runner.py",
+    "version_manifest": "solutions/v58/VERSION_MANIFEST.json",
+    "version_manifest_sha256": "031ea200ca7900b6858ee9d9d8b187cd12b0a906dffc6d056b04cbcd2e1c7be0"
   },
   "current_tests": {
-    "status": "NOT_STARTED",
-    "passed": null
+    "status": "OFFLINE_TEST_PASS_RECOVERY_TEST_PASS",
+    "passed": 17,
+    "recovery_checks_passed": 13,
+    "backend_fake_four_trial_drill": "PASS",
+    "backend_cross_process_resume_checks_passed": 8,
+    "real_model_calls": 0
   },
   "current_docs": {
-    "status": "BASELINE_READY",
+    "status": "V58_PROTOCOL_AMENDMENT_AND_IMPLEMENTATION_AUDITS_RECORDED",
     "idea": "IDEA.md",
     "development_standard": "科研开发规范.md",
     "readme": "README.md",
     "change_history": "docs/CHANGE_HISTORY.md",
-    "version_docs": null
+    "version_docs": "docs/v58/"
   },
   "current_data": {
-    "status": "NOT_STARTED",
-    "inputs": null,
-    "outputs": null,
+    "status": "PINNED_INPUT_STAGED_NO_FORMAL_OUTPUT",
+    "inputs": "solutions/v58/inputs/longmemeval-v1/longmemeval_s_cleaned.json",
+    "outputs": "solutions/v58/outputs/",
     "git_policy": "all inputs/ and outputs/ ignored"
   },
   "historical_evidence": {
@@ -42,16 +48,60 @@
     }
   },
   "outstanding_before_v58_execution": [
-    "Create docs/v58/ protocol and freeze manifest",
-    "Create solutions/v58/src/ runner and tests",
-    "Stage pinned inputs under ignored solutions/v58/inputs/",
-    "Pass backend/runtime/recovery gates before any new run"
+    "Wait for a separate user decision to start formal V58 model calls",
+    "Recheck live Ollama digest, source/input hashes and remaining global budget immediately before any authorized formal run",
+    "Keep 0-4 correctness score pending; user chose answer/reference preservation without a scorer"
   ],
   "last_run_receipts_for_active_version": null,
+  "v58_freeze_audit": {
+    "status": "PASS_AFTER_PROSPECTIVE_AMENDMENT",
+    "original_failure_path": "docs/v58/FREEZE_AUDIT.json",
+    "audit_path": "docs/v58/FREEZE_AUDIT_AFTER_IMPLEMENTATION.json",
+    "amendment_path": "study_freeze/V58_PRIMARY_METRIC_AMENDMENT_20260930.json",
+    "amendment_manifest_path": "study_freeze/V58_AMENDMENT_MANIFEST_20260930.json",
+    "review_path": "docs/v58/REVIEW_P0_P3.md",
+    "decision_path": "docs/v58/DECISION_AUDIT.md",
+    "verified": "Frozen file, V45/V55 source and dataset hashes; 12 orders, 24 planned sequences, 36/36 coverage and 12 N/V pairs",
+    "resolved_p0": "Original metric ambiguity fixed prospectively as 1925D ordered Top-5 footprint and float64 Euclidean L2",
+    "resolved_p1": "Version-local fixed-path audit replaces the broken archived auditor without editing it",
+    "scientific_design_gate_passed": true,
+    "formal_execution_authorized_in_this_task": false,
+    "real_model_calls_during_audit": 0
+  },
   "source_of_truth_rule": "Original frozen protocols and immutable run receipts outrank this summary when they conflict.",
   "shared_runtime": {
-    "status": "NOT_CREATED_FOR_NEW_VERSION",
+    "status": "PINNED_HISTORICAL_ENV_AND_ASSETS_REUSED_FOR_OFFLINE_TESTS",
     "path": ".runtime/",
-    "purpose": "Shared uv environments, model weights and caches; Git ignored. Raw run receipts belong in each version outputs/."
-  }
+    "purpose": "Shared uv environments, model weights and caches; Git ignored. Raw run receipts belong in each version outputs/.",
+    "offline_python": "history/runtime/v55-venv/bin/python",
+    "embedding_cache": "history/pre_v58_root_20260930/.runtime/fastembed-cache"
+  },
+  "v58_execution_gates": {
+    "design_freeze_audit": "PASS_26_OF_26",
+    "offline_tests": "PASS_17_OF_17",
+    "process_isolation_dry_run": "PASS_TWO_FRESH_PROCESSES",
+    "real_backend_fake_client_drill": "PASS_FOUR_TRIALS_PER_POLICY",
+    "recovery_drill": "PASS_13_OF_13",
+    "real_backend_cross_process_resume": "PASS_8_OF_8_FAKE_CLIENT",
+    "runtime_identity_read_only_preflight": "PASS_WHEN_OLLAMA_TEMPORARILY_STARTED",
+    "cost_preflight": "PASS_ESTIMATE_UNCERTAIN",
+    "final_implementation_audit": "PASS_P0_0_P1_0",
+    "regulatory_state": "READY_FOR_FORMAL_RUN",
+    "formal_model_calls": 0,
+    "formal_run_receipts": null
+  },
+  "development_profiling": {
+    "status": "STOPPED_AT_RESOURCE_PREFLIGHT",
+    "target_host": "current Mac M5 16 GB",
+    "plan": "docs/v58/EXECUTION_PROFILING_PLAN.md",
+    "screening_audit": "docs/v58/EXECUTION_PROFILING_SCREENING_AUDIT.json",
+    "development_requests_dispatched": 3,
+    "development_responses_persisted": 2,
+    "infrastructure_tests_passed": 2,
+    "formal_model_calls": 0,
+    "two_lane_throughput_gate": "NOT_EVALUATED_NOT_QUALIFIED",
+    "formal_execution_amendment": null,
+    "serial_formal_runner_and_checkpoint_unchanged": true
+  },
+  "env_location": ".env (moved from history/pre_v58_root_20260930/.env at user request; Git ignored; mode 0600)"
 }

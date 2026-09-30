@@ -1,0 +1,84 @@
+{
+  "checkpoints_unchanged": true,
+  "comparison_order": [
+    1,
+    2
+  ],
+  "conditions": [
+    {
+      "execution": "two worker sequences serially",
+      "lanes": 1,
+      "planned_ingestions": 102
+    },
+    {
+      "execution": "same two worker sequences concurrently",
+      "lanes": 2,
+      "planned_ingestions": 102
+    }
+  ],
+  "created_at_utc": "2026-09-30T10:37:15.656270+00:00",
+  "dataset_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+  "development_smoke_ingestions": 2,
+  "formal_cases_excluded": [
+    "gpt4_ec93e27f",
+    "gpt4_45189cb4",
+    "08f4fc43",
+    "e8a79c70"
+  ],
+  "formal_design_unchanged": true,
+  "formal_model_calls_before_profile": 0,
+  "formal_run_decision": "unchanged serial until a separate prospective execution amendment passes all gates",
+  "formal_runner_sha256": "8a3390bf39527b673cbce2f6044f0ec5da6e27074d15602c5116fac7fe27cd72",
+  "host_platform": "macOS-26.6-arm64-arm-64bit",
+  "journal_sha256": "f18ada8dcece03f82118f061cb9b213d6a87222d7852559576449ff7d36544fb",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "model_request_retry_policy": "zero after dispatch",
+  "no_formal_samples": true,
+  "ollama_version": "0.34.3",
+  "profile_code_sha256": "4b260f1e567591afcae820367adf22564a79b628d3334b4a4b6a103745795130",
+  "request_options": {
+    "keep_alive": "30m",
+    "num_ctx": 32768,
+    "num_predict": 2048,
+    "repeat_penalty": 1.1,
+    "seed": 20260920,
+    "temperature": 0,
+    "top_k": 1,
+    "top_p": 1.0
+  },
+  "schema": "science-v58-development-execution-profiling-freeze-v1",
+  "server_config_claim": {
+    "OLLAMA_CONTEXT_LENGTH": "32768",
+    "OLLAMA_FLASH_ATTENTION": "false",
+    "OLLAMA_KEEP_ALIVE": "30m",
+    "OLLAMA_KV_CACHE_TYPE": "UNSET_DEFAULT_F16",
+    "OLLAMA_NUM_PARALLEL": "2"
+  },
+  "status": "PROSPECTIVE_DEVELOPMENT_PROFILING_ONLY",
+  "target_host": "current Mac M5 16 GB unified memory",
+  "throughput_gate": {
+    "formula": "(2-lane committed sessions/total condition wall seconds)/(1-lane committed sessions/total condition wall seconds)",
+    "minimum_ratio": 1.35,
+    "missing_required_receipt": "FAIL_CLOSED",
+    "must_have_zero": [
+      "OOM",
+      "unexpected_503",
+      "unexplained_timeout",
+      "cross_sequence_state_leakage",
+      "recovery_failure"
+    ]
+  },
+  "workers_per_condition": 2,
+  "workload_per_worker": [
+    {
+      "expected_total_sessions": 52,
+      "question_id": "b5ef892d",
+      "selected_first_sessions": 26
+    },
+    {
+      "expected_total_sessions": 51,
+      "question_id": "1a8a66a6",
+      "selected_first_sessions": 25
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "science-v58-real-backend-fake-client-drill-v1",
+  "status": "PASS",
+  "results": [
+    {
+      "policy": "N",
+      "fake_client_calls": 1,
+      "messages_before": 2,
+      "messages_after_native": 2,
+      "messages_after_cleanup": 2,
+      "vectors_after_cleanup": 0,
+      "readback": "PASS"
+    },
+    {
+      "policy": "V",
+      "fake_client_calls": 1,
+      "messages_before": 2,
+      "messages_after_native": 2,
+      "messages_after_cleanup": 0,
+      "vectors_after_cleanup": 0,
+      "readback": "PASS"
+    }
+  ],
+  "real_model_calls": 0
+}
