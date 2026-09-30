@@ -30,3 +30,5 @@ solutions/vXX/
 针对武大超算，已建立[仅源码的 GPU 交接与资源预检](docs/v58/GPU_SOURCE_PREP.md)。它不包含凭据、输入、模型或环境；A100 分区的 `sbatch --test-only` 可通过，但共享登录账号的 `/home` 1GiB 配额已超限，当前无法在允许目录解包源码。超算上的正式执行资格仍需独立审查。
 
 根目录另有本次用户明确要求的 `study_freeze/` 补充冻结清单；`docs/CHANGE_HISTORY.md` 是全项目变更记录，本版变化另见 `docs/v58/CHANGE_HISTORY.md`。`.env` 已按用户要求从旧归档移回根目录，仍由 Git 忽略且权限为 `0600`；旧迁移清单记录的是移动前位置。历史材料不会为了目录外观被批量改写，**不可将 `history/` 整体上传或公开**。
+
+V58 新增[安全暂停与本机监控](docs/v58/PAUSE_AND_MONITOR_AUDIT.md)，页面为 `http://127.0.0.1:8773`。可随时请求暂停，实际在当前步骤 checkpoint 提交后停止；模型请求期间强杀仍不能保证恢复。正式实验尚未启动。

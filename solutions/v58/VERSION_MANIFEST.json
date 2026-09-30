@@ -9,6 +9,7 @@
   "formal_run_receipts": null,
   "gpu_source_pack_sha256": "2a346366497b1318cf2ed640b7c7a4a4f2a00a0ce13ffad4aac418de18367945",
   "gpu_source_status": "SOURCE_ONLY_PREPARED_NO_MODEL_ENV_DOWNLOAD",
+  "implementation_revision": "Cooperative checkpoint pause, safe batch continuation, loopback dashboard and machine telemetry before formal outcomes",
   "input_manifest_sha256": "5e8bef6afa0a3b6e66b8610dbcf8d411e7497374a1e2737951f5d9c82456df82",
   "metric_amendment_sha256": "e00a04bf02502a3fcc9067c837d9e7f7534b7645e4f48200e6ad92ed2f05bece",
   "offline_preflight_entry": "python solutions/v58/src/audit_freeze.py",
@@ -19,21 +20,29 @@
   "source_sha256": {
     "solutions/v58/src/audit_freeze.py": "854206894c0d06ade78a1d56a5b63eac1a3416d16d9dc288524b0e93a40678db",
     "solutions/v58/src/backend.py": "220d506659bad373eb01f09763f25eb05d8aec8a01014a80de9ef2517be5e891",
+    "solutions/v58/src/control.py": "4e3f261eeace04d8e1746701c5b16b09acd69d880b2e54c17dcdd2159a86cd53",
     "solutions/v58/src/drill_backend_fake.py": "431c80687e296b93b4c701eb1016bf0b22e363f42f4583351ed426aafa8d9a8e",
     "solutions/v58/src/drill_backend_resume.py": "de4bc4097b319559ba20f52fecae4017c5c27fe66de65ab2f81ffa06a127b082",
     "solutions/v58/src/drill_recovery.py": "eda36693de5ef79e3e565ea80a9bf9b7ccbd2612dd58615cd379fcc7653ad2cf",
     "solutions/v58/src/gpu/prepare_sources.py": "285126b8f4d84536c85dadd46ac5e05fef23d74285ff04ccbd1ccf671fff06d6",
     "solutions/v58/src/gpu/test_prepare_sources.py": "39b061f590ea6526705d258a90bb2d964d3e8e8cff0ded86f76983db7ee4ec2c",
     "solutions/v58/src/journal.py": "f18ada8dcece03f82118f061cb9b213d6a87222d7852559576449ff7d36544fb",
+    "solutions/v58/src/machine_metrics.py": "0a129f8e428303c88abf6388fc71be4526a7e5a20ed009f7cebea74429dc5b59",
     "solutions/v58/src/profiling/profile.py": "b94f69523d8fa976f4d5a3164daef1b6f78249fd3f8e5ffc7a9aee61daf4baeb",
     "solutions/v58/src/profiling/test_profile.py": "34605c095306d017c1a936ab5ee1c16f4c966005fb31ddb0acef44b04b266fa5",
+    "solutions/v58/src/progress_server.py": "f3f67a139274e39e3c76e06e34753f725835bf4ab3662c0e6b02cb5cc944330e",
     "solutions/v58/src/retrieval_footprint.py": "80ebdde1bbaa7998532e198eac55ca0a62343adeef3ef65ad0d8428a8501e171",
-    "solutions/v58/src/runner.py": "8a3390bf39527b673cbce2f6044f0ec5da6e27074d15602c5116fac7fe27cd72",
+    "solutions/v58/src/runner.py": "ca29a1a134e31b453de5bbf5c2f74ce55e1f21ce8e6e7b52cad1eca80347de7e",
     "solutions/v58/src/statistics.py": "463cb51e633faf964fe2853ca4a034c7ab176db7abdd11bf42d86e4f36db0e99",
+    "solutions/v58/src/tests/test_dashboard.py": "1d45e4f9d267cff2340a4dbbf17ac5d50c7664d867bbc66b7c00bde2416618b1",
     "solutions/v58/src/tests/test_offline_core.py": "d74f1de80f11c809a43fc18b363a8068eb5e9525d2511378f1ed1b6490186fd9",
+    "solutions/v58/src/tests/test_pause_controls.py": "4300367d98a43a3c272a78e6fb42999ea730fd73752e93e024fe65f81643ffa2",
     "solutions/v58/src/transport.py": "d94a895ba16ae87256634e9bf3e6d7a75e15da1351872dd0aecd0beca1ed27d3"
   },
   "status": "READY_FOR_FORMAL_RUN_NO_FORMAL_RUN_STARTED",
-  "updated_at_utc": "2026-09-30T12:03:57.584980+00:00",
+  "ui_assets_sha256": {
+    "solutions/v58/src/progress.html": "016416a40d89a1e3be21ccff1c4a83c29f09c2e1462a8839f7555b904e0d618b"
+  },
+  "updated_at_utc": "2026-09-30T13:21:33.197280+00:00",
   "version": "v58"
 }

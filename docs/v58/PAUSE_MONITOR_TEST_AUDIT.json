@@ -1,0 +1,20 @@
+{
+  "schema": "science-v58-pause-monitor-audit-v1",
+  "at_utc": "2026-09-30T13:21:33.197280+00:00",
+  "offline_tests_passed": 21,
+  "freeze_checks_passed": 26,
+  "real_backend_fake_resume_checks_passed": 8,
+  "model_calls": 0,
+  "formal_calls": 0,
+  "code_hashes": {
+    "runner.py": "ca29a1a134e31b453de5bbf5c2f74ce55e1f21ce8e6e7b52cad1eca80347de7e",
+    "control.py": "4e3f261eeace04d8e1746701c5b16b09acd69d880b2e54c17dcdd2159a86cd53",
+    "progress_server.py": "f3f67a139274e39e3c76e06e34753f725835bf4ab3662c0e6b02cb5cc944330e",
+    "machine_metrics.py": "0a129f8e428303c88abf6388fc71be4526a7e5a20ed009f7cebea74429dc5b59",
+    "progress.html": "016416a40d89a1e3be21ccff1c4a83c29f09c2e1462a8839f7555b904e0d618b"
+  },
+  "signal_during_fake_request": "PASS_COMMIT_ONCE_PAUSE_THEN_RESUME_NEXT_STEP",
+  "batch_continuation": "PASS_RESUME_SAME_SEQUENCE_BEFORE_NEXT",
+  "ui_control": "PASS_TOKEN_CHECK_LOCAL_PAUSE_ONLY",
+  "limitation": "SIGKILL, power failure, or provider failure before committed response remains fail-closed; cooperation is not immediate cancellation"
+}

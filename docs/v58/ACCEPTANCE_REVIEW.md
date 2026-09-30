@@ -39,3 +39,5 @@
 重点攻击了随机化单位、数据身份、scope carryover、sequence 间隔离、异常发送后重试、response 落盘时点、raw 篡改、cleanup 在恢复中重复、预算漂移和正式结果过度解释。无未解决 P0/P1。真正的 Qwen 输出格式与长批次耗时仍只能在后续获准的正式执行中观察；遇到任何身份、收据、预算或运行时漂移，runner 必须停止而不能补抽。无 V58 正式 outcome 可供结果审查。
 
 **FORMAL MODEL CALLS DURING THIS TASK: 0**
+
+2026-09-30 暂停与监控实现修订后，最新离线测试 21/21、冻结检查 26/26、真实后端 fake-client 恢复 8/8 通过；见 [审计收据](PAUSE_MONITOR_TEST_AUDIT.json)。正式模型调用 0。

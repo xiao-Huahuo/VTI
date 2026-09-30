@@ -1,6 +1,6 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-09-30T12:16:03+00:00",
+  "updated_at_utc": "2026-09-30T13:21:33.197280+00:00",
   "project": "Reset Is Not Isolation",
   "phase": "V58_READY_FOR_FORMAL_RUN_NO_FORMAL_CALLS",
   "active_version": "v58",
@@ -11,11 +11,11 @@
     "source_path": "solutions/v58/src/",
     "runner": "solutions/v58/src/runner.py",
     "version_manifest": "solutions/v58/VERSION_MANIFEST.json",
-    "version_manifest_sha256": "7c96f9b54f54be5df183d79bab153c69ccbc4efa5ba8605b9fdd1bc3de20c46b"
+    "version_manifest_sha256": "195925df2ca3b02e03ef02b311016455489b696ef892911342607f82e596e9b9"
   },
   "current_tests": {
     "status": "OFFLINE_TEST_PASS_RECOVERY_TEST_PASS",
-    "passed": 17,
+    "passed": 21,
     "recovery_checks_passed": 13,
     "backend_fake_four_trial_drill": "PASS",
     "backend_cross_process_resume_checks_passed": 8,
@@ -79,7 +79,7 @@
   },
   "v58_execution_gates": {
     "design_freeze_audit": "PASS_26_OF_26",
-    "offline_tests": "PASS_17_OF_17",
+    "offline_tests": "PASS_21_OF_21",
     "process_isolation_dry_run": "PASS_TWO_FRESH_PROCESSES",
     "real_backend_fake_client_drill": "PASS_FOUR_TRIALS_PER_POLICY",
     "recovery_drill": "PASS_13_OF_13",
@@ -89,7 +89,8 @@
     "final_implementation_audit": "PASS_P0_0_P1_0",
     "regulatory_state": "READY_FOR_FORMAL_RUN",
     "formal_model_calls": 0,
-    "formal_run_receipts": null
+    "formal_run_receipts": null,
+    "safe_pause_and_resume": "PASS_FAKE_REQUEST_SIGNAL_AND_BATCH_CONTINUATION"
   },
   "development_profiling": {
     "status": "STOPPED_AT_RESOURCE_PREFLIGHT",
@@ -126,5 +127,13 @@
     "dataset_downloads": 0,
     "gpu_formal_run_qualified": false
   },
-  "env_location": ".env (moved from history/pre_v58_root_20260930/.env at user request; Git ignored; mode 0600)"
+  "env_location": ".env (moved from history/pre_v58_root_20260930/.env at user request; Git ignored; mode 0600)",
+  "pause_and_monitor": {
+    "status": "IMPLEMENTED_OFFLINE_VERIFIED",
+    "dashboard_url": "http://127.0.0.1:8773",
+    "pause_semantics": "Finish current operation and commit checkpoint, then exit; in-flight hard kill remains uncertain",
+    "dashboard_entry": "solutions/v58/src/progress_server.py",
+    "audit": "docs/v58/PAUSE_AND_MONITOR_AUDIT.md",
+    "formal_model_calls_during_revision": 0
+  }
 }

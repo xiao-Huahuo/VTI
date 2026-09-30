@@ -7,6 +7,7 @@ import asyncio
 import importlib.util
 import json
 import os
+import signal
 import subprocess
 import sys
 import tempfile
@@ -17,6 +18,8 @@ from audit_freeze import audit, src_and_project
 from journal import Journal, immutable_json, sha, tree_sha, utc_now
 from statistics import exact_randomization
 from transport import ReceiptTransport
+from control import (STOP_REQUESTED, PAUSED_EXIT, SafePause, request_pause, requested,
+                     clear_pause, checkpoint_pause, status as control_status)
 
 
 SRC, PROJECT = src_and_project()
@@ -105,10 +108,23 @@ async def run_sequence(args: argparse.Namespace, *, resume: bool) -> None:
     if not run_id.startswith("v58-"):
         raise ValueError("run_id must be a simple v58- identifier")
     simple_token(run_id)
+    run_root = OUTPUTS / run_id
+    batch_id = getattr(args, "batch_id", None)
+    roots = [run_root]
+    if batch_id:
+        simple_token(batch_id)
+        if not run_id.startswith(f"v58-{batch_id}-b"):
+            raise ValueError("Sequence does not belong to requested batch")
+        roots.append(OUTPUTS / f"v58-{batch_id}-controller")
+    if any((root / "control/pause.request.json").exists() for root in roots):
+        if not getattr(args, "resume_paused", False):
+            raise SafePause("Pause request remains active; use --resume-paused to continue")
+        for root in roots:
+            clear_pause(root)
     budget = {"max_requests": args.max_requests, "max_input_tokens": args.max_input_tokens,
               "max_output_tokens": args.max_output_tokens, "max_cost": args.max_cost}
     info = identity(run_id, block, args.slot, policy, runtime, budget)
-    journal = Journal(OUTPUTS / run_id, info, resume=resume)
+    journal = Journal(run_root, info, resume=resume)
     if resume:
         journal.readback()
     else:
@@ -129,7 +145,12 @@ async def run_sequence(args: argparse.Namespace, *, resume: bool) -> None:
         raise RuntimeError("Initial checkpoint missing")
     next_step = last[0] + 1
     for step in range(next_step, len(plan) + 1):
+        if requested(*roots):
+            request_pause(run_root, "signal_or_batch_request")
+            checkpoint_pause(run_root, step - 1, run_id=run_id, batch_id=batch_id)
         operation = plan[step - 1]
+        control_status(run_root, phase="RUNNING", run_id=run_id, batch_id=batch_id,
+                       current_step=step, last_committed_step=step - 1, operation=operation)
         journal.begin_step(step, operation["kind"])
         source = journal.checkpoint_path(step - 1) / "state"
         attempt = journal.create_attempt(step, source)
@@ -154,12 +175,20 @@ async def run_sequence(args: argparse.Namespace, *, resume: bool) -> None:
                            {"step": step, "operation": operation, "type": type(exc).__name__,
                             "message": str(exc), "at_utc": utc_now(), "terminal": True,
                             "attempt_state_sha256": tree_sha(attempt)})
+            control_status(run_root, phase="TERMINAL_INVALID", run_id=run_id,
+                           current_step=step, error=type(exc).__name__)
             raise
+        control_status(run_root, phase="RUNNING", run_id=run_id, batch_id=batch_id,
+                       last_committed_step=step, operation=operation)
+        if requested(*roots) and step < len(plan):
+            request_pause(run_root, "signal_or_batch_request")
+            checkpoint_pause(run_root, step, run_id=run_id, batch_id=batch_id)
     immutable_json(journal.root / "raw/sequence_complete.json",
                    {"run_id": run_id, "block": args.block, "slot": args.slot,
                     "policy": policy, "order": block["order"], "steps": len(plan),
                     "process_id": os.getpid(), "at_utc": utc_now()})
     print(json.dumps({"run_id": run_id, "status": "COMPLETE", "steps": len(plan)}))
+    control_status(run_root, phase="COMPLETE", run_id=run_id, last_committed_step=len(plan))
 
 
 def readback(run_id: str) -> dict[str, Any]:
@@ -258,24 +287,54 @@ def full(args: argparse.Namespace) -> None:
         for name in ("raw", "checkpoints", "processed"):
             (batch_root / name).mkdir()
         immutable_json(batch_root / "raw/batch_identity.json", batch_identity)
+    if (batch_root / "control/pause.request.json").exists():
+        if not getattr(args, "resume_paused", False):
+            raise SafePause("Batch is paused; use --resume-paused to continue")
+        clear_pause(batch_root)
     consumed = {"requests": 0, "input": 0, "output": 0}
     for block in range(1, 13):
         for slot in (1, 2):
+            if requested(batch_root):
+                request_pause(batch_root, "signal_or_user")
+                control_status(batch_root, phase="PAUSED", batch_id=args.batch_id)
+                raise SafePause("Batch paused before the next sequence")
             run_id = f"v58-{args.batch_id}-b{block:02d}-s{slot}"
             existing = (OUTPUTS / run_id).exists()
-            if not existing:
+            existing_info = None
+            complete = False
+            if existing:
+                complete = readback(run_id)["complete"]
+                existing_info = json.loads((OUTPUTS / run_id / "raw/identity.json").read_text())
+            if not complete:
                 remaining = {"requests": args.max_requests - consumed["requests"],
                              "input": args.max_input_tokens - consumed["input"],
                              "output": args.max_output_tokens - consumed["output"]}
                 if remaining["requests"] < 1 or remaining["input"] < 32768 or remaining["output"] < 2048:
                     raise RuntimeError("Global batch budget exhausted before next sequence")
-                cmd = [sys.executable, str(Path(__file__).resolve()), "single-sequence",
+                limits = existing_info["budget_limits"] if existing_info else {
+                    "max_requests": remaining["requests"], "max_input_tokens": remaining["input"],
+                    "max_output_tokens": remaining["output"], "max_cost": args.max_cost}
+                cmd = [sys.executable, str(Path(__file__).resolve()), "resume" if existing else "single-sequence",
                        "--block", str(block), "--slot", str(slot), "--run-id", run_id,
-                       "--allow-model-calls", "--max-requests", str(remaining["requests"]),
-                       "--max-input-tokens", str(remaining["input"]),
-                       "--max-output-tokens", str(remaining["output"]),
-                       "--max-cost", str(args.max_cost)]
-                subprocess.run(cmd, check=True)
+                       "--batch-id", args.batch_id,
+                       "--allow-model-calls", "--max-requests", str(limits["max_requests"]),
+                       "--max-input-tokens", str(limits["max_input_tokens"]),
+                       "--max-output-tokens", str(limits["max_output_tokens"]),
+                       "--max-cost", str(limits["max_cost"])]
+                if getattr(args, "resume_paused", False):
+                    cmd.append("--resume-paused")
+                control_status(batch_root, phase="RUNNING", batch_id=args.batch_id,
+                               active_run_id=run_id, block=block, slot=slot)
+                result_process = subprocess.run(cmd, check=False)
+                if result_process.returncode == PAUSED_EXIT:
+                    request_pause(batch_root, "worker_safe_pause")
+                    control_status(batch_root, phase="PAUSED", batch_id=args.batch_id,
+                                   active_run_id=run_id)
+                    raise SafePause("Sequence saved a checkpoint and paused")
+                if result_process.returncode != 0:
+                    control_status(batch_root, phase="FAILED", batch_id=args.batch_id,
+                                   active_run_id=run_id)
+                    raise subprocess.CalledProcessError(result_process.returncode, cmd)
             result = readback(run_id)
             if not result["complete"] or result["block"] != block or result["slot"] != slot:
                 raise RuntimeError("Incomplete sequence: resume it under its original identity before continuing batch")
@@ -302,6 +361,7 @@ def full(args: argparse.Namespace) -> None:
         immutable_json(completion, {"batch_id": args.batch_id, "sequence_count": 24,
                                     "conservative_budget_consumed": consumed,
                                     "at_utc": utc_now()})
+    control_status(batch_root, phase="COMPLETE", batch_id=args.batch_id)
 
 
 def dry_run_child(output: Path) -> None:
@@ -339,6 +399,7 @@ def main() -> None:
     for name in ("single-sequence", "resume", "full"):
         command = sub.add_parser(name)
         command.add_argument("--allow-model-calls", action="store_true")
+        command.add_argument("--resume-paused", action="store_true")
         command.add_argument("--max-requests", type=int, required=True)
         command.add_argument("--max-input-tokens", type=int, required=True)
         command.add_argument("--max-output-tokens", type=int, required=True)
@@ -346,6 +407,7 @@ def main() -> None:
         if name == "full":
             command.add_argument("--batch-id", required=True)
         else:
+            command.add_argument("--batch-id")
             command.add_argument("--block", type=int, required=True)
             command.add_argument("--slot", type=int, required=True)
             command.add_argument("--run-id", required=True)
@@ -355,6 +417,10 @@ def main() -> None:
     rb.add_argument("--run-id", required=True)
     agg = sub.add_parser("aggregate")
     agg.add_argument("--batch-id", required=True)
+    pause = sub.add_parser("pause")
+    target = pause.add_mutually_exclusive_group(required=True)
+    target.add_argument("--batch-id")
+    target.add_argument("--run-id")
     args = parser.parse_args()
     if args.command == "preflight":
         result = audit()
@@ -366,10 +432,30 @@ def main() -> None:
     elif args.command in ("single-sequence", "resume", "full"):
         if not args.allow_model_calls:
             raise SystemExit("Real model calls require --allow-model-calls; current preparation task forbids using it")
-        if args.command == "full":
-            full(args)
-        else:
-            asyncio.run(run_sequence(args, resume=args.command == "resume"))
+        STOP_REQUESTED.clear()
+        def handle_stop(signum, _frame):
+            STOP_REQUESTED.set()
+            if args.command == "full":
+                try:
+                    root = OUTPUTS / f"v58-{simple_token(args.batch_id)}-controller"
+                    if root.exists():
+                        request_pause(root, signal.Signals(signum).name)
+                except (OSError, ValueError):
+                    pass
+        for signum in (signal.SIGINT, signal.SIGTERM):
+            signal.signal(signum, handle_stop)
+        try:
+            if args.command == "full":
+                full(args)
+            else:
+                asyncio.run(run_sequence(args, resume=args.command == "resume"))
+        except SafePause as exc:
+            print(json.dumps({"status": "PAUSED_AT_CHECKPOINT", "detail": str(exc)}))
+            raise SystemExit(PAUSED_EXIT)
+    elif args.command == "pause":
+        key = simple_token(args.batch_id or args.run_id)
+        root = OUTPUTS / (f"v58-{key}-controller" if args.batch_id else key)
+        print(json.dumps({"status": "PAUSE_REQUESTED", **request_pause(root)}, ensure_ascii=False))
     elif args.command == "readback":
         print(json.dumps(readback(args.run_id), ensure_ascii=False))
     elif args.command == "aggregate":

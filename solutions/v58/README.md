@@ -19,3 +19,5 @@ python solutions/v58/src/drill_backend_fake.py
 GPU 超算源码准备见[交接记录](../../docs/v58/GPU_SOURCE_PREP.md)。Git clone 后可在允许的项目目录下执行 `python3 solutions/v58/src/gpu/prepare_sources.py --cluster --dry-run`，再用 `--materialize` 恢复**仅源码**的冻结依赖，最后 `--verify-only` 回读。`frozen_sources/MANIFEST.json` 绑定每个文件及公开 benchmark Git bundle 的哈希。此入口不下载数据、模型或环境；超算 GPU 的正式执行身份需另外冻结，不能直接继承 Mac 的运行资格。
 
 每个 sequence 有独立 `outputs/<run_id>/{raw,checkpoints,processed}`。`full` 另保存批次身份与全局预算，重启时回读并跳过已完成 sequence；未完成 sequence 必须先在原预算下单独恢复。运行身份绑定原冻结、补充冻结、数据、源码、模型参数和实际模型 digest。checkpoint 保留全量状态快照；从已提交步骤恢复，遇到发送后无完成标记、cleanup 未提交或身份改变时拒绝自动继续。原始请求/HTTP 响应与计算后 footprint 保留在 `raw/`，统计产物写入独立分析 run 的 `processed/`。
+
+安全暂停与右侧进度页见[审查记录](../../docs/v58/PAUSE_AND_MONITOR_AUDIT.md)。启动 `python solutions/v58/src/progress_server.py --port 8773` 后打开 `http://127.0.0.1:8773`，可查看 CPU/GPU/统一内存/swap/磁盘/模型驻留并请求暂停。终端也可用 `python solutions/v58/src/runner.py pause --batch-id <原批次id>`；Ctrl-C 会请求安全暂停。恢复原批次使用相同 full 命令与预算，增加 `--resume-paused`。暂停等当前步骤保存后退出；强杀与断电仍可能使请求不确定。
