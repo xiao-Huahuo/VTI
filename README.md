@@ -27,6 +27,6 @@ solutions/vXX/
 
 后续提出的并发提速仅做了[独立开发筛查](docs/v58/EXECUTION_PROFILING_SCREENING_20260930.md)：当前 Mac 在 32k context、2 路服务配置下出现明显 CPU offload 与内存压力，故未启动 1/2 lane 完整吞吐对照，`1.35×` 资格门未评估。已完成的两个串行开发 session 显示模型请求占主要耗时；开发请求与正式 V58 结果严格分开。**正式 runner 仍串行，正式模型调用仍为 0。**
 
-针对武大超算，已建立[仅源码的 GPU 交接与资源预检](docs/v58/GPU_SOURCE_PREP.md)。它不包含凭据、输入、模型或环境；超算上的正式执行资格仍需独立审查。
+针对武大超算，已建立[仅源码的 GPU 交接与资源预检](docs/v58/GPU_SOURCE_PREP.md)。它不包含凭据、输入、模型或环境；A100 分区的 `sbatch --test-only` 可通过，但共享登录账号的 `/home` 1GiB 配额已超限，当前无法在允许目录解包源码。超算上的正式执行资格仍需独立审查。
 
 根目录另有本次用户明确要求的 `study_freeze/` 补充冻结清单；`docs/CHANGE_HISTORY.md` 是全项目变更记录，本版变化另见 `docs/v58/CHANGE_HISTORY.md`。`.env` 已按用户要求从旧归档移回根目录，仍由 Git 忽略且权限为 `0600`；旧迁移清单记录的是移动前位置。历史材料不会为了目录外观被批量改写，**不可将 `history/` 整体上传或公开**。

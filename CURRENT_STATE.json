@@ -1,6 +1,6 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-09-30T12:04:18+00:00",
+  "updated_at_utc": "2026-09-30T12:16:03+00:00",
   "project": "Reset Is Not Isolation",
   "phase": "V58_READY_FOR_FORMAL_RUN_NO_FORMAL_CALLS",
   "active_version": "v58",
@@ -23,7 +23,7 @@
     "real_model_calls": 0
   },
   "current_docs": {
-    "status": "V58_PROTOCOL_AMENDMENT_AND_IMPLEMENTATION_AUDITS_RECORDED",
+    "status": "V58_PROTOCOL_IMPLEMENTATION_AND_GPU_SOURCE_PREP_RECORDED",
     "idea": "IDEA.md",
     "development_standard": "科研开发规范.md",
     "readme": "README.md",
@@ -105,7 +105,7 @@
     "serial_formal_runner_and_checkpoint_unchanged": true
   },
   "gpu_supercomputer_preparation": {
-    "status": "SOURCE_ONLY_LOCAL_VERIFIED_SCHEDULER_TEST_ONLY",
+    "status": "CODE_READY_REMOTE_HOME_USER_QUOTA_BLOCKED",
     "account_work_boundary": "~/projects/srx/",
     "source_pack": "solutions/v58/frozen_sources/MANIFEST.json",
     "source_pack_sha256": "2a346366497b1318cf2ed640b7c7a4a4f2a00a0ce13ffad4aac418de18367945",
@@ -114,6 +114,12 @@
     "login_reachable": true,
     "github_https_from_login": "TIMEOUT",
     "a100x4_sbatch_test_only": "ELIGIBLE_WITH_PROJECT_ACCOUNT",
+    "remote_source_materialized": false,
+    "source_archive_hash_verified_before_extract": true,
+    "remote_partial_source_and_archive_removed": true,
+    "remote_home_quota_kib": 1048576,
+    "remote_home_used_kib_after_cleanup": 1115206,
+    "blocking_condition": "Shared login user's /home Lustre block quota is already exceeded; only ~/projects/srx/ is authorized for work",
     "gpu_job_submitted": false,
     "model_downloads": 0,
     "environment_installs": 0,
