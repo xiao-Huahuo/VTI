@@ -1,6 +1,6 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-09-30T06:13:03.779997+00:00",
+  "updated_at_utc": "2026-09-30T06:20:25.278831+00:00",
   "project": "Reset Is Not Isolation",
   "phase": "PRE_V58_RESET",
   "active_version": null,
@@ -48,5 +48,10 @@
     "Pass backend/runtime/recovery gates before any new run"
   ],
   "last_run_receipts_for_active_version": null,
-  "source_of_truth_rule": "Original frozen protocols and immutable run receipts outrank this summary when they conflict."
+  "source_of_truth_rule": "Original frozen protocols and immutable run receipts outrank this summary when they conflict.",
+  "shared_runtime": {
+    "status": "NOT_CREATED_FOR_NEW_VERSION",
+    "path": ".runtime/",
+    "purpose": "Shared uv environments, model weights and caches; Git ignored. Raw run receipts belong in each version outputs/."
+  }
 }
