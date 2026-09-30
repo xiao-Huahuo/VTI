@@ -1,6 +1,6 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-09-30T13:47:00.805348+00:00",
+  "updated_at_utc": "2026-09-30T13:48:43.467846+00:00",
   "project": "Reset Is Not Isolation",
   "phase": "V58_FORMAL_SERIAL_RUNNING",
   "active_version": "v58",
@@ -11,7 +11,7 @@
     "source_path": "solutions/v58/src/",
     "runner": "solutions/v58/src/runner.py",
     "version_manifest": "solutions/v58/VERSION_MANIFEST.json",
-    "version_manifest_sha256": "26c87ca950333ceeae104568bef6b608df516691dae90ca0e2c70a0555de74e2"
+    "version_manifest_sha256": "60051f3d0c231510ba003ae76ac4c903cecd5b12d64384ab6e0929865952620d"
   },
   "current_tests": {
     "status": "OFFLINE_TEST_PASS_RECOVERY_TEST_PASS",
@@ -60,7 +60,9 @@
     "ollama_pid": 2039,
     "caffeinate_pid": 2611,
     "phase": "RUNNING",
-    "note": "Counters here are a snapshot; live receipts/dashboard are authoritative. Prior startup attempts stopped before dispatch and are preserved."
+    "note": "Counters here are a snapshot; live receipts/dashboard are authoritative. Prior startup attempts stopped before dispatch and are preserved.",
+    "first_formal_checkpoint": "PASS_STEP_1_STATE_AND_IDENTITY_HASH_VERIFIED",
+    "committed_ingestions_at_snapshot": 1
   },
   "v58_freeze_audit": {
     "status": "PASS_AFTER_PROSPECTIVE_AMENDMENT",
@@ -96,10 +98,10 @@
     "cost_preflight": "PASS_ESTIMATE_UNCERTAIN",
     "final_implementation_audit": "PASS_P0_0_P1_0",
     "regulatory_state": "FORMAL_RUN_IN_PROGRESS",
-    "formal_model_calls": 1,
+    "formal_model_calls": 2,
     "formal_run_receipts": "solutions/v58/outputs/v58-formal-mac-20260930-r02-controller/raw/batch_identity.json",
     "safe_pause_and_resume": "PASS_FAKE_REQUEST_SIGNAL_AND_BATCH_CONTINUATION",
-    "formal_model_calls_sampled_at_utc": "2026-09-30T13:47:00.805348+00:00"
+    "formal_model_calls_sampled_at_utc": "2026-09-30T13:48:43.467846+00:00"
   },
   "development_profiling": {
     "status": "STOPPED_AT_RESOURCE_PREFLIGHT",

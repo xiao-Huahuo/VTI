@@ -5,7 +5,7 @@
   "development_profiling_status": "STOPPED_AT_RESOURCE_PREFLIGHT_NO_CONCURRENCY_AMENDMENT",
   "footprint_sha256": "80ebdde1bbaa7998532e198eac55ca0a62343adeef3ef65ad0d8428a8501e171",
   "formal_entry": "solutions/v58/src/runner.py",
-  "formal_model_calls": 1,
+  "formal_model_calls": 2,
   "formal_run_receipts": "solutions/v58/outputs/v58-formal-mac-20260930-r02-controller/raw/batch_identity.json",
   "gpu_source_pack_sha256": "2a346366497b1318cf2ed640b7c7a4a4f2a00a0ce13ffad4aac418de18367945",
   "gpu_source_status": "SOURCE_ONLY_PREPARED_NO_MODEL_ENV_DOWNLOAD",
@@ -45,5 +45,5 @@
   },
   "updated_at_utc": "2026-09-30T13:47:00.805348+00:00",
   "version": "v58",
-  "formal_model_calls_sampled_at_utc": "2026-09-30T13:47:00.805348+00:00"
+  "formal_model_calls_sampled_at_utc": "2026-09-30T13:48:43.467846+00:00"
 }

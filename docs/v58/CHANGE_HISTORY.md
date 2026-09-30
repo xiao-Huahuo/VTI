@@ -87,3 +87,5 @@ V58 设计文件已归档为 `DESIGN_FROZEN_EXECUTION_BLOCKED`，当前没有本
 ### 完成与未完成状态
 
 首次启动缺 MEM0_TELEMETRY=false，在请求前退出；补齐后因 FastEmbed 默认缓存路径错误，在首个操作未提交且尚未发送请求时终止。旧批次 `formal-mac-20260930` 保留，0 模型请求，不恢复该 terminal 操作。完整 store 初始化及嵌入 snapshot 哈希 d43150a691d02e46b7848cb04e6db89ad74b9f1a1e00bb75e8d9f034861ff7a3 离线核验通过后启动新批次。新批次首个正式请求已发送，运行中；尚未完成实验或统计。启动与失败日志见 `solutions/v58/outputs/v58-formal-mac-20260930-launch/`，实时计数以原始收据和页面为准。运行期间不修改源码；用户可页面请求安全暂停。原 70–100h 仅为估算。
+
+启动验收补充：第 1 个正式 ingestion 已保存响应并提交 checkpoint，状态及身份哈希回读通过；第 2 个请求正在运行。验收收据：`solutions/v58/outputs/v58-formal-mac-20260930-launch/first_checkpoint_verified.json`。运行结果尚未完成。
