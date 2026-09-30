@@ -1,8 +1,8 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-09-30T13:21:33.197280+00:00",
+  "updated_at_utc": "2026-09-30T13:47:00.805348+00:00",
   "project": "Reset Is Not Isolation",
-  "phase": "V58_READY_FOR_FORMAL_RUN_NO_FORMAL_CALLS",
+  "phase": "V58_FORMAL_SERIAL_RUNNING",
   "active_version": "v58",
   "next_version": "v59",
   "scientific_design_status": "DESIGN_FROZEN_WITH_PROSPECTIVE_METRIC_AMENDMENT",
@@ -11,7 +11,7 @@
     "source_path": "solutions/v58/src/",
     "runner": "solutions/v58/src/runner.py",
     "version_manifest": "solutions/v58/VERSION_MANIFEST.json",
-    "version_manifest_sha256": "4ed607103f84f99287bbf1f10300099f95855831f7903b8ff9f9b649f5e06452"
+    "version_manifest_sha256": "26c87ca950333ceeae104568bef6b608df516691dae90ca0e2c70a0555de74e2"
   },
   "current_tests": {
     "status": "OFFLINE_TEST_PASS_RECOVERY_TEST_PASS",
@@ -31,7 +31,7 @@
     "version_docs": "docs/v58/"
   },
   "current_data": {
-    "status": "PINNED_INPUT_STAGED_NO_FORMAL_OUTPUT",
+    "status": "PINNED_INPUT_FORMAL_RUN_IN_PROGRESS",
     "inputs": "solutions/v58/inputs/longmemeval-v1/longmemeval_s_cleaned.json",
     "outputs": "solutions/v58/outputs/",
     "git_policy": "all inputs/ and outputs/ ignored"
@@ -49,11 +49,19 @@
     }
   },
   "outstanding_before_v58_execution": [
-    "Wait for a separate user decision to start formal V58 model calls",
-    "Recheck live Ollama digest, source/input hashes and remaining global budget immediately before any authorized formal run",
-    "Keep 0-4 correctness score pending; user chose answer/reference preservation without a scorer"
+    "Keep 0-4 correctness score pending; answers/reference only"
   ],
-  "last_run_receipts_for_active_version": null,
+  "last_run_receipts_for_active_version": {
+    "batch_id": "formal-mac-20260930-r02",
+    "controller": "solutions/v58/outputs/v58-formal-mac-20260930-r02-controller",
+    "active_run_id": "v58-formal-mac-20260930-r02-b01-s1",
+    "launch_receipt": "solutions/v58/outputs/v58-formal-mac-20260930-launch/formal_launch_r02.json",
+    "runner_pid": 2610,
+    "ollama_pid": 2039,
+    "caffeinate_pid": 2611,
+    "phase": "RUNNING",
+    "note": "Counters here are a snapshot; live receipts/dashboard are authoritative. Prior startup attempts stopped before dispatch and are preserved."
+  },
   "v58_freeze_audit": {
     "status": "PASS_AFTER_PROSPECTIVE_AMENDMENT",
     "original_failure_path": "docs/v58/FREEZE_AUDIT.json",
@@ -66,7 +74,7 @@
     "resolved_p0": "Original metric ambiguity fixed prospectively as 1925D ordered Top-5 footprint and float64 Euclidean L2",
     "resolved_p1": "Version-local fixed-path audit replaces the broken archived auditor without editing it",
     "scientific_design_gate_passed": true,
-    "formal_execution_authorized_in_this_task": false,
+    "formal_execution_authorized_in_this_task": true,
     "real_model_calls_during_audit": 0
   },
   "source_of_truth_rule": "Original frozen protocols and immutable run receipts outrank this summary when they conflict.",
@@ -87,10 +95,11 @@
     "runtime_identity_read_only_preflight": "PASS_WHEN_OLLAMA_TEMPORARILY_STARTED",
     "cost_preflight": "PASS_ESTIMATE_UNCERTAIN",
     "final_implementation_audit": "PASS_P0_0_P1_0",
-    "regulatory_state": "READY_FOR_FORMAL_RUN",
-    "formal_model_calls": 0,
-    "formal_run_receipts": null,
-    "safe_pause_and_resume": "PASS_FAKE_REQUEST_SIGNAL_AND_BATCH_CONTINUATION"
+    "regulatory_state": "FORMAL_RUN_IN_PROGRESS",
+    "formal_model_calls": 1,
+    "formal_run_receipts": "solutions/v58/outputs/v58-formal-mac-20260930-r02-controller/raw/batch_identity.json",
+    "safe_pause_and_resume": "PASS_FAKE_REQUEST_SIGNAL_AND_BATCH_CONTINUATION",
+    "formal_model_calls_sampled_at_utc": "2026-09-30T13:47:00.805348+00:00"
   },
   "development_profiling": {
     "status": "STOPPED_AT_RESOURCE_PREFLIGHT",

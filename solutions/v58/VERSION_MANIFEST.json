@@ -5,8 +5,8 @@
   "development_profiling_status": "STOPPED_AT_RESOURCE_PREFLIGHT_NO_CONCURRENCY_AMENDMENT",
   "footprint_sha256": "80ebdde1bbaa7998532e198eac55ca0a62343adeef3ef65ad0d8428a8501e171",
   "formal_entry": "solutions/v58/src/runner.py",
-  "formal_model_calls": 0,
-  "formal_run_receipts": null,
+  "formal_model_calls": 1,
+  "formal_run_receipts": "solutions/v58/outputs/v58-formal-mac-20260930-r02-controller/raw/batch_identity.json",
   "gpu_source_pack_sha256": "2a346366497b1318cf2ed640b7c7a4a4f2a00a0ce13ffad4aac418de18367945",
   "gpu_source_status": "SOURCE_ONLY_PREPARED_NO_MODEL_ENV_DOWNLOAD",
   "implementation_revision": "Cooperative checkpoint pause, safe batch continuation, loopback dashboard and machine telemetry before formal outcomes; corrected memory page telemetry interpretation",
@@ -39,10 +39,11 @@
     "solutions/v58/src/tests/test_pause_controls.py": "4300367d98a43a3c272a78e6fb42999ea730fd73752e93e024fe65f81643ffa2",
     "solutions/v58/src/transport.py": "d94a895ba16ae87256634e9bf3e6d7a75e15da1351872dd0aecd0beca1ed27d3"
   },
-  "status": "READY_FOR_FORMAL_RUN_NO_FORMAL_RUN_STARTED",
+  "status": "FORMAL_SERIAL_RUN_IN_PROGRESS",
   "ui_assets_sha256": {
     "solutions/v58/src/progress.html": "ee993055911e5162ffac4be8be35cfc7a2e8e65c73afde811471d5f15f83be29"
   },
-  "updated_at_utc": "2026-09-30T13:37:01.010704+00:00",
-  "version": "v58"
+  "updated_at_utc": "2026-09-30T13:47:00.805348+00:00",
+  "version": "v58",
+  "formal_model_calls_sampled_at_utc": "2026-09-30T13:47:00.805348+00:00"
 }

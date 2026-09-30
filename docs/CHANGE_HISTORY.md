@@ -103,3 +103,17 @@ GitHub 主分支已同步，但 V58 依赖的冻结源码仍在 Git 忽略的历
 # 2026-09-30 V58 内存监控口径更正
 
 用户发现空闲整机已用约 10GB。更正此前将 memory_pressure free percentage 解释为物理可用比例的错误；保留原始 profiling 收据，并说明旧 smoke 未控制后台应用。进度页改用 vm_stat 页分类显示非文件缓存占用估计、文件缓存与压缩内存；缺失采样不显示为零。监控测试 2/2 通过，现场读取 16GiB 总量、约 10.16GiB 非缓存占用、约 5.06GiB 文件缓存、swap 0。未调用模型，正式调用仍为 0。
+
+# 2026-09-30 V58 正式 Mac 串行启动
+
+### 现状
+
+用户明确要求“开始跑算了,开始跑”，授权当前 Mac 正式执行。冻结检查与运行时身份匹配，保持原模型参数、完整 checkpoint、单路串行。
+
+### 实施方案
+
+批次 `formal-mac-20260930-r02`，24 sequences / 4392 ingestion / 96 answer，硬预算 4488 请求、147062784 input token、9191424 output token，外部 API 成本 0；使用保守 token 预留。Ollama NUM_PARALLEL=1，context=32768，Flash Attention=false，KV cache 类型未设置。Mem0 遥测关闭，FastEmbed 显式定位已验哈希缓存、离线读取。后台独立进程运行，caffeinate 在 runner 生命周期内阻止空闲睡眠（接电时阻止系统睡眠）；不能保证合盖或断电继续。
+
+### 完成与未完成状态
+
+首次启动缺 MEM0_TELEMETRY=false，在请求前退出；补齐后因 FastEmbed 默认缓存路径错误，在首个操作未提交且尚未发送请求时终止。旧批次 `formal-mac-20260930` 保留，0 模型请求，不恢复该 terminal 操作。完整 store 初始化及嵌入 snapshot 哈希 d43150a691d02e46b7848cb04e6db89ad74b9f1a1e00bb75e8d9f034861ff7a3 离线核验通过后启动新批次。新批次首个正式请求已发送，运行中；尚未完成实验或统计。启动与失败日志见 `solutions/v58/outputs/v58-formal-mac-20260930-launch/`，实时计数以原始收据和页面为准。运行期间不修改源码；用户可页面请求安全暂停。原 70–100h 仅为估算。
