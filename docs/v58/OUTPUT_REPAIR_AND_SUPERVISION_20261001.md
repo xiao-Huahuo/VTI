@@ -43,3 +43,5 @@ Codex heartbeat `v58` 已设为每小时在当前聊天执行，正常推进保�
 验收：开发请求自然结束 `stop`、eval_count=365、schema 通过，1 次开发调用。离线测试 24/24、恢复检查 13/13、真实 Mem0 fake-client 跨进程恢复 8/8、冻结检查 27/27。源码到需求审查及挖洞审查：已知参数漂移通过新批次和身份绑定隔离，不复用旧 N；无 P0/P1 未解决项。仍有 P2 边界：单次资格门不能保证全样本无截断，模型可能输出其他 malformed JSON；监督不会修补响应或盲目重试。开发收据 `solutions/v58/outputs/v58-dev-output-20261001/raw/qualification.json`。
 
 北京时间 2026-10-01 12:36，完整 store 预检通过后正式新批次 `formal-mac-20261001-output8192` 已后台启动，首个请求已发送。启动记录：`solutions/v58/outputs/v58-formal-mac-20261001-output8192-launch/launch.json`。每小时监督 ACTIVE，常规修复仅写文档，完成或需用户介入才通知。
+
+新批次启动验收：第 1 个 ingestion checkpoint 的身份、状态树哈希及 num_predict=8192 通过核验，第 2 个请求已发送。证据：`solutions/v58/outputs/v58-formal-mac-20261001-output8192-launch/first_checkpoint_verified.json`。
