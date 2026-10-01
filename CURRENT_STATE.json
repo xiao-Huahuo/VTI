@@ -1,8 +1,8 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-09-30T13:48:43.467846+00:00",
+  "updated_at_utc": "2026-10-01T04:23:28.486434+00:00",
   "project": "Reset Is Not Isolation",
-  "phase": "V58_FORMAL_SERIAL_RUNNING",
+  "phase": "V58_FORMAL_RUN_FAILED_TERMINAL_OUTPUT_TRUNCATION",
   "active_version": "v58",
   "next_version": "v59",
   "scientific_design_status": "DESIGN_FROZEN_WITH_PROSPECTIVE_METRIC_AMENDMENT",
@@ -11,7 +11,7 @@
     "source_path": "solutions/v58/src/",
     "runner": "solutions/v58/src/runner.py",
     "version_manifest": "solutions/v58/VERSION_MANIFEST.json",
-    "version_manifest_sha256": "60051f3d0c231510ba003ae76ac4c903cecd5b12d64384ab6e0929865952620d"
+    "version_manifest_sha256": "e32d1e04893ff42675cadd57bf19cab57ec150933c47b2b037c4de9231e42654"
   },
   "current_tests": {
     "status": "OFFLINE_TEST_PASS_RECOVERY_TEST_PASS",
@@ -31,7 +31,7 @@
     "version_docs": "docs/v58/"
   },
   "current_data": {
-    "status": "PINNED_INPUT_FORMAL_RUN_IN_PROGRESS",
+    "status": "FORMAL_PARTIAL_OUTPUT_AND_FAILURE_PRESERVED",
     "inputs": "solutions/v58/inputs/longmemeval-v1/longmemeval_s_cleaned.json",
     "outputs": "solutions/v58/outputs/",
     "git_policy": "all inputs/ and outputs/ ignored"
@@ -54,15 +54,18 @@
   "last_run_receipts_for_active_version": {
     "batch_id": "formal-mac-20260930-r02",
     "controller": "solutions/v58/outputs/v58-formal-mac-20260930-r02-controller",
-    "active_run_id": "v58-formal-mac-20260930-r02-b01-s1",
+    "active_run_id": "v58-formal-mac-20260930-r02-b01-s2",
     "launch_receipt": "solutions/v58/outputs/v58-formal-mac-20260930-launch/formal_launch_r02.json",
     "runner_pid": 2610,
     "ollama_pid": 2039,
     "caffeinate_pid": 2611,
-    "phase": "RUNNING",
+    "phase": "FAILED",
     "note": "Counters here are a snapshot; live receipts/dashboard are authoritative. Prior startup attempts stopped before dispatch and are preserved.",
     "first_formal_checkpoint": "PASS_STEP_1_STATE_AND_IDENTITY_HASH_VERIFIED",
-    "committed_ingestions_at_snapshot": 1
+    "committed_ingestions_at_snapshot": 186,
+    "completed_sequences": 1,
+    "status_receipt": "docs/v58/FORMAL_RUN_STATUS_20261001.json",
+    "process_running": false
   },
   "v58_freeze_audit": {
     "status": "PASS_AFTER_PROSPECTIVE_AMENDMENT",
@@ -97,11 +100,11 @@
     "runtime_identity_read_only_preflight": "PASS_WHEN_OLLAMA_TEMPORARILY_STARTED",
     "cost_preflight": "PASS_ESTIMATE_UNCERTAIN",
     "final_implementation_audit": "PASS_P0_0_P1_0",
-    "regulatory_state": "FORMAL_RUN_IN_PROGRESS",
-    "formal_model_calls": 2,
+    "regulatory_state": "FORMAL_RUN_FAILED_TERMINAL_OUTPUT_TRUNCATION",
+    "formal_model_calls": 191,
     "formal_run_receipts": "solutions/v58/outputs/v58-formal-mac-20260930-r02-controller/raw/batch_identity.json",
     "safe_pause_and_resume": "PASS_FAKE_REQUEST_SIGNAL_AND_BATCH_CONTINUATION",
-    "formal_model_calls_sampled_at_utc": "2026-09-30T13:48:43.467846+00:00"
+    "formal_model_calls_sampled_at_utc": "2026-10-01T04:23:28.486434+00:00"
   },
   "development_profiling": {
     "status": "STOPPED_AT_RESOURCE_PREFLIGHT",

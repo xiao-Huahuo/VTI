@@ -119,3 +119,17 @@ GitHub 主分支已同步，但 V58 依赖的冻结源码仍在 Git 忽略的历
 首次启动缺 MEM0_TELEMETRY=false，在请求前退出；补齐后因 FastEmbed 默认缓存路径错误，在首个操作未提交且尚未发送请求时终止。旧批次 `formal-mac-20260930` 保留，0 模型请求，不恢复该 terminal 操作。完整 store 初始化及嵌入 snapshot 哈希 d43150a691d02e46b7848cb04e6db89ad74b9f1a1e00bb75e8d9f034861ff7a3 离线核验通过后启动新批次。新批次首个正式请求已发送，运行中；尚未完成实验或统计。启动与失败日志见 `solutions/v58/outputs/v58-formal-mac-20260930-launch/`，实时计数以原始收据和页面为准。运行期间不修改源码；用户可页面请求安全暂停。原 70–100h 仅为估算。
 
 启动验收补充：第 1 个正式 ingestion 已保存响应并提交 checkpoint，状态及身份哈希回读通过；第 2 个请求正在运行。验收收据：`solutions/v58/outputs/v58-formal-mac-20260930-launch/first_checkpoint_verified.json`。运行结果尚未完成。
+
+# 2026-10-01 V58 正式运行失败状态核查
+
+### 现状
+
+用户查询现状，发现批次 formal-mac-20260930-r02 于北京时间 10 月 1 日 01:32 因模型 JSON 截断终止。
+
+### 实施方案
+
+只读核查 controller、原始 HTTP/响应、失败收据、进程及已完成 sequence 回读；不重发、不修补响应、不改变冻结参数。
+
+### 完成与未完成状态
+
+第 1 个 N sequence 全部 183 ingestion 与 4 answer 完成，191 checkpoint（含初始）回读 PASS。第 2 个 V sequence 已提交 3 ingestion；第 4 个请求 eval_count=2048、done_reason=length，JSON 未闭合，引发 Mem0 LLMError，未提交该步骤。共 186/4392 ingestion、1/24 sequence、191 模型请求；runner 已退出，Ollama 服务在线但模型已卸载。这是输出截断失败，现有证据不支持归因内存崩溃。失败操作不能自动恢复或重试；没有完整 N/V 配对和正式统计结论。需要先审查冻结输出上限和前瞻性失败处理；本次未调用模型。状态证据见 FORMAL_RUN_STATUS_20261001.json。

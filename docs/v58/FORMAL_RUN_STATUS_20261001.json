@@ -1,0 +1,18 @@
+{
+  "checked_at_utc": "2026-10-01T04:23:28.486434+00:00",
+  "batch_id": "formal-mac-20260930-r02",
+  "status": "FAILED_TERMINAL_MODEL_OUTPUT_TRUNCATION",
+  "failed_at_utc": "2026-09-30T17:32:51.426842+00:00",
+  "completed_sequences": 1,
+  "committed_ingestions": 186,
+  "dispatched_model_requests": 191,
+  "completed_sequence_readback": "PASS_191_CHECKPOINTS",
+  "failed_run_id": "v58-formal-mac-20260930-r02-b01-s2",
+  "failed_step": 4,
+  "done_reason": "length",
+  "eval_count": 2048,
+  "error": "Unterminated JSON string during Mem0 extraction",
+  "automatic_resume_allowed": false,
+  "formal_statistics_available": false,
+  "next_action": "Review frozen output cap and prospective failure handling before any new model calls; preserve raw receipts"
+}
