@@ -1,0 +1,92 @@
+{
+  "checked_at_utc": "2026-10-01T21:34:44.388217+00:00",
+  "scheduled_heartbeat_utc": "2026-10-01T19:01:00.405Z",
+  "status": "RECOVERED_VERIFIED_POST_COMPLETION_NATIVE_TEARDOWN_ABORT",
+  "failure_at_utc": "2026-10-01T18:04:27.217628+00:00",
+  "native_error": "recursive_mutex lock failed: Invalid argument; SIGABRT after COMPLETE",
+  "root_library": "Not attributed; native shutdown exception, not model/schema failure",
+  "completed_sequence_readback": "PASS_191_CHECKPOINTS_COMPLETE",
+  "recovery_rule": "Original full runner restarted only after immutable COMPLETE and full readback; no model request retry, old completed sequence skipped",
+  "original_top_level_source": "UNCHANGED",
+  "new_supervisor": "solutions/v58/src/ops/teardown_supervisor.py",
+  "supervisor_test": "PASS_1_OF_1_negative_and_positive_signature_checks",
+  "runtime_recovery_evidence": "solutions/v58/outputs/v58-formal-mac-20261001-output8192-teardown-supervision/initial_recovery.json",
+  "progress": {
+    "batch_id": "formal-mac-20261001-output8192",
+    "phase": "RUNNING",
+    "pause_requested": false,
+    "active_run_id": "v58-formal-mac-20261001-output8192-b01-s2",
+    "completed_sessions": 183,
+    "total_sessions": 4392,
+    "completed_sequences": 1,
+    "total_sequences": 24,
+    "model_requests": 188,
+    "regulatory_state": "AMENDED_FORMAL_RUN_IN_PROGRESS",
+    "formal_model_calls_recorded": 184
+  },
+  "machine": {
+    "sampled_at_utc": "2026-10-01T21:34:39.885115+00:00",
+    "platform": "Darwin",
+    "cores": 10,
+    "cpu_percent": 10.54,
+    "gpu_percent": 93,
+    "memory_total_bytes": 17179869184,
+    "memory_pressure_free_percent": 8,
+    "swap_used_bytes": 3629121536.0,
+    "gpu_shared_memory_bytes": 11733254144,
+    "model_server_online": true,
+    "models": [
+      {
+        "name": "qwen3:8b-q4_K_M",
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "size": 14548184594,
+        "size_vram": 11413204499,
+        "context_length": 32768
+      }
+    ],
+    "processes": [
+      {
+        "pid": 1613,
+        "label": "Ollama",
+        "cpu_percent": 0.0,
+        "rss_bytes": 7290880
+      },
+      {
+        "pid": 31114,
+        "label": "V58 runner",
+        "cpu_percent": 0.0,
+        "rss_bytes": 16384
+      },
+      {
+        "pid": 31126,
+        "label": "V58 runner",
+        "cpu_percent": 0.0,
+        "rss_bytes": 2932736
+      },
+      {
+        "pid": 31136,
+        "label": "Qwen 推理进程",
+        "cpu_percent": 83.9,
+        "rss_bytes": 9588719616
+      }
+    ],
+    "chip": "Apple M5",
+    "memory_noncache_estimate_bytes": 15895625728,
+    "memory_file_cache_bytes": 463437824,
+    "memory_compressed_resident_bytes": 1664647168,
+    "memory_wired_bytes": 13180502016,
+    "memory_unused_pages_bytes": 96452608,
+    "load_average": [
+      2.72705078125,
+      2.05810546875,
+      1.57080078125
+    ],
+    "disk": {
+      "total_bytes": 494332366848,
+      "used_bytes": 134676566016,
+      "free_bytes": 359655800832
+    }
+  },
+  "statistical_results": "NOT_AVAILABLE",
+  "supervisor_guard": "Incomplete operation/schema/output failure stays terminal; no repeated recovery of same completed sequence; bounded 24 distinct completed sequences; user pause stops"
+}

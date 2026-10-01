@@ -45,3 +45,17 @@ Codex heartbeat `v58` 已设为每小时在当前聊天执行，正常推进保�
 北京时间 2026-10-01 12:36，完整 store 预检通过后正式新批次 `formal-mac-20261001-output8192` 已后台启动，首个请求已发送。启动记录：`solutions/v58/outputs/v58-formal-mac-20261001-output8192-launch/launch.json`。每小时监督 ACTIVE，常规修复仅写文档，完成或需用户介入才通知。
 
 新批次启动验收：第 1 个 ingestion checkpoint 的身份、状态树哈希及 num_predict=8192 通过核验，第 2 个请求已发送。证据：`solutions/v58/outputs/v58-formal-mac-20261001-output8192-launch/first_checkpoint_verified.json`。
+
+# 2026-10-02 原生退出异常修复与监督
+
+### 现状
+
+第一条 N sequence 于北京时间 02:04 完成全部 190 步后，native shutdown 抛出 recursive_mutex lock failed: Invalid argument，SIGABRT，父 controller 停止。心跳计划时间为 03:01，实际检查/修复时间见原始 checked_at_utc（本次约 05:33）；不能把计划时间当作实际检测时间。
+
+### 实施方案
+
+完整回读 N sequence：191 checkpoints PASS、COMPLETE，所有请求已提交，无不确定请求。保留原错误日志；不改已绑定的顶层正式源码/输出参数/设计，新增 src/ops/ 外层 controller 监督，仅对日志同时包含 COMPLETE、特定原生退出异常、SIGABRT 且完整回读通过的已完成 sequence 续调度。原 full 将已完成 N 跳过，向 V 前进，不重发模型请求。异常来源库尚未定位，不声称 C++ native 根因已消除；修复的是已完成工作被退出清理异常阻断的调度。
+
+### 完成与未完成状态
+
+辨识正/负测试 1/1 通过；首次完整回读和真实续调度通过，现已进入 b01-s2 V，第一请求发送。原 batch/model/source 身份不变、预算原值、旧批次仍排除。监督最多恢复 24 个不同已完成 sequence，不盲目循环同一失败、不恢复 incomplete/schema/length、不覆盖 raw、用户暂停立即停止。每小时核查要读取 controller 当前 PID（可随完成后恢复而改变）与外层 supervisor PID，不能把旧 PID 退出当作全体已死。暂无完整统计结论；证据 SUPERVISION_20261002_0300.json。
