@@ -119,3 +119,17 @@ V58 设计文件已归档为 `DESIGN_FROZEN_EXECUTION_BLOCKED`，当前没有本
 开发资格重放 1 次自然结束 stop、365 输出 token、冻结 JSON schema 通过，门槛 <75% of 8192 达成；不是正式样本结果。离线 24/24、恢复 13/13、真实后端 fake-client 跨进程恢复 8/8、冻结审计 27/27 通过。暂无全量结果；具体修订、边界、监督规范与启动收据见 OUTPUT_REPAIR_AND_SUPERVISION_20261001.md。
 
 北京时间 2026-10-01 12:36，完整 store 预检通过后正式新批次 `formal-mac-20261001-output8192` 已后台启动，首个请求已发送。启动记录：`solutions/v58/outputs/v58-formal-mac-20261001-output8192-launch/launch.json`。每小时监督 ACTIVE，常规修复仅写文档，完成或需用户介入才通知。
+
+# 2026-10-01 13:30 V58 小时监督
+
+### 现状
+
+修订批次 formal-mac-20261001-output8192 正常运行，检查时已保存 46/4392 ingestion、完成 0/24 sequence、发送 47 请求；当前仍为第一条 N sequence。
+
+### 实施方案
+
+只读核对活跃 runner、caffeinate、Ollama、模型 digest/context、源码与执行修订身份及最新已提交 checkpoint 哈希；检查响应截断、日志、资源、磁盘与保守预算。对正在请求的 sequence 不执行要求无 pending call 的全量回读。
+
+### 完成与未完成状态
+
+身份与最新 checkpoint 回读通过，已保存响应无 length 停止；GPU 活跃，swap 约 4GiB，磁盘余量约 337GiB。缺少 spaCy 的警告是原依赖配置下的既有警告，没有 terminal failure。按原冻结继续运行，不修复、不重启、不调用模型。旧失败批次保持排除，无完整分析结论。详细收据：SUPERVISION_20261001_1330.json。
