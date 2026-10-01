@@ -233,3 +233,17 @@ GitHub 主分支已同步，但 V58 依赖的冻结源码仍在 Git 忽略的历
 ### 完成与未完成状态
 
 辨识正/负测试 1/1 通过；首次完整回读和真实续调度通过，现已进入 b01-s2 V，第一请求发送。原 batch/model/source 身份不变、预算原值、旧批次仍排除。监督最多恢复 24 个不同已完成 sequence，不盲目循环同一失败、不恢复 incomplete/schema/length、不覆盖 raw、用户暂停立即停止。每小时核查要读取 controller 当前 PID（可随完成后恢复而改变）与外层 supervisor PID，不能把旧 PID 退出当作全体已死。暂无完整统计结论；证据 SUPERVISION_20261002_0300.json。
+
+# 2026-10-02 05:36 V58 修复后监督
+
+### 现状
+
+外层完成后退出异常保护与原 full controller 均存活，批次在第一条 V 推进。已保存 186/4392 ingestion、完成 1/24 sequence、发送 191 请求，比修复收据增加 3 ingestion。
+
+### 实施方案
+
+只读核查最新规范与修订，controller 当前 PID、外层监督、caffeinate/Ollama、源码/执行身份、活跃 V 最新已提交 checkpoint、响应/失败收据、预算和资源；不重试或重启。
+
+### 完成与未完成状态
+
+检查通过，无新的 schema/length/terminal failure；GPU 活跃，swap 约 3.34GiB、磁盘余量约 335GiB，原预算以内。旧 native 错误仍保留，不能把修复后正常推进说成底层库缺陷已消除。原 N 完成成果未重算，尚无完整 N/V block 与统计结论。本次无模型调用，详见 SUPERVISION_20261002_0536.json。

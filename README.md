@@ -54,3 +54,5 @@ V58 新增[安全暂停与本机监控](docs/v58/PAUSE_AND_MONITOR_AUDIT.md)，�
 2026-10-02 02:00 小时监督：原修订批次继续推进，无新 terminal failure；进程、source/执行身份、最新提交 checkpoint 和预算核验通过。详细收据 `docs/v58/SUPERVISION_20261002_0200.json`。
 
 2026-10-02 自动监督修复：第一条 N 完成后发生 native shutdown SIGABRT，完整回读通过。外层监督仅恢复“已完成且已验收”的退出异常，保持原正式源码与条件，原 N 不重跑；当前进入第一条 V。监督收据 `docs/v58/SUPERVISION_20261002_0300.json`，诊断与保护规则见输出修复/监督文档。
+
+2026-10-02 05:36 修复后监督：外层保护、原 controller 和第一条 V 正常推进，源码/执行身份、最新提交 checkpoint、预算核验通过，无新 terminal failure。详细收据 `docs/v58/SUPERVISION_20261002_0536.json`。
