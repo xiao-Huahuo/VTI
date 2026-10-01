@@ -231,3 +231,17 @@ V58 设计文件已归档为 `DESIGN_FROZEN_EXECUTION_BLOCKED`，当前没有本
 ### 完成与未完成状态
 
 检查通过，V step 4 已保存并通过生产路径 schema 校验，没有 length 停止；这不证明其余样本永不失败。无新 terminal failure，GPU 活跃、swap 约 3.06GiB、磁盘余量约 335GiB，预算以内。保持原参数运行，不重启、不新增模型调用；完整 N/V block 和统计尚未完成。详细收据 SUPERVISION_20261002_0635.json。
+
+# 2026-10-02 07:36 V58 小时监督
+
+### 现状
+
+原修订批次正常运行，已保存 279/4392 ingestion、发送 286 请求，完成 1/24 sequence；比前次增加 47 ingestion。
+
+### 实施方案
+
+只读检查真实 controller/外层监督/Ollama、规范与修订、源码及执行身份、活跃 V 最新已提交 checkpoint、错误/响应停止原因、预算、GPU/swap/磁盘。
+
+### 完成与未完成状态
+
+核验通过，无新的 terminal failure 或 length，GPU 活跃、swap 约 3.35GiB、磁盘余量约 335GiB，预算以内。无需干预，不重试、不重启，无新增模型调用；活跃 sequence 不作要求无 pending call 的全量回读。当前尚无完整统计结论。收据 SUPERVISION_20261002_0736.json。

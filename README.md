@@ -58,3 +58,5 @@ V58 新增[安全暂停与本机监控](docs/v58/PAUSE_AND_MONITOR_AUDIT.md)，�
 2026-10-02 05:36 修复后监督：外层保护、原 controller 和第一条 V 正常推进，源码/执行身份、最新提交 checkpoint、预算核验通过，无新 terminal failure。详细收据 `docs/v58/SUPERVISION_20261002_0536.json`。
 
 2026-10-02 06:35 小时监督：第一条 V 正常推进至第 2 trial，原截断位置的 V step 4 已在本批次自然结束并提交；无新 terminal failure，身份/checkpoint/预算核验通过。详细收据 `docs/v58/SUPERVISION_20261002_0635.json`。
+
+2026-10-02 07:36 小时监督：修订批次继续正常推进，source/执行身份、最新提交 checkpoint、真实进程及预算核验通过，无新 terminal failure。收据 `docs/v58/SUPERVISION_20261002_0736.json`。
