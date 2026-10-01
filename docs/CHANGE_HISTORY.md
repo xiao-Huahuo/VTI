@@ -147,3 +147,5 @@ GitHub 主分支已同步，但 V58 依赖的冻结源码仍在 Git 忽略的历
 ### 完成与未完成状态
 
 开发资格重放 1 次自然结束 stop、365 输出 token、冻结 JSON schema 通过，门槛 <75% of 8192 达成；不是正式样本结果。离线 24/24、恢复 13/13、真实后端 fake-client 跨进程恢复 8/8、冻结审计 27/27 通过。暂无全量结果；具体修订、边界、监督规范与启动收据见 OUTPUT_REPAIR_AND_SUPERVISION_20261001.md。
+
+北京时间 2026-10-01 12:36，完整 store 预检通过后正式新批次 `formal-mac-20261001-output8192` 已后台启动，首个请求已发送。启动记录：`solutions/v58/outputs/v58-formal-mac-20261001-output8192-launch/launch.json`。每小时监督 ACTIVE，常规修复仅写文档，完成或需用户介入才通知。
