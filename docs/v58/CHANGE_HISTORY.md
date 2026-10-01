@@ -161,3 +161,17 @@ V58 设计文件已归档为 `DESIGN_FROZEN_EXECUTION_BLOCKED`，当前没有本
 ### 完成与未完成状态
 
 原批次 formal-mac-20261001-output8192 已恢复，step 142 请求已发送，140 次请求计数；已完成 137 ingestion 不重算。右侧页面显示原进度并运行；每小时监督配置仍 ACTIVE。尚无全量结果。用户此次“继续开跑”明确撤销之前暂停，不自动恢复未获撤销的用户暂停。
+
+# 2026-10-02 01:00 V58 小时监督
+
+### 现状
+
+原修订批次在用户授权安全恢复后正常推进，已保存 140 ingestion、发送 144 请求、完整 sequence 0/24。自 checkpoint 141 恢复后新增 3 ingestion。
+
+### 实施方案
+
+只读核查真实 runner/caffeinate/Ollama、模型驻留、源码/执行身份、最新已提交 checkpoint、length/terminal 失败与硬预算。
+
+### 完成与未完成状态
+
+核验通过，无新失败，GPU 活跃，swap 约 4.8GiB、磁盘剩余约 333GiB；没有无进度证据，不强杀或重启。原依赖缺 spaCy 的警告不新增安装。保持原参数运行，旧批次仍排除，无完整统计结果。本次无模型调用；详见 SUPERVISION_20261002_0100.json。

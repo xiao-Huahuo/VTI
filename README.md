@@ -48,3 +48,5 @@ V58 新增[安全暂停与本机监控](docs/v58/PAUSE_AND_MONITOR_AUDIT.md)，�
 2026-10-01 14:30 小时监督：修订批次正常推进，最新提交 checkpoint、源码/执行身份、真实进程及预算核验通过，无需修复或重启。详见 `docs/v58/SUPERVISION_20261001_1430.json`。
 
 2026-10-02 用户授权恢复原安全暂停批次，checkpoint 141 回读通过，从 step 142 接着执行；已保存的 137 ingestion 不重算，右侧页面重新在线，每小时监督保持启用。
+
+2026-10-02 01:00 小时监督：用户授权续跑后正常推进，身份、最新提交 checkpoint、真实进程与预算核验通过；无新 terminal failure，未干预当前请求。收据 `docs/v58/SUPERVISION_20261002_0100.json`。
