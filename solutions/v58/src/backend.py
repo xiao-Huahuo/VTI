@@ -15,6 +15,7 @@ from audit_freeze import audit, src_and_project
 from journal import Journal, immutable_json, sha
 from retrieval_footprint import footprint
 from transport import ReceiptTransport
+from execution import OUTPUT_LIMIT, verify_execution
 
 
 class FrozenBackend:
@@ -55,7 +56,7 @@ class FrozenBackend:
     def _install_v55_ollama_path(self) -> None:
         v45 = self.v45
         previous_options = v45.deterministic_options
-        v45.deterministic_options = lambda: {**previous_options(), "repeat_penalty": 1.1}
+        v45.deterministic_options = lambda: {**previous_options(), "repeat_penalty": 1.1, "num_predict": OUTPUT_LIMIT}
 
         def logged_chat(client: Any, messages: list[dict[str, str]], *, json_mode: bool) -> Any:
             if self.current_step < 0:
@@ -71,6 +72,8 @@ class FrozenBackend:
             if json_mode:
                 request["format"] = self.memory_schema
             response = self.transport.call_once(client, request, step=self.current_step)
+            if getattr(response, "done_reason", None) == "length":
+                raise RuntimeError("Model output truncated at frozen amended cap; no retry")
             content = v45.response_content(response)
             if not content.strip():
                 raise RuntimeError("Empty Ollama response; no retry")
@@ -81,6 +84,7 @@ class FrozenBackend:
         v45.deterministic_chat = logged_chat
 
     def runtime_preflight(self) -> dict[str, Any]:
+        verify_execution()
         v45 = self.v45
         protocol = json.loads((self.historical / "v55_formal/FORMAL_PROTOCOL_V55.json").read_text())
         stack = protocol["stack"]
@@ -106,6 +110,11 @@ class FrozenBackend:
     def _store(self, state: Path, scope: str) -> Any:
         memory_store = self.Mem0MemoryStore(config=self.v45.make_config(state), user_id=scope,
                                             model=self.v45.EXPECTED_MODEL)
+        loaded = Path(memory_store._memory.embedding_model.dense_model.model._model_dir)
+        expected = self.asset_cache / "models--Qdrant--bge-small-en-v1.5-onnx-Q/snapshots/aa8f8b060edb00e03bfdd08813a2949946c8ba55"
+        if not loaded.samefile(expected):
+            self.v45.close_memory(memory_store._memory)
+            raise RuntimeError("Backend embedding snapshot drift")
         self.v45.install_deterministic_ollama(memory_store._memory)
         return memory_store
 

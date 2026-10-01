@@ -1,8 +1,8 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-10-01T04:23:28.486434+00:00",
+  "updated_at_utc": "2026-10-01T04:36:17.114439+00:00",
   "project": "Reset Is Not Isolation",
-  "phase": "V58_FORMAL_RUN_FAILED_TERMINAL_OUTPUT_TRUNCATION",
+  "phase": "V58_AMENDED_EXECUTION_QUALIFIED_RESTART_PREPARATION",
   "active_version": "v58",
   "next_version": "v59",
   "scientific_design_status": "DESIGN_FROZEN_WITH_PROSPECTIVE_METRIC_AMENDMENT",
@@ -11,11 +11,11 @@
     "source_path": "solutions/v58/src/",
     "runner": "solutions/v58/src/runner.py",
     "version_manifest": "solutions/v58/VERSION_MANIFEST.json",
-    "version_manifest_sha256": "e32d1e04893ff42675cadd57bf19cab57ec150933c47b2b037c4de9231e42654"
+    "version_manifest_sha256": "79fdc393262fc33fbe08d845cf144b8a53d807b0158be6f433499d73e1454639"
   },
   "current_tests": {
     "status": "OFFLINE_TEST_PASS_RECOVERY_TEST_PASS",
-    "passed": 21,
+    "passed": 24,
     "recovery_checks_passed": 13,
     "backend_fake_four_trial_drill": "PASS",
     "backend_cross_process_resume_checks_passed": 8,
@@ -91,8 +91,8 @@
     "embedding_cache": "history/pre_v58_root_20260930/.runtime/fastembed-cache"
   },
   "v58_execution_gates": {
-    "design_freeze_audit": "PASS_26_OF_26",
-    "offline_tests": "PASS_21_OF_21",
+    "design_freeze_audit": "PASS_27_OF_27",
+    "offline_tests": "PASS_24_OF_24",
     "process_isolation_dry_run": "PASS_TWO_FRESH_PROCESSES",
     "real_backend_fake_client_drill": "PASS_FOUR_TRIALS_PER_POLICY",
     "recovery_drill": "PASS_13_OF_13",
@@ -100,7 +100,7 @@
     "runtime_identity_read_only_preflight": "PASS_WHEN_OLLAMA_TEMPORARILY_STARTED",
     "cost_preflight": "PASS_ESTIMATE_UNCERTAIN",
     "final_implementation_audit": "PASS_P0_0_P1_0",
-    "regulatory_state": "FORMAL_RUN_FAILED_TERMINAL_OUTPUT_TRUNCATION",
+    "regulatory_state": "AMENDED_EXECUTION_QUALIFIED_READY_TO_RESTART",
     "formal_model_calls": 191,
     "formal_run_receipts": "solutions/v58/outputs/v58-formal-mac-20260930-r02-controller/raw/batch_identity.json",
     "safe_pause_and_resume": "PASS_FAKE_REQUEST_SIGNAL_AND_BATCH_CONTINUATION",
@@ -151,5 +151,13 @@
     "formal_model_calls_during_revision": 0,
     "memory_interpretation": "vm_stat non-file-cache estimate, cache and compressor; memory_pressure percentage is not physical availability",
     "memory_correction_tests": "2/2 dashboard tests, no model calls"
+  },
+  "hourly_supervision": {
+    "automation_id": "v58",
+    "interval_hours": 1,
+    "status": "ACTIVE",
+    "routine_failures": "AUTONOMOUS_REPAIR_WITH_DOCUMENTATION",
+    "user_pause": "NEVER_AUTOMATICALLY_RESUME",
+    "procedure": "docs/v58/OUTPUT_REPAIR_AND_SUPERVISION_20261001.md"
   }
 }

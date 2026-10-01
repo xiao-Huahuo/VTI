@@ -54,7 +54,7 @@ class PauseControlTests(unittest.TestCase):
             outputs = Path(temporary)
             runtime = {"model": "FAKE"}
             args = argparse.Namespace(batch_id="pausedbatch", max_requests=24,
-                                      max_input_tokens=24*32768, max_output_tokens=24*2048,
+                                      max_input_tokens=24*32768, max_output_tokens=24*runner.OUTPUT_LIMIT,
                                       max_cost=0, resume_paused=False)
             sources = {p.name: runner.sha(p) for p in runner.SRC.glob("*.py")}
             completed = set()

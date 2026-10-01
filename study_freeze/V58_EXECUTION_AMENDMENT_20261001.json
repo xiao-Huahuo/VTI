@@ -1,0 +1,22 @@
+{
+  "schema": "v58-execution-amendment-v1",
+  "created_at_utc": "2026-10-01T04:30:44.521074+00:00",
+  "authorization": "User authorized repair, verification and fresh formal rerun autonomously; routine future failures may be fixed without confirmation",
+  "reason": "Prior formal request ended done_reason=length eval_count=2048 with truncated JSON",
+  "old_num_predict": 2048,
+  "num_predict": 8192,
+  "output_reserve_per_request": 8192,
+  "input_reserve_per_request": 32768,
+  "max_requests": 4488,
+  "max_input_tokens": 147062784,
+  "max_output_tokens": 36765696,
+  "max_cost": 0,
+  "num_ctx": 32768,
+  "all_other_model_parameters": "unchanged",
+  "design_cases_order_metric_checkpoint": "unchanged",
+  "prior_batch": "formal-mac-20260930-r02",
+  "prior_batch_disposition": "Preserved failed batch; exclude ALL its sequences from amended formal statistics; no reuse",
+  "formal_start_gate": "Exact failed request with amended cap must end naturally, pass frozen JSON schema, save raw response, and use fewer than 75% of amended output cap; offline tests and recovery must pass",
+  "failure_rule": "Reject length stop, malformed schema, uncertain requests, drift and budget exhaustion; preserve terminal failure; no automatic model request retries",
+  "supervision_interval_hours": 1
+}

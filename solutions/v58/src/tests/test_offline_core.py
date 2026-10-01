@@ -365,7 +365,7 @@ class AggregationTests(unittest.TestCase):
             runtime = {"model_digest": "fake-fixed"}
             args = argparse.Namespace(batch_id="fakebatch", max_requests=24,
                                       max_input_tokens=24 * 32768,
-                                      max_output_tokens=24 * 2048, max_cost=0.0)
+                                      max_output_tokens=24 * runner.OUTPUT_LIMIT, max_cost=0.0)
             info = {"code_sha256": {p.name: runner.sha(p) for p in runner.SRC.glob("*.py")},
                     "v58_design_sha256": runner.sha(runner.DESIGN),
                     "amendment_sha256": runner.sha(runner.AMENDMENT),

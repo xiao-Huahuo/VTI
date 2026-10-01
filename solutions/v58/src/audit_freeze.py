@@ -131,6 +131,9 @@ def audit() -> dict:
           amendment["unchanged_primary"]["p_value"] == "count(permuted_delta>=observed_delta-1e-12)/4096" and
           amendment["unchanged_primary"]["decision"] == "delta>0 and p<0.05")
 
+    from execution import EXECUTION_AMENDMENT, EXPECTED_SHA256
+    check("execution_amendment_identity", sha(EXECUTION_AMENDMENT) == EXPECTED_SHA256)
+
     return {
         "schema": "science-v58-post-amendment-freeze-audit-v1",
         "checked_at_utc": datetime.now(timezone.utc).isoformat(),

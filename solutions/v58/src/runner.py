@@ -18,6 +18,7 @@ from audit_freeze import audit, src_and_project
 from journal import Journal, immutable_json, sha, tree_sha, utc_now
 from statistics import exact_randomization
 from transport import ReceiptTransport
+from execution import OUTPUT_LIMIT, verify_execution
 from control import (STOP_REQUESTED, PAUSED_EXIT, SafePause, request_pause, requested,
                      clear_pause, checkpoint_pause, status as control_status)
 
@@ -82,9 +83,10 @@ def runtime_preflight() -> dict[str, Any]:
 
 def identity(run_id: str, block: dict[str, Any], slot: int, policy: str, runtime: dict[str, Any],
              budget: dict[str, int | float]) -> dict[str, Any]:
+    execution_sha = verify_execution()
     source_hashes = {p.name: sha(p) for p in SRC.glob("*.py")}
     return {"schema": "science-v58-sequence-identity-v1", "run_id": run_id,
-            "version": "v58", "block": block["block"], "slot": slot, "order": block["order"],
+            "execution_amendment_sha256": execution_sha, "version": "v58", "block": block["block"], "slot": slot, "order": block["order"],
             "policy": policy, "scope": f"v58_{run_id}",
             "original_freeze_sha256": sha(OLD / "study_freeze/FREEZE_MANIFEST.json"),
             "v58_design_sha256": sha(DESIGN), "amendment_sha256": sha(AMENDMENT),
@@ -95,7 +97,7 @@ def identity(run_id: str, block: dict[str, Any], slot: int, policy: str, runtime
             "model_parameters": {"model": "qwen3:8b-q4_K_M", "think": False,
                                  "temperature": 0.0, "top_k": 1, "top_p": 1.0,
                                  "seed": 20260920, "num_ctx": 32768,
-                                 "num_predict": 2048, "repeat_penalty": 1.1}}
+                                 "num_predict": OUTPUT_LIMIT, "repeat_penalty": 1.1}}
 
 
 async def run_sequence(args: argparse.Namespace, *, resume: bool) -> None:
@@ -134,7 +136,7 @@ async def run_sequence(args: argparse.Namespace, *, resume: bool) -> None:
     transport = ReceiptTransport(journal, max_requests=args.max_requests,
                                  max_input_tokens=args.max_input_tokens,
                                  max_output_tokens=args.max_output_tokens,
-                                 max_cost=args.max_cost)
+                                 max_cost=args.max_cost, output_reserve_per_request=OUTPUT_LIMIT)
     from backend import FrozenBackend
     backend = FrozenBackend(journal, transport)
     backend.runtime_preflight()
@@ -274,6 +276,7 @@ def full(args: argparse.Namespace) -> None:
                       "amendment_sha256": sha(AMENDMENT), "dataset_sha256": sha(DATASET),
                       "source_sha256": {p.name: sha(p) for p in SRC.glob("*.py")},
                       "runtime": current_runtime,
+                      "execution_amendment_sha256": verify_execution(),
                       "global_budget": {"max_requests": args.max_requests,
                                         "max_input_tokens": args.max_input_tokens,
                                         "max_output_tokens": args.max_output_tokens,
@@ -309,7 +312,7 @@ def full(args: argparse.Namespace) -> None:
                 remaining = {"requests": args.max_requests - consumed["requests"],
                              "input": args.max_input_tokens - consumed["input"],
                              "output": args.max_output_tokens - consumed["output"]}
-                if remaining["requests"] < 1 or remaining["input"] < 32768 or remaining["output"] < 2048:
+                if remaining["requests"] < 1 or remaining["input"] < 32768 or remaining["output"] < OUTPUT_LIMIT:
                     raise RuntimeError("Global batch budget exhausted before next sequence")
                 limits = existing_info["budget_limits"] if existing_info else {
                     "max_requests": remaining["requests"], "max_input_tokens": remaining["input"],
@@ -352,7 +355,7 @@ def full(args: argparse.Namespace) -> None:
                 response = call / "response.json"
                 item = json.loads(response.read_text()) if response.exists() else {}
                 consumed["input"] += max(int(item.get("prompt_eval_count") or 0), 32768)
-                consumed["output"] += max(int(item.get("eval_count") or 0), 2048)
+                consumed["output"] += max(int(item.get("eval_count") or 0), OUTPUT_LIMIT)
             if (consumed["requests"] > args.max_requests or consumed["input"] > args.max_input_tokens or
                 consumed["output"] > args.max_output_tokens):
                 raise RuntimeError("Global batch budget exceeded; no further sequence will start")
