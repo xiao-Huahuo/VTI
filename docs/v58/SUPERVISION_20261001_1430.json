@@ -1,0 +1,119 @@
+{
+  "action": "No repair, restart, model calls or interruption; preserve active request",
+  "active_sequence": {
+    "block": 1,
+    "last_step": 102,
+    "model_requests": 101,
+    "operation": {
+      "kind": "ingest",
+      "session": 7,
+      "symbol": "A",
+      "trial": 3
+    },
+    "pause_requested": false,
+    "phase": "RUNNING",
+    "policy": "N",
+    "run_id": "v58-formal-mac-20261001-output8192-b01-s1",
+    "sessions": 98,
+    "slot": 1,
+    "total_sessions": 183
+  },
+  "batch_id": "formal-mac-20261001-output8192",
+  "budget_limits": {
+    "max_cost": 0.0,
+    "max_input_tokens": 147062784,
+    "max_output_tokens": 36765696,
+    "max_requests": 4488
+  },
+  "budget_reservations": {
+    "input": 3309568,
+    "output": 827392,
+    "requests": 101
+  },
+  "caveat": "Snapshot can advance; only committed snapshot verified, no active-run full readback",
+  "checked_at_utc": "2026-10-01T06:31:41.965279+00:00",
+  "committed_ingestions_since_previous_check": 52,
+  "last_checkpoint_sha256": "a1f5341090cfe8a3e4dcdd2b4ed43c98494c17e8c468ec5a5e7d79b275e7f30e",
+  "last_checkpoint_step_verified": 102,
+  "length_stops": 0,
+  "machine": {
+    "chip": "Apple M5",
+    "cores": 10,
+    "cpu_percent": 46.16,
+    "disk": {
+      "free_bytes": 361766498304,
+      "total_bytes": 494332366848,
+      "used_bytes": 132565868544
+    },
+    "gpu_percent": 100,
+    "gpu_shared_memory_bytes": 12060852224,
+    "load_average": [
+      3.34765625,
+      3.18994140625,
+      3.16650390625
+    ],
+    "memory_compressed_resident_bytes": 1237106688,
+    "memory_file_cache_bytes": 391577600,
+    "memory_noncache_estimate_bytes": 15960047616,
+    "memory_pressure_free_percent": 9,
+    "memory_total_bytes": 17179869184,
+    "memory_unused_pages_bytes": 94584832,
+    "memory_wired_bytes": 13602701312,
+    "model_server_online": true,
+    "models": [
+      {
+        "context_length": 32768,
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "name": "qwen3:8b-q4_K_M",
+        "size": 14548184594,
+        "size_vram": 11413204499
+      }
+    ],
+    "platform": "Darwin",
+    "processes": [
+      {
+        "cpu_percent": 0.0,
+        "label": "Ollama",
+        "pid": 2039,
+        "rss_bytes": 9011200
+      },
+      {
+        "cpu_percent": 352.2,
+        "label": "Qwen 推理进程",
+        "pid": 93964,
+        "rss_bytes": 10110812160
+      },
+      {
+        "cpu_percent": 0.0,
+        "label": "V58 runner",
+        "pid": 94607,
+        "rss_bytes": 1884160
+      },
+      {
+        "cpu_percent": 0.0,
+        "label": "V58 runner",
+        "pid": 94615,
+        "rss_bytes": 24739840
+      }
+    ],
+    "sampled_at_utc": "2026-10-01T06:31:38.625002+00:00",
+    "swap_used_bytes": 4124175237.12
+  },
+  "max_saved_eval_count": 1116,
+  "progress": {
+    "active_run_id": "v58-formal-mac-20261001-output8192-b01-s1",
+    "batch_id": "formal-mac-20261001-output8192",
+    "completed_sequences": 0,
+    "completed_sessions": 98,
+    "formal_model_calls_recorded": 47,
+    "model_requests": 101,
+    "pause_requested": false,
+    "phase": "RUNNING",
+    "regulatory_state": "AMENDED_FORMAL_RUN_IN_PROGRESS",
+    "total_sequences": 24,
+    "total_sessions": 4392
+  },
+  "saved_responses": 100,
+  "source_and_execution_identity": "PASS",
+  "status": "HEALTHY_RUNNING"
+}

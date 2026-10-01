@@ -133,3 +133,17 @@ V58 设计文件已归档为 `DESIGN_FROZEN_EXECUTION_BLOCKED`，当前没有本
 ### 完成与未完成状态
 
 身份与最新 checkpoint 回读通过，已保存响应无 length 停止；GPU 活跃，swap 约 4GiB，磁盘余量约 337GiB。缺少 spaCy 的警告是原依赖配置下的既有警告，没有 terminal failure。按原冻结继续运行，不修复、不重启、不调用模型。旧失败批次保持排除，无完整分析结论。详细收据：SUPERVISION_20261001_1330.json。
+
+# 2026-10-01 14:30 V58 小时监督
+
+### 现状
+
+修订批次 formal-mac-20261001-output8192 正常运行，保存 98/4392 ingestion、0/24 完整 sequence、发送 101 请求；比上次监督增加 52 ingestion，第一条 N sequence 已进入第 3 trial。
+
+### 实施方案
+
+只读核对 runner/caffeinate/Ollama 存活、源码与执行修订、最新 checkpoint 身份及状态哈希、失败/截断收据、资源与冻结硬预算；不对 active pending 请求做全量回读。
+
+### 完成与未完成状态
+
+核验通过，无新 terminal failure 或 length 停止，GPU 活跃、swap 约 3.92GiB，磁盘余量约 337GiB，保守预算以内。无需修复或重启，无新增模型调用，继续运行；未获得完整配对/统计结论，旧批次仍排除。详见 SUPERVISION_20261001_1430.json。
