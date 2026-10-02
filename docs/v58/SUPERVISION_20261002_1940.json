@@ -1,0 +1,101 @@
+{
+  "action": "Continue unchanged; no repair/restart/model calls; only committed snapshot verified during active request",
+  "active_controller_pid": 31114,
+  "budget_limits": {
+    "max_cost": 0.0,
+    "max_input_tokens": 147062784,
+    "max_output_tokens": 36765696,
+    "max_requests": 4488
+  },
+  "budget_reservations": {
+    "input": 29229056,
+    "output": 7307264,
+    "requests": 892
+  },
+  "checked_at_utc": "2026-10-02T11:41:51.083289+00:00",
+  "committed_ingestions_since_previous_check": 49,
+  "length_stops_in_active_sequence": 0,
+  "machine": {
+    "chip": "Apple M5",
+    "cores": 10,
+    "cpu_percent": 10.709999999999999,
+    "disk": {
+      "free_bytes": 355560046592,
+      "total_bytes": 494332366848,
+      "used_bytes": 138772320256
+    },
+    "gpu_percent": 93,
+    "gpu_shared_memory_bytes": 11604148224,
+    "load_average": [
+      2.7998046875,
+      2.86083984375,
+      2.8515625
+    ],
+    "memory_compressed_resident_bytes": 1747501056,
+    "memory_file_cache_bytes": 450805760,
+    "memory_noncache_estimate_bytes": 15971876864,
+    "memory_pressure_free_percent": 8,
+    "memory_total_bytes": 17179869184,
+    "memory_unused_pages_bytes": 115916800,
+    "memory_wired_bytes": 13422493696,
+    "model_server_online": true,
+    "models": [
+      {
+        "context_length": 32768,
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "name": "qwen3:8b-q4_K_M",
+        "size": 14548184594,
+        "size_vram": 11413204499
+      }
+    ],
+    "platform": "Darwin",
+    "processes": [
+      {
+        "cpu_percent": 0.0,
+        "label": "Ollama",
+        "pid": 1613,
+        "rss_bytes": 7667712
+      },
+      {
+        "cpu_percent": 0.0,
+        "label": "V58 runner",
+        "pid": 15758,
+        "rss_bytes": 6864896
+      },
+      {
+        "cpu_percent": 0.0,
+        "label": "V58 runner",
+        "pid": 31114,
+        "rss_bytes": 212992
+      },
+      {
+        "cpu_percent": 61.7,
+        "label": "Qwen 推理进程",
+        "pid": 31136,
+        "rss_bytes": 9612558336
+      }
+    ],
+    "sampled_at_utc": "2026-10-02T11:41:48.606859+00:00",
+    "swap_used_bytes": 4711451197.44
+  },
+  "max_saved_eval_count_in_active_sequence": 1581,
+  "progress": {
+    "active_run_id": "v58-formal-mac-20261001-output8192-b03-s1",
+    "batch_id": "formal-mac-20261001-output8192",
+    "completed_sequences": 4,
+    "completed_sessions": 872,
+    "formal_model_calls_recorded": 841,
+    "model_requests": 892,
+    "pause_requested": false,
+    "phase": "RUNNING",
+    "regulatory_state": "AMENDED_FORMAL_RUN_IN_PROGRESS",
+    "total_sequences": 24,
+    "total_sessions": 4392
+  },
+  "saved_responses_in_active_sequence": 143,
+  "scheduled_heartbeat_utc": "2026-10-02T11:40:30.088Z",
+  "source_execution_identity": "PASS",
+  "status": "HEALTHY_RUNNING",
+  "terminal_failures_in_active_sequence": 0,
+  "verified_checkpoint_step": 146
+}

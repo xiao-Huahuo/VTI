@@ -443,3 +443,17 @@ b02-s2 V 已完成，第二 N/V order block 完成，原 controller 进入冻结
 ### 完成与未完成状态
 
 核验通过，无新 terminal failure 或 length；GPU 活跃，swap 约 4.39GiB、磁盘余量约 330GiB，预算以内。原参数继续运行，不重试、不重启、无新增模型调用；活跃 sequence 仅核验提交快照，不作要求无 pending call 的全量回读或中途统计。暂无全量结果。收据 SUPERVISION_20261002_1840.json。
+
+# 2026-10-02 19:40 V58 小时监督
+
+### 现状
+
+修订批次 b03-s1 V 正常推进，累计保存 872/4392 ingestion、发送 892 请求、完成 4/24 sequence，比前次增加 49 ingestion。
+
+### 实施方案
+
+只读核查规范与执行修订、真实 controller/外层监督/Ollama、原 source/执行身份、最新提交 checkpoint、错误/响应停止原因、硬预算及资源。
+
+### 完成与未完成状态
+
+核验通过，无新的 terminal failure 或 length；GPU 活跃，swap 约 4.39GiB、磁盘余量约 331GiB，预算以内。原参数继续运行，不重试、不重启、无新增模型调用；活跃 sequence 仅核验提交快照，不作要求无 pending call 的全量回读或中途统计。暂无全量结果。收据 SUPERVISION_20261002_1940.json。
