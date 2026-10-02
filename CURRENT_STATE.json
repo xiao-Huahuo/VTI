@@ -1,6 +1,6 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-10-02T21:54:38.885391+00:00",
+  "updated_at_utc": "2026-10-02T22:55:49.987533+00:00",
   "project": "Reset Is Not Isolation",
   "phase": "V58_AMENDED_FORMAL_SERIAL_RUNNING",
   "active_version": "v58",
@@ -63,7 +63,7 @@
     "process_running": true,
     "prior_failed_batch": "formal-mac-20260930-r02 preserved, all excluded",
     "counter_note": "Counters are current batch snapshot; excluded old formal requests 191; current raw receipts authoritative",
-    "committed_ingestions_at_snapshot": 1387,
+    "committed_ingestions_at_snapshot": 1440,
     "completed_sequences": 7,
     "resume_receipt": "solutions/v58/outputs/v58-resume-20261002/resume.json",
     "supervisor_pid": 31106,
@@ -105,10 +105,10 @@
     "cost_preflight": "PASS_ESTIMATE_UNCERTAIN",
     "final_implementation_audit": "PASS_P0_0_P1_0",
     "regulatory_state": "AMENDED_FORMAL_RUN_IN_PROGRESS",
-    "formal_model_calls": 1418,
+    "formal_model_calls": 1472,
     "formal_run_receipts": "solutions/v58/outputs/v58-formal-mac-20261001-output8192-controller/raw/batch_identity.json",
     "safe_pause_and_resume": "PASS_FAKE_REQUEST_SIGNAL_AND_BATCH_CONTINUATION",
-    "formal_model_calls_sampled_at_utc": "2026-10-02T21:54:38.885391+00:00",
+    "formal_model_calls_sampled_at_utc": "2026-10-02T22:55:49.987533+00:00",
     "excluded_prior_formal_calls": 191
   },
   "development_profiling": {
@@ -164,9 +164,9 @@
     "routine_failures": "AUTONOMOUS_REPAIR_WITH_DOCUMENTATION",
     "user_pause": "NEVER_AUTOMATICALLY_RESUME",
     "procedure": "docs/v58/OUTPUT_REPAIR_AND_SUPERVISION_20261001.md",
-    "last_checked_at_utc": "2026-10-02T21:54:38.885391+00:00",
+    "last_checked_at_utc": "2026-10-02T22:55:49.987533+00:00",
     "last_status": "HEALTHY_RUNNING",
-    "last_receipt": "docs/v58/SUPERVISION_20261003_0553.json"
+    "last_receipt": "docs/v58/SUPERVISION_20261003_0654.json"
   },
   "runtime_estimate": {
     "receipt": "docs/v58/RUNTIME_ESTIMATE_20261002.json",
