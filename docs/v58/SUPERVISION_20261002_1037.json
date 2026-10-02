@@ -1,0 +1,101 @@
+{
+  "action": "Continue unchanged; no repair/restart/extra model calls; committed snapshot only checked while request active",
+  "active_controller_pid": 31114,
+  "budget_limits": {
+    "max_cost": 0.0,
+    "max_input_tokens": 147062784,
+    "max_output_tokens": 36765696,
+    "max_requests": 4488
+  },
+  "budget_reservations": {
+    "input": 13959168,
+    "output": 3489792,
+    "requests": 426
+  },
+  "checked_at_utc": "2026-10-02T02:38:49.854147+00:00",
+  "committed_ingestions_since_previous_check": 44,
+  "length_stops_in_active_sequence": 0,
+  "machine": {
+    "chip": "Apple M5",
+    "cores": 10,
+    "cpu_percent": 11.92,
+    "disk": {
+      "free_bytes": 357631500288,
+      "total_bytes": 494332366848,
+      "used_bytes": 136700866560
+    },
+    "gpu_percent": 96,
+    "gpu_shared_memory_bytes": 12258000896,
+    "load_average": [
+      2.63232421875,
+      3.146484375,
+      3.1494140625
+    ],
+    "memory_compressed_resident_bytes": 1485455360,
+    "memory_file_cache_bytes": 361725952,
+    "memory_noncache_estimate_bytes": 16009134080,
+    "memory_pressure_free_percent": 6,
+    "memory_total_bytes": 17179869184,
+    "memory_unused_pages_bytes": 96059392,
+    "memory_wired_bytes": 13799276544,
+    "model_server_online": true,
+    "models": [
+      {
+        "context_length": 32768,
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "name": "qwen3:8b-q4_K_M",
+        "size": 14548184594,
+        "size_vram": 11413204499
+      }
+    ],
+    "platform": "Darwin",
+    "processes": [
+      {
+        "cpu_percent": 0.0,
+        "label": "Ollama",
+        "pid": 1613,
+        "rss_bytes": 7290880
+      },
+      {
+        "cpu_percent": 0.0,
+        "label": "V58 runner",
+        "pid": 31114,
+        "rss_bytes": 720896
+      },
+      {
+        "cpu_percent": 84.2,
+        "label": "Qwen 推理进程",
+        "pid": 31136,
+        "rss_bytes": 9613492224
+      },
+      {
+        "cpu_percent": 0.0,
+        "label": "V58 runner",
+        "pid": 61459,
+        "rss_bytes": 8929280
+      }
+    ],
+    "sampled_at_utc": "2026-10-02T02:38:46.749215+00:00",
+    "swap_used_bytes": 4382586306.56
+  },
+  "max_saved_eval_count_in_active_sequence": 878,
+  "progress": {
+    "active_run_id": "v58-formal-mac-20261001-output8192-b02-s1",
+    "batch_id": "formal-mac-20261001-output8192",
+    "completed_sequences": 2,
+    "completed_sessions": 416,
+    "formal_model_calls_recorded": 381,
+    "model_requests": 426,
+    "pause_requested": false,
+    "phase": "RUNNING",
+    "regulatory_state": "AMENDED_FORMAL_RUN_IN_PROGRESS",
+    "total_sequences": 24,
+    "total_sessions": 4392
+  },
+  "saved_responses_in_active_sequence": 51,
+  "scheduled_heartbeat_utc": "2026-10-02T02:37:27.407Z",
+  "source_execution_identity": "PASS",
+  "status": "HEALTHY_RUNNING",
+  "terminal_failures_in_active_sequence": 0,
+  "verified_checkpoint_step": 52
+}

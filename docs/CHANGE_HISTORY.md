@@ -303,3 +303,17 @@ GitHub 主分支已同步，但 V58 依赖的冻结源码仍在 Git 忽略的历
 ### 完成与未完成状态
 
 新完成 V 的 191 checkpoints 回读 PASS/COMPLETE；父 controller 自然调度进入下一条，没有新增退出异常修复。活跃 sequence 身份/checkpoint 检查通过，无新 terminal failure，GPU 活跃、swap 约 3.75GiB、磁盘余量约 333GiB，预算以内。不重启、不改参数、无新增模型调用；未作中途结果或统计分析，需完整设计完成后统一分析。收据 SUPERVISION_20261002_0937.json。
+
+# 2026-10-02 10:37 V58 小时监督
+
+### 现状
+
+修订批次在 b02-s1 N 正常推进，累计保存 416/4392 ingestion、发送 426 请求、完成 2/24 sequence，比前次增加 44 ingestion。
+
+### 实施方案
+
+只读核查最新规范与执行修订、真实 controller/外层监督/Ollama、原源码和执行身份、最新已提交 checkpoint、错误/响应停止原因、预算和资源。
+
+### 完成与未完成状态
+
+核验通过，无新 terminal failure 或 length；GPU 活跃，swap 约 3.99GiB、磁盘余量约 333GiB，预算以内。原参数继续执行，无需重试、重启或新增模型调用；存在 pending 请求的 sequence 仅核验已提交快照。暂无完整统计结果。收据 SUPERVISION_20261002_1037.json。
