@@ -455,3 +455,17 @@ b03-s1 V 已完成，原 controller 正常进入冻结 slot 的 b03-s2 N。累�
 ### 完成与未完成状态
 
 核验通过，无新的 terminal failure 或 length；GPU 活跃，swap 约 4.66GiB、磁盘余量约 330GiB，预算以内。原参数继续运行，不重试、不重启、无新增模型调用；活跃 sequence 仅核验提交快照，不作要求无 pending call 的全量回读或中途统计。暂无全量结果。收据 SUPERVISION_20261002_2143.json。
+
+# 2026-10-02 22:45 V58 小时监督
+
+### 现状
+
+修订批次 b03-s2 N 正常推进，累计保存 1033/4392 ingestion、发送 1056 请求、完成 5/24 sequence，比前次增加 55 ingestion。
+
+### 实施方案
+
+只读核查规范与执行修订、真实 controller/外层监督/Ollama、原 source/执行身份、最新提交 checkpoint、错误/响应停止原因、硬预算及资源。
+
+### 完成与未完成状态
+
+核验通过，无新的 terminal failure 或 length；GPU 活跃，swap 约 4.72GiB、磁盘余量约 330GiB，预算以内。原参数继续运行，不重试、不重启、无新增模型调用；活跃 sequence 仅核验提交快照，不作要求无 pending call 的全量回读或中途统计。暂无全量结果。收据 SUPERVISION_20261002_2245.json。
