@@ -1,0 +1,23 @@
+{
+  "estimated_at_utc": "2026-10-02T02:58:01.574552+00:00",
+  "batch_id": "formal-mac-20261001-output8192",
+  "committed_ingestions_snapshot": 424,
+  "total_ingestions": 4392,
+  "remaining_ingestions": 3968,
+  "active_runtime_hours_approx": 9.12,
+  "sessions_per_active_hour_approx": 46.5,
+  "point_remaining_hours_approx": 85,
+  "planning_remaining_hours": [
+    80,
+    100
+  ],
+  "total_active_runtime_point_hours_approx": 94.5,
+  "expected_finish_china": "Approximately 2026-10-06 if uninterrupted",
+  "method": "Three actual running intervals, excluding safe pause and failed-controller downtime; includes model answers/cleanup overhead through observed ingestion throughput",
+  "not_a_formal_statistical_interval": true,
+  "caveats": [
+    "Case/order prompt lengths vary",
+    "Thermal/system load may change rate",
+    "Future pause/failure downtime not included"
+  ]
+}

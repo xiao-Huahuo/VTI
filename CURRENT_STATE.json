@@ -167,5 +167,14 @@
     "last_checked_at_utc": "2026-10-02T02:38:49.854147+00:00",
     "last_status": "HEALTHY_RUNNING",
     "last_receipt": "docs/v58/SUPERVISION_20261002_1037.json"
+  },
+  "runtime_estimate": {
+    "receipt": "docs/v58/RUNTIME_ESTIMATE_20261002.json",
+    "remaining_hours_planning": [
+      80,
+      100
+    ],
+    "remaining_hours_point": 85,
+    "updated_at_utc": "2026-10-02T02:58:01.574552+00:00"
   }
 }
