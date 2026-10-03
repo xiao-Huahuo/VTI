@@ -651,3 +651,17 @@ b04-s2 N 已完成，第四 N/V order block 完成，原 controller 正常进入
 ### 完成与未完成状态
 
 外层保护测试 3/3 通过，包括非安全暂停和不确定回读拒绝；真实原批次恢复成功，第 13 步已发新请求（计数 1696），已提交前 12 步不重算。新外层 supervisor/caffeinate 保持运行，用户暂停仍会停止。每小时监督仍启用；原始暂停/恢复控制历史保留，无全量统计结论。恢复收据 outputs/v58-resume-20261003/launch.json，外层事件目录见 CURRENT_STATE.json。
+
+# 2026-10-03 11:59 V58 恢复后小时监督
+
+### 现状
+
+用户授权恢复后，b05-s2 N 正常推进。累计保存 1687/4392 ingestion、发送 1724 请求、完成 9/24 sequence，比前次心跳增加 47 ingestion；安全恢复后新增 28 ingestion。
+
+### 实施方案
+
+只读核查规范/执行修订、controller 当前 PID、新外层监督/caffeinate/Ollama、原 source/执行身份、活跃 N 最新提交 checkpoint、错误/响应停止原因、预算与资源；独立完整回读已完成 b05-s1 V。
+
+### 完成与未完成状态
+
+已完成 V 的 191 checkpoints PASS/COMPLETE；恢复后的 N 身份/checkpoint 检查通过，无新 terminal failure 或 length。GPU/CPU 有推理活动，swap 约 5.28GiB、磁盘余量约 327GiB，预算以内，进度持续推进。无需修复或重启，无新增模型调用；用户此前暂停与本次明确恢复授权均保留，未重算已提交步骤。暂无完整统计结果。收据 SUPERVISION_20261003_1159.json。
