@@ -609,3 +609,17 @@ b04-s2 N 已完成，第四 N/V order block 完成，原 controller 正常进入
 ### 完成与未完成状态
 
 核验通过，无新的 terminal failure 或 length；GPU 活跃，swap 约 5.45GiB、磁盘余量约 328GiB，预算以内。虽然 swap 比上一采样上升，进度持续推进，没有停滞或 OOM 证据，不据单次资源读数重启。原参数继续运行，不重试、不重启、无新增模型调用；活跃 sequence 仅核验提交快照，不作要求无 pending call 的全量回读或中途统计。暂无全量结果。收据 SUPERVISION_20261003_0856.json。
+
+# 2026-10-03 09:58 V58 小时监督
+
+### 现状
+
+修订批次 b05-s1 V 正常推进，累计保存 1590/4392 ingestion、发送 1625 请求、完成 8/24 sequence，比前次增加 51 ingestion。
+
+### 实施方案
+
+只读核查规范与执行修订、真实 controller/外层监督/Ollama、原 source/执行身份、最新提交 checkpoint、错误/响应停止原因、硬预算及资源。
+
+### 完成与未完成状态
+
+核验通过，无新的 terminal failure 或 length；GPU 活跃，swap 约 5.46GiB、磁盘余量约 327GiB，预算以内，进度持续推进，无停滞或 OOM 证据。原参数继续运行，不重试、不重启、无新增模型调用；活跃 sequence 仅核验提交快照，不作要求无 pending call 的全量回读或中途统计。暂无全量结果。收据 SUPERVISION_20261003_0958.json。
