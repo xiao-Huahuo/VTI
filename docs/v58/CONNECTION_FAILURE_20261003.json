@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-10-03T15:38:17.073415+00:00",
+  "status": "TERMINAL_AMBIGUOUS_LOCAL_MODEL_CONNECTION_FAILURE",
+  "batch_id": "formal-mac-20261001-output8192",
+  "failed_at_utc": "2026-10-03T15:34:08.293049+00:00",
+  "failed_run_id": "v58-formal-mac-20261001-output8192-b07-s1",
+  "failed_step": 64,
+  "operation": {
+    "kind": "ingest",
+    "symbol": "D",
+    "trial": 2,
+    "session": 15
+  },
+  "committed_ingestions": 2257,
+  "completed_sequences": 12,
+  "model_requests_dispatched": 2307,
+  "client_error": "httpx.RemoteProtocolError: Server disconnected without sending a response",
+  "ollama_log": "POST /api/chat returned 500 after approximately 62s; task cancelled; server remained alive",
+  "response_receipt_missing": true,
+  "automatic_resume_allowed": false,
+  "root_cause": "Connection/server-side termination observed; trigger not established. No evidence establishing OOM, output-cap truncation, or native completion teardown",
+  "action": "Preserve failed dispatch and raw; explanation-only user request, no restart/model calls during diagnosis"
+}

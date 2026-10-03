@@ -122,3 +122,5 @@ V58 新增[安全暂停与本机监控](docs/v58/PAUSE_AND_MONITOR_AUDIT.md)，�
 2026-10-03 11:59 恢复后监督：b05-s2 N 正常推进，已完成 b05-s1 V 独立完整回读通过，原 source/执行身份、最新提交 checkpoint 和预算核验通过。无新 terminal failure，收据 `docs/v58/SUPERVISION_20261003_1159.json`。
 
 2026-10-03 13:00 小时监督：b05-s2 N 正常推进，source/执行身份、最新提交 checkpoint、真实进程及预算核验通过，无新 terminal failure。收据 `docs/v58/SUPERVISION_20261003_1300.json`。
+
+2026-10-03 23:34 最新失败：本地 /api/chat 连接中断，step 64 已发送但无响应收据；当前保存 2257 ingestion、完成 12/24 sequence。暂停自动续跑该不确定步骤，底层触发原因待诊断，详见 `docs/v58/CONNECTION_FAILURE_20261003.json`。

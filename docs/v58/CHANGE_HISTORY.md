@@ -679,3 +679,17 @@ b04-s2 N 已完成，第四 N/V order block 完成，原 controller 正常进入
 ### 完成与未完成状态
 
 核验通过，无新的 terminal failure 或 length；GPU/CPU 有推理活动，swap 约 5.77GiB、磁盘余量约 326GiB，预算以内，进度持续推进，无停滞或 OOM 证据。原参数继续运行，不重试、不重启、无新增模型调用；活跃 sequence 仅核验提交快照，不作要求无 pending call 的全量回读或中途统计。暂无全量结果。收据 SUPERVISION_20261003_1300.json。
+
+# 2026-10-03 本地模型连接失败诊断
+
+### 现状
+
+用户询问为何运行失败。北京时间 23:34，b07-s1 step 64（D trial 2 session 15）请求已发送但没有响应收据，client RemoteProtocolError；累计保存 2257 ingestion、完成 12 sequence，发送 2307 请求。
+
+### 实施方案
+
+只读对照失败 raw、客户端异常、Ollama 服务日志和进程。服务日志 /api/chat 约 62s 返回 500、取消对应 task，服务随后仍可读取 /api/ps。
+
+### 完成与未完成状态
+
+直接原因是模型请求连接中断，不是已知 output length/schema 或 completed teardown 情况。不能据现有证据归因 OOM/内存或指定网络层；底层触发原因仍待定位。不重发原不确定请求，不修补 raw，不自动原地恢复；本次仅诊断解释，无模型调用。状态已更正 FAILED，收据 CONNECTION_FAILURE_20261003.json。
