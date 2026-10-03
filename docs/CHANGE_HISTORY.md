@@ -695,3 +695,17 @@ b04-s2 N 已完成，第四 N/V order block 完成，原 controller 正常进入
 ### 完成与未完成状态
 
 已完成 V 的 191 checkpoints PASS/COMPLETE；恢复后的 N 身份/checkpoint 检查通过，无新 terminal failure 或 length。GPU/CPU 有推理活动，swap 约 5.28GiB、磁盘余量约 327GiB，预算以内，进度持续推进。无需修复或重启，无新增模型调用；用户此前暂停与本次明确恢复授权均保留，未重算已提交步骤。暂无完整统计结果。收据 SUPERVISION_20261003_1159.json。
+
+# 2026-10-03 13:00 V58 小时监督
+
+### 现状
+
+修订批次 b05-s2 N 正常推进，累计保存 1734/4392 ingestion、发送 1772 请求、完成 9/24 sequence，比前次增加 47 ingestion。
+
+### 实施方案
+
+只读核查规范与执行修订、当前 controller PID/新外层监督/caffeinate/Ollama、原 source/执行身份、最新提交 checkpoint、错误/响应停止原因、硬预算及资源。
+
+### 完成与未完成状态
+
+核验通过，无新的 terminal failure 或 length；GPU/CPU 有推理活动，swap 约 5.77GiB、磁盘余量约 326GiB，预算以内，进度持续推进，无停滞或 OOM 证据。原参数继续运行，不重试、不重启、无新增模型调用；活跃 sequence 仅核验提交快照，不作要求无 pending call 的全量回读或中途统计。暂无全量结果。收据 SUPERVISION_20261003_1300.json。
