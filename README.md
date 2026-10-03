@@ -130,3 +130,5 @@ V58 新增[安全暂停与本机监控](docs/v58/PAUSE_AND_MONITOR_AUDIT.md)，�
 2026-10-04 重启后恢复：前12完整sequence复用，failed b07-s1保留排除，后12条从空状态在 recovery-mac-20261003 执行；统一原参数/设计，右侧组合进度页运行。剩余预算与最终分析须按 [连接失败恢复方案](docs/v58/RECOVERY_AFTER_CONNECTION_20261003.md) 的manifest选定run_id。
 
 2026-10-04 00:39 恢复组合批次监督：新b07-s1 V正常推进，原source/执行及恢复manifest身份、最新提交checkpoint、新调用预算检查通过，无新terminal failure。收据 `docs/v58/SUPERVISION_20261004_0039.json`。
+
+2026-10-04 01:39 恢复监督：新b07-s1已越过原连接失败位置step64并保存提交；正常推进，原source/执行/manifest、最新checkpoint及新调用预算核验通过。旧失败现场仍保留，根因不作确定归因；收据 `docs/v58/SUPERVISION_20261004_0139.json`。

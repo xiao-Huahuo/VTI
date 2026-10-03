@@ -737,3 +737,17 @@ recovery-mac-20261003 在新 b07-s1 V 正常推进，选定进度 2225/4392、�
 ### 完成与未完成状态
 
 检查通过，无新 terminal failure/length，GPU活跃，swap约3.21GiB、磁盘余量约326GiB。预算以新run真实dispatch及保守token预留核查，不把复用2244请求计入新剩余2244预算。持续推进，原失败现场保留排除，不修复、不重启、无新增模型调用；暂无全量统计结论。收据 SUPERVISION_20261004_0039.json。
+
+# 2026-10-04 01:39 恢复组合批次监督
+
+### 现状
+
+新 b07-s1 V 正常推进，选定进度 2276/4392、完整 sequence 12/24；新调用 82，选定总调用 2326，比前次新增 51 ingestion。
+
+### 实施方案
+
+只读核查规范/恢复方案、controller/caffeinate/Ollama、原source/执行与manifest身份、最新提交checkpoint、错误/响应停止原因、新调用真实预算和资源；额外验证原失败位置 step64 在新独立sequence已提交。
+
+### 完成与未完成状态
+
+身份/checkpoint通过，新step64已保存响应、通过生产路径schema并提交，无新 terminal failure/length；这不是原不确定请求重试，不能证明根因已消除。GPU单次读数0但CPU推理活动且进度增加，无停滞证据；swap约3.53GiB、磁盘余量约326GiB。新run预算以内，复用2244调用不计入剩余预算。不修复、不重启、无新增模型调用，未做中途统计。收据 SUPERVISION_20261004_0139.json。
