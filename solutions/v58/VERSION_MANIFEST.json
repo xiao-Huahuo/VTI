@@ -42,14 +42,14 @@
     "solutions/v58/src/tests/test_offline_core.py": "11fe065ce96dce251ee44a31e958cd86061fa22f9e1e8951c18d1db2e493de1d",
     "solutions/v58/src/tests/test_pause_controls.py": "1559c9320678dbef2b85bf6834b5b63b724f8e2b817099a334db6a3f3d40849a",
     "solutions/v58/src/transport.py": "d94a895ba16ae87256634e9bf3e6d7a75e15da1351872dd0aecd0beca1ed27d3",
-    "solutions/v58/src/ops/teardown_supervisor.py": "f95c125172c2e4b514be6912a4fe3d0ce72a6ace5fd8732c6629e55541ce16c4",
-    "solutions/v58/src/ops/test_teardown_supervisor.py": "73ac9a0a48241ca7ba2b6e44e8cc6531a699441d2ce5c95e9bf7d9bcc4067ec1"
+    "solutions/v58/src/ops/teardown_supervisor.py": "ebbdbafac4100934e1d08e679e369004401a4cebbfb2d1d6df36ea51e9c195fb",
+    "solutions/v58/src/ops/test_teardown_supervisor.py": "e67c2147338804bea7548ff61b97443aa763f6d2d6bf466447d629f584bce9e6"
   },
   "status": "AMENDED_FORMAL_SERIAL_RUN_IN_PROGRESS",
   "ui_assets_sha256": {
     "solutions/v58/src/progress.html": "ee993055911e5162ffac4be8be35cfc7a2e8e65c73afde811471d5f15f83be29"
   },
-  "updated_at_utc": "2026-10-01T21:34:44.388217+00:00",
+  "updated_at_utc": "2026-10-03T03:27:53.882024+00:00",
   "version": "v58",
   "formal_model_calls_sampled_at_utc": "2026-10-01T04:37:31.925205+00:00",
   "execution_amendment_sha256": "a18e512be5a45a815b495ac1237c5d5a6ad94eb8df32346d136f1f66c4f48751",

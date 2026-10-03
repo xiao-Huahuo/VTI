@@ -47,10 +47,30 @@ def verify_completed_failure(outputs, batch_id, log):
             'action':'Restart original full controller; completed sequence skipped, no request resend'}
 
 
+def verify_safe_pause(outputs, batch_id):
+    controller = outputs/f'v58-{batch_id}-controller'
+    status = json.loads((controller/'control/status.json').read_text())
+    if status.get('phase') != 'PAUSED':
+        raise RuntimeError('User-authorized resume requires a safe paused controller')
+    active = status['active_run_id']
+    if not active.startswith(f'v58-{batch_id}-b'):
+        raise RuntimeError('Unexpected active run')
+    result = readback(active)  # Rejects pending operations/uncertain calls.
+    batch = json.loads((controller/'raw/batch_identity.json').read_text())
+    info = json.loads((outputs/active/'raw/identity.json').read_text())
+    if info['code_sha256'] != batch['source_sha256'] or any(
+            sha(SRC/name) != h for name,h in batch['source_sha256'].items()):
+        raise RuntimeError('Original source identity drift')
+    return {'at_utc':utc_now(),'status':'USER_AUTHORIZED_VERIFIED_SAFE_PAUSE',
+            'active_run_id':active,'readback':result,
+            'action':'Resume original controller under unchanged budget; no request resend'}
+
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--batch-id', required=True)
-    parser.add_argument('--previous-log', type=Path, required=True)
+    parser.add_argument('--previous-log', type=Path)
+    parser.add_argument('--resume-paused', action='store_true')
     parser.add_argument('--allow-model-calls', action='store_true')
     args=parser.parse_args()
     if not args.allow_model_calls:
@@ -64,14 +84,20 @@ def main():
     os.environ.update(MEM0_TELEMETRY='false',ANONYMIZED_TELEMETRY='False',HF_HUB_OFFLINE='1',
         FASTEMBED_CACHE_PATH=str(project/'history/pre_v58_root_20260930/.runtime/fastembed-cache'))
     if audit()['status']!='PASS':raise RuntimeError('Freeze audit failed')
-    evidence=verify_completed_failure(outputs,args.batch_id,args.previous_log)
-    events=outputs/f'v58-{args.batch_id}-teardown-supervision'
+    if args.resume_paused:
+        evidence=verify_safe_pause(outputs,args.batch_id)
+    else:
+        if args.previous_log is None:raise RuntimeError('Previous teardown log required')
+        evidence=verify_completed_failure(outputs,args.batch_id,args.previous_log)
+    suffix = '-resume-' + utc_now().replace(':','').replace('.','').replace('+','') if args.resume_paused else ''
+    events=outputs/f'v58-{args.batch_id}-teardown-supervision{suffix}'
     events.mkdir()
     immutable_json(events/'initial_recovery.json',evidence)
     budget=json.loads((outputs/f'v58-{args.batch_id}-controller/raw/batch_identity.json').read_text())['global_budget']
     cmd=[sys.executable,'-u',str(SRC/'runner.py'),'full','--batch-id',args.batch_id,'--allow-model-calls']
     for key,value in budget.items():cmd += ['--'+key.replace('_','-'),str(value)]
-    recovered={evidence['active_run_id']}
+    if args.resume_paused:cmd.append('--resume-paused')
+    recovered=set() if args.resume_paused else {evidence['active_run_id']}
     # Bound by 24 distinct completed sequences, never replay an incomplete operation.
     for attempt in range(25):
         log=events/f'controller-{attempt:02d}.log'

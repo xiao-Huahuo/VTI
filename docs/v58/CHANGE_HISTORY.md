@@ -637,3 +637,17 @@ b04-s2 N 已完成，第四 N/V order block 完成，原 controller 正常进入
 ### 完成与未完成状态
 
 核验通过，无新的 terminal failure 或 length；GPU 活跃，swap 约 5.44GiB、磁盘余量约 327GiB，预算以内，进度持续推进，无停滞或 OOM 证据。原参数继续运行，不重试、不重启、无新增模型调用；活跃 sequence 仅核验提交快照，不作要求无 pending call 的全量回读或中途统计。暂无全量结果。收据 SUPERVISION_20261003_1059.json。
+
+# 2026-10-03 用户授权安全续跑
+
+### 现状
+
+用户要求“继续一下”。实际已安全暂停在 b05-s2 N checkpoint 12，保存 1659/4392 ingestion、完成 9/24 sequence，先前状态文件仍为运行中快照。
+
+### 实施方案
+
+原 sequence 完整回读 PASS（13 checkpoints 含初始）、运行时 digest/版本匹配，无不确定请求；在 src/ops 外层保护新增显式 --resume-paused 入口及独立新事件目录，只有 PAUSED 且完整回读通过才能恢复。保留原顶层 runner/source、预算和所有模型条件，原 full 自行清除已获用户撤销的暂停请求并跳过已完成 sequence。
+
+### 完成与未完成状态
+
+外层保护测试 3/3 通过，包括非安全暂停和不确定回读拒绝；真实原批次恢复成功，第 13 步已发新请求（计数 1696），已提交前 12 步不重算。新外层 supervisor/caffeinate 保持运行，用户暂停仍会停止。每小时监督仍启用；原始暂停/恢复控制历史保留，无全量统计结论。恢复收据 outputs/v58-resume-20261003/launch.json，外层事件目录见 CURRENT_STATE.json。

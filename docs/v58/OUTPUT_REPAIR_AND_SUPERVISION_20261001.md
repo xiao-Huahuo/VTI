@@ -59,3 +59,17 @@ Codex heartbeat `v58` 已设为每小时在当前聊天执行，正常推进保�
 ### 完成与未完成状态
 
 辨识正/负测试 1/1 通过；首次完整回读和真实续调度通过，现已进入 b01-s2 V，第一请求发送。原 batch/model/source 身份不变、预算原值、旧批次仍排除。监督最多恢复 24 个不同已完成 sequence，不盲目循环同一失败、不恢复 incomplete/schema/length、不覆盖 raw、用户暂停立即停止。每小时核查要读取 controller 当前 PID（可随完成后恢复而改变）与外层 supervisor PID，不能把旧 PID 退出当作全体已死。暂无完整统计结论；证据 SUPERVISION_20261002_0300.json。
+
+# 2026-10-03 用户授权安全续跑
+
+### 现状
+
+用户要求“继续一下”。实际已安全暂停在 b05-s2 N checkpoint 12，保存 1659/4392 ingestion、完成 9/24 sequence，先前状态文件仍为运行中快照。
+
+### 实施方案
+
+原 sequence 完整回读 PASS（13 checkpoints 含初始）、运行时 digest/版本匹配，无不确定请求；在 src/ops 外层保护新增显式 --resume-paused 入口及独立新事件目录，只有 PAUSED 且完整回读通过才能恢复。保留原顶层 runner/source、预算和所有模型条件，原 full 自行清除已获用户撤销的暂停请求并跳过已完成 sequence。
+
+### 完成与未完成状态
+
+外层保护测试 3/3 通过，包括非安全暂停和不确定回读拒绝；真实原批次恢复成功，第 13 步已发新请求（计数 1696），已提交前 12 步不重算。新外层 supervisor/caffeinate 保持运行，用户暂停仍会停止。每小时监督仍启用；原始暂停/恢复控制历史保留，无全量统计结论。恢复收据 outputs/v58-resume-20261003/launch.json，外层事件目录见 CURRENT_STATE.json。
