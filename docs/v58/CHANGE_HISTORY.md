@@ -707,3 +707,17 @@ b04-s2 N 已完成，第四 N/V order block 完成，原 controller 正常进入
 ### 完成与未完成状态
 
 12 条完整 sequence 各 191 checkpoints PASS/COMPLETE。b07-s1 初始至 step 63 共 64 checkpoints 哈希/身份通过；step 64 已发送而无响应，自动恢复仍拒绝。2257 已提交 ingestion 保留，但不等于全批次能自动恢复或最终统计已合格。当前无正式计算，用户可以重启；重启不消除不确定请求。审查收据 PRE_REBOOT_AUDIT_20261003.json。本次无模型调用，所有旧 raw 未改。
+
+# 2026-10-04 重启后连接失败恢复与组合批次
+
+### 现状
+
+用户明确授权继续并显示 HTML。旧 b07-s1 step64 无响应，terminal 保持，不允许原地重试；前12完整sequence已验收。
+
+### 实施方案
+
+恢复manifest前瞻性绑定24slot：旧 block1–6共12条完整成果复用，旧failed block7sequence整个排除（61 ingestion/63请求原样保留），block7–12在新 recovery-mac-20261003 从pristine重新执行。原顶层runner/source、模型、数据、schema、checkpoint、order/slot、主指标都不改；新增代码在src/ops。Direct localhost环境去代理仅为预防，根因尚未证明。原新旧scope独立，原不确定请求不重发。
+
+### 完成与未完成状态
+
+manifest24slot/12完整身份回读PASS，外层保护负测试及暂停测试6/6，模型/冻结与完整Mem0 store预检PASS无模型调用；新恢复controller已后台启动。新剩余预算2244请求，页面总量包含复用2244请求，监督不能把合计与剩余预算比较。页面排除旧失败61个session，选定进度从2196起。全部完成后按manifest统一原统计，不按单一batch命名猜路径；仍无最终统计结论。依据 RECOVERY_AFTER_CONNECTION_20261003.md。

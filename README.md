@@ -126,3 +126,5 @@ V58 新增[安全暂停与本机监控](docs/v58/PAUSE_AND_MONITOR_AUDIT.md)，�
 2026-10-03 23:34 最新失败：本地 /api/chat 连接中断，step 64 已发送但无响应收据；当前保存 2257 ingestion、完成 12/24 sequence。暂停自动续跑该不确定步骤，底层触发原因待诊断，详见 `docs/v58/CONNECTION_FAILURE_20261003.json`。
 
 2026-10-03 重启前审查：12 条完整 sequence 独立回读通过，b07-s1 最后有效 step 63 链通过；step 64 无响应仍阻止自动恢复。用户准备重启，execution_hold 与控制暂停请求阻止监督自行启动，等待重启后明确继续。证据 `docs/v58/PRE_REBOOT_AUDIT_20261003.json`。
+
+2026-10-04 重启后恢复：前12完整sequence复用，failed b07-s1保留排除，后12条从空状态在 recovery-mac-20261003 执行；统一原参数/设计，右侧组合进度页运行。剩余预算与最终分析须按 [连接失败恢复方案](docs/v58/RECOVERY_AFTER_CONNECTION_20261003.md) 的manifest选定run_id。

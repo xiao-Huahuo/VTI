@@ -1,0 +1,224 @@
+{
+  "created_at_utc": "2026-10-03T15:54:43.416171+00:00",
+  "batch_id": "recovery-mac-20261003",
+  "previous_batch": "formal-mac-20261001-output8192",
+  "reason": "Terminal missing response on old block7. Preserve and exclude entire failed sequence; fresh pristine block7-12, verified completed blocks1-6 reused. No request retransmission or response repair. No scientific/model condition change. No outcomes used for selection.",
+  "user_authorization": "Continue formal execution after reboot; autonomous routine repairs authorized",
+  "sequences": [
+    {
+      "block": 1,
+      "slot": 1,
+      "order": "CBAD",
+      "policy": "N",
+      "run_id": "v58-formal-mac-20261001-output8192-b01-s1",
+      "reuse": true,
+      "identity_sha256": "60d981e093648ef68e8248e9bbe4f53bc89fa5980b638e4814b708849ad4a3cb"
+    },
+    {
+      "block": 1,
+      "slot": 2,
+      "order": "CBAD",
+      "policy": "V",
+      "run_id": "v58-formal-mac-20261001-output8192-b01-s2",
+      "reuse": true,
+      "identity_sha256": "a210836ad1043e598b4912724ffb4c5aa72545ad5788efd8f97b17a652411ae3"
+    },
+    {
+      "block": 2,
+      "slot": 1,
+      "order": "BCDA",
+      "policy": "N",
+      "run_id": "v58-formal-mac-20261001-output8192-b02-s1",
+      "reuse": true,
+      "identity_sha256": "fb91bb98b95b63081495a7fd3954dda6c79b3600d22a5f84171ef6a4872f4fd5"
+    },
+    {
+      "block": 2,
+      "slot": 2,
+      "order": "BCDA",
+      "policy": "V",
+      "run_id": "v58-formal-mac-20261001-output8192-b02-s2",
+      "reuse": true,
+      "identity_sha256": "edb38ad64633880a477e9ef72cf1a4c135f04dd067d16ab9c64ca44cf716e36c"
+    },
+    {
+      "block": 3,
+      "slot": 1,
+      "order": "ABDC",
+      "policy": "V",
+      "run_id": "v58-formal-mac-20261001-output8192-b03-s1",
+      "reuse": true,
+      "identity_sha256": "b52c05125b86d7441df21da47dee8ed21ee71ef3842bc0e589233c918249f136"
+    },
+    {
+      "block": 3,
+      "slot": 2,
+      "order": "ABDC",
+      "policy": "N",
+      "run_id": "v58-formal-mac-20261001-output8192-b03-s2",
+      "reuse": true,
+      "identity_sha256": "d48c5373788bde14eacc3f3037d3ede9f6c6093190b3b7c2cc77518f40072504"
+    },
+    {
+      "block": 4,
+      "slot": 1,
+      "order": "ACBD",
+      "policy": "V",
+      "run_id": "v58-formal-mac-20261001-output8192-b04-s1",
+      "reuse": true,
+      "identity_sha256": "8799795f9f63788e48c1f5cf4ca043f7d3af8ff091307aeb92c0a41f29df5e8f"
+    },
+    {
+      "block": 4,
+      "slot": 2,
+      "order": "ACBD",
+      "policy": "N",
+      "run_id": "v58-formal-mac-20261001-output8192-b04-s2",
+      "reuse": true,
+      "identity_sha256": "a3858e7fdf714570c9d16bf637b76b26e7384ce2d4644cd66579eeeb2140b0ac"
+    },
+    {
+      "block": 5,
+      "slot": 1,
+      "order": "CADB",
+      "policy": "V",
+      "run_id": "v58-formal-mac-20261001-output8192-b05-s1",
+      "reuse": true,
+      "identity_sha256": "e764604a02e4c6f546c75caf3b9f05bfb4fa7641892425f9b6d62be76cefc23f"
+    },
+    {
+      "block": 5,
+      "slot": 2,
+      "order": "CADB",
+      "policy": "N",
+      "run_id": "v58-formal-mac-20261001-output8192-b05-s2",
+      "reuse": true,
+      "identity_sha256": "2350cb56c293dc825fa8abaca99eea6ce8ed4b15f687ec3c0ff5be1d67ff5aee"
+    },
+    {
+      "block": 6,
+      "slot": 1,
+      "order": "BACD",
+      "policy": "V",
+      "run_id": "v58-formal-mac-20261001-output8192-b06-s1",
+      "reuse": true,
+      "identity_sha256": "50f3aa95f4de20629b59812cf912654500bf44305009f3c8f85b1d4e3506fcc6"
+    },
+    {
+      "block": 6,
+      "slot": 2,
+      "order": "BACD",
+      "policy": "N",
+      "run_id": "v58-formal-mac-20261001-output8192-b06-s2",
+      "reuse": true,
+      "identity_sha256": "8a69ac346ca9f2f9a22b4fe2b7e612d2246c5f1e0495f0581207335e8839f922"
+    },
+    {
+      "block": 7,
+      "slot": 1,
+      "order": "ADCB",
+      "policy": "V",
+      "run_id": "v58-recovery-mac-20261003-b07-s1",
+      "reuse": false
+    },
+    {
+      "block": 7,
+      "slot": 2,
+      "order": "ADCB",
+      "policy": "N",
+      "run_id": "v58-recovery-mac-20261003-b07-s2",
+      "reuse": false
+    },
+    {
+      "block": 8,
+      "slot": 1,
+      "order": "DABC",
+      "policy": "N",
+      "run_id": "v58-recovery-mac-20261003-b08-s1",
+      "reuse": false
+    },
+    {
+      "block": 8,
+      "slot": 2,
+      "order": "DABC",
+      "policy": "V",
+      "run_id": "v58-recovery-mac-20261003-b08-s2",
+      "reuse": false
+    },
+    {
+      "block": 9,
+      "slot": 1,
+      "order": "DCAB",
+      "policy": "N",
+      "run_id": "v58-recovery-mac-20261003-b09-s1",
+      "reuse": false
+    },
+    {
+      "block": 9,
+      "slot": 2,
+      "order": "DCAB",
+      "policy": "V",
+      "run_id": "v58-recovery-mac-20261003-b09-s2",
+      "reuse": false
+    },
+    {
+      "block": 10,
+      "slot": 1,
+      "order": "CDBA",
+      "policy": "N",
+      "run_id": "v58-recovery-mac-20261003-b10-s1",
+      "reuse": false
+    },
+    {
+      "block": 10,
+      "slot": 2,
+      "order": "CDBA",
+      "policy": "V",
+      "run_id": "v58-recovery-mac-20261003-b10-s2",
+      "reuse": false
+    },
+    {
+      "block": 11,
+      "slot": 1,
+      "order": "BDAC",
+      "policy": "N",
+      "run_id": "v58-recovery-mac-20261003-b11-s1",
+      "reuse": false
+    },
+    {
+      "block": 11,
+      "slot": 2,
+      "order": "BDAC",
+      "policy": "V",
+      "run_id": "v58-recovery-mac-20261003-b11-s2",
+      "reuse": false
+    },
+    {
+      "block": 12,
+      "slot": 1,
+      "order": "DBCA",
+      "policy": "N",
+      "run_id": "v58-recovery-mac-20261003-b12-s1",
+      "reuse": false
+    },
+    {
+      "block": 12,
+      "slot": 2,
+      "order": "DBCA",
+      "policy": "V",
+      "run_id": "v58-recovery-mac-20261003-b12-s2",
+      "reuse": false
+    }
+  ],
+  "remaining_budget": {
+    "max_requests": 2244,
+    "max_input_tokens": 73531392,
+    "max_output_tokens": 18382848,
+    "max_cost": 0
+  },
+  "excluded_run_id": "v58-formal-mac-20261001-output8192-b07-s1",
+  "statistical_selected_requests": 4488,
+  "prior_excluded_requests": 63,
+  "total_attempts_request_allowance": 4551,
+  "transport_environment": "Direct localhost with proxy variables removed and NO_PROXY localhost/127.0.0.1; preventative isolation, original disconnection trigger not proven"
+}
