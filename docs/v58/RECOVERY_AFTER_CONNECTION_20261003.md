@@ -25,3 +25,5 @@ coordinator仅从 pristine 启动新sequence，父controller接受退出异常�
 最终分析必须使用 `ops/recovery_batch.py --aggregate` 读取manifest选定的24run_id，先全部完整回读，使用原 exact_randomization 算法4096分配、原footprint/statistic。不使用原runner按单一batch ID自动推导路径的aggregate入口，也不把排除的失败run加入统计。
 
 监督读最新 CURRENT_STATE：新controller剩余调用计数与page合计区分，原始raw预算优先。当前尚无全量统计结论。
+
+恢复启动验收：新 b07-s1 第1步 checkpoint 身份与状态哈希通过，已保存至少2个新ingestion，右侧页面显示2198/4392及12/24完整sequence，暂停按钮可用。启动收据 `outputs/v58-recovery-reboot-20261003/first_checkpoint_verified.json`。

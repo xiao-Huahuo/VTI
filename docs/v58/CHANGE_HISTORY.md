@@ -721,3 +721,5 @@ b04-s2 N 已完成，第四 N/V order block 完成，原 controller 正常进入
 ### 完成与未完成状态
 
 manifest24slot/12完整身份回读PASS，外层保护负测试及暂停测试6/6，模型/冻结与完整Mem0 store预检PASS无模型调用；新恢复controller已后台启动。新剩余预算2244请求，页面总量包含复用2244请求，监督不能把合计与剩余预算比较。页面排除旧失败61个session，选定进度从2196起。全部完成后按manifest统一原统计，不按单一batch命名猜路径；仍无最终统计结论。依据 RECOVERY_AFTER_CONNECTION_20261003.md。
+
+恢复启动验收：新 b07-s1 第1步 checkpoint 身份与状态哈希通过，已保存至少2个新ingestion，右侧页面显示2198/4392及12/24完整sequence，暂停按钮可用。启动收据 `outputs/v58-recovery-reboot-20261003/first_checkpoint_verified.json`。
