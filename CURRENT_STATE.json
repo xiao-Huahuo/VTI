@@ -1,6 +1,6 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-10-03T15:38:17.073415+00:00",
+  "updated_at_utc": "2026-10-03T15:43:44.728160+00:00",
   "project": "Reset Is Not Isolation",
   "phase": "V58_FORMAL_FAILED_AMBIGUOUS_LOCAL_CONNECTION",
   "active_version": "v58",
@@ -165,9 +165,9 @@
     "routine_failures": "AUTONOMOUS_REPAIR_WITH_DOCUMENTATION",
     "user_pause": "NEVER_AUTOMATICALLY_RESUME",
     "procedure": "docs/v58/OUTPUT_REPAIR_AND_SUPERVISION_20261001.md",
-    "last_checked_at_utc": "2026-10-03T15:38:17.073415+00:00",
-    "last_status": "TERMINAL_AMBIGUOUS_LOCAL_CONNECTION",
-    "last_receipt": "docs/v58/CONNECTION_FAILURE_20261003.json"
+    "last_checked_at_utc": "2026-10-03T15:43:44.728160+00:00",
+    "last_status": "USER_REBOOT_HOLD_NO_AUTO_RESTART",
+    "last_receipt": "docs/v58/PRE_REBOOT_AUDIT_20261003.json"
   },
   "runtime_estimate": {
     "receipt": "docs/v58/RUNTIME_ESTIMATE_20261002.json",
@@ -177,5 +177,12 @@
     ],
     "remaining_hours_point": 85,
     "updated_at_utc": "2026-10-02T02:58:01.574552+00:00"
+  },
+  "execution_hold": {
+    "reason": "USER_PREPARING_HOST_REBOOT",
+    "authorized_request": "我准备重启一下刷新内存,现在的中断点你检查一下",
+    "model_calls_allowed_while_hold": false,
+    "release_condition": "User explicitly asks to resume after reboot; terminal uncertain request still requires appropriate recovery disposition",
+    "audit": "docs/v58/PRE_REBOOT_AUDIT_20261003.json"
   }
 }

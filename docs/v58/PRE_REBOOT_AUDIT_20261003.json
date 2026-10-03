@@ -1,0 +1,129 @@
+{
+  "automatic_resume": "BLOCKED_UNCERTAIN_DISPATCH",
+  "batch_id": "formal-mac-20261001-output8192",
+  "checked_at_utc": "2026-10-03T15:41:11.155682+00:00",
+  "committed_checkpoint_chain_count": 64,
+  "completed_sequence_count": 12,
+  "completed_sequences": [
+    {
+      "block": 1,
+      "checkpoints": 191,
+      "complete": true,
+      "policy": "N",
+      "run_id": "v58-formal-mac-20261001-output8192-b01-s1",
+      "slot": 1,
+      "status": "PASS"
+    },
+    {
+      "block": 1,
+      "checkpoints": 191,
+      "complete": true,
+      "policy": "V",
+      "run_id": "v58-formal-mac-20261001-output8192-b01-s2",
+      "slot": 2,
+      "status": "PASS"
+    },
+    {
+      "block": 2,
+      "checkpoints": 191,
+      "complete": true,
+      "policy": "N",
+      "run_id": "v58-formal-mac-20261001-output8192-b02-s1",
+      "slot": 1,
+      "status": "PASS"
+    },
+    {
+      "block": 2,
+      "checkpoints": 191,
+      "complete": true,
+      "policy": "V",
+      "run_id": "v58-formal-mac-20261001-output8192-b02-s2",
+      "slot": 2,
+      "status": "PASS"
+    },
+    {
+      "block": 3,
+      "checkpoints": 191,
+      "complete": true,
+      "policy": "V",
+      "run_id": "v58-formal-mac-20261001-output8192-b03-s1",
+      "slot": 1,
+      "status": "PASS"
+    },
+    {
+      "block": 3,
+      "checkpoints": 191,
+      "complete": true,
+      "policy": "N",
+      "run_id": "v58-formal-mac-20261001-output8192-b03-s2",
+      "slot": 2,
+      "status": "PASS"
+    },
+    {
+      "block": 4,
+      "checkpoints": 191,
+      "complete": true,
+      "policy": "V",
+      "run_id": "v58-formal-mac-20261001-output8192-b04-s1",
+      "slot": 1,
+      "status": "PASS"
+    },
+    {
+      "block": 4,
+      "checkpoints": 191,
+      "complete": true,
+      "policy": "N",
+      "run_id": "v58-formal-mac-20261001-output8192-b04-s2",
+      "slot": 2,
+      "status": "PASS"
+    },
+    {
+      "block": 5,
+      "checkpoints": 191,
+      "complete": true,
+      "policy": "V",
+      "run_id": "v58-formal-mac-20261001-output8192-b05-s1",
+      "slot": 1,
+      "status": "PASS"
+    },
+    {
+      "block": 5,
+      "checkpoints": 191,
+      "complete": true,
+      "policy": "N",
+      "run_id": "v58-formal-mac-20261001-output8192-b05-s2",
+      "slot": 2,
+      "status": "PASS"
+    },
+    {
+      "block": 6,
+      "checkpoints": 191,
+      "complete": true,
+      "policy": "V",
+      "run_id": "v58-formal-mac-20261001-output8192-b06-s1",
+      "slot": 1,
+      "status": "PASS"
+    },
+    {
+      "block": 6,
+      "checkpoints": 191,
+      "complete": true,
+      "policy": "N",
+      "run_id": "v58-formal-mac-20261001-output8192-b06-s2",
+      "slot": 2,
+      "status": "PASS"
+    }
+  ],
+  "formal_process_running": false,
+  "incomplete_run_id": "v58-formal-mac-20261001-output8192-b07-s1",
+  "last_checkpoint_state_sha256": "ffcf2c18b23a84d0d28dea177e6ae8e274d52fe446895e39c30540cad3b5098a",
+  "last_committed_step": 63,
+  "next_action": "User requested reboot preparation; do not dispatch model calls or restart until user resumes after reboot",
+  "original_receipts_modified": false,
+  "reboot_effect": "Committed disk evidence remains; does not resolve missing response or enable auto-resume",
+  "resume_rejection": "Uncommitted or ambiguous dispatched request; automatic resume forbidden",
+  "status": "STOPPED_DATA_VERIFIED_READY_FOR_HOST_REBOOT",
+  "uncertain_call_directories": [
+    "solutions/v58/outputs/v58-formal-mac-20261001-output8192-b07-s1/raw/model_calls/00064-9343c0829b2e87dc"
+  ]
+}

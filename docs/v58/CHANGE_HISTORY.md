@@ -693,3 +693,17 @@ b04-s2 N 已完成，第四 N/V order block 完成，原 controller 正常进入
 ### 完成与未完成状态
 
 直接原因是模型请求连接中断，不是已知 output length/schema 或 completed teardown 情况。不能据现有证据归因 OOM/内存或指定网络层；底层触发原因仍待定位。不重发原不确定请求，不修补 raw，不自动原地恢复；本次仅诊断解释，无模型调用。状态已更正 FAILED，收据 CONNECTION_FAILURE_20261003.json。
+
+# 2026-10-03 重启前中断点审查
+
+### 现状
+
+用户准备重启刷新内存，要求检查中断点。正式 runner 与外层监督已退出，只有 Ollama 服务仍在线。
+
+### 实施方案
+
+对 b01–b06 共 12 条已完成 sequence 独立完整回读；对 terminal b07-s1 仅回读已提交 checkpoint 链并验证自动恢复门拒绝未响应的 dispatch。不删失败现场、不修补响应。按用户重启意图设置控制暂停请求与 execution_hold，监督不得自行启动模型任务，等待重启后用户明确继续。
+
+### 完成与未完成状态
+
+12 条完整 sequence 各 191 checkpoints PASS/COMPLETE。b07-s1 初始至 step 63 共 64 checkpoints 哈希/身份通过；step 64 已发送而无响应，自动恢复仍拒绝。2257 已提交 ingestion 保留，但不等于全批次能自动恢复或最终统计已合格。当前无正式计算，用户可以重启；重启不消除不确定请求。审查收据 PRE_REBOOT_AUDIT_20261003.json。本次无模型调用，所有旧 raw 未改。
