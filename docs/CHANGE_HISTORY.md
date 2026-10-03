@@ -753,3 +753,17 @@ b04-s2 N 已完成，第四 N/V order block 完成，原 controller 正常进入
 manifest24slot/12完整身份回读PASS，外层保护负测试及暂停测试6/6，模型/冻结与完整Mem0 store预检PASS无模型调用；新恢复controller已后台启动。新剩余预算2244请求，页面总量包含复用2244请求，监督不能把合计与剩余预算比较。页面排除旧失败61个session，选定进度从2196起。全部完成后按manifest统一原统计，不按单一batch命名猜路径；仍无最终统计结论。依据 RECOVERY_AFTER_CONNECTION_20261003.md。
 
 恢复启动验收：新 b07-s1 第1步 checkpoint 身份与状态哈希通过，已保存至少2个新ingestion，右侧页面显示2198/4392及12/24完整sequence，暂停按钮可用。启动收据 `outputs/v58-recovery-reboot-20261003/first_checkpoint_verified.json`。
+
+# 2026-10-04 00:39 恢复组合批次监督
+
+### 现状
+
+recovery-mac-20261003 在新 b07-s1 V 正常推进，选定进度 2225/4392、完整 sequence 12/24，含12复用完整成果；新恢复调用 30，页面选定总调用 2274。
+
+### 实施方案
+
+只读核查最新规范/恢复方案、当前 controller/caffeinate/Ollama、原 source/执行身份与 recovery manifest哈希、最新提交checkpoint、错误/响应停止原因、资源及新恢复run实际预算消耗。
+
+### 完成与未完成状态
+
+检查通过，无新 terminal failure/length，GPU活跃，swap约3.21GiB、磁盘余量约326GiB。预算以新run真实dispatch及保守token预留核查，不把复用2244请求计入新剩余2244预算。持续推进，原失败现场保留排除，不修复、不重启、无新增模型调用；暂无全量统计结论。收据 SUPERVISION_20261004_0039.json。
