@@ -1,6 +1,6 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-10-04T18:04:21.887446+00:00",
+  "updated_at_utc": "2026-10-04T21:32:47.301560+00:00",
   "project": "Reset Is Not Isolation",
   "phase": "V58_COMPOSITE_RECOVERY_FORMAL_RUNNING",
   "active_version": "v58",
@@ -54,7 +54,7 @@
   "last_run_receipts_for_active_version": {
     "batch_id": "recovery-mac-20261003",
     "controller": "solutions/v58/outputs/v58-recovery-mac-20261003-controller",
-    "active_run_id": "v58-recovery-mac-20261003-b10-s1",
+    "active_run_id": "v58-recovery-mac-20261003-b10-s2",
     "runner_pid": 27179,
     "supervisor_pid": 27179,
     "caffeinate_pid": 27180,
@@ -67,8 +67,8 @@
     "selected_committed_ingestions_before_new_calls": 2196,
     "excluded_failed_sequence": "v58-formal-mac-20261001-output8192-b07-s1",
     "budget_note": "Remaining controller budget only covers fresh 12 runs; use dashboard new_model_requests or manifest reuse=false raw counts, not total selected model_requests",
-    "committed_ingestions_at_snapshot": 3460,
-    "completed_sequences": 18,
+    "committed_ingestions_at_snapshot": 3634,
+    "completed_sequences": 19,
     "first_recovery_checkpoint": "PASS_IDENTITY_AND_STATE_HASH"
   },
   "v58_freeze_audit": {
@@ -105,15 +105,15 @@
     "cost_preflight": "PASS_ESTIMATE_UNCERTAIN",
     "final_implementation_audit": "PASS_P0_0_P1_0",
     "regulatory_state": "COMPOSITE_RECOVERY_FORMAL_RUNNING",
-    "formal_model_calls": 3536,
+    "formal_model_calls": 3714,
     "formal_run_receipts": "solutions/v58/outputs/v58-recovery-mac-20261003-controller/raw/batch_identity.json",
     "safe_pause_and_resume": "PASS_FAKE_REQUEST_SIGNAL_AND_BATCH_CONTINUATION",
-    "formal_model_calls_sampled_at_utc": "2026-10-04T18:04:21.887446+00:00",
+    "formal_model_calls_sampled_at_utc": "2026-10-04T21:32:47.301560+00:00",
     "excluded_prior_formal_calls": 191,
     "recovery_tests": "PASS_7_OF_7",
     "recovery_manifest_audit": "PASS_24_SLOTS_12_REUSED_COMPLETE",
     "excluded_previous_failed_run_requests": 63,
-    "new_recovery_model_calls": 1292,
+    "new_recovery_model_calls": 1470,
     "formal_model_calls_scope": "Manifest-selected reused + new calls; controller remaining budget only applies to new calls"
   },
   "development_profiling": {
@@ -169,9 +169,9 @@
     "routine_failures": "AUTONOMOUS_REPAIR_WITH_DOCUMENTATION",
     "user_pause": "NEVER_AUTOMATICALLY_RESUME",
     "procedure": "docs/v58/RECOVERY_AFTER_CONNECTION_20261003.md",
-    "last_checked_at_utc": "2026-10-04T18:04:21.887446+00:00",
-    "last_status": "HEALTHY_COMPOSITE_RECOVERY_RUNNING",
-    "last_receipt": "docs/v58/SUPERVISION_20261005_0203.json"
+    "last_checked_at_utc": "2026-10-04T21:32:47.301560+00:00",
+    "last_status": "HEALTHY_COMPOSITE_RECOVERY_NINETEENTH_SEQUENCE_COMPLETE",
+    "last_receipt": "docs/v58/SUPERVISION_20261005_0531.json"
   },
   "runtime_estimate": {
     "receipt": "docs/v58/RUNTIME_ESTIMATE_20261002.json",
