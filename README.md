@@ -162,3 +162,5 @@ V58 新增[安全暂停与本机监控](docs/v58/PAUSE_AND_MONITOR_AUDIT.md)，�
 2026-10-04 15:51 恢复监督：新b09-s1 N正常推进，source/执行/manifest身份、最新checkpoint及新调用预算核验通过，无新terminal failure；swap上升但无停滞证据，不干预。收据 `docs/v58/SUPERVISION_20261004_1551.json`。
 
 2026-10-04 16:52 恢复监督：新b09-s1 N正常推进，source/执行/manifest身份、最新checkpoint及新调用预算核验通过，无新terminal failure。收据 `docs/v58/SUPERVISION_20261004_1652.json`。
+
+2026-10-04 17:54 恢复监督：新b09-s1 N正常推进，source/执行/manifest身份、最新checkpoint及新调用预算核验通过，无新terminal failure；单次GPU读数0但CPU/进度活跃，不干预。收据 `docs/v58/SUPERVISION_20261004_1754.json`。
