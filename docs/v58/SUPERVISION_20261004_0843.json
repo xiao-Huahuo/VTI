@@ -1,0 +1,95 @@
+{
+  "action": "Continue unchanged; no repair/restart/model calls; active committed snapshot only; fresh budget excludes reused requests and old failed run preserved",
+  "checked_at_utc": "2026-10-04T00:44:52.505123+00:00",
+  "committed_ingestions_since_previous_check": 46,
+  "length_stops": 0,
+  "machine": {
+    "chip": "Apple M5",
+    "cores": 10,
+    "cpu_percent": 9.41,
+    "disk": {
+      "free_bytes": 347838730240,
+      "total_bytes": 494332366848,
+      "used_bytes": 146493636608
+    },
+    "gpu_percent": 93,
+    "gpu_shared_memory_bytes": 11675926528,
+    "load_average": [
+      2.90673828125,
+      2.779296875,
+      2.6357421875
+    ],
+    "memory_compressed_resident_bytes": 1813708800,
+    "memory_file_cache_bytes": 443695104,
+    "memory_noncache_estimate_bytes": 15980183552,
+    "memory_pressure_free_percent": 7,
+    "memory_total_bytes": 17179869184,
+    "memory_unused_pages_bytes": 115081216,
+    "memory_wired_bytes": 13415727104,
+    "model_server_online": true,
+    "models": [
+      {
+        "context_length": 32768,
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "name": "qwen3:8b-q4_K_M",
+        "size": 14548184594,
+        "size_vram": 11413204499
+      }
+    ],
+    "platform": "Darwin",
+    "processes": [
+      {
+        "cpu_percent": 0.0,
+        "label": "Ollama",
+        "pid": 1484,
+        "rss_bytes": 8290304
+      },
+      {
+        "cpu_percent": 67.4,
+        "label": "Qwen 推理进程",
+        "pid": 2089,
+        "rss_bytes": 9614098432
+      },
+      {
+        "cpu_percent": 0.0,
+        "label": "V58 runner",
+        "pid": 49067,
+        "rss_bytes": 9879552
+      }
+    ],
+    "sampled_at_utc": "2026-10-04T00:44:48.592657+00:00",
+    "swap_used_bytes": 4545314816.0
+  },
+  "new_recovery_spent_conservative": {
+    "max_cost": 0,
+    "max_input_tokens": 14745600,
+    "max_output_tokens": 3686400,
+    "max_requests": 450
+  },
+  "progress": {
+    "active_run_id": "v58-recovery-mac-20261003-b08-s1",
+    "batch_id": "recovery-mac-20261003",
+    "budget_scope": "Fresh recovery runs only; exclude 2244 reused requests",
+    "completed_sequences": 14,
+    "completed_sessions": 2636,
+    "formal_model_calls_recorded": 2647,
+    "model_requests": 2694,
+    "new_model_requests": 450,
+    "pause_requested": false,
+    "phase": "RUNNING",
+    "regulatory_state": "COMPOSITE_RECOVERY_FORMAL_RUNNING",
+    "total_sequences": 24,
+    "total_sessions": 4392
+  },
+  "remaining_controller_budget": {
+    "max_cost": 0,
+    "max_input_tokens": 73531392,
+    "max_output_tokens": 18382848,
+    "max_requests": 2244
+  },
+  "scheduled_heartbeat_utc": "2026-10-04T00:43:30.193Z",
+  "source_execution_recovery_manifest_identity": "PASS",
+  "status": "HEALTHY_COMPOSITE_RECOVERY_RUNNING",
+  "terminal_failures": 0,
+  "verified_checkpoint_step": 76
+}
