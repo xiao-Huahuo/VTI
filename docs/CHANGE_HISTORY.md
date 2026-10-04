@@ -921,3 +921,17 @@ recovery-mac-20261003 在新 b07-s1 V 正常推进，选定进度 2225/4392、�
 ### 完成与未完成状态
 
 新完成N的191 checkpoints PASS/COMPLETE；活跃V快照/身份通过，无新terminal failure/length，GPU活跃，swap约4.49GiB、磁盘余量约323GiB，新run预算以内。复用2244调用不占剩余预算，原不确定sequence仍排除，未重发旧请求。不修复、不重启、无新增模型调用，无中途统计。收据 SUPERVISION_20261004_1146.json。
+
+# 2026-10-04 12:46 恢复组合批次监督
+
+### 现状
+
+新 b08-s2 V 正常推进，选定进度 2839/4392、完整sequence 15/24；新调用 658、选定总调用 2902，比前次新增 49 ingestion。
+
+### 实施方案
+
+只读核查规范/恢复方案、coordinator/caffeinate/Ollama、原source/执行和manifest身份、最新提交checkpoint、错误/响应停止原因、新run预算及资源。
+
+### 完成与未完成状态
+
+核验通过，无新terminal failure/length，GPU活跃，swap约4.71GiB、磁盘余量约322GiB，新run预算以内；复用2244调用不占剩余预算，旧failed sequence保留排除。不修复、不重试、不重启、无新增模型调用；只核验活跃sequence已提交快照，无中途统计。收据 SUPERVISION_20261004_1246.json。
