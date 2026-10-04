@@ -1101,3 +1101,17 @@ b09-s1 N于18:25完成后再次触发原生recursive_mutex退出异常。全部1
 ### 完成与未完成状态
 
 新完成N的191 checkpoints PASS/COMPLETE；活跃V快照/身份通过，无新terminal failure/length，单次GPU读数0但CPU推理活跃且进度增加，无停滞证据，swap约4.52GiB、磁盘余量约319GiB，新run预算以内。复用2244调用不占剩余预算，原不确定sequence仍排除。不修复、不重启、无新增模型调用，无中途统计。收据 SUPERVISION_20261005_0531.json。
+
+# 2026-10-05 06:32 恢复组合批次监督
+
+### 现状
+
+新b10-s2 V完整完成，第十N/V block两条均完成，coordinator自然进入b11-s1 N；选定进度 3690/4392、完整sequence 20/24，新调用 1527、选定总调用 3771，比前次新增 56 ingestion。
+
+### 实施方案
+
+只读核查规范/恢复方案、coordinator/caffeinate/Ollama、原source/执行及manifest身份、活跃N最新checkpoint、失败/响应、新run真实预算及资源；独立完整回读新完成V。
+
+### 完成与未完成状态
+
+新完成V的191 checkpoints PASS/COMPLETE；活跃N快照/身份通过，无新terminal failure/length，GPU活跃，swap约4.39GiB、磁盘余量约320GiB，新run预算以内。复用2244调用不占剩余预算，原不确定sequence仍排除。不修复、不重启、无新增模型调用，无中途统计。收据 SUPERVISION_20261005_0632.json。
