@@ -989,3 +989,17 @@ b09-s1 N于18:25完成后再次触发原生recursive_mutex退出异常。全部1
 ### 完成与未完成状态
 
 7/7外层测试通过（含信号码/不完整/连接失败拒绝）；独立回读与真实恢复通过。跳过已完成b09-s1，不重算、不重发，已进入未执行b09-s2 V，选定17/24完成。原生库根因仍未归因/消除，修复的是退出误判和调度阻塞。旧returncode未单独落盘，不补造历史数值；今后记录真实码。恢复launch见outputs/v58-recovery-teardown-20261004/launch.json，检查收据SUPERVISION_20261004_1855.json。暂无全量统计结论。
+
+# 2026-10-04 19:55 退出修复后恢复监督
+
+### 现状
+
+修复后新 b09-s2 V 正常推进，选定进度 3159/4392、完整sequence 17/24；新调用 985、选定总调用 3229，比修复记录新增 47 ingestion。
+
+### 实施方案
+
+只读核查规范/恢复及退出修复方案、新coordinator/caffeinate/Ollama、原source/执行和manifest身份、最新提交checkpoint、错误/响应停止原因、新run预算及资源。
+
+### 完成与未完成状态
+
+核验通过，无新terminal failure/length，GPU活跃，swap约3.44GiB、磁盘余量约323GiB，新run预算以内，进度持续增加。完成后的b09-s1未重算，native库根因仍不声称消除。复用2244调用不占剩余预算，旧failed sequence保留排除。不修复、不重试、不重启、无新增模型调用；只核验活跃sequence已提交快照，无中途统计。收据 SUPERVISION_20261004_1955.json。
