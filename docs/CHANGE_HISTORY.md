@@ -1005,3 +1005,17 @@ recovery-mac-20261003 在新 b07-s1 V 正常推进，选定进度 2225/4392、�
 ### 完成与未完成状态
 
 核验通过，无新terminal failure/length，GPU单次读数0但CPU推理活跃且进度增加，无停滞证据；swap约5.11GiB、磁盘余量约321GiB，新run预算以内。复用2244调用不占剩余预算，旧failed sequence保留排除。不修复、不重试、不重启、无新增模型调用；只核验活跃sequence已提交快照，无中途统计。收据 SUPERVISION_20261004_1754.json。
+
+# 2026-10-04 18:55 原生退出误判修复
+
+### 现状
+
+b09-s1 N于18:25完成后再次触发原生recursive_mutex退出异常。全部190步骤/COMPLETE均保存，191 checkpoint独立完整回读通过。组合coordinator误判退出异常为终端失败：复用旧full父进程日志辨识器要求SIGABRT文字，但直接worker日志没有父级traceback。
+
+### 实施方案
+
+只改src/ops：辨识直接worker真实returncode=-SIGABRT、精确native signature、COMPLETE日志三项，完整回读仍为必要门；新增worker退出码/log哈希不可覆盖收据。非zero其他错误、无COMPLETE、连接错误都不得走此例外。旧日志/错误现场保留；原source/model/参数/manifest/预算/设计不改。
+
+### 完成与未完成状态
+
+7/7外层测试通过（含信号码/不完整/连接失败拒绝）；独立回读与真实恢复通过。跳过已完成b09-s1，不重算、不重发，已进入未执行b09-s2 V，选定17/24完成。原生库根因仍未归因/消除，修复的是退出误判和调度阻塞。旧returncode未单独落盘，不补造历史数值；今后记录真实码。恢复launch见outputs/v58-recovery-teardown-20261004/launch.json，检查收据SUPERVISION_20261004_1855.json。暂无全量统计结论。

@@ -1,6 +1,6 @@
 """Explicit composite continuation: verified complete runs plus fresh replacement runs."""
 from __future__ import annotations
-import argparse,json,os,subprocess,sys
+import argparse,json,os,subprocess,sys,signal
 from pathlib import Path
 SRC=next(p for p in Path(__file__).resolve().parents if p.name=='src');sys.path.insert(0,str(SRC))
 from runner import frozen,readback,runtime_preflight,OUTPUTS,DESIGN,AMENDMENT,DATASET
@@ -32,6 +32,13 @@ def mapping_check(manifest):
             if info['block']!=row['block'] or info['slot']!=row['slot'] or info['policy']!=row['policy']:
                 raise RuntimeError('Reuse slot mismatch')
     return design
+
+def worker_teardown_abort(text, code):
+    # Direct worker logs omit the parent's SIGABRT traceback; use actual returncode.
+    return (code == -signal.SIGABRT and
+            'recursive_mutex lock failed: Invalid argument' in text and
+            '"status": "COMPLETE"' in text)
+
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--allow-model-calls',action='store_true');parser.add_argument('--resume-paused',action='store_true');parser.add_argument('--audit-only',action='store_true');parser.add_argument('--aggregate',action='store_true');args=parser.parse_args()
@@ -76,9 +83,10 @@ def main():
         while (controller/f'logs/{row["block"]:02d}-{row["slot"]}-{attempt}.log').exists():attempt+=1
         log=controller/f'logs/{row["block"]:02d}-{row["slot"]}-{attempt}.log';log.parent.mkdir(exist_ok=True)
         with log.open('xb') as f:code=subprocess.run(cmd,stdout=f,stderr=subprocess.STDOUT).returncode
+        immutable_json(controller/f'raw/worker-exit-{row["block"]:02d}-{row["slot"]}-{attempt}.json',{'at_utc':utc_now(),'returncode':code,'log_sha256':sha(log)})
         if code==PAUSED_EXIT:status(controller,phase='PAUSED',batch_id=batch,active_run_id=row['run_id']);return
         if code!=0:
-            if not teardown_abort(log.read_text()) or not readback(row['run_id'])['complete']:
+            if not worker_teardown_abort(log.read_text(),code) or not readback(row['run_id'])['complete']:
                 status(controller,phase='FAILED',batch_id=batch,active_run_id=row['run_id']);raise RuntimeError('Failed operation preserved; no retry')
             immutable_json(controller/f'raw/teardown-{row["block"]:02d}-{row["slot"]}.json',{'log_sha256':sha(log),'readback':readback(row['run_id'])})
         assert readback(row['run_id'])['complete']

@@ -45,14 +45,14 @@
     "solutions/v58/src/ops/teardown_supervisor.py": "ebbdbafac4100934e1d08e679e369004401a4cebbfb2d1d6df36ea51e9c195fb",
     "solutions/v58/src/ops/test_teardown_supervisor.py": "e67c2147338804bea7548ff61b97443aa763f6d2d6bf466447d629f584bce9e6",
     "solutions/v58/src/ops/recovery_dashboard.py": "ccf539095eb26ca6b7eaba6b6bcebc87f97042327544b657cf0934248ddb926e",
-    "solutions/v58/src/ops/test_recovery_batch.py": "a15213735599841308b5d25b8a92ccd3001d5b20c9217ef240855c3897a2fa56",
-    "solutions/v58/src/ops/recovery_batch.py": "44d06f4c6951fcefe9ff1e0175c9c60cecbac1cef2636d901c748a08f927a003"
+    "solutions/v58/src/ops/test_recovery_batch.py": "1174b0175f1ee6575152d35d5dcec37101ddf629c61a4b401fa15b30a0f854d2",
+    "solutions/v58/src/ops/recovery_batch.py": "25ec69510afa2b0570b364e8e0e76c623a9b3cff5df66324b71440f353a8bb9a"
   },
   "status": "COMPOSITE_RECOVERY_FORMAL_RUNNING",
   "ui_assets_sha256": {
     "solutions/v58/src/progress.html": "ee993055911e5162ffac4be8be35cfc7a2e8e65c73afde811471d5f15f83be29"
   },
-  "updated_at_utc": "2026-10-03T16:03:29.971716+00:00",
+  "updated_at_utc": "2026-10-04T10:59:13.489143+00:00",
   "version": "v58",
   "formal_model_calls_sampled_at_utc": "2026-10-01T04:37:31.925205+00:00",
   "execution_amendment_sha256": "a18e512be5a45a815b495ac1237c5d5a6ad94eb8df32346d136f1f66c4f48751",

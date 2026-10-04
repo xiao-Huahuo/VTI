@@ -1,0 +1,90 @@
+{
+  "checked_at_utc": "2026-10-04T10:59:13.489143+00:00",
+  "scheduled_heartbeat_utc": "2026-10-04T10:55:33.012Z",
+  "status": "RECOVERED_POST_COMPLETE_NATIVE_TEARDOWN_CLASSIFIER_DEFECT",
+  "failure_at_utc": "2026-10-04T10:25:41.844181+00:00",
+  "completed_run_id": "v58-recovery-mac-20261003-b09-s1",
+  "completed_readback": "PASS_191_CHECKPOINTS_COMPLETE",
+  "native_log_error": "recursive_mutex lock failed: Invalid argument after COMPLETE",
+  "classifier_defect": "Reused helper required SIGABRT text emitted by original full parent traceback; direct worker log lacks that text, so valid post-completion recovery rejected",
+  "fix": "Use actual direct worker returncode -SIGABRT plus COMPLETE and exact native signature; persist worker returncode+log hash; still require full readback",
+  "prior_returncode_note": "Old worker nonzero was observed by coordinator but not separately persisted; raw native log and complete readback preserved",
+  "tests": "PASS_7_OF_7 including negative returncode/incomplete/protocol-error cases",
+  "model_conditions_changed": false,
+  "original_top_level_source_changed": false,
+  "no_completed_operation_replayed": true,
+  "launch": "solutions/v58/outputs/v58-recovery-teardown-20261004/launch.json",
+  "progress": {
+    "batch_id": "recovery-mac-20261003",
+    "phase": "RUNNING",
+    "pause_requested": false,
+    "active_run_id": "v58-recovery-mac-20261003-b09-s2",
+    "completed_sessions": 3112,
+    "total_sessions": 4392,
+    "completed_sequences": 17,
+    "total_sequences": 24,
+    "model_requests": 3181,
+    "regulatory_state": "COMPOSITE_RECOVERY_FORMAL_RUNNING",
+    "formal_model_calls_recorded": 3153,
+    "new_model_requests": 937,
+    "budget_scope": "Fresh recovery runs only; exclude 2244 reused requests"
+  },
+  "machine": {
+    "sampled_at_utc": "2026-10-04T10:59:07.844364+00:00",
+    "platform": "Darwin",
+    "cores": 10,
+    "cpu_percent": 13.100000000000001,
+    "gpu_percent": 93,
+    "memory_total_bytes": 17179869184,
+    "memory_pressure_free_percent": 8,
+    "swap_used_bytes": 4268102778.88,
+    "gpu_shared_memory_bytes": 11587026944,
+    "model_server_online": true,
+    "models": [
+      {
+        "name": "qwen3:8b-q4_K_M",
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "size": 14548184594,
+        "size_vram": 11413204499,
+        "context_length": 32768
+      }
+    ],
+    "processes": [
+      {
+        "pid": 1484,
+        "label": "Ollama",
+        "cpu_percent": 0.1,
+        "rss_bytes": 8519680
+      },
+      {
+        "pid": 27195,
+        "label": "V58 runner",
+        "cpu_percent": 0.0,
+        "rss_bytes": 5767168
+      },
+      {
+        "pid": 27237,
+        "label": "Qwen 推理进程",
+        "cpu_percent": 92.2,
+        "rss_bytes": 9611362304
+      }
+    ],
+    "chip": "Apple M5",
+    "memory_noncache_estimate_bytes": 15969107968,
+    "memory_file_cache_bytes": 455278592,
+    "memory_compressed_resident_bytes": 1795358720,
+    "memory_wired_bytes": 13361446912,
+    "memory_unused_pages_bytes": 107167744,
+    "load_average": [
+      2.654296875,
+      1.79638671875,
+      1.5556640625
+    ],
+    "disk": {
+      "total_bytes": 494332366848,
+      "used_bytes": 148599590912,
+      "free_bytes": 345732775936
+    }
+  },
+  "action": "Restart coordinator, skip completed N and begin untouched V; no scientific outcome analysis"
+}
