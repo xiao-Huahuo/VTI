@@ -168,3 +168,5 @@ V58 新增[安全暂停与本机监控](docs/v58/PAUSE_AND_MONITOR_AUDIT.md)，�
 2026-10-04 18:55 自动修复：b09-s1 N完成并完整回读通过后native退出被组合coordinator误判；外层辨识改用真实signal returncode并新增退出收据，7/7测试通过。已跳过完成成果恢复至b09-s2 V，选定17/24完成，原条件与budget不变；收据 `docs/v58/SUPERVISION_20261004_1855.json`。
 
 2026-10-04 19:55 修复后恢复监督：新b09-s2 V正常推进，原source/执行/manifest、最新checkpoint及新调用预算核验通过，无新terminal failure；已完成b09-s1未重算。收据 `docs/v58/SUPERVISION_20261004_1955.json`。
+
+2026-10-04 20:56 恢复监督：新b09-s2 V正常推进，source/执行/manifest身份、最新checkpoint及新调用预算核验通过，无新terminal failure。收据 `docs/v58/SUPERVISION_20261004_2056.json`。
