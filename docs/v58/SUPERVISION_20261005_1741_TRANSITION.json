@@ -1,0 +1,14 @@
+{
+  "checked_at_utc": "2026-10-05T09:43:29.357701+00:00",
+  "completed_N_readback": {
+    "block": 12,
+    "checkpoints": 191,
+    "complete": true,
+    "policy": "N",
+    "run_id": "v58-recovery-mac-20261003-b12-s1",
+    "slot": 1,
+    "status": "PASS"
+  },
+  "correction": "Sampling crossed sequence boundary: original receipt progress already shows 23 complete and active b12-s2 V; checkpoint0 belongs to new V. Previous prose N-at-end is superseded. No early outcome analysis.",
+  "original_receipt": "docs/v58/SUPERVISION_20261005_1741.json"
+}
