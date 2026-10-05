@@ -1185,3 +1185,17 @@ b09-s1 N于18:25完成后再次触发原生recursive_mutex退出异常。全部1
 ### 完成与未完成状态
 
 coordinator已恢复RUNNING，右侧进度页在线并打开；原21条完整成果保留，第64步继续执行。启动PID与收据目录见CURRENT_STATE.json。safe pause与本次用户恢复授权均保留，每小时监督继续。未完成全量统计。
+
+# 2026-10-05 11:38 用户重启恢复后监督
+
+### 现状
+
+用户授权安全恢复后，新 b11-s2 V 正常推进，选定进度 3923/4392、完整sequence 21/24；新调用 1765、选定总调用 4009，比恢复快照新增 19 ingestion。
+
+### 实施方案
+
+只读核查规范/恢复及退出修复方案、新coordinator/caffeinate/Ollama、原source/执行和manifest身份、最新提交checkpoint、错误/响应停止原因、新run预算及资源。
+
+### 完成与未完成状态
+
+核验通过，无新terminal failure/length，GPU活跃，swap约3.23GiB、磁盘余量约320GiB，新run预算以内，进度持续增加。用户暂停及明确恢复授权保留，已提交步骤不重算；复用2244调用不占剩余预算，旧failed sequence保留排除。不修复、不重试、不重启、无新增模型调用；只核验活跃sequence已提交快照，无中途统计。收据 SUPERVISION_20261005_1138.json。
