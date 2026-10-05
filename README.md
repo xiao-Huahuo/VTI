@@ -206,3 +206,5 @@ V58 新增[安全暂停与本机监控](docs/v58/PAUSE_AND_MONITOR_AUDIT.md)，�
 2026-10-05 15:41 恢复监督：新b12-s1 N正常推进，原source/执行/manifest、最新checkpoint及新调用预算核验通过，无新terminal failure。收据 `docs/v58/SUPERVISION_20261005_1541.json`。
 
 2026-10-05 16:41 恢复监督：新b12-s1 N正常推进，原source/执行/manifest、最新checkpoint及新调用预算核验通过，无新terminal failure。收据 `docs/v58/SUPERVISION_20261005_1641.json`。
+
+2026-10-05 17:41 恢复监督：新b12-s1 N正常推进至末尾，原source/执行/manifest、最新checkpoint及新调用预算核验通过，无新terminal failure；尚未全量完成。收据 `docs/v58/SUPERVISION_20261005_1741.json`。
