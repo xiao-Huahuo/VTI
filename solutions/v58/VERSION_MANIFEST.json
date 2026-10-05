@@ -5,8 +5,8 @@
   "development_profiling_status": "STOPPED_AT_RESOURCE_PREFLIGHT_NO_CONCURRENCY_AMENDMENT",
   "footprint_sha256": "80ebdde1bbaa7998532e198eac55ca0a62343adeef3ef65ad0d8428a8501e171",
   "formal_entry": "solutions/v58/src/runner.py",
-  "formal_model_calls": 1,
-  "formal_run_receipts": "solutions/v58/outputs/v58-formal-mac-20261001-output8192-controller/raw/batch_identity.json",
+  "formal_model_calls": 4488,
+  "formal_run_receipts": "solutions/v58/outputs/v58-recovery-mac-20261003-controller/raw/batch_complete.json",
   "gpu_source_pack_sha256": "2a346366497b1318cf2ed640b7c7a4a4f2a00a0ce13ffad4aac418de18367945",
   "gpu_source_status": "SOURCE_ONLY_PREPARED_NO_MODEL_ENV_DOWNLOAD",
   "implementation_revision": "Prospective output cap 8192, matching budget accounting, terminal truncation guard, full store launch gate, hourly autonomous supervision",
@@ -46,19 +46,24 @@
     "solutions/v58/src/ops/test_teardown_supervisor.py": "e67c2147338804bea7548ff61b97443aa763f6d2d6bf466447d629f584bce9e6",
     "solutions/v58/src/ops/recovery_dashboard.py": "ccf539095eb26ca6b7eaba6b6bcebc87f97042327544b657cf0934248ddb926e",
     "solutions/v58/src/ops/test_recovery_batch.py": "1174b0175f1ee6575152d35d5dcec37101ddf629c61a4b401fa15b30a0f854d2",
-    "solutions/v58/src/ops/recovery_batch.py": "25ec69510afa2b0570b364e8e0e76c623a9b3cff5df66324b71440f353a8bb9a"
+    "solutions/v58/src/ops/recovery_batch.py": "25ec69510afa2b0570b364e8e0e76c623a9b3cff5df66324b71440f353a8bb9a",
+    "solutions/v58/src/ops/final_audit.py": "dd7b673dfdda43d2fbb43a392055696dd6fedfd6e20d428e239895f967291ab6",
+    "solutions/v58/src/ops/export_results.py": "66556bb479353862ebbe6262f794e648578d1afd52b1da0c85ae13edd4f743d2"
   },
-  "status": "COMPOSITE_RECOVERY_FORMAL_RUNNING",
+  "status": "FORMAL_COMPLETE_FINAL_AUDIT_PASS_PRIMARY_GATE_PASS",
   "ui_assets_sha256": {
     "solutions/v58/src/progress.html": "ee993055911e5162ffac4be8be35cfc7a2e8e65c73afde811471d5f15f83be29"
   },
-  "updated_at_utc": "2026-10-04T10:59:13.489143+00:00",
+  "updated_at_utc": "2026-10-05T13:55:04.246824+00:00",
   "version": "v58",
-  "formal_model_calls_sampled_at_utc": "2026-10-01T04:37:31.925205+00:00",
+  "formal_model_calls_sampled_at_utc": "2026-10-05T13:55:04.246824+00:00",
   "execution_amendment_sha256": "a18e512be5a45a815b495ac1237c5d5a6ad94eb8df32346d136f1f66c4f48751",
   "prior_formal_batch": "formal-mac-20260930-r02 EXCLUDED_FROM_AMENDED_STATISTICS",
   "excluded_prior_formal_model_calls": 191,
   "operational_supervisor": "Post-completion native teardown recovery outside immutable formal runner; condition/metric unchanged",
   "recovery_manifest": "solutions/v58/RECOVERY_MANIFEST_20261003.json",
-  "recovery_manifest_sha256": "f9e511a1f1ae6844a3f543bcfc2819ede41337181527673aec0a4679174b5122"
+  "recovery_manifest_sha256": "f9e511a1f1ae6844a3f543bcfc2819ede41337181527673aec0a4679174b5122",
+  "formal_model_calls_scope": "24 selected sequences; excludes unsuccessful attempts and development calls",
+  "final_evidence_audit_sha256": "5d82740f0c500d51e836c9c88c7e344993073f6c3be3cebb8a639404294376f8",
+  "result_summary_sha256": "032ab3581834da7ed44a02d993bfdf7d7191ad5b1670f9f1110bce0f886a431e"
 }

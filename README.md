@@ -216,3 +216,7 @@ V58 新增[安全暂停与本机监控](docs/v58/PAUSE_AND_MONITOR_AUDIT.md)，�
 2026-10-05 19:43 最后一条sequence监督：b12-s2 V正常推进，23/24完整，原source/执行/manifest、最新checkpoint及新调用预算核验通过，无新terminal failure；尚未全量完成。收据 `docs/v58/SUPERVISION_20261005_1943.json`。
 
 2026-10-05 20:44 最后一条sequence监督：b12-s2 V正常推进，23/24完整，原source/执行/manifest、最新checkpoint及新调用预算核验通过，无新terminal failure；尚未全量完成。收据 `docs/v58/SUPERVISION_20261005_2044.json`。
+
+## V58 最终结果（2026-10-05）
+
+全量24sequence/4392ingestion/96回答已完成，4584检查点与96检索表示完整回读/重建通过。冻结主指标Delta=0.1362，精确单侧p=0.01025，主门通过：固定四题和绑定8192条件下Verified Cleanup相较Native Reset降低顺序条件化检索离散度约15.77%。不推导准确率或排名变化，correctness仍不评分。失败/执行修订和恢复manifest均披露，见 [最终报告](docs/v58/FINAL_REPORT_20261005.md) 与 [证据审计](docs/v58/FINAL_EVIDENCE_AUDIT_20261005.json)。模型服务已停止释放资源，每小时监督停用；此前运行中状态均为历史快照。

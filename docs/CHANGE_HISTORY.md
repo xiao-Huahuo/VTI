@@ -1357,3 +1357,17 @@ coordinator已恢复RUNNING，右侧进度页在线并打开；原21条完整成
 ### 完成与未完成状态
 
 核验通过，无新terminal failure/length，GPU活跃，swap约4.26GiB、磁盘余量约318GiB，新run预算以内，进度持续增加。复用2244调用不占剩余预算，旧failed sequence保留排除。不修复、不重试、不重启、无新增模型调用；只核验活跃sequence已提交快照，无中途统计。最后V尚未完成，不提前标记全量完成。收据 SUPERVISION_20261005_2044.json。
+
+# 2026-10-05 V58 全量完成、最终验收与统计
+
+### 现状
+
+21:26:30全量计算完成：恢复manifest选定24sequence/96trial/4392ingestion/96回答/4488请求，coordinator与worker退出。
+
+### 实施方案
+
+完整回读24条、原source/model/冻结及数据身份、scope和清理门；离线重建96footprint逐float32元素验证，独立距离矩阵重算4096标签交换；原raw不可覆盖，先验收再汇报。
+
+### 完成与未完成状态
+
+4584 checkpoints回读PASS，96重建footprint最大差异0，72清理边界门通过，原统计与独立重算一致。S_N=0.8635833941，S_V=0.7273865832，Delta=0.1361968109，p=42/4096=0.01025390625，冻结主门通过，相对离散度降低15.77%。仅支持固定四题/绑定配置检索顺序敏感性降低，不支持accuracy/score/ranking或普遍隔离。失败和8192修订、旧12复用及失败sequence排除完整披露，不能称原始2048方案原样运行。correctness按用户决定不评分。最终三层审查与边界见FINAL_REPORT_20261005.md。停止本次Ollama释放资源；每小时监督已停用，HTML可继续查看。

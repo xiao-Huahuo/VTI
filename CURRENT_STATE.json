@@ -1,8 +1,8 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-10-05T12:46:12.268471+00:00",
+  "updated_at_utc": "2026-10-05T13:55:04.246824+00:00",
   "project": "Reset Is Not Isolation",
-  "phase": "V58_COMPOSITE_RECOVERY_FORMAL_RUNNING",
+  "phase": "V58_COMPLETE_FINAL_AUDIT_PASS_PRIMARY_GATE_PASS",
   "active_version": "v58",
   "next_version": "v59",
   "scientific_design_status": "DESIGN_FROZEN_WITH_PROSPECTIVE_METRIC_AMENDMENT",
@@ -11,7 +11,7 @@
     "source_path": "solutions/v58/src/",
     "runner": "solutions/v58/src/runner.py",
     "version_manifest": "solutions/v58/VERSION_MANIFEST.json",
-    "version_manifest_sha256": "cd2b53c765273e80ba97df78bdeb1050d7c2edab8953f15e86199f813450aaa6"
+    "version_manifest_sha256": "2b11c5d7c1bb0f1c915cc85e7259363ad8a9e50c25e2aa0c3302f335aa6b2b8d"
   },
   "current_tests": {
     "status": "OFFLINE_TEST_PASS_RECOVERY_TEST_PASS",
@@ -31,7 +31,7 @@
     "version_docs": "docs/v58/"
   },
   "current_data": {
-    "status": "AMENDED_FORMAL_RUN_IN_PROGRESS_PRIOR_FAILED_BATCH_EXCLUDED",
+    "status": "FORMAL_COMPLETE_RAW_IMMUTABLE_ANALYSIS_VERIFIED",
     "inputs": "solutions/v58/inputs/longmemeval-v1/longmemeval_s_cleaned.json",
     "outputs": "solutions/v58/outputs/",
     "git_policy": "all inputs/ and outputs/ ignored"
@@ -48,28 +48,29 @@
       "v57": "LANGMEM_DS_INCOMPATIBLE compatibility; formal rank 26/27 not run"
     }
   },
-  "outstanding_before_v58_execution": [
-    "Keep 0-4 correctness score pending; answers/reference only"
-  ],
+  "outstanding_before_v58_execution": [],
   "last_run_receipts_for_active_version": {
     "batch_id": "recovery-mac-20261003",
     "controller": "solutions/v58/outputs/v58-recovery-mac-20261003-controller",
-    "active_run_id": "v58-recovery-mac-20261003-b12-s2",
+    "active_run_id": null,
     "runner_pid": 1389,
     "supervisor_pid": 1389,
     "caffeinate_pid": 1390,
     "ollama_pid": 1380,
-    "phase": "RUNNING",
-    "process_running": true,
+    "phase": "COMPLETE",
+    "process_running": false,
     "launch": "solutions/v58/outputs/v58-host-resume-20261005T030750/launch.json",
     "recovery_manifest": "solutions/v58/RECOVERY_MANIFEST_20261003.json",
     "reused_complete_sequences": 12,
     "selected_committed_ingestions_before_new_calls": 2196,
     "excluded_failed_sequence": "v58-formal-mac-20261001-output8192-b07-s1",
     "budget_note": "Remaining controller budget only covers fresh 12 runs; use dashboard new_model_requests or manifest reuse=false raw counts, not total selected model_requests",
-    "committed_ingestions_at_snapshot": 4354,
-    "completed_sequences": 23,
-    "first_recovery_checkpoint": "PASS_IDENTITY_AND_STATE_HASH"
+    "committed_ingestions_at_snapshot": 4392,
+    "completed_sequences": 24,
+    "first_recovery_checkpoint": "PASS_IDENTITY_AND_STATE_HASH",
+    "completion": "solutions/v58/outputs/v58-recovery-mac-20261003-controller/raw/batch_complete.json",
+    "analysis": "solutions/v58/outputs/v58-recovery-mac-20261003-analysis/processed/exact_randomization.json",
+    "final_audit": "docs/v58/FINAL_EVIDENCE_AUDIT_20261005.json"
   },
   "v58_freeze_audit": {
     "status": "PASS_AFTER_PROSPECTIVE_AMENDMENT",
@@ -104,17 +105,18 @@
     "runtime_identity_read_only_preflight": "PASS_WHEN_OLLAMA_TEMPORARILY_STARTED",
     "cost_preflight": "PASS_ESTIMATE_UNCERTAIN",
     "final_implementation_audit": "PASS_P0_0_P1_0",
-    "regulatory_state": "COMPOSITE_RECOVERY_FORMAL_RUNNING",
-    "formal_model_calls": 4450,
+    "regulatory_state": "FORMAL_COMPLETE_FINAL_AUDIT_PASS_PRIMARY_GATE_PASS",
+    "formal_model_calls": 4488,
     "formal_run_receipts": "solutions/v58/outputs/v58-recovery-mac-20261003-controller/raw/batch_identity.json",
     "safe_pause_and_resume": "PASS_FAKE_REQUEST_SIGNAL_AND_BATCH_CONTINUATION",
-    "formal_model_calls_sampled_at_utc": "2026-10-05T12:46:12.268471+00:00",
+    "formal_model_calls_sampled_at_utc": "2026-10-05T13:55:04.246824+00:00",
     "excluded_prior_formal_calls": 191,
     "recovery_tests": "PASS_7_OF_7",
     "recovery_manifest_audit": "PASS_24_SLOTS_12_REUSED_COMPLETE",
     "excluded_previous_failed_run_requests": 63,
-    "new_recovery_model_calls": 2206,
-    "formal_model_calls_scope": "Manifest-selected reused + new calls; controller remaining budget only applies to new calls"
+    "new_recovery_model_calls": 2244,
+    "formal_model_calls_scope": "Manifest-selected reused + new calls; controller remaining budget only applies to new calls",
+    "final_evidence_audit": "PASS_24_COMPLETE_4584_CHECKPOINTS_96_EXACT_FOOTPRINTS_4096_INDEPENDENT_REBUILD"
   },
   "development_profiling": {
     "status": "STOPPED_AT_RESOURCE_PREFLIGHT",
@@ -165,13 +167,13 @@
   "hourly_supervision": {
     "automation_id": "v58",
     "interval_hours": 1,
-    "status": "ACTIVE",
+    "status": "PAUSED_TASK_COMPLETE",
     "routine_failures": "AUTONOMOUS_REPAIR_WITH_DOCUMENTATION",
     "user_pause": "NEVER_AUTOMATICALLY_RESUME",
     "procedure": "docs/v58/RECOVERY_AFTER_CONNECTION_20261003.md",
-    "last_checked_at_utc": "2026-10-05T12:46:12.268471+00:00",
-    "last_status": "HEALTHY_COMPOSITE_RECOVERY_FINAL_SEQUENCE_RUNNING",
-    "last_receipt": "docs/v58/SUPERVISION_20261005_2044.json"
+    "last_checked_at_utc": "2026-10-05T13:55:04.246824+00:00",
+    "last_status": "FINAL_ACCEPTANCE_COMPLETE",
+    "last_receipt": "docs/v58/FINAL_EVIDENCE_AUDIT_20261005.json"
   },
   "runtime_estimate": {
     "receipt": "docs/v58/RUNTIME_ESTIMATE_20261002.json",
@@ -190,5 +192,20 @@
     "audit": "docs/v58/PRE_REBOOT_AUDIT_20261003.json",
     "released_at_utc": "2026-10-03T15:57:48.024263+00:00",
     "status": "RELEASED_BY_EXPLICIT_USER_CONTINUE"
-  }
+  },
+  "final_result": {
+    "report": "docs/v58/FINAL_REPORT_20261005.md",
+    "summary": "docs/v58/FINAL_RESULT_SUMMARY_20261005.json",
+    "native_dispersion": 0.863583394121555,
+    "verified_dispersion": 0.7273865831865272,
+    "effect": 0.1361968109350279,
+    "p": 0.01025390625,
+    "primary_gate_passed": true,
+    "correctness_scored": false,
+    "claim_boundary": "Fixed four-case panel, order/complete-history conditioned retrieval dispersion under amended 8192 execution conditions"
+  },
+  "outstanding_after_v58_completion": [
+    "0-4 correctness scorer remains intentionally pending; not part of this primary result",
+    "Any accuracy/ranking/generalization claim requires separately designed evidence"
+  ]
 }

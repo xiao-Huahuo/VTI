@@ -1,0 +1,21 @@
+{
+  "accuracy_or_ranking_claim": false,
+  "answers_preserved": 96,
+  "assignments": 4096,
+  "correctness_scored": false,
+  "effect": 0.1361968109350279,
+  "evidence_audit_sha256": "5d82740f0c500d51e836c9c88c7e344993073f6c3be3cebb8a639404294376f8",
+  "exact_p_value": 0.01025390625,
+  "ingestions": 4392,
+  "native_dispersion": 0.863583394121555,
+  "primary_gate_passed": true,
+  "raw_untouched": true,
+  "recovery_manifest_sha256": "f9e511a1f1ae6844a3f543bcfc2819ede41337181527673aec0a4679174b5122",
+  "relative_dispersion_reduction_percent": 15.771124347934983,
+  "scope": "Fixed four-case panel, order/complete-history conditioned retrieval dispersion under amended 8192 execution conditions",
+  "selected_model_requests": 4488,
+  "selected_sequences": 24,
+  "source_result_sha256": "4a1cb434c2f5aded9e79b68e26bc560427b9db8afb7eb60060f95db4ce67906c",
+  "tail_count": 42,
+  "verified_dispersion": 0.7273865831865272
+}
