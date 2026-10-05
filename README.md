@@ -192,3 +192,5 @@ V58 新增[安全暂停与本机监控](docs/v58/PAUSE_AND_MONITOR_AUDIT.md)，�
 2026-10-05 09:35 恢复监督：新b11-s1 N正常推进，source/执行/manifest身份、最新checkpoint及新调用预算核验通过，无新terminal failure。收据 `docs/v58/SUPERVISION_20261005_0935.json`。
 
 2026-10-05 10:36 恢复监督：新b11-s1 N完成并完整回读通过，选定21/24条完成；coordinator正常进入b11-s2 V，无新terminal failure。收据 `docs/v58/SUPERVISION_20261005_1036.json`。
+
+2026-10-05 用户重启后恢复：b11-s2 checkpoint63完整回读通过，原manifest/预算/条件下继续，原21条完成成果保留，右侧HTML恢复在线。

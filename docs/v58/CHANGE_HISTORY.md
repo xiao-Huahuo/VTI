@@ -1171,3 +1171,17 @@ b09-s1 N于18:25完成后再次触发原生recursive_mutex退出异常。全部1
 ### 完成与未完成状态
 
 新完成N的191 checkpoints PASS/COMPLETE；活跃V快照/身份通过，无新terminal failure/length，GPU活跃，swap约4.84GiB、磁盘余量约318GiB，新run预算以内。复用2244调用不占剩余预算，原不确定sequence仍排除。不修复、不重启、无新增模型调用，无中途统计。收据 SUPERVISION_20261005_1036.json。
+
+# 2026-10-05 重启后恢复与右侧页面
+
+### 现状
+
+用户刚重启，要求恢复程序并展开右侧HTML。原controller为PAUSED，b11-s2 V停于checkpoint63；没有存活正式进程。
+
+### 实施方案
+
+原sequence完整回读PASS（64 checkpoints含初始），无不确定dispatch；冻结/runtime只读预检通过，恢复原串行Ollama/固定cache/direct localhost，原coordinator使用--resume-paused，在原manifest与预算下续跑；不改变源码、不重算已完成步骤。
+
+### 完成与未完成状态
+
+coordinator已恢复RUNNING，右侧进度页在线并打开；原21条完整成果保留，第64步继续执行。启动PID与收据目录见CURRENT_STATE.json。safe pause与本次用户恢复授权均保留，每小时监督继续。未完成全量统计。
