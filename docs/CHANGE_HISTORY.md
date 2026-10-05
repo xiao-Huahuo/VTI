@@ -1343,3 +1343,17 @@ coordinator已恢复RUNNING，右侧进度页在线并打开；原21条完整成
 ### 完成与未完成状态
 
 核验通过，无新terminal failure/length，GPU活跃，swap约4.18GiB、磁盘余量约318GiB，新run预算以内，进度持续增加。复用2244调用不占剩余预算，旧failed sequence保留排除。不修复、不重试、不重启、无新增模型调用；只核验活跃sequence已提交快照，无中途统计。最后V尚未完成，不提前标记全量完成。收据 SUPERVISION_20261005_1943.json。
+
+# 2026-10-05 20:44 最后一条sequence监督
+
+### 现状
+
+新 b12-s2 V 正常推进，选定进度 4354/4392、完整sequence 23/24；新调用 2206、选定总调用 4450，比前次新增 49 ingestion。
+
+### 实施方案
+
+只读核查规范/恢复及退出修复方案、当前coordinator/caffeinate/Ollama、原source/执行和manifest身份、最新提交checkpoint、错误/响应停止原因、新run预算及资源。
+
+### 完成与未完成状态
+
+核验通过，无新terminal failure/length，GPU活跃，swap约4.26GiB、磁盘余量约318GiB，新run预算以内，进度持续增加。复用2244调用不占剩余预算，旧failed sequence保留排除。不修复、不重试、不重启、无新增模型调用；只核验活跃sequence已提交快照，无中途统计。最后V尚未完成，不提前标记全量完成。收据 SUPERVISION_20261005_2044.json。
