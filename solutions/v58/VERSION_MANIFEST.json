@@ -48,13 +48,14 @@
     "solutions/v58/src/ops/test_recovery_batch.py": "1174b0175f1ee6575152d35d5dcec37101ddf629c61a4b401fa15b30a0f854d2",
     "solutions/v58/src/ops/recovery_batch.py": "25ec69510afa2b0570b364e8e0e76c623a9b3cff5df66324b71440f353a8bb9a",
     "solutions/v58/src/ops/final_audit.py": "dd7b673dfdda43d2fbb43a392055696dd6fedfd6e20d428e239895f967291ab6",
-    "solutions/v58/src/ops/export_results.py": "66556bb479353862ebbe6262f794e648578d1afd52b1da0c85ae13edd4f743d2"
+    "solutions/v58/src/ops/export_results.py": "66556bb479353862ebbe6262f794e648578d1afd52b1da0c85ae13edd4f743d2",
+    "solutions/v58/src/ops/report_analysis.py": "62c7df150bce99712817d6d56c538cdaf2b3786fc5b84685caad50c69a30d937"
   },
   "status": "FORMAL_COMPLETE_FINAL_AUDIT_PASS_PRIMARY_GATE_PASS",
   "ui_assets_sha256": {
     "solutions/v58/src/progress.html": "ee993055911e5162ffac4be8be35cfc7a2e8e65c73afde811471d5f15f83be29"
   },
-  "updated_at_utc": "2026-10-05T13:55:04.246824+00:00",
+  "updated_at_utc": "2026-10-06T08:28:11.062022+00:00",
   "version": "v58",
   "formal_model_calls_sampled_at_utc": "2026-10-05T13:55:04.246824+00:00",
   "execution_amendment_sha256": "a18e512be5a45a815b495ac1237c5d5a6ad94eb8df32346d136f1f66c4f48751",

@@ -1,0 +1,19 @@
+{
+  "reviewed_at_utc": "2026-10-06T08:28:11.062022+00:00",
+  "report_sha256": "1341b28d4d503b0b56ebf0c72c18267c18a7f01520f6717b5294e5b3c76daede",
+  "source_result_sha256": "4a1cb434c2f5aded9e79b68e26bc560427b9db8afb7eb60060f95db4ce67906c",
+  "descriptive_analysis_sha256": "b3a955eddc1e82f8ae4d96c95c18298e7578a9ebb793daac627b2496b2ad8744",
+  "checks": {
+    "all_local_links_resolve": true,
+    "primary_result_unchanged": true,
+    "target_mean_effect_matches_primary": true,
+    "histogram_total_4096": true,
+    "mechanism_96_first_ingestion_checkpoints": true,
+    "post_hoc_tables_labelled": true,
+    "three_reversed_cells_disclosed": true,
+    "execution_revisions_and_failure_denominators_disclosed": true,
+    "accuracy_ranking_claim_absent": true,
+    "full_raw_not_modified": true
+  },
+  "model_calls": 0
+}

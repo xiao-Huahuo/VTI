@@ -1,6 +1,6 @@
 {
   "schema": "science-current-state-v1",
-  "updated_at_utc": "2026-10-05T13:55:04.246824+00:00",
+  "updated_at_utc": "2026-10-06T08:28:11.062022+00:00",
   "project": "Reset Is Not Isolation",
   "phase": "V58_COMPLETE_FINAL_AUDIT_PASS_PRIMARY_GATE_PASS",
   "active_version": "v58",
@@ -11,7 +11,7 @@
     "source_path": "solutions/v58/src/",
     "runner": "solutions/v58/src/runner.py",
     "version_manifest": "solutions/v58/VERSION_MANIFEST.json",
-    "version_manifest_sha256": "2b11c5d7c1bb0f1c915cc85e7259363ad8a9e50c25e2aa0c3302f335aa6b2b8d"
+    "version_manifest_sha256": "5971536f5950c198bf218d3bc858144ab39ac02c3c0796956586dce2b35341ac"
   },
   "current_tests": {
     "status": "OFFLINE_TEST_PASS_RECOVERY_TEST_PASS",
@@ -202,7 +202,10 @@
     "p": 0.01025390625,
     "primary_gate_passed": true,
     "correctness_scored": false,
-    "claim_boundary": "Fixed four-case panel, order/complete-history conditioned retrieval dispersion under amended 8192 execution conditions"
+    "claim_boundary": "Fixed four-case panel, order/complete-history conditioned retrieval dispersion under amended 8192 execution conditions",
+    "full_experiment_report": "docs/v58/EXPERIMENT_REPORT_20261006.md",
+    "report_review": "docs/v58/REPORT_REVIEW_20261006.json",
+    "supplementary_mechanism": "Post-hoc first-ingestion prompt records: N later trials nonempty 36/36, V later trials 0/36"
   },
   "outstanding_after_v58_completion": [
     "0-4 correctness scorer remains intentionally pending; not part of this primary result",
